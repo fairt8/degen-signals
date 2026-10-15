@@ -1,8 +1,8 @@
 {
- "updatedAt": 1792073749,
+ "updatedAt": 1792075600,
  "window": "h1",
  "lastRunErrors": [],
- "candidates": 118,
+ "candidates": 119,
  "cheapPass": 0,
  "tokens": [
   {
@@ -123,5 +123,80 @@
    ],
    "signalAt": 1792066768
   }
- ]
+ ],
+ "journal": [
+  {
+   "mint": "AKotzk1dhcNangAJBtvNKtT9bhbSVZc2mMhRFgkFpump",
+   "symbol": "Macca",
+   "chain": "solana",
+   "t0": 1792073666,
+   "price0": 0.00010050831568803552,
+   "mcap0": 95824,
+   "score": null,
+   "devScore": 0,
+   "link": "https://dexscreener.com/solana/4fonnnmmkma66ppcia9557cg63s2bnn9uofcakxxbmvg",
+   "maxPrice": 0.00016,
+   "samples": [
+    [
+     1792075600,
+     0.00016
+    ]
+   ],
+   "trend": null,
+   "h1": null,
+   "h24": null,
+   "hit2x": false,
+   "hit5x": false,
+   "msgId": null,
+   "last": 0.00016,
+   "lastT": 1792075600,
+   "lastPct": 59.2
+  },
+  {
+   "mint": "vaJ2tXfvML8sFstrEYtza7tmJGvbmBAp8Dvx3Qxpump",
+   "symbol": "UNSUB",
+   "chain": "solana",
+   "t0": 1792066768,
+   "price0": 8.12339441474395e-05,
+   "mcap0": 78293,
+   "score": null,
+   "devScore": 0,
+   "link": "https://dexscreener.com/solana/2p9rmzjxy9egpfy6wrchsnkc5rx4wdxlfpzgmxyn2pan",
+   "maxPrice": 8.12339441474395e-05,
+   "samples": [
+    [
+     1792075600,
+     1.475e-05
+    ]
+   ],
+   "trend": null,
+   "h1": {
+    "price": 1.475e-05,
+    "pct": -81.8,
+    "maxX": 1.0
+   },
+   "h24": null,
+   "hit2x": false,
+   "hit5x": false,
+   "msgId": null,
+   "last": 1.475e-05,
+   "lastT": 1792075600,
+   "lastPct": -81.8
+  }
+ ],
+ "stats": {
+  "signals": 2,
+  "h1": {
+   "n": 1,
+   "winRate": 0.0,
+   "avg": -81.8,
+   "best": -81.8,
+   "worst": -81.8
+  },
+  "h24": {
+   "n": 0
+  },
+  "hit2x": 0,
+  "hit5x": 0
+ }
 }
