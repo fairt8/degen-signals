@@ -1,10 +1,115 @@
 {
- "updatedAt": 1792081324,
+ "updatedAt": 1792089939,
  "window": "h1",
  "lastRunErrors": [],
- "candidates": 114,
- "cheapPass": 0,
+ "candidates": 116,
+ "cheapPass": 1,
  "tokens": [
+  {
+   "symbol": "STREAM",
+   "name": "streamoors.fun",
+   "chain": "solana",
+   "mint": "Diy4Q5aiNEcdn7CWhuwYtuoHtHD9rKBTHCa9hi4qpump",
+   "dex": "pumpswap",
+   "mcap": 76566,
+   "liq": 24078.2,
+   "vol": 119038,
+   "window": "h1",
+   "buys": 1365,
+   "sells": 1087,
+   "ch5m": 12.78,
+   "ch1h": -48.74,
+   "ageH": 2.67,
+   "description": "Launch an AI streamer with its own token. Let it talk to viewers in real time.",
+   "estFeesSol": 275.09,
+   "priceUsd": 7.692e-05,
+   "socials": [
+    "https://x.com/streamoors"
+   ],
+   "websites": [
+    "https://streamoors.fun"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/91tcj2v9wfs11pkvyzkntswc35cb1tujxpkugsgnrjcq",
+    "pumpfun": "https://pump.fun/coin/Diy4Q5aiNEcdn7CWhuwYtuoHtHD9rKBTHCa9hi4qpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=Diy4Q5aiNEcdn7CWhuwYtuoHtHD9rKBTHCa9hi4qpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/Diy4Q5aiNEcdn7CWhuwYtuoHtHD9rKBTHCa9hi4qpump",
+    "x_search": "https://x.com/search?q=%24STREAM&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=STREAM"
+   },
+   "top10Pct": 8.8,
+   "clusterPct": 3.88,
+   "clusterSource": "rugcheck_insider_networks",
+   "clusters": [],
+   "dev": {
+    "wallet": "GNNNZvk5p6y6ThsQN5UWdrf7kESMVFQbncre15uGYLuC",
+    "holdPct": 6.55,
+    "sold": false,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/GNNNZvk5p6y6ThsQN5UWdrf7kESMVFQbncre15uGYLuC",
+     "pumpfun": "https://pump.fun/profile/GNNNZvk5p6y6ThsQN5UWdrf7kESMVFQbncre15uGYLuC"
+    },
+    "funder": null,
+    "firstTs": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": -10,
+   "devNotes": [
+    "-10 dev holds 6.55%"
+   ],
+   "extras": {
+    "estFeesSol": 275.09,
+    "maxSingleHolderPct": 1.89,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "wild-plum-thrush",
+      "size": 100,
+      "type": "transfer"
+     },
+     {
+      "id": "vibrant-beige-cobra",
+      "size": 4,
+      "type": "transfer"
+     },
+     {
+      "id": "anxious-wheat-alligator",
+      "size": 4,
+      "type": "transfer"
+     },
+     {
+      "id": "quirky-snow-tapir",
+      "size": 4,
+      "type": "transfer"
+     },
+     {
+      "id": "gentle-ivory-oyster",
+      "size": 4,
+      "type": "transfer"
+     },
+     {
+      "id": "slow-smoke-stingray",
+      "size": 9,
+      "type": "transfer"
+     },
+     {
+      "id": "tall-violet-heron",
+      "size": 8,
+      "type": "transfer"
+     }
+    ]
+   },
+   "signalAt": 1792089939
+  },
   {
    "symbol": "Macca",
    "name": "Macca The Gator",
@@ -126,6 +231,33 @@
  ],
  "journal": [
   {
+   "mint": "Diy4Q5aiNEcdn7CWhuwYtuoHtHD9rKBTHCa9hi4qpump",
+   "symbol": "STREAM",
+   "chain": "solana",
+   "t0": 1792089939,
+   "price0": 7.692e-05,
+   "mcap0": 76566,
+   "score": null,
+   "devScore": -10,
+   "link": "https://dexscreener.com/solana/91tcj2v9wfs11pkvyzkntswc35cb1tujxpkugsgnrjcq",
+   "maxPrice": 8.259e-05,
+   "samples": [
+    [
+     1792089939,
+     8.259e-05
+    ]
+   ],
+   "trend": null,
+   "h1": null,
+   "h24": null,
+   "hit2x": false,
+   "hit5x": false,
+   "msgId": 7,
+   "last": 8.259e-05,
+   "lastT": 1792089939,
+   "lastPct": 7.4
+  },
+  {
    "mint": "AKotzk1dhcNangAJBtvNKtT9bhbSVZc2mMhRFgkFpump",
    "symbol": "Macca",
    "chain": "solana",
@@ -148,6 +280,10 @@
     [
      1792081324,
      0.0002759
+    ],
+    [
+     1792089939,
+     0.0001197
     ]
    ],
    "trend": "up",
@@ -160,9 +296,9 @@
    "hit2x": true,
    "hit5x": false,
    "msgId": null,
-   "last": 0.0002759,
-   "lastT": 1792081324,
-   "lastPct": 174.5
+   "last": 0.0001197,
+   "lastT": 1792089939,
+   "lastPct": 19.1
   },
   {
    "mint": "vaJ2tXfvML8sFstrEYtza7tmJGvbmBAp8Dvx3Qxpump",
@@ -175,20 +311,7 @@
    "devScore": 0,
    "link": "https://dexscreener.com/solana/2p9rmzjxy9egpfy6wrchsnkc5rx4wdxlfpzgmxyn2pan",
    "maxPrice": 8.12339441474395e-05,
-   "samples": [
-    [
-     1792075600,
-     1.475e-05
-    ],
-    [
-     1792078726,
-     1.234e-05
-    ],
-    [
-     1792081324,
-     1.097e-05
-    ]
-   ],
+   "samples": [],
    "trend": null,
    "h1": {
     "price": 1.475e-05,
@@ -199,13 +322,13 @@
    "hit2x": false,
    "hit5x": false,
    "msgId": null,
-   "last": 1.097e-05,
-   "lastT": 1792081324,
-   "lastPct": -86.5
+   "last": 5.644e-06,
+   "lastT": 1792089939,
+   "lastPct": -93.1
   }
  ],
  "stats": {
-  "signals": 2,
+  "signals": 3,
   "h1": {
    "n": 2,
    "winRate": 50.0,
