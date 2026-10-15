@@ -7,6 +7,22 @@ def dev_line(r):
     flags = ("🚩rug history " if d.get("rugHistory") else "") + ("sold " if d.get("sold") else f"holds {d.get('holdPct')}% ")
     return (f"Dev: {flags}· {d.get('priorTokens')} prior ({d.get('priorMigrated')} migrated, {d.get('priorDead')} dead) "
             f"· dev score {r.get('devScore', 0):+d}\n")
+import os as _os
+def post(text, reply_to=None):
+    """Raw post. DRY_RUN=1 prints instead of sending. Returns message_id or None."""
+    tok, chat = _os.environ.get("TELEGRAM_BOT_TOKEN"), _os.environ.get("TELEGRAM_CHAT_ID")
+    if _os.environ.get("DRY_RUN"):
+        print("[DRY_RUN telegram]", text.replace("\n", " | ")[:300], file=sys.stderr); return -1
+    if not tok or not chat:
+        print("telegram: TELEGRAM_BOT_TOKEN/TELEGRAM_CHAT_ID not set, skipping", file=sys.stderr); return None
+    q = {"chat_id": chat, "text": text, "parse_mode": "HTML", "disable_web_page_preview": "true"}
+    if reply_to and reply_to > 0: q.update(reply_to_message_id=reply_to, allow_sending_without_reply="true")
+    try:
+        r = json.loads(urllib.request.urlopen(f"https://api.telegram.org/bot{tok}/sendMessage",
+                       data=urllib.parse.urlencode(q).encode(), timeout=15).read())
+        return r["result"]["message_id"]
+    except Exception as e:
+        print(f"telegram error: {e}", file=sys.stderr); return None
 def send(r):
     tok, chat = os.environ.get("TELEGRAM_BOT_TOKEN"), os.environ.get("TELEGRAM_CHAT_ID")
     if not tok or not chat:
@@ -23,8 +39,4 @@ def send(r):
             + " | ".join(x for x in [link("dexscreener", "DexScreener"), link("pumpfun", "pump.fun"), link("bubblemaps", "Bubblemaps"),
                                      link("insightx", "InsightX"), link("x_search", "X")] if x)
             + "\n⚠️ Not financial advice. DYOR.")
-    data = urllib.parse.urlencode({"chat_id": chat, "text": text, "parse_mode": "HTML", "disable_web_page_preview": "true"}).encode()
-    try:
-        urllib.request.urlopen(f"https://api.telegram.org/bot{tok}/sendMessage", data=data, timeout=15); return True
-    except Exception as e:
-        print(f"telegram error: {e}", file=sys.stderr); return False
+    return post(text)

@@ -36,16 +36,32 @@ if a.debug:
     for r in rows:
         for k, v in (r.get("checks") or {}).items(): fails[k] = fails.get(k, 0) + (not v)
     print(json.dumps({"candidates": len(rows), "cheapPass": len(cheap), "failCounts": fails}), file=sys.stderr)
+import journal as J
+feed = json.load(open(a.signals)) if a.signals and os.path.exists(a.signals) else {"tokens": []}
+jr = feed.get("journal", [])
+for t in reversed(feed.get("tokens", [])):  # backfill journal from earlier feed signals
+    if t.get("signalAt") and t.get("links"): J.add(jr, t, t0=t["signalAt"])
+jr.sort(key=lambda e: -e["t0"])
+for r in out:
+    r["priceUsd"] = r.get("priceUsd"); J.add(jr, r)
+try: notes = J.update(jr)
+except Exception as e: notes = []; errors.append(f"journal update failed: {str(e)[:100]}")
 if a.signals:
-    feed = json.load(open(a.signals)) if os.path.exists(a.signals) else {"tokens": []}
     for r in out: r["signalAt"] = int(time.time())
     feed = {"updatedAt": int(time.time()), "window": F["window"], "lastRunErrors": errors,
-            "candidates": len(rows), "cheapPass": len(cheap), "tokens": (out + feed["tokens"])[:200]}
+            "candidates": len(rows), "cheapPass": len(cheap), "tokens": (out + feed["tokens"])[:200],
+            "journal": jr[:300], "stats": J.stats(jr)}
     os.makedirs(os.path.dirname(os.path.abspath(a.signals)), exist_ok=True)
     json.dump(feed, open(a.signals, "w"), indent=1)
 if a.telegram:
     import notify
-    for r in out: notify.send(r)
+    for r in out:
+        mid = notify.send(r)
+        for e in jr:
+            if e["mint"] == r["mint"] and mid: e["msgId"] = mid
+    for kind, e, text in notes:
+        notify.post(text, reply_to=e.get("msgId"))
+    if a.signals: json.dump({**json.load(open(a.signals)), "journal": jr[:300]}, open(a.signals, "w"), indent=1)
 json.dump(sorted(seen | {r["mint"] for r in out}), open(a.state, "w"))
 print(json.dumps({"generatedAt": time.strftime("%Y-%m-%dT%H:%M:%S%z"), "window": F["window"], "count": len(out), "errors": errors,
                   "disclaimer": "Not financial advice.", "tokens": out}, indent=2))

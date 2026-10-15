@@ -213,7 +213,7 @@ def evaluate(p, m, F, now=None):
     return {"symbol": p["baseToken"]["symbol"], "name": p["baseToken"]["name"], "chain": p["chainId"], "mint": a,
             "dex": p.get("dexId"), "mcap": mc, "liq": liq, "vol": vol, "window": w, "buys": tx["buys"], "sells": tx["sells"],
             "ch5m": c5, "ch1h": c1, "ageH": round(ageH, 2) if ageH else None, "description": m["description"][:200],
-            "estFeesSol": estFeesSol, "socials": list(dict.fromkeys(s.split(" ")[0] for s in socials)), "websites": list(dict.fromkeys(webs)), "checks": checks, "cheapPass": all(checks.values()),
+            "estFeesSol": estFeesSol, "priceUsd": pu or None, "socials": list(dict.fromkeys(s.split(" ")[0] for s in socials)), "websites": list(dict.fromkeys(webs)), "checks": checks, "cheapPass": all(checks.values()),
             "links": links(p["chainId"], a, p.get("url"), p["baseToken"]["symbol"])}
 
 def links(chain, a, ds_url, sym):

@@ -68,3 +68,9 @@ Graceful failures: if rugcheck or RPC blocks the GitHub runner, the token is ski
   - `maxSingleHolderPct`: any non-pool wallet above 5%.
   - `freshWalletsMax`: top-10 holders with fewer than 15 lifetime transactions.
   - Insider networks from rugcheck feed into cluster %.
+
+## Journal & watch mode (v5)
+- Every 5R signal is saved to `docs/signals.json` → `journal`. Each run records entry price/mcap/time and devScore, the price at 1h and 24h, the max seen price (sampled about every 10 min, so it's a lower bound), and whether it hit 2x or 5x. `stats` holds win rate, average, best and worst. The site shows the journal and stats.
+- Telegram sends follow-ups as replies to the original alert: 1h and 24h results, 2x/5x hits, and, for the first 6h, trend notices. Trend is fast (last 3 samples) vs slow (last 9), or DexScreener m5/h1 before 9 samples exist. A notice is sent only when the state changes: "trend turned up" or "momentum fading – consider exit".
+- Dry run: `DRY_RUN=1 python3 alert.py --signals docs/signals.json --telegram` prints the Telegram messages instead of sending them.
+- No workflow change needed. The journal lives inside the already-committed `docs/signals.json`.
