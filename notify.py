@@ -11,17 +11,18 @@ def send(r):
     tok, chat = os.environ.get("TELEGRAM_BOT_TOKEN"), os.environ.get("TELEGRAM_CHAT_ID")
     if not tok or not chat:
         print("telegram: TELEGRAM_BOT_TOKEN/TELEGRAM_CHAT_ID not set, skipping", file=sys.stderr); return False
+    from html import escape as e
     L = r["links"]
-    text = (f"🎯 5R signal: ${r['symbol']} ({r['name']})\n"
+    link = lambda k, label: f'<a href="{e(L[k])}">{label}</a>' if L.get(k) else ""
+    text = (f"🎯 5R signal: ${e(r['symbol'])} ({e(r['name'])})\n"
             f"MC ${fmt(r['mcap'])} · Liq ${fmt(r['liq'])} · Vol {r['window']} ${fmt(r['vol'])}\n"
             f"5m {r['ch5m']}% · 1h {r['ch1h']}% · {r['buys']}B/{r['sells']}S · age {r['ageH']}h\n"
-            f"Top10 {r.get('top10Pct')}% · Cluster {r.get('clusterPct')}% ({r.get('clusterSource')})\n"
-            f"{dev_line(r)}"
-            f"CA: {r['mint']}\n"
-            f"<a href=\"{L['dexscreener']}\">DexScreener</a> | <a href=\"{L['pumpfun']}\">pump.fun</a> | "
-            f"<a href=\"{L['bubblemaps']}\">Bubblemaps</a> | <a href=\"{L['insightx']}\">InsightX</a> | <a href=\"{L['x_search']}\">X</a>\n"
-            f"⚠️ Not financial advice. DYOR.")
-    text = text.replace("&", "&amp;").replace("<a href", "\0").replace("<", "&lt;").replace("\0", "<a href")  # light HTML escape
+            f"Top10 {r.get('top10Pct')}% · Cluster {r.get('clusterPct')}% ({e(str(r.get('clusterSource')))})\n"
+            f"{e(dev_line(r))}"
+            f"CA: <code>{e(r['mint'])}</code>\n"
+            + " | ".join(x for x in [link("dexscreener", "DexScreener"), link("pumpfun", "pump.fun"), link("bubblemaps", "Bubblemaps"),
+                                     link("insightx", "InsightX"), link("x_search", "X")] if x)
+            + "\n⚠️ Not financial advice. DYOR.")
     data = urllib.parse.urlencode({"chat_id": chat, "text": text, "parse_mode": "HTML", "disable_web_page_preview": "true"}).encode()
     try:
         urllib.request.urlopen(f"https://api.telegram.org/bot{tok}/sendMessage", data=data, timeout=15); return True
