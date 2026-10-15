@@ -1,9 +1,9 @@
 {
- "updatedAt": 1792075600,
+ "updatedAt": 1792078726,
  "window": "h1",
  "lastRunErrors": [],
- "candidates": 119,
- "cheapPass": 0,
+ "candidates": 116,
+ "cheapPass": 1,
  "tokens": [
   {
    "symbol": "Macca",
@@ -135,22 +135,30 @@
    "score": null,
    "devScore": 0,
    "link": "https://dexscreener.com/solana/4fonnnmmkma66ppcia9557cg63s2bnn9uofcakxxbmvg",
-   "maxPrice": 0.00016,
+   "maxPrice": 0.0003372,
    "samples": [
     [
      1792075600,
      0.00016
+    ],
+    [
+     1792078726,
+     0.0003372
     ]
    ],
-   "trend": null,
-   "h1": null,
+   "trend": "up",
+   "h1": {
+    "price": 0.0003372,
+    "pct": 235.5,
+    "maxX": 3.35
+   },
    "h24": null,
-   "hit2x": false,
+   "hit2x": true,
    "hit5x": false,
    "msgId": null,
-   "last": 0.00016,
-   "lastT": 1792075600,
-   "lastPct": 59.2
+   "last": 0.0003372,
+   "lastT": 1792078726,
+   "lastPct": 235.5
   },
   {
    "mint": "vaJ2tXfvML8sFstrEYtza7tmJGvbmBAp8Dvx3Qxpump",
@@ -167,6 +175,10 @@
     [
      1792075600,
      1.475e-05
+    ],
+    [
+     1792078726,
+     1.234e-05
     ]
    ],
    "trend": null,
@@ -179,24 +191,24 @@
    "hit2x": false,
    "hit5x": false,
    "msgId": null,
-   "last": 1.475e-05,
-   "lastT": 1792075600,
-   "lastPct": -81.8
+   "last": 1.234e-05,
+   "lastT": 1792078726,
+   "lastPct": -84.8
   }
  ],
  "stats": {
   "signals": 2,
   "h1": {
-   "n": 1,
-   "winRate": 0.0,
-   "avg": -81.8,
-   "best": -81.8,
+   "n": 2,
+   "winRate": 50.0,
+   "avg": 76.8,
+   "best": 235.5,
    "worst": -81.8
   },
   "h24": {
    "n": 0
   },
-  "hit2x": 0,
+  "hit2x": 1,
   "hit5x": 0
  }
 }
