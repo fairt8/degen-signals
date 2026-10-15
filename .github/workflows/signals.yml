@@ -1,0 +1,27 @@
+name: 5R signals
+on:
+  schedule: [{cron: "*/10 * * * *"}]   # GitHub may delay/skip under load
+  workflow_dispatch: {}
+permissions: {contents: write}
+concurrency: {group: signals, cancel-in-progress: false}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Run 5R pipeline (failures of rugcheck/RPC are reported, not fatal)
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          INSIGHTX_API_KEY: ${{ secrets.INSIGHTX_API_KEY }}
+          BUBBLEMAPS_API_KEY: ${{ secrets.BUBBLEMAPS_API_KEY }}
+          SOLANA_RPC: ${{ secrets.SOLANA_RPC }}
+        run: python3 alert.py --state seen.json --signals docs/signals.json --telegram --debug || echo "alert.py failed (network?)"
+      - name: Commit state + feed
+        run: |
+          git config user.name "signals-bot"; git config user.email "signals-bot@users.noreply.github.com"
+          git add seen.json docs/signals.json 2>/dev/null || true
+          git diff --cached --quiet || (git commit -m "signals: $(date -u +%FT%TZ)" && git push)

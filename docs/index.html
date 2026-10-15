@@ -1,0 +1,22 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Degen Signals 5R</title><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0d1117"><link rel="icon" href="icon.svg">
+<style>body{font-family:system-ui;background:#0d1117;color:#e6edf3;margin:0;padding:14px;max-width:900px;margin:auto}a{color:#58a6ff}
+.card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:10px;margin:10px 0}.pos{color:#3fb950}.neg{color:#f85149}
+.disc{background:#3d1d1d;border:1px solid #f85149;padding:8px;border-radius:6px}small{color:#8b949e}button{background:#238636;color:#fff;border:0;padding:6px 10px;border-radius:5px}</style></head>
+<body><h2>🎯 Degen Signals: 5R hunter</h2>
+<div class="disc">⚠️ <b>NOT FINANCIAL ADVICE.</b> Automated heuristics on extremely risky memecoins. Most go to zero. DYOR.</div>
+<p><small id="meta">Loading…</small> <button id="inst" hidden>Install app</button></p><div id="list"></div>
+<script>
+const fmt=n=>n>=1e6?(n/1e6).toFixed(2)+"M":n>=1e3?(n/1e3).toFixed(1)+"K":(+n).toFixed(0), esc=s=>String(s??"").replace(/[&<>"']/g,c=>"&#"+c.charCodeAt(0)+";");
+async function load(){ try{ const d=await (await fetch("signals.json?t="+Date.now())).json();
+  document.getElementById("meta").textContent=`Updated ${new Date(d.updatedAt*1000).toLocaleString()} · window ${d.window} · ${d.candidates} scanned, ${d.cheapPass} near-pass`+(d.lastRunErrors?.length?` · ⚠ ${d.lastRunErrors.length} lookup errors last run`:"");
+  document.getElementById("list").innerHTML=d.tokens.length?d.tokens.map(r=>`<div class="card"><b>$${esc(r.symbol)}</b> ${esc(r.name)} <small>${new Date(r.signalAt*1000).toLocaleString()}</small><br>
+  MC $${fmt(r.mcap)} · Liq $${fmt(r.liq)} · Vol ${r.window} $${fmt(r.vol)} · <span class="${r.ch5m<0?'neg':'pos'}">5m ${r.ch5m}%</span> · <span class="${r.ch1h<0?'neg':'pos'}">1h ${r.ch1h}%</span> · ${r.buys}B/${r.sells}S · age ${r.ageH}h<br>
+  Top10 ${r.top10Pct}% · Cluster ${r.clusterPct}% (${esc(r.clusterSource)})${r.extras?` · fees≈${r.extras.estFeesSol??"?"} SOL · max holder ${r.extras.maxSingleHolderPct}% · fresh ${r.extras.freshWallets}/10`:""}<br>
+  ${r.dev?.wallet?`<small>Dev <a href="https://solscan.io/account/${esc(r.dev.wallet)}" target=_blank>${esc(r.dev.wallet.slice(0,4))}…</a> ${r.dev.rugHistory?'<span class="neg">🚩rug history</span> ':''}${r.dev.sold?'sold':'holds '+r.dev.holdPct+'%'} · ${r.dev.priorTokens} prior (${r.dev.priorMigrated} migrated, ${r.dev.priorDead} dead) · dev score <b class="${r.devScore<0?'neg':'pos'}">${r.devScore}</b></small><br>`:""}<small>${esc(r.description)}</small><br><small>CA: ${esc(r.mint)}</small><br>
+  ${Object.entries(r.links).filter(([,u])=>u).map(([k,u])=>`<a href="${esc(u)}" target=_blank>${k}</a>`).join(" · ")} · ${r.socials.map(u=>`<a href="${esc(u)}" target=_blank>social</a>`).join(" · ")}</div>`).join(""):"<p>No signals yet. The bot posts when a token passes every 5R filter.</p>";
+ }catch(e){document.getElementById("meta").textContent="No signals.json yet ("+e.message+")";} }
+load(); setInterval(load,60000);
+if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+let ev; addEventListener("beforeinstallprompt",e=>{e.preventDefault();ev=e;const b=document.getElementById("inst");b.hidden=false;b.onclick=()=>ev.prompt();});
+</script></body></html>

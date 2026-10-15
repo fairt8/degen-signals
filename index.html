@@ -1,0 +1,15 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Degen Signals – Memecoin Signal Generator</title>
+<style>body{font-family:system-ui;background:#0d1117;color:#e6edf3;margin:0;padding:16px}a{color:#58a6ff}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:6px;border-bottom:1px solid #30363d;text-align:left;vertical-align:top}
+th[data-k]{cursor:pointer;color:#8b949e}.pos{color:#3fb950}.neg{color:#f85149}.sig{padding:2px 6px;border-radius:4px;font-weight:700;font-size:11px;white-space:nowrap}
+.STRONGBUY{background:#238636}.WATCH{background:#9e6a03}.AVOID{background:#6e2020}.disc{background:#3d1d1d;border:1px solid #f85149;padding:8px;border-radius:6px;margin:8px 0}
+input,select,button{background:#161b22;color:#e6edf3;border:1px solid #30363d;padding:5px;border-radius:4px}</style></head><body>
+<h2>🚀 Degen Signals</h2>
+<div class="disc">⚠️ <b>NOT FINANCIAL ADVICE.</b> Automated, heuristic signals on extremely risky memecoins. Most go to zero; rugs are common. DYOR, never invest what you can't lose.</div>
+<p><select id="filter"><option value="">All signals</option><option>STRONG BUY</option><option>WATCH</option><option>AVOID</option></select>
+<input id="q" placeholder="Search symbol/chain"> <button id="refresh">Refresh</button> <span id="status"></span></p>
+<details open><summary><b>🎯 Filters / 5R hunter preset</b> (tick preset5R to show only tokens passing all)</summary><div id="fpanel" style="font-size:12px;line-height:2"></div></details>
+<p><small>Only tokens with at least one social link (X/Telegram/Discord/community) are shown. Sources: DexScreener profiles, boosts, pumpfun/pumpswap pairs (+ pump.fun API via proxy when reachable). Auto-refresh 45s. Click headers to sort.</small></p>
+<table><thead><tr><th data-k="signal">Signal</th><th data-k="score">Score</th><th data-k="sym">Token</th><th data-k="liq">Liq</th><th data-k="mc">MCap</th><th data-k="v1">Vol 5m/1h</th><th data-k="c5">5m</th><th data-k="c1">1h</th><th data-k="ratio">B/S 1h</th><th data-k="ageH">Age</th><th>Reasons</th><th>Risk flags</th><th>5R filters</th><th>Links</th></tr></thead><tbody id="rows"></tbody></table>
+<script src="config.js"></script><script src="app.js"></script></body></html>
