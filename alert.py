@@ -23,6 +23,8 @@ for r in cheap[:F.get("holderLookupLimit", 15)]:
     except Exception as e:
         errors.append(f"holder lookup failed {r['symbol']}: {str(e)[:100]}"); print(errors[-1], file=sys.stderr); continue
     r["top10Pct"], r["clusterPct"], r["clusterSource"], r["clusters"] = h["top10Pct"], h["clusterPct"], h["clusterSource"], h["clusters"]
+    import gmgn
+    r["gmgn"] = gmgn.analyze(r["mint"], F["gmgn"]); r["gmgnScore"] = r["gmgn"]["scoreAdj"]
     r["dev"] = h.get("dev"); r["devScore"], r["devNotes"] = pipeline.dev_score(r["dev"], F["devScore"])
     r["extras"] = {"estFeesSol": r["estFeesSol"], "maxSingleHolderPct": h.get("maxSingleHolderPct"),
                    "freshWallets": h.get("freshWallets"), "insiderNetworks": h.get("insiderNetworks")}

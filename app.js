@@ -141,7 +141,8 @@ function checks(r) {
   // dev lookup = score bonus/penalty only
   [r.devScore, r.devNotes] = devScore(h?.dev);
   r.baseScore ??= r.score;
-  r.score = Math.max(0, Math.min(100, r.baseScore + r.devScore + (r.pass5R && r.narratives.length ? 5 : 0)));
+  r.gmgn = h?.gmgn;
+  r.score = Math.max(0, Math.min(100, r.baseScore + r.devScore + (r.gmgn?.scoreAdj||0) + (r.pass5R && r.narratives.length ? 5 : 0)));
   return c;
 }
 function devScore(d) {
@@ -158,11 +159,14 @@ function devCell(r) {
   const h = HOLD[r.p.baseToken.address], d = h?.dev;
   const extra = `<small>fees≈${r.estFeesSol!=null?r.estFeesSol.toFixed(1)+" SOL":"?"}${h?` · max holder ${h.maxSingleHolderPct}% · fresh ${h.freshWallets}/10`+(h.insiderNetworks?.length?` · ${h.insiderNetworks.length} insider net`:""):""}</small>`;
   if (!d) return extra + (r.chain==="solana" ? "<br><small>dev: looked up when cheap filters pass</small>" : "");
-  return extra + `<br><small><b>Dev</b> <a href="${d.links.solscan}" target=_blank>${d.wallet.slice(0,4)}…</a> ${d.rugHistory?'<span class="neg">🚩rug history</span> ':''}${d.sold?'sold':'holds '+d.holdPct+'%'} · ${d.priorTokens} prior (${d.priorMigrated} migr, ${d.priorDead} dead)${d.funder?` · funded by ${d.funder.slice(0,4)}…`:''}<br>dev score <b class="${r.devScore<0?'neg':'pos'}">${r.devScore>0?'+':''}${r.devScore}</b> ${r.devNotes.join(", ")}</small>`;
+  const g = h?.gmgn, gl = !g ? "" : `<br><small><b>GMGN: <span class="${g.status==="PASS"?"pos":g.status==="FAIL"?"neg":""}">${g.status}</span></b> ${esc((g.reasons||[]).join("; "))}${g.scoreAdj?` (score ${g.scoreAdj>0?"+":""}${g.scoreAdj})`:""}${g.link?` <a href="${g.link}" target=_blank>gmgn</a>`:""}</small>`;
+  return extra + gl + `<br><small><b>Dev</b> <a href="${d.links.solscan}" target=_blank>${d.wallet.slice(0,4)}…</a> ${d.rugHistory?'<span class="neg">🚩rug history</span> ':''}${d.sold?'sold':'holds '+d.holdPct+'%'} · ${d.priorTokens} prior (${d.priorMigrated} migr, ${d.priorDead} dead)${d.funder?` · funded by ${d.funder.slice(0,4)}…`:''}<br>dev score <b class="${r.devScore<0?'neg':'pos'}">${r.devScore>0?'+':''}${r.devScore}</b> ${r.devNotes.join(", ")}</small>`;
 }
 async function lookupHolders() {
   const todo = rows.filter(r=>r.cheapPass && r.chain==="solana" && !HOLD[r.p.baseToken.address]).slice(0, F.holderLookupLimit);
-  for (const r of todo) { try { HOLD[r.p.baseToken.address] = await j("/holders/"+r.p.baseToken.address); } catch { HOLD[r.p.baseToken.address] = {top10Pct:null}; } }
+  for (const r of todo) { const a = r.p.baseToken.address;
+    try { HOLD[a] = await j("/holders/"+a); } catch { HOLD[a] = {top10Pct:null}; }
+    try { HOLD[a].gmgn = await j("/gmgn/"+a); } catch { HOLD[a].gmgn = {status:"SKIPPED", reasons:["server.py not running"], scoreAdj:0}; } }
   rows.forEach(r => r.checks = checks(r)); render();
   setStatus(document.getElementById("status").textContent.replace(/ · 5R.*/,"")+` · 5R pass: ${rows.filter(r=>r.pass5R).length} (cheap filters: ${rows.filter(r=>r.cheapPass).length})`);
 }

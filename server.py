@@ -6,6 +6,12 @@ CACHE = {}  # mint -> (ts, json)
 PUMP = "https://frontend-api-v3.pump.fun/coins?offset=0&limit=50&sort=last_trade_timestamp&order=DESC&includeNsfw=false"
 class H(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
+        if self.path.startswith("/gmgn/"):
+            import gmgn
+            mint = self.path.split("/")[2].split("?")[0]
+            body = json.dumps(gmgn.analyze(mint, pipeline.load_config()["gmgn"])).encode()
+            self.send_response(200); self.send_header("Content-Type", "application/json"); self.end_headers(); self.wfile.write(body)
+            return
         if self.path.startswith("/holders/"):
             mint = self.path.split("/")[2].split("?")[0]
             try: body, code = json.dumps(pipeline.holders_and_clusters(mint)).encode(), 200

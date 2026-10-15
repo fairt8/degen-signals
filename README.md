@@ -74,3 +74,11 @@ Graceful failures: if rugcheck or RPC blocks the GitHub runner, the token is ski
 - Telegram sends follow-ups as replies to the original alert: 1h and 24h results, 2x/5x hits, and, for the first 6h, trend notices. Trend is fast (last 3 samples) vs slow (last 9), or DexScreener m5/h1 before 9 samples exist. A notice is sent only when the state changes: "trend turned up" or "momentum fading – consider exit".
 - Dry run: `DRY_RUN=1 python3 alert.py --signals docs/signals.json --telegram` prints the Telegram messages instead of sending them.
 - No workflow change needed. The journal lives inside the already-committed `docs/signals.json`.
+
+## GMGN layer (optional)
+`gmgn.py` uses GMGN's official OpenAPI (`https://openapi.gmgn.ai`, header `X-APIKEY`). Get a free key at https://gmgn.ai/ai by uploading an Ed25519 public key. It reads only, about 6 calls per token, and only for tokens that already pass the cheap 5R filters. Results are cached 10 min.
+For each token it looks at holders tagged smart_degen, renowned (KOL), sniper, bundler, fresh_wallet and rat_trader, ignoring the pool account.
+- **PASS** needs at least `minSmartKol` smart/KOL wallets still holding, sniper+bundler+fresh supply at or below `maxComboPct`, and each of snipers, bundlers and rat traders at or below its own cap.
+- **Score:** +5 per smart/KOL holder (cap +15), −10 if the combined cap is exceeded, −5 for rat traders.
+- **Never a gate:** every 5R alert still fires and shows `GMGN: PASS/FAIL — …`. It shows `SKIPPED` without a key and `ERROR` if the API fails.
+Settings are in config.js → `filters.gmgn`. To enable it on GitHub, add the repo secret `GMGN_API_KEY` and add `GMGN_API_KEY: ${{ secrets.GMGN_API_KEY }}` to the workflow's `env:`.

@@ -43,6 +43,7 @@ def send(r):
             f"5m {r['ch5m']}% · 1h {r['ch1h']}% · {r['buys']}B/{r['sells']}S · age {r['ageH']}h\n"
             f"Top10 {r.get('top10Pct')}% · Cluster {r.get('clusterPct')}% ({e(str(r.get('clusterSource')))})\n"
             f"{e(dev_line(r))}"
+            f"{e(__import__('gmgn').line(r.get('gmgn')))}\n"
             f"CA: <code>{e(r['mint'])}</code>\n"
             + " | ".join(x for x in [link("dexscreener", "DexScreener"), link("pumpfun", "pump.fun"), link("bubblemaps", "Bubblemaps"),
                                      link("insightx", "InsightX"), link("x_search", "X")] if x)
