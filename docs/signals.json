@@ -1,13 +1,92 @@
 {
- "updatedAt": 1792190713,
+ "updatedAt": 1792191763,
  "window": "h1",
- "lastRunErrors": [
-  "holder lookup failed PLAY: HTTP Error 400: Bad Request",
-  "holder lookup failed TURTLES: HTTP Error 400: Bad Request"
- ],
- "candidates": 129,
+ "lastRunErrors": [],
+ "candidates": 122,
  "cheapPass": 2,
  "tokens": [
+  {
+   "symbol": "PLAY",
+   "name": "Playground",
+   "chain": "solana",
+   "mint": "599h3tRUnep6PeQcEaUadosDyZk3uzs173f6h8NTpump",
+   "dex": "pumpswap",
+   "mcap": 47636,
+   "liq": 17886.25,
+   "vol": 156138.14,
+   "window": "h1",
+   "buys": 1936,
+   "sells": 1362,
+   "ch5m": 9.25,
+   "ch1h": 6.4,
+   "ageH": 0.78,
+   "description": "The new era of playable tokens.",
+   "estFeesSol": null,
+   "priceUsd": 4.966e-05,
+   "socials": [
+    "https://x.com/PlaygroundOnX"
+   ],
+   "websites": [
+    "https://tryplayground.online/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/d6dg2aldnkgaujtehvvu5ew7vxfbcoggtvifmirpcee9",
+    "pumpfun": "https://pump.fun/coin/599h3tRUnep6PeQcEaUadosDyZk3uzs173f6h8NTpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=599h3tRUnep6PeQcEaUadosDyZk3uzs173f6h8NTpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/599h3tRUnep6PeQcEaUadosDyZk3uzs173f6h8NTpump",
+    "x_search": "https://x.com/search?q=%24PLAY&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=PLAY"
+   },
+   "top10Pct": 19.49,
+   "clusterPct": 0.33,
+   "clusterSource": "rugcheck_insider_networks",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "GyrtrQ431UAcnj6FSFP45US4aSXLh8Qjw8iDUsh1735n",
+    "holdPct": 0.38,
+    "sold": false,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/GyrtrQ431UAcnj6FSFP45US4aSXLh8Qjw8iDUsh1735n",
+     "pumpfun": "https://pump.fun/profile/GyrtrQ431UAcnj6FSFP45US4aSXLh8Qjw8iDUsh1735n"
+    },
+    "funder": null,
+    "firstTs": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": null,
+    "maxSingleHolderPct": 3.25,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "charming-vermilion-dinosaur",
+      "size": 6,
+      "type": "transfer"
+     }
+    ]
+   },
+   "signalAt": 1792191763
+  },
   {
    "symbol": "FLEG",
    "name": "FLEG SPACE",
@@ -1122,6 +1201,36 @@
  ],
  "journal": [
   {
+   "mint": "599h3tRUnep6PeQcEaUadosDyZk3uzs173f6h8NTpump",
+   "symbol": "PLAY",
+   "chain": "solana",
+   "t0": 1792191763,
+   "price0": 4.966e-05,
+   "mcap0": 47636,
+   "score": null,
+   "devScore": 0,
+   "link": "https://dexscreener.com/solana/d6dg2aldnkgaujtehvvu5ew7vxfbcoggtvifmirpcee9",
+   "maxPrice": 4.966e-05,
+   "samples": [
+    [
+     1792191763,
+     2.87e-05
+    ]
+   ],
+   "trend": "fading",
+   "h1": null,
+   "h24": null,
+   "hit2x": false,
+   "hit5x": false,
+   "msgId": {
+    "1318404489": 75,
+    "-1004348482526": 1501
+   },
+   "last": 2.87e-05,
+   "lastT": 1792191763,
+   "lastPct": -42.2
+  },
+  {
    "mint": "8jNrFaRyhNh8vccpSQ9o55R4hhinmFc1XfSWwDJhpump",
    "symbol": "FLEG",
    "chain": "solana",
@@ -1172,6 +1281,10 @@
     [
      1792190713,
      2.43e-06
+    ],
+    [
+     1792191763,
+     2.388e-06
     ]
    ],
    "trend": "fading",
@@ -1187,8 +1300,8 @@
     "1318404489": 71,
     "-1004348482526": 1497
    },
-   "last": 2.43e-06,
-   "lastT": 1792190713,
+   "last": 2.388e-06,
+   "lastT": 1792191763,
    "lastPct": -98.2
   },
   {
@@ -1306,6 +1419,10 @@
     [
      1792190713,
      2.831e-06
+    ],
+    [
+     1792191763,
+     2.811e-06
     ]
    ],
    "trend": "up",
@@ -1321,8 +1438,8 @@
     "1318404489": 57,
     "-1004348482526": 1483
    },
-   "last": 2.831e-06,
-   "lastT": 1792190713,
+   "last": 2.811e-06,
+   "lastT": 1792191763,
    "lastPct": -92.6
   },
   {
@@ -1336,116 +1453,7 @@
    "devScore": 0,
    "link": "https://dexscreener.com/solana/5l2y1umbhrpu6zmmsyxx3e8t51dhaawhvhsppig6ijsx",
    "maxPrice": 3.955e-05,
-   "samples": [
-    [
-     1792170089,
-     3.955e-05
-    ],
-    [
-     1792170986,
-     2.578e-06
-    ],
-    [
-     1792171889,
-     2.449e-06
-    ],
-    [
-     1792172711,
-     2.431e-06
-    ],
-    [
-     1792173105,
-     2.431e-06
-    ],
-    [
-     1792173614,
-     2.442e-06
-    ],
-    [
-     1792174511,
-     2.442e-06
-    ],
-    [
-     1792175412,
-     2.439e-06
-    ],
-    [
-     1792176313,
-     2.439e-06
-    ],
-    [
-     1792177009,
-     2.419e-06
-    ],
-    [
-     1792177213,
-     2.419e-06
-    ],
-    [
-     1792178110,
-     2.419e-06
-    ],
-    [
-     1792179014,
-     2.419e-06
-    ],
-    [
-     1792179911,
-     2.419e-06
-    ],
-    [
-     1792180814,
-     2.419e-06
-    ],
-    [
-     1792181711,
-     2.419e-06
-    ],
-    [
-     1792182613,
-     2.419e-06
-    ],
-    [
-     1792183589,
-     2.419e-06
-    ],
-    [
-     1792184416,
-     2.419e-06
-    ],
-    [
-     1792185314,
-     2.419e-06
-    ],
-    [
-     1792186211,
-     2.419e-06
-    ],
-    [
-     1792187111,
-     2.419e-06
-    ],
-    [
-     1792187982,
-     2.443e-06
-    ],
-    [
-     1792188015,
-     2.443e-06
-    ],
-    [
-     1792188911,
-     2.433e-06
-    ],
-    [
-     1792189812,
-     2.433e-06
-    ],
-    [
-     1792190713,
-     2.433e-06
-    ]
-   ],
+   "samples": [],
    "trend": "fading",
    "h1": {
     "price": 2.442e-06,
@@ -1460,7 +1468,7 @@
     "-1004348482526": 1481
    },
    "last": 2.433e-06,
-   "lastT": 1792190713,
+   "lastT": 1792191763,
    "lastPct": -93.1
   },
   {
@@ -1488,9 +1496,9 @@
     "1318404489": 51,
     "-1004348482526": 1477
    },
-   "last": 3.722e-06,
-   "lastT": 1792190713,
-   "lastPct": -84.7
+   "last": 3.663e-06,
+   "lastT": 1792191763,
+   "lastPct": -84.9
   },
   {
    "mint": "78ZBbCJkwQjXxRJJ2xv4gXU1BZvAayrvysqF4bmZpump",
@@ -1517,9 +1525,9 @@
     "1318404489": 42,
     "-1004348482526": 1468
    },
-   "last": 6.376e-06,
-   "lastT": 1792190713,
-   "lastPct": -90.2
+   "last": 6.143e-06,
+   "lastT": 1792191763,
+   "lastPct": -90.6
   },
   {
    "mint": "63UjR7d4xfCDjBqAwS2fJWaZPz7JfN32WtbzSAX3pump",
@@ -1546,9 +1554,9 @@
     "1318404489": 41,
     "-1004348482526": 1467
    },
-   "last": 9.005e-06,
-   "lastT": 1792190713,
-   "lastPct": -69.5
+   "last": 7.946e-06,
+   "lastT": 1792191763,
+   "lastPct": -73.1
   },
   {
    "mint": "DdVXE425xZe27FhY41PR8dwfL3VczYdyJJAWDC1jpump",
@@ -1575,9 +1583,9 @@
     "1318404489": 35,
     "-1004348482526": 1461
    },
-   "last": 1.025e-05,
-   "lastT": 1792190713,
-   "lastPct": -78.7
+   "last": 1.058e-05,
+   "lastT": 1792191763,
+   "lastPct": -78.0
   },
   {
    "mint": "6VdcMnBTCj4tJVwtNdJZNzWeYmxzMnygVSzcfY35pump",
@@ -1604,9 +1612,9 @@
     "1318404489": 29,
     "-1004348482526": 1449
    },
-   "last": 1.133e-05,
-   "lastT": 1792190713,
-   "lastPct": -88.7
+   "last": 1.256e-05,
+   "lastT": 1792191763,
+   "lastPct": -87.5
   },
   {
    "mint": "GjkMsvYmuFR37SyKnJoD8DwccLb3HKMQBnNe5Nqbpump",
@@ -1634,7 +1642,7 @@
     "-1004348482526": 1433
    },
    "last": 2.611e-06,
-   "lastT": 1792190713,
+   "lastT": 1792191763,
    "lastPct": -98.2
   },
   {
@@ -1663,7 +1671,7 @@
     "-1004348482526": 1432
    },
    "last": 5.273e-06,
-   "lastT": 1792190713,
+   "lastT": 1792191763,
    "lastPct": -87.4
   },
   {
@@ -1692,7 +1700,7 @@
     "-1004348482526": 1426
    },
    "last": 4.343e-06,
-   "lastT": 1792190713,
+   "lastT": 1792191763,
    "lastPct": -96.2
   },
   {
@@ -1787,7 +1795,7 @@
   }
  ],
  "stats": {
-  "signals": 14,
+  "signals": 15,
   "h1": {
    "n": 14,
    "winRate": 35.7,
