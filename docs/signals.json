@@ -1,10 +1,87 @@
 {
- "updatedAt": 1792140388,
+ "updatedAt": 1792141291,
  "window": "h1",
  "lastRunErrors": [],
- "candidates": 119,
+ "candidates": 115,
  "cheapPass": 1,
  "tokens": [
+  {
+   "symbol": "GOAT11",
+   "name": "GOAT11",
+   "chain": "solana",
+   "mint": "GjkMsvYmuFR37SyKnJoD8DwccLb3HKMQBnNe5Nqbpump",
+   "dex": "pumpswap",
+   "mcap": 147617,
+   "liq": 37450.77,
+   "vol": 1005237.82,
+   "window": "h1",
+   "buys": 4822,
+   "sells": 3735,
+   "ch5m": 3.92,
+   "ch1h": 233,
+   "ageH": 0.41,
+   "description": "GOAT11",
+   "estFeesSol": 117.74,
+   "priceUsd": 0.0001476,
+   "socials": [
+    "https://x.com/GOAT11SOL",
+    "https://t.me/GOAT11SOL"
+   ],
+   "websites": [
+    "https://goat11.top/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/cagcwzhhemnkrc1ygp4yywegdssdcaebpqhefxemusg9",
+    "pumpfun": "https://pump.fun/coin/GjkMsvYmuFR37SyKnJoD8DwccLb3HKMQBnNe5Nqbpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=GjkMsvYmuFR37SyKnJoD8DwccLb3HKMQBnNe5Nqbpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/GjkMsvYmuFR37SyKnJoD8DwccLb3HKMQBnNe5Nqbpump",
+    "x_search": "https://x.com/search?q=%24GOAT11&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=GOAT11"
+   },
+   "top10Pct": 12.09,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "BEWzEmGUFj33AvebSqUQwnG6Xab4C6Eaz9mxWU9FtP8n",
+    "holdPct": 0.03,
+    "sold": false,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/BEWzEmGUFj33AvebSqUQwnG6Xab4C6Eaz9mxWU9FtP8n",
+     "pumpfun": "https://pump.fun/profile/BEWzEmGUFj33AvebSqUQwnG6Xab4C6Eaz9mxWU9FtP8n"
+    },
+    "funder": null,
+    "firstTs": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 117.74,
+    "maxSingleHolderPct": 2.32,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "signalAt": 1792141291
+  },
   {
    "symbol": "EVERYTHING",
    "name": "The Everything Project",
@@ -394,6 +471,36 @@
  ],
  "journal": [
   {
+   "mint": "GjkMsvYmuFR37SyKnJoD8DwccLb3HKMQBnNe5Nqbpump",
+   "symbol": "GOAT11",
+   "chain": "solana",
+   "t0": 1792141291,
+   "price0": 0.0001476,
+   "mcap0": 147617,
+   "score": null,
+   "devScore": 0,
+   "link": "https://dexscreener.com/solana/cagcwzhhemnkrc1ygp4yywegdssdcaebpqhefxemusg9",
+   "maxPrice": 0.0001476,
+   "samples": [
+    [
+     1792141291,
+     0.0001164
+    ]
+   ],
+   "trend": null,
+   "h1": null,
+   "h24": null,
+   "hit2x": false,
+   "hit5x": false,
+   "msgId": {
+    "1318404489": 25,
+    "-1004348482526": 1433
+   },
+   "last": 0.0001164,
+   "lastT": 1792141291,
+   "lastPct": -21.1
+  },
+  {
    "mint": "DZVADw7Qkfqg2mqQCQBYD2kNsNbq4c2Q9nhBmhtNpump",
    "symbol": "EVERYTHING",
    "chain": "solana",
@@ -408,9 +515,13 @@
     [
      1792140388,
      4.625e-05
+    ],
+    [
+     1792141291,
+     2.084e-05
     ]
    ],
-   "trend": "up",
+   "trend": "fading",
    "h1": null,
    "h24": null,
    "hit2x": false,
@@ -419,9 +530,9 @@
     "1318404489": 24,
     "-1004348482526": 1432
    },
-   "last": 4.625e-05,
-   "lastT": 1792140388,
-   "lastPct": 10.5
+   "last": 2.084e-05,
+   "lastT": 1792141291,
+   "lastPct": -50.2
   },
   {
    "mint": "3EC7gRDGKgqPHc9ipJxxChoeyseE2xAbQHZUSSTfpump",
@@ -502,6 +613,10 @@
     [
      1792140388,
      4.275e-06
+    ],
+    [
+     1792141291,
+     4.369e-06
     ]
    ],
    "trend": "up",
@@ -517,8 +632,8 @@
     "1318404489": 18,
     "-1004348482526": 1426
    },
-   "last": 4.275e-06,
-   "lastT": 1792140388,
+   "last": 4.369e-06,
+   "lastT": 1792141291,
    "lastPct": -96.2
   },
   {
@@ -543,9 +658,9 @@
    "hit2x": true,
    "hit5x": false,
    "msgId": 7,
-   "last": 0.0002178,
-   "lastT": 1792140388,
-   "lastPct": 183.2
+   "last": 0.0002288,
+   "lastT": 1792141291,
+   "lastPct": 197.5
   },
   {
    "mint": "AKotzk1dhcNangAJBtvNKtT9bhbSVZc2mMhRFgkFpump",
@@ -569,9 +684,9 @@
    "hit2x": true,
    "hit5x": false,
    "msgId": null,
-   "last": 0.000221,
-   "lastT": 1792140388,
-   "lastPct": 119.9
+   "last": 0.0002231,
+   "lastT": 1792141291,
+   "lastPct": 122.0
   },
   {
    "mint": "vaJ2tXfvML8sFstrEYtza7tmJGvbmBAp8Dvx3Qxpump",
@@ -595,13 +710,13 @@
    "hit2x": false,
    "hit5x": false,
    "msgId": null,
-   "last": 3.531e-06,
-   "lastT": 1792140388,
+   "last": 3.498e-06,
+   "lastT": 1792141291,
    "lastPct": -95.7
   }
  ],
  "stats": {
-  "signals": 5,
+  "signals": 6,
   "h1": {
    "n": 4,
    "winRate": 50.0,
