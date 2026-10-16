@@ -1,10 +1,92 @@
 {
- "updatedAt": 1792182613,
+ "updatedAt": 1792183589,
  "window": "h1",
  "lastRunErrors": [],
- "candidates": 120,
- "cheapPass": 0,
+ "candidates": 124,
+ "cheapPass": 1,
  "tokens": [
+  {
+   "symbol": "FLEG",
+   "name": "FLEG SPACE",
+   "chain": "solana",
+   "mint": "8jNrFaRyhNh8vccpSQ9o55R4hhinmFc1XfSWwDJhpump",
+   "dex": "pumpswap",
+   "mcap": 128506,
+   "liq": 29568.55,
+   "vol": 183234.98,
+   "window": "h1",
+   "buys": 1287,
+   "sells": 1000,
+   "ch5m": 29.79,
+   "ch1h": 208,
+   "ageH": 0.73,
+   "description": "flegs surf crypto X live, collecting posts and mapping connections to build Fleg AI (trainable LLM)",
+   "estFeesSol": 22.1,
+   "priceUsd": 0.0001314,
+   "socials": [
+    "https://x.com/Nekt_0/status/2111117408224104875"
+   ],
+   "websites": [
+    "https://flegspace.network/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/gcam4ffyrlbprk511caltynwgkujczqjzt7tdumoenhn",
+    "pumpfun": "https://pump.fun/coin/8jNrFaRyhNh8vccpSQ9o55R4hhinmFc1XfSWwDJhpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=8jNrFaRyhNh8vccpSQ9o55R4hhinmFc1XfSWwDJhpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/8jNrFaRyhNh8vccpSQ9o55R4hhinmFc1XfSWwDJhpump",
+    "x_search": "https://x.com/search?q=%24FLEG&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=FLEG"
+   },
+   "top10Pct": 16.02,
+   "clusterPct": 1.59,
+   "clusterSource": "rugcheck_insider_networks",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "AZ34sULqvaZbeZdn2ucTcaueYiFBZY8z97QFwfASL9Ka",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/AZ34sULqvaZbeZdn2ucTcaueYiFBZY8z97QFwfASL9Ka",
+     "pumpfun": "https://pump.fun/profile/AZ34sULqvaZbeZdn2ucTcaueYiFBZY8z97QFwfASL9Ka"
+    },
+    "funder": null,
+    "firstTs": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 22.1,
+    "maxSingleHolderPct": 1.81,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "odd-straw-moose",
+      "size": 5,
+      "type": "transfer"
+     }
+    ]
+   },
+   "signalAt": 1792183589
+  },
   {
    "symbol": "HAI",
    "name": "HookAgents",
@@ -1037,6 +1119,36 @@
  ],
  "journal": [
   {
+   "mint": "8jNrFaRyhNh8vccpSQ9o55R4hhinmFc1XfSWwDJhpump",
+   "symbol": "FLEG",
+   "chain": "solana",
+   "t0": 1792183589,
+   "price0": 0.0001314,
+   "mcap0": 128506,
+   "score": null,
+   "devScore": 0,
+   "link": "https://dexscreener.com/solana/gcam4ffyrlbprk511caltynwgkujczqjzt7tdumoenhn",
+   "maxPrice": 0.0001314,
+   "samples": [
+    [
+     1792183589,
+     0.0001154
+    ]
+   ],
+   "trend": "up",
+   "h1": null,
+   "h24": null,
+   "hit2x": false,
+   "hit5x": false,
+   "msgId": {
+    "1318404489": 71,
+    "-1004348482526": 1497
+   },
+   "last": 0.0001154,
+   "lastT": 1792183589,
+   "lastPct": -12.2
+  },
+  {
    "mint": "GePQb6k4ZjsBDTtn2ZMfYRNJH4fzZ6ExKqRzWnCxpump",
    "symbol": "HAI",
    "chain": "solana",
@@ -1111,6 +1223,10 @@
     [
      1792182613,
      2.921e-06
+    ],
+    [
+     1792183589,
+     2.967e-06
     ]
    ],
    "trend": "up",
@@ -1126,9 +1242,9 @@
     "1318404489": 57,
     "-1004348482526": 1483
    },
-   "last": 2.921e-06,
-   "lastT": 1792182613,
-   "lastPct": -92.4
+   "last": 2.967e-06,
+   "lastT": 1792183589,
+   "lastPct": -92.2
   },
   {
    "mint": "LN2VVt7AyyZCvYeJ8WMZbQdGj6w9Y5vR1LNeJsppump",
@@ -1209,6 +1325,10 @@
     [
      1792182613,
      2.419e-06
+    ],
+    [
+     1792183589,
+     2.419e-06
     ]
    ],
    "trend": "fading",
@@ -1225,7 +1345,7 @@
     "-1004348482526": 1481
    },
    "last": 2.419e-06,
-   "lastT": 1792182613,
+   "lastT": 1792183589,
    "lastPct": -93.1
   },
   {
@@ -1339,6 +1459,10 @@
     [
      1792182613,
      4.144e-06
+    ],
+    [
+     1792183589,
+     4.073e-06
     ]
    ],
    "trend": "up",
@@ -1354,9 +1478,9 @@
     "1318404489": 51,
     "-1004348482526": 1477
    },
-   "last": 4.144e-06,
-   "lastT": 1792182613,
-   "lastPct": -82.9
+   "last": 4.073e-06,
+   "lastT": 1792183589,
+   "lastPct": -83.2
   },
   {
    "mint": "78ZBbCJkwQjXxRJJ2xv4gXU1BZvAayrvysqF4bmZpump",
@@ -1383,9 +1507,9 @@
     "1318404489": 42,
     "-1004348482526": 1468
    },
-   "last": 6.156e-06,
-   "lastT": 1792182613,
-   "lastPct": -90.6
+   "last": 5.902e-06,
+   "lastT": 1792183589,
+   "lastPct": -91.0
   },
   {
    "mint": "63UjR7d4xfCDjBqAwS2fJWaZPz7JfN32WtbzSAX3pump",
@@ -1412,9 +1536,9 @@
     "1318404489": 41,
     "-1004348482526": 1467
    },
-   "last": 7.556e-06,
-   "lastT": 1792182613,
-   "lastPct": -74.4
+   "last": 7.484e-06,
+   "lastT": 1792183589,
+   "lastPct": -74.7
   },
   {
    "mint": "DdVXE425xZe27FhY41PR8dwfL3VczYdyJJAWDC1jpump",
@@ -1441,9 +1565,9 @@
     "1318404489": 35,
     "-1004348482526": 1461
    },
-   "last": 1.137e-05,
-   "lastT": 1792182613,
-   "lastPct": -76.4
+   "last": 1.15e-05,
+   "lastT": 1792183589,
+   "lastPct": -76.1
   },
   {
    "mint": "6VdcMnBTCj4tJVwtNdJZNzWeYmxzMnygVSzcfY35pump",
@@ -1470,9 +1594,9 @@
     "1318404489": 29,
     "-1004348482526": 1449
    },
-   "last": 1.264e-05,
-   "lastT": 1792182613,
-   "lastPct": -87.4
+   "last": 1.567e-05,
+   "lastT": 1792183589,
+   "lastPct": -84.4
   },
   {
    "mint": "GjkMsvYmuFR37SyKnJoD8DwccLb3HKMQBnNe5Nqbpump",
@@ -1499,8 +1623,8 @@
     "1318404489": 25,
     "-1004348482526": 1433
    },
-   "last": 2.607e-06,
-   "lastT": 1792182613,
+   "last": 2.61e-06,
+   "lastT": 1792183589,
    "lastPct": -98.2
   },
   {
@@ -1528,9 +1652,9 @@
     "1318404489": 24,
     "-1004348482526": 1432
    },
-   "last": 5.465e-06,
-   "lastT": 1792182613,
-   "lastPct": -86.9
+   "last": 4.952e-06,
+   "lastT": 1792183589,
+   "lastPct": -88.2
   },
   {
    "mint": "3EC7gRDGKgqPHc9ipJxxChoeyseE2xAbQHZUSSTfpump",
@@ -1558,7 +1682,7 @@
     "-1004348482526": 1426
    },
    "last": 4.463e-06,
-   "lastT": 1792182613,
+   "lastT": 1792183589,
    "lastPct": -96.1
   },
   {
@@ -1653,7 +1777,7 @@
   }
  ],
  "stats": {
-  "signals": 13,
+  "signals": 14,
   "h1": {
    "n": 13,
    "winRate": 38.5,
