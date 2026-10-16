@@ -1,10 +1,102 @@
 {
- "updatedAt": 1792144816,
+ "updatedAt": 1792145788,
  "window": "h1",
  "lastRunErrors": [],
- "candidates": 122,
- "cheapPass": 0,
+ "candidates": 121,
+ "cheapPass": 1,
  "tokens": [
+  {
+   "symbol": "Irene",
+   "name": "Irene The Orangutan",
+   "chain": "solana",
+   "mint": "6VdcMnBTCj4tJVwtNdJZNzWeYmxzMnygVSzcfY35pump",
+   "dex": "pumpswap",
+   "mcap": 95872,
+   "liq": 26382.24,
+   "vol": 508150.1,
+   "window": "h1",
+   "buys": 7848,
+   "sells": 5479,
+   "ch5m": 45.71,
+   "ch1h": 138,
+   "ageH": 0.84,
+   "description": "Irene The Orangutan",
+   "estFeesSol": 60.08,
+   "priceUsd": 0.0001007,
+   "socials": [
+    "https://x.com/i/communities/2038558375277961439"
+   ],
+   "websites": [
+    "https://www.facebook.com/reel/1096607172979248"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/9econ3c1yq4t4bws3lkdnvpcja2le51ba81y5b8uxccw",
+    "pumpfun": "https://pump.fun/coin/6VdcMnBTCj4tJVwtNdJZNzWeYmxzMnygVSzcfY35pump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=6VdcMnBTCj4tJVwtNdJZNzWeYmxzMnygVSzcfY35pump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/6VdcMnBTCj4tJVwtNdJZNzWeYmxzMnygVSzcfY35pump",
+    "x_search": "https://x.com/search?q=%24Irene&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=Irene"
+   },
+   "top10Pct": 16.12,
+   "clusterPct": 3.46,
+   "clusterSource": "rugcheck_insider_networks",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "DoMyfEjAN3KbWRgZs36AZYu3BAqAhh6G4ibnjd9DY4By",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/DoMyfEjAN3KbWRgZs36AZYu3BAqAhh6G4ibnjd9DY4By",
+     "pumpfun": "https://pump.fun/profile/DoMyfEjAN3KbWRgZs36AZYu3BAqAhh6G4ibnjd9DY4By"
+    },
+    "funder": null,
+    "firstTs": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 60.08,
+    "maxSingleHolderPct": 3.32,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "silly-mustard-starfish",
+      "size": 4,
+      "type": "transfer"
+     },
+     {
+      "id": "wacky-sunset-bird",
+      "size": 4,
+      "type": "transfer"
+     },
+     {
+      "id": "zany-cobalt-orangutan",
+      "size": 7,
+      "type": "transfer"
+     }
+    ]
+   },
+   "signalAt": 1792145788
+  },
   {
    "symbol": "GOAT11",
    "name": "GOAT11",
@@ -471,6 +563,36 @@
  ],
  "journal": [
   {
+   "mint": "6VdcMnBTCj4tJVwtNdJZNzWeYmxzMnygVSzcfY35pump",
+   "symbol": "Irene",
+   "chain": "solana",
+   "t0": 1792145787,
+   "price0": 0.0001007,
+   "mcap0": 95872,
+   "score": null,
+   "devScore": 0,
+   "link": "https://dexscreener.com/solana/9econ3c1yq4t4bws3lkdnvpcja2le51ba81y5b8uxccw",
+   "maxPrice": 0.0001025,
+   "samples": [
+    [
+     1792145787,
+     0.0001025
+    ]
+   ],
+   "trend": "up",
+   "h1": null,
+   "h24": null,
+   "hit2x": false,
+   "hit5x": false,
+   "msgId": {
+    "1318404489": 29,
+    "-1004348482526": 1449
+   },
+   "last": 0.0001025,
+   "lastT": 1792145787,
+   "lastPct": 1.8
+  },
+  {
    "mint": "GjkMsvYmuFR37SyKnJoD8DwccLb3HKMQBnNe5Nqbpump",
    "symbol": "GOAT11",
    "chain": "solana",
@@ -501,10 +623,18 @@
     [
      1792144816,
      2.711e-06
+    ],
+    [
+     1792145787,
+     2.74e-06
     ]
    ],
    "trend": "fading",
-   "h1": null,
+   "h1": {
+    "price": 2.74e-06,
+    "pct": -98.1,
+    "maxX": 1.53
+   },
    "h24": null,
    "hit2x": false,
    "hit5x": false,
@@ -512,9 +642,9 @@
     "1318404489": 25,
     "-1004348482526": 1433
    },
-   "last": 2.711e-06,
-   "lastT": 1792144816,
-   "lastPct": -98.2
+   "last": 2.74e-06,
+   "lastT": 1792145787,
+   "lastPct": -98.1
   },
   {
    "mint": "DZVADw7Qkfqg2mqQCQBYD2kNsNbq4c2Q9nhBmhtNpump",
@@ -551,9 +681,13 @@
     [
      1792144816,
      1.171e-05
+    ],
+    [
+     1792145787,
+     1.25e-05
     ]
    ],
-   "trend": "fading",
+   "trend": "up",
    "h1": {
     "price": 1.171e-05,
     "pct": -72.0,
@@ -566,9 +700,9 @@
     "1318404489": 24,
     "-1004348482526": 1432
    },
-   "last": 1.171e-05,
-   "lastT": 1792144816,
-   "lastPct": -72.0
+   "last": 1.25e-05,
+   "lastT": 1792145787,
+   "lastPct": -70.1
   },
   {
    "mint": "3EC7gRDGKgqPHc9ipJxxChoeyseE2xAbQHZUSSTfpump",
@@ -669,6 +803,10 @@
     [
      1792144816,
      4.947e-06
+    ],
+    [
+     1792145787,
+     4.947e-06
     ]
    ],
    "trend": "up",
@@ -685,7 +823,7 @@
     "-1004348482526": 1426
    },
    "last": 4.947e-06,
-   "lastT": 1792144816,
+   "lastT": 1792145787,
    "lastPct": -95.7
   },
   {
@@ -710,9 +848,9 @@
    "hit2x": true,
    "hit5x": false,
    "msgId": 7,
-   "last": 0.0001886,
-   "lastT": 1792144816,
-   "lastPct": 145.2
+   "last": 0.0001851,
+   "lastT": 1792145787,
+   "lastPct": 140.6
   },
   {
    "mint": "AKotzk1dhcNangAJBtvNKtT9bhbSVZc2mMhRFgkFpump",
@@ -736,9 +874,9 @@
    "hit2x": true,
    "hit5x": false,
    "msgId": null,
-   "last": 0.0002257,
-   "lastT": 1792144816,
-   "lastPct": 124.6
+   "last": 0.0002042,
+   "lastT": 1792145787,
+   "lastPct": 103.2
   },
   {
    "mint": "vaJ2tXfvML8sFstrEYtza7tmJGvbmBAp8Dvx3Qxpump",
@@ -763,18 +901,18 @@
    "hit5x": false,
    "msgId": null,
    "last": 3.498e-06,
-   "lastT": 1792144816,
+   "lastT": 1792145787,
    "lastPct": -95.7
   }
  ],
  "stats": {
-  "signals": 6,
+  "signals": 7,
   "h1": {
-   "n": 5,
-   "winRate": 40.0,
-   "avg": 25.1,
+   "n": 6,
+   "winRate": 33.3,
+   "avg": 4.5,
    "best": 235.5,
-   "worst": -81.8
+   "worst": -98.1
   },
   "h24": {
    "n": 0
