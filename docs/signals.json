@@ -1,10 +1,91 @@
 {
- "updatedAt": 1792125912,
+ "updatedAt": 1792126890,
  "window": "h1",
  "lastRunErrors": [],
- "candidates": 116,
- "cheapPass": 0,
+ "candidates": 114,
+ "cheapPass": 1,
  "tokens": [
+  {
+   "symbol": "SYCAMORE",
+   "name": "Sycamore Core",
+   "chain": "solana",
+   "mint": "3EC7gRDGKgqPHc9ipJxxChoeyseE2xAbQHZUSSTfpump",
+   "dex": "pumpswap",
+   "mcap": 110447,
+   "liq": 32215.84,
+   "vol": 171932.94,
+   "window": "h1",
+   "buys": 659,
+   "sells": 461,
+   "ch5m": 27.82,
+   "ch1h": -41.69,
+   "ageH": 21.16,
+   "description": "Preparing digital ownership for the quantum era.\nSycamore brings research, experimentation, and practical tools together to help crypto builders understand and prepare for post-quantum security.",
+   "estFeesSol": 565.55,
+   "priceUsd": 0.0001138,
+   "socials": [
+    "https://x.com/sycamore_hub"
+   ],
+   "websites": [
+    "https://sycamore.lat/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/5cx7awh9czi1vkk2sfabfcszyvbytf7kbexijip6jydq",
+    "pumpfun": "https://pump.fun/coin/3EC7gRDGKgqPHc9ipJxxChoeyseE2xAbQHZUSSTfpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=3EC7gRDGKgqPHc9ipJxxChoeyseE2xAbQHZUSSTfpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/3EC7gRDGKgqPHc9ipJxxChoeyseE2xAbQHZUSSTfpump",
+    "x_search": "https://x.com/search?q=%24SYCAMORE&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=SYCAMORE"
+   },
+   "top10Pct": 13.22,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "4ksbmVvz7CyhAxG4jnz8SmiRFtRMLTL4yzcP4NvvSZdW",
+    "holdPct": 0.13,
+    "sold": false,
+    "priorTokens": 6,
+    "priorMigrated": 0,
+    "priorDead": 6,
+    "bestPriorMcap": 3078.0,
+    "rugHistory": true,
+    "launchpad": "Pump.Fun",
+    "riskNames": [
+     "Creator history of rugged tokens"
+    ],
+    "links": {
+     "solscan": "https://solscan.io/account/4ksbmVvz7CyhAxG4jnz8SmiRFtRMLTL4yzcP4NvvSZdW",
+     "pumpfun": "https://pump.fun/profile/4ksbmVvz7CyhAxG4jnz8SmiRFtRMLTL4yzcP4NvvSZdW"
+    },
+    "funder": null,
+    "firstTs": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": -30,
+   "devNotes": [
+    "-20 dev rug history",
+    "-10 serial launcher (6/6 dead)"
+   ],
+   "extras": {
+    "estFeesSol": 565.55,
+    "maxSingleHolderPct": 2.52,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "signalAt": 1792126890
+  },
   {
    "symbol": "STREAM",
    "name": "streamoors.fun",
@@ -231,6 +312,36 @@
  ],
  "journal": [
   {
+   "mint": "3EC7gRDGKgqPHc9ipJxxChoeyseE2xAbQHZUSSTfpump",
+   "symbol": "SYCAMORE",
+   "chain": "solana",
+   "t0": 1792126890,
+   "price0": 0.0001138,
+   "mcap0": 110447,
+   "score": null,
+   "devScore": -30,
+   "link": "https://dexscreener.com/solana/5cx7awh9czi1vkk2sfabfcszyvbytf7kbexijip6jydq",
+   "maxPrice": 0.0001233,
+   "samples": [
+    [
+     1792126890,
+     0.0001233
+    ]
+   ],
+   "trend": null,
+   "h1": null,
+   "h24": null,
+   "hit2x": false,
+   "hit5x": false,
+   "msgId": {
+    "1318404489": 18,
+    "-1004348482526": 1426
+   },
+   "last": 0.0001233,
+   "lastT": 1792126890,
+   "lastPct": 8.3
+  },
+  {
    "mint": "Diy4Q5aiNEcdn7CWhuwYtuoHtHD9rKBTHCa9hi4qpump",
    "symbol": "STREAM",
    "chain": "solana",
@@ -252,9 +363,9 @@
    "hit2x": true,
    "hit5x": false,
    "msgId": 7,
-   "last": 0.0001903,
-   "lastT": 1792125912,
-   "lastPct": 147.4
+   "last": 0.0002084,
+   "lastT": 1792126890,
+   "lastPct": 170.9
   },
   {
    "mint": "AKotzk1dhcNangAJBtvNKtT9bhbSVZc2mMhRFgkFpump",
@@ -278,9 +389,9 @@
    "hit2x": true,
    "hit5x": false,
    "msgId": null,
-   "last": 0.0001792,
-   "lastT": 1792125912,
-   "lastPct": 78.3
+   "last": 0.0001398,
+   "lastT": 1792126890,
+   "lastPct": 39.1
   },
   {
    "mint": "vaJ2tXfvML8sFstrEYtza7tmJGvbmBAp8Dvx3Qxpump",
@@ -304,13 +415,13 @@
    "hit2x": false,
    "hit5x": false,
    "msgId": null,
-   "last": 3.696e-06,
-   "lastT": 1792125912,
-   "lastPct": -95.5
+   "last": 3.759e-06,
+   "lastT": 1792126890,
+   "lastPct": -95.4
   }
  ],
  "stats": {
-  "signals": 3,
+  "signals": 4,
   "h1": {
    "n": 3,
    "winRate": 66.7,
