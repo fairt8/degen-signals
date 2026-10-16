@@ -1,5 +1,5 @@
 {
- "updatedAt": 1792130415,
+ "updatedAt": 1792131311,
  "window": "h1",
  "lastRunErrors": [],
  "candidates": 111,
@@ -346,10 +346,18 @@
     [
      1792130415,
      0.000127
+    ],
+    [
+     1792131311,
+     6.366e-05
     ]
    ],
-   "trend": "up",
-   "h1": null,
+   "trend": "fading",
+   "h1": {
+    "price": 6.366e-05,
+    "pct": -44.1,
+    "maxX": 1.35
+   },
    "h24": null,
    "hit2x": false,
    "hit5x": false,
@@ -357,9 +365,9 @@
     "1318404489": 18,
     "-1004348482526": 1426
    },
-   "last": 0.000127,
-   "lastT": 1792130415,
-   "lastPct": 11.6
+   "last": 6.366e-05,
+   "lastT": 1792131311,
+   "lastPct": -44.1
   },
   {
    "mint": "Diy4Q5aiNEcdn7CWhuwYtuoHtHD9rKBTHCa9hi4qpump",
@@ -383,9 +391,9 @@
    "hit2x": true,
    "hit5x": false,
    "msgId": 7,
-   "last": 0.0001991,
-   "lastT": 1792130415,
-   "lastPct": 158.8
+   "last": 0.0002001,
+   "lastT": 1792131311,
+   "lastPct": 160.1
   },
   {
    "mint": "AKotzk1dhcNangAJBtvNKtT9bhbSVZc2mMhRFgkFpump",
@@ -409,9 +417,9 @@
    "hit2x": true,
    "hit5x": false,
    "msgId": null,
-   "last": 0.0001883,
-   "lastT": 1792130415,
-   "lastPct": 87.3
+   "last": 0.0001865,
+   "lastT": 1792131311,
+   "lastPct": 85.6
   },
   {
    "mint": "vaJ2tXfvML8sFstrEYtza7tmJGvbmBAp8Dvx3Qxpump",
@@ -436,16 +444,16 @@
    "hit5x": false,
    "msgId": null,
    "last": 3.691e-06,
-   "lastT": 1792130415,
+   "lastT": 1792131311,
    "lastPct": -95.5
   }
  ],
  "stats": {
   "signals": 4,
   "h1": {
-   "n": 3,
-   "winRate": 66.7,
-   "avg": 80.5,
+   "n": 4,
+   "winRate": 50.0,
+   "avg": 49.3,
    "best": 235.5,
    "worst": -81.8
   },
