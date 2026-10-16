@@ -1,8 +1,8 @@
 {
- "updatedAt": 1792143913,
+ "updatedAt": 1792144816,
  "window": "h1",
  "lastRunErrors": [],
- "candidates": 116,
+ "candidates": 122,
  "cheapPass": 0,
  "tokens": [
   {
@@ -497,6 +497,10 @@
     [
      1792143913,
      2.91e-06
+    ],
+    [
+     1792144816,
+     2.711e-06
     ]
    ],
    "trend": "fading",
@@ -508,9 +512,9 @@
     "1318404489": 25,
     "-1004348482526": 1433
    },
-   "last": 2.91e-06,
-   "lastT": 1792143913,
-   "lastPct": -98.0
+   "last": 2.711e-06,
+   "lastT": 1792144816,
+   "lastPct": -98.2
   },
   {
    "mint": "DZVADw7Qkfqg2mqQCQBYD2kNsNbq4c2Q9nhBmhtNpump",
@@ -543,10 +547,18 @@
     [
      1792143913,
      9.429e-06
+    ],
+    [
+     1792144816,
+     1.171e-05
     ]
    ],
    "trend": "fading",
-   "h1": null,
+   "h1": {
+    "price": 1.171e-05,
+    "pct": -72.0,
+    "maxX": 1.1
+   },
    "h24": null,
    "hit2x": false,
    "hit5x": false,
@@ -554,9 +566,9 @@
     "1318404489": 24,
     "-1004348482526": 1432
    },
-   "last": 9.429e-06,
-   "lastT": 1792143913,
-   "lastPct": -77.5
+   "last": 1.171e-05,
+   "lastT": 1792144816,
+   "lastPct": -72.0
   },
   {
    "mint": "3EC7gRDGKgqPHc9ipJxxChoeyseE2xAbQHZUSSTfpump",
@@ -653,6 +665,10 @@
     [
      1792143913,
      4.712e-06
+    ],
+    [
+     1792144816,
+     4.947e-06
     ]
    ],
    "trend": "up",
@@ -668,9 +684,9 @@
     "1318404489": 18,
     "-1004348482526": 1426
    },
-   "last": 4.712e-06,
-   "lastT": 1792143913,
-   "lastPct": -95.9
+   "last": 4.947e-06,
+   "lastT": 1792144816,
+   "lastPct": -95.7
   },
   {
    "mint": "Diy4Q5aiNEcdn7CWhuwYtuoHtHD9rKBTHCa9hi4qpump",
@@ -694,9 +710,9 @@
    "hit2x": true,
    "hit5x": false,
    "msgId": 7,
-   "last": 0.0001951,
-   "lastT": 1792143913,
-   "lastPct": 153.6
+   "last": 0.0001886,
+   "lastT": 1792144816,
+   "lastPct": 145.2
   },
   {
    "mint": "AKotzk1dhcNangAJBtvNKtT9bhbSVZc2mMhRFgkFpump",
@@ -720,9 +736,9 @@
    "hit2x": true,
    "hit5x": false,
    "msgId": null,
-   "last": 0.0001864,
-   "lastT": 1792143913,
-   "lastPct": 85.5
+   "last": 0.0002257,
+   "lastT": 1792144816,
+   "lastPct": 124.6
   },
   {
    "mint": "vaJ2tXfvML8sFstrEYtza7tmJGvbmBAp8Dvx3Qxpump",
@@ -747,16 +763,16 @@
    "hit5x": false,
    "msgId": null,
    "last": 3.498e-06,
-   "lastT": 1792143913,
+   "lastT": 1792144816,
    "lastPct": -95.7
   }
  ],
  "stats": {
   "signals": 6,
   "h1": {
-   "n": 4,
-   "winRate": 50.0,
-   "avg": 49.3,
+   "n": 5,
+   "winRate": 40.0,
+   "avg": 25.1,
    "best": 235.5,
    "worst": -81.8
   },
