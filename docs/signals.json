@@ -1,8 +1,8 @@
 {
- "updatedAt": 1792155616,
+ "updatedAt": 1792156513,
  "window": "h1",
  "lastRunErrors": [],
- "candidates": 128,
+ "candidates": 125,
  "cheapPass": 0,
  "tokens": [
   {
@@ -648,7 +648,7 @@
    "score": null,
    "devScore": 0,
    "link": "https://dexscreener.com/solana/fc7tguyshk8gyhbnggcz26bgsptsuevczhqpynv7truh",
-   "maxPrice": 0.0001302,
+   "maxPrice": 0.0001407,
    "samples": [
     [
      1792152091,
@@ -669,10 +669,18 @@
     [
      1792155616,
      0.0001302
+    ],
+    [
+     1792156513,
+     0.0001407
     ]
    ],
    "trend": "up",
-   "h1": null,
+   "h1": {
+    "price": 0.0001407,
+    "pct": 192.5,
+    "maxX": 2.93
+   },
    "h24": null,
    "hit2x": true,
    "hit5x": false,
@@ -680,9 +688,9 @@
     "1318404489": 35,
     "-1004348482526": 1461
    },
-   "last": 0.0001302,
-   "lastT": 1792155616,
-   "lastPct": 170.7
+   "last": 0.0001407,
+   "lastT": 1792156513,
+   "lastPct": 192.5
   },
   {
    "mint": "6VdcMnBTCj4tJVwtNdJZNzWeYmxzMnygVSzcfY35pump",
@@ -747,9 +755,13 @@
     [
      1792155616,
      0.0001015
+    ],
+    [
+     1792156513,
+     0.0001467
     ]
    ],
-   "trend": "fading",
+   "trend": "up",
    "h1": {
     "price": 0.0001535,
     "pct": 52.4,
@@ -762,9 +774,9 @@
     "1318404489": 29,
     "-1004348482526": 1449
    },
-   "last": 0.0001015,
-   "lastT": 1792155616,
-   "lastPct": 0.8
+   "last": 0.0001467,
+   "lastT": 1792156513,
+   "lastPct": 45.7
   },
   {
    "mint": "GjkMsvYmuFR37SyKnJoD8DwccLb3HKMQBnNe5Nqbpump",
@@ -849,6 +861,10 @@
     [
      1792155616,
      2.686e-06
+    ],
+    [
+     1792156513,
+     2.677e-06
     ]
    ],
    "trend": "fading",
@@ -864,8 +880,8 @@
     "1318404489": 25,
     "-1004348482526": 1433
    },
-   "last": 2.686e-06,
-   "lastT": 1792155616,
+   "last": 2.677e-06,
+   "lastT": 1792156513,
    "lastPct": -98.2
   },
   {
@@ -955,6 +971,10 @@
     [
      1792155616,
      7.52e-06
+    ],
+    [
+     1792156513,
+     9.798e-06
     ]
    ],
    "trend": "up",
@@ -970,9 +990,9 @@
     "1318404489": 24,
     "-1004348482526": 1432
    },
-   "last": 7.52e-06,
-   "lastT": 1792155616,
-   "lastPct": -82.0
+   "last": 9.798e-06,
+   "lastT": 1792156513,
+   "lastPct": -76.6
   },
   {
    "mint": "3EC7gRDGKgqPHc9ipJxxChoeyseE2xAbQHZUSSTfpump",
@@ -999,9 +1019,9 @@
     "1318404489": 18,
     "-1004348482526": 1426
    },
-   "last": 5.459e-06,
-   "lastT": 1792155616,
-   "lastPct": -95.2
+   "last": 5.244e-06,
+   "lastT": 1792156513,
+   "lastPct": -95.4
   },
   {
    "mint": "Diy4Q5aiNEcdn7CWhuwYtuoHtHD9rKBTHCa9hi4qpump",
@@ -1025,9 +1045,9 @@
    "hit2x": true,
    "hit5x": false,
    "msgId": 7,
-   "last": 0.0002083,
-   "lastT": 1792155616,
-   "lastPct": 170.8
+   "last": 0.000215,
+   "lastT": 1792156513,
+   "lastPct": 179.5
   },
   {
    "mint": "AKotzk1dhcNangAJBtvNKtT9bhbSVZc2mMhRFgkFpump",
@@ -1051,9 +1071,9 @@
    "hit2x": true,
    "hit5x": false,
    "msgId": null,
-   "last": 0.0002063,
-   "lastT": 1792155616,
-   "lastPct": 105.3
+   "last": 0.0001729,
+   "lastT": 1792156513,
+   "lastPct": 72.0
   },
   {
    "mint": "vaJ2tXfvML8sFstrEYtza7tmJGvbmBAp8Dvx3Qxpump",
@@ -1089,9 +1109,9 @@
  "stats": {
   "signals": 8,
   "h1": {
-   "n": 7,
-   "winRate": 42.9,
-   "avg": 11.4,
+   "n": 8,
+   "winRate": 50.0,
+   "avg": 34.0,
    "best": 235.5,
    "worst": -98.1
   },
