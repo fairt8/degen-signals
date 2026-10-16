@@ -65,3 +65,16 @@ def line(g):
     if g["status"] in ("SKIPPED", "ERROR"): return f"GMGN: {g['status']} ({g['reasons'][0]})"
     bad = [r for r in g["reasons"] if ">" in r or "only" in r]
     return f"GMGN: {g['status']} — " + "; ".join(bad if g["status"] == "FAIL" else g["reasons"][:2]) + f" (score {g['scoreAdj']:+d})"
+
+def ath_mc(mint, chain="sol"):
+    """ATH market cap = ath_price * circulating_supply from /v1/token/info. None if no key / error."""
+    if not os.environ.get("GMGN_API_KEY"): return None
+    try:
+        q = dict(chain=chain, address=mint, timestamp=int(time.time()), client_id=str(uuid.uuid4()))
+        req = urllib.request.Request(f"{HOST}/v1/token/info?{urllib.parse.urlencode(q)}",
+                                     headers={"X-APIKEY": os.environ["GMGN_API_KEY"], "User-Agent": "degen-signals/1.0"})
+        d = json.loads(urllib.request.urlopen(req, timeout=15).read()).get("data") or {}
+        ath, sup = float(d.get("ath_price") or 0), float(d.get("circulating_supply") or d.get("total_supply") or 0)
+        return ath * sup if ath and sup else None
+    except Exception:
+        return None

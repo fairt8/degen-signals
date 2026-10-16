@@ -34,18 +34,38 @@ def post(text, reply_to=None):
         except Exception as e:
             print(f"telegram error chat#{cs.index(chat)}: {e}", file=sys.stderr)
     return out
-def send(r):
+def ath(r, journal=None):
+    """(ath_mc, label). GMGN token info -> pump.fun ath field -> highest MC seen in our journal (est.)."""
+    import gmgn
+    v = gmgn.ath_mc(r["mint"]) if r.get("chain") == "solana" else None
+    if v: return max(v, r["mcap"]), ""
+    try:
+        req = urllib.request.Request(f"https://frontend-api-v3.pump.fun/coins/{r['mint']}", headers={"User-Agent": "Mozilla/5.0"})
+        d = json.loads(urllib.request.urlopen(req, timeout=8).read())
+        v = d.get("ath_market_cap") or d.get("athMarketCap")
+        if v: return max(float(v), r["mcap"]), ""
+    except Exception: pass
+    for e in journal or []:
+        if e.get("mint") == r["mint"] and e.get("price0") and e.get("maxPrice") and e.get("mcap0"):
+            return max(e["mcap0"] * e["maxPrice"] / e["price0"], r["mcap"]), " (est., seen by bot)"
+    return None, ""
+
+def send(r, journal=None):
     from html import escape as e
     L = r["links"]
     link = lambda k, label: f'<a href="{e(L[k])}">{label}</a>' if L.get(k) else ""
-    text = (f"🎯 5R signal: ${e(r['symbol'])} ({e(r['name'])})\n"
-            f"MC ${fmt(r['mcap'])} · Liq ${fmt(r['liq'])} · Vol {r['window']} ${fmt(r['vol'])}\n"
-            f"5m {r['ch5m']}% · 1h {r['ch1h']}% · {r['buys']}B/{r['sells']}S · age {r['ageH']}h\n"
-            f"Top10 {r.get('top10Pct')}% · Cluster {r.get('clusterPct')}% ({e(str(r.get('clusterSource')))})\n"
-            f"{e(dev_line(r))}"
-            f"{e(__import__('gmgn').line(r.get('gmgn')))}\n"
-            f"CA: <code>{e(r['mint'])}</code>\n"
-            + " | ".join(x for x in [link("dexscreener", "DexScreener"), link("pumpfun", "pump.fun"), link("bubblemaps", "Bubblemaps"),
-                                     link("insightx", "InsightX"), link("x_search", "X")] if x)
-            + "\n⚠️ Not financial advice. DYOR.")
-    return post(text)
+    a, lbl = ath(r, journal)
+    aths = f"${fmt(a)}{lbl}" if a else "n/a"
+    sections = [
+        f"<code>{e(r['mint'])}</code>\n{e(r['name'])} ${e(r['symbol'])}",
+        f"MC: ${fmt(r['mcap'])} | ATH MC: {e(aths)}\nLiq: ${fmt(r['liq'])} · Age: {r['ageH']}h · 5m {r['ch5m']}% · 1h {r['ch1h']}%",
+        f"Vol {r['window']}: ${fmt(r['vol'])} · Txns: {r['buys']} buys / {r['sells']} sells",
+        f"Top10: {r.get('top10Pct')}% · Cluster: {r.get('clusterPct')}% ({e(str(r.get('clusterSource')))})",
+        e(dev_line(r).strip()) or "Dev: n/a",
+        e(__import__('gmgn').line(r.get('gmgn'))),
+        " | ".join(x for x in [link("dexscreener", "DexScreener"), link("pumpfun", "pump.fun"), link("bubblemaps", "Bubblemaps"),
+                               link("insightx", "InsightX"), link("x_search", "X")] if x) + "\n⚠️ Not financial advice. DYOR.",
+    ]
+    if (r.get("description") or "").strip():
+        sections.append(f"<i>{e(r['description'].strip()[:400])}</i>")
+    return post("\n\n".join(sections))

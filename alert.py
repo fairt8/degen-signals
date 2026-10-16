@@ -58,7 +58,7 @@ if a.signals:
 if a.telegram:
     import notify
     for r in out:
-        mid = notify.send(r)
+        mid = notify.send(r, jr)
         for e in jr:
             if e["mint"] == r["mint"] and mid: e["msgId"] = mid
     for kind, e, text in notes:
