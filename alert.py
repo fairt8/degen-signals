@@ -71,7 +71,7 @@ if a.signals:
             "candidates": len(rows), "cheapPass": len(cheap), "tokens": (out + feed["tokens"])[:200],
             "journal": jr[:300], "stats": J.stats(jr),
             "periodStats": J.period_stats(jr, F.get("winThresholdPct", 0), tp=F.get("tp")), "statsBasis": "24h result where available, else live price",
-            "lastReportSlot": feed.get("lastReportSlot"), "firstSeen": fs}
+            "lastReportSlot": feed.get("lastReportSlot"), "firstSeen": fs, "tgOffset": feed.get("tgOffset")}
     os.makedirs(os.path.dirname(os.path.abspath(a.signals)), exist_ok=True)
     json.dump(feed, open(a.signals, "w"), indent=1)
 if a.telegram:
@@ -97,7 +97,13 @@ if a.telegram:
             rps, day_label = ps, "Today"
         sent = notify.post(notify.pnl_report(rps, slot, day_label))
         if sent and not os.environ.get("DRY_RUN"): last = slot
-    if a.signals: json.dump({**json.load(open(a.signals)), "journal": jr[:300], "lastReportSlot": last}, open(a.signals, "w"), indent=1)
+    # bot commands via getUpdates once per run, only when no always-on listener/webhook owns the updates
+    tgo = feed.get("tgOffset")
+    pol = os.environ.get("TG_COMMANDS_POLL")
+    if (pol == "1" or (pol is None and (F.get("commands") or {}).get("workflowPolling"))) and not os.environ.get("DRY_RUN"):
+        import commands
+        tgo = commands.poll_once(tgo)
+    if a.signals: json.dump({**json.load(open(a.signals)), "journal": jr[:300], "lastReportSlot": last, "tgOffset": tgo}, open(a.signals, "w"), indent=1)
 json.dump(sorted(seen | {r["mint"] for r in out}), open(a.state, "w"))
 print(json.dumps({"generatedAt": time.strftime("%Y-%m-%dT%H:%M:%S%z"), "window": F["window"], "count": len(out), "errors": errors,
                   "disclaimer": "Not financial advice.", "tokens": out}, indent=2))

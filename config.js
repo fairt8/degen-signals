@@ -35,6 +35,10 @@ window.SIGNAL_CONFIG.filters = {
                flipperPctAmber: 15, flipperPctRed: 30, freshPctAmber: 30, freshPctRed: 50, volLiqAmber: 20, volLiqRed: 40, scoreCap: 40 },
   // multiplier milestones (max gain seen since alert); beyond the last one, every +milestoneStep (150x, 200x, ...)
   milestones: [2, 5, 10, 15, 20, 30, 50, 60, 70, 80, 90, 100], milestoneStep: 50,
+  // Telegram commands (/tokens, /pnl, /help). Exactly one consumer may poll getUpdates:
+  // keep workflowPolling false while the box listener (listener.py) or a Cloudflare Worker webhook is running.
+  // Repo variable / env TG_COMMANDS_POLL=1 or 0 overrides this.
+  commands: { workflowPolling: false },
   winThresholdPct: 0,       // journal: a signal "wins" if its PnL % is above this
   // PnL report: standalone Telegram message at 12:00 AM and 12:00 PM WAT (first run in each slot; lastReportSlot in docs/signals.json)
   // ---- optional signals (from @OLeksa_one / Padre-style filters); *_On=false => info/flag only, true => required for 5R

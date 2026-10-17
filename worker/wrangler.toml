@@ -1,0 +1,11 @@
+name = "degen-bot"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+
+[vars]
+ALLOWED_CHATS = "1318404489,-1004348482526"
+SIGNALS_URL = "https://raw.githubusercontent.com/fairt8/degen-signals/main/docs/signals.json"
+BOT_USERNAME = "DegenGainsBot"
+TP_AT_PCT = "100"
+TP_SELL_FRAC = "0.5"
+# secrets (wrangler secret put): TELEGRAM_BOT_TOKEN, WEBHOOK_SECRET

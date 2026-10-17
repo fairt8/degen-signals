@@ -122,3 +122,12 @@ All thresholds are in config.js → `behaviour`. No extra RPC calls: these come 
 
 ## Multiplier milestones (v9)
 `milestones` in config.js (2, 5, 10, 15, 20, 30, 50–100) plus every `milestoneStep` (50x) beyond. Each journal entry records `milestones` {"10": ts}, `topMilestone` and `topMilestoneT`, based on the max price seen since the alert (sampled each run, tracked for 24h). The first time a signal crosses a milestone, the bot replies to the original alert in every chat, once per milestone. The 12h PnL report and the site table show counts per period: 2x and 5x always, higher ones only when hit. Milestones reached before this feature existed are recorded without sending a message.
+
+## Telegram commands (v10)
+`/tokens today|week|month|all [page]` (WAT boundaries, 20 per page), `/pnl <CA or $SYMBOL>`, `/help`. `/cmd@DegenGainsBot` also works.
+The bot answers only in the chats in TELEGRAM_CHAT_ID(S), plus any in TELEGRAM_ALLOWED_CHATS. The command menu is set with `python3 commands.py --set-commands`.
+Telegram allows only ONE update consumer at a time. Pick one:
+- **Box listener** (current setup): `nohup ./run_listener.sh >> listener.log 2>&1 &`. It long-polls for instant replies and restarts itself if it crashes. It does not survive a box reboot.
+- **Cloudflare Worker webhook** (free, 24/7): see `worker/README.md`.
+- **Workflow polling** (slow, one check per run, about every 15 min): set `commands.workflowPolling: true` in config.js or the env `TG_COMMANDS_POLL=1`. The offset is stored as `tgOffset` in docs/signals.json. Keep it off while the listener or the Worker is active.
+Command data: the journal comes from `signals.json` (GitHub raw, refreshed by each workflow run) and prices come live from DexScreener. A token that is not in the journal gets live price/MC and the note "not a Degen signal".
