@@ -1,10 +1,86 @@
 {
- "updatedAt": 1792253710,
+ "updatedAt": 1792254033,
  "window": "h1",
  "lastRunErrors": [],
  "candidates": 121,
- "cheapPass": 0,
+ "cheapPass": 1,
  "tokens": [
+  {
+   "symbol": "ANIMA",
+   "name": "Anima",
+   "chain": "solana",
+   "mint": "VFJudeZzRdptxmytqBTVMdmqEgJwTj5fTk9U8kDpump",
+   "dex": "pumpswap",
+   "mcap": 83147,
+   "liq": 24616.72,
+   "vol": 321338.66,
+   "window": "h1",
+   "buys": 3544,
+   "sells": 2712,
+   "ch5m": 7.5,
+   "ch1h": 124,
+   "ageH": 0.85,
+   "description": "Give your token a live streamer.",
+   "estFeesSol": 38.87,
+   "priceUsd": 9.17e-05,
+   "socials": [
+    "https://x.com/_Animastudio"
+   ],
+   "websites": [
+    "https://tryanima.app/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/2qrojsgeng99jcoez5afyzogmwzenvjh6ejvzfbz7xnw",
+    "pumpfun": "https://pump.fun/coin/VFJudeZzRdptxmytqBTVMdmqEgJwTj5fTk9U8kDpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=VFJudeZzRdptxmytqBTVMdmqEgJwTj5fTk9U8kDpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/VFJudeZzRdptxmytqBTVMdmqEgJwTj5fTk9U8kDpump",
+    "x_search": "https://x.com/search?q=%24ANIMA&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=ANIMA"
+   },
+   "top10Pct": 20.89,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "9VX7QNKUNMRFe4dxWAryAEXJLVBJA7TnoiMtxhESWcBX",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/9VX7QNKUNMRFe4dxWAryAEXJLVBJA7TnoiMtxhESWcBX",
+     "pumpfun": "https://pump.fun/profile/9VX7QNKUNMRFe4dxWAryAEXJLVBJA7TnoiMtxhESWcBX"
+    },
+    "funder": null,
+    "firstTs": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 38.87,
+    "maxSingleHolderPct": 3.27,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "signalAt": 1792254033
+  },
   {
    "symbol": "21M",
    "name": "21m.family",
@@ -2217,6 +2293,36 @@
  ],
  "journal": [
   {
+   "mint": "VFJudeZzRdptxmytqBTVMdmqEgJwTj5fTk9U8kDpump",
+   "symbol": "ANIMA",
+   "chain": "solana",
+   "t0": 1792254033,
+   "price0": 9.17e-05,
+   "mcap0": 83147,
+   "score": null,
+   "devScore": 0,
+   "link": "https://dexscreener.com/solana/2qrojsgeng99jcoez5afyzogmwzenvjh6ejvzfbz7xnw",
+   "maxPrice": 0.0001058,
+   "samples": [
+    [
+     1792254033,
+     0.0001058
+    ]
+   ],
+   "trend": "up",
+   "h1": null,
+   "h24": null,
+   "hit2x": false,
+   "hit5x": false,
+   "msgId": {
+    "1318404489": 146,
+    "-1004348482526": 1572
+   },
+   "last": 0.0001058,
+   "lastT": 1792254033,
+   "lastPct": 15.4
+  },
+  {
    "mint": "ATkPwdMMvJDFY5Y5BxaZ5998wzx2x8Pg84hYkTm21fam",
    "symbol": "21M",
    "chain": "solana",
@@ -2255,10 +2361,18 @@
     [
      1792253710,
      2.727e-05
+    ],
+    [
+     1792254033,
+     2.324e-05
     ]
    ],
    "trend": "fading",
-   "h1": null,
+   "h1": {
+    "price": 2.324e-05,
+    "pct": -20.2,
+    "maxX": 1.22
+   },
    "h24": null,
    "hit2x": false,
    "hit5x": false,
@@ -2266,9 +2380,9 @@
     "1318404489": 138,
     "-1004348482526": 1564
    },
-   "last": 2.727e-05,
-   "lastT": 1792253710,
-   "lastPct": -6.3
+   "last": 2.324e-05,
+   "lastT": 1792254033,
+   "lastPct": -20.2
   },
   {
    "mint": "GxCEZaNR7FPUJq37Zov8tdFWWuwAiEeVqxGykbqNpump",
@@ -2321,6 +2435,10 @@
     [
      1792253710,
      1.546e-05
+    ],
+    [
+     1792254033,
+     1.336e-05
     ]
    ],
    "trend": "fading",
@@ -2336,9 +2454,9 @@
     "1318404489": 133,
     "-1004348482526": 1559
    },
-   "last": 1.546e-05,
-   "lastT": 1792253710,
-   "lastPct": -54.1
+   "last": 1.336e-05,
+   "lastT": 1792254033,
+   "lastPct": -60.3
   },
   {
    "mint": "2e3zQiA8JWeDjjVeuqzv9X1Q3aqRRaPqL8UYEbxVpump",
@@ -2391,6 +2509,10 @@
     [
      1792253710,
      5.175e-06
+    ],
+    [
+     1792254033,
+     5.222e-06
     ]
    ],
    "trend": "fading",
@@ -2406,8 +2528,8 @@
     "1318404489": 132,
     "-1004348482526": 1558
    },
-   "last": 5.175e-06,
-   "lastT": 1792253710,
+   "last": 5.222e-06,
+   "lastT": 1792254033,
    "lastPct": -97.2
   },
   {
@@ -2469,6 +2591,10 @@
     [
      1792253710,
      2.579e-05
+    ],
+    [
+     1792254033,
+     2.578e-05
     ]
    ],
    "trend": "fading",
@@ -2484,9 +2610,9 @@
     "1318404489": 130,
     "-1004348482526": 1556
    },
-   "last": 2.579e-05,
-   "lastT": 1792253710,
-   "lastPct": -60.0
+   "last": 2.578e-05,
+   "lastT": 1792254033,
+   "lastPct": -60.1
   },
   {
    "mint": "6tsykNmR3WDqouj9uVUFZRgR2Kpai4F1Qm1gAcirpump",
@@ -2595,6 +2721,10 @@
     [
      1792253710,
      0.0001692
+    ],
+    [
+     1792254033,
+     0.0001501
     ]
    ],
    "trend": "up",
@@ -2610,9 +2740,9 @@
     "1318404489": 118,
     "-1004348482526": 1544
    },
-   "last": 0.0001692,
-   "lastT": 1792253710,
-   "lastPct": 24.2
+   "last": 0.0001501,
+   "lastT": 1792254033,
+   "lastPct": 10.2
   },
   {
    "mint": "ErvkxE8gc7EwmaQfvoGfVfcDJbVG4EcHQr3yweTkpump",
@@ -2725,6 +2855,10 @@
     [
      1792253710,
      0.0001357
+    ],
+    [
+     1792254033,
+     0.0001185
     ]
    ],
    "trend": "up",
@@ -2740,9 +2874,9 @@
     "1318404489": 116,
     "-1004348482526": 1542
    },
-   "last": 0.0001357,
-   "lastT": 1792253710,
-   "lastPct": 235.9
+   "last": 0.0001185,
+   "lastT": 1792254033,
+   "lastPct": 193.3
   },
   {
    "mint": "9rS42P1UYS6rjZLNFQQ5HmaknAxsU1phcVHTQ3dgpump",
@@ -2770,7 +2904,7 @@
     "-1004348482526": 1529
    },
    "last": 2.036e-06,
-   "lastT": 1792253710,
+   "lastT": 1792254033,
    "lastPct": -98.1
   },
   {
@@ -2798,9 +2932,9 @@
     "1318404489": 100,
     "-1004348482526": 1526
    },
-   "last": 2.751e-05,
-   "lastT": 1792253710,
-   "lastPct": -70.1
+   "last": 2.552e-05,
+   "lastT": 1792254033,
+   "lastPct": -72.3
   },
   {
    "mint": "CFggXZXwg5pkiB5aHGq1LEoaK1hVhVYVGZpHgVewpump",
@@ -2827,9 +2961,9 @@
     "1318404489": 98,
     "-1004348482526": 1524
    },
-   "last": 4.783e-06,
-   "lastT": 1792253710,
-   "lastPct": -85.4
+   "last": 4.691e-06,
+   "lastT": 1792254033,
+   "lastPct": -85.7
   },
   {
    "mint": "GFhszS7cFM4xmcfT4tBCSwcLHWAwj4yXhSwuTXKYpump",
@@ -2857,7 +2991,7 @@
     "-1004348482526": 1518
    },
    "last": 2.535e-06,
-   "lastT": 1792253710,
+   "lastT": 1792254033,
    "lastPct": -97.9
   },
   {
@@ -2885,9 +3019,9 @@
     "1318404489": 88,
     "-1004348482526": 1514
    },
-   "last": 3.762e-05,
-   "lastT": 1792253710,
-   "lastPct": -5.8
+   "last": 3.805e-05,
+   "lastT": 1792254033,
+   "lastPct": -4.7
   },
   {
    "mint": "3XEqNHe3jHTRWAZCTHbb1UwpSfNbJL9oU1ErsM86pump",
@@ -2914,9 +3048,9 @@
     "1318404489": 83,
     "-1004348482526": 1509
    },
-   "last": 0.0003119,
-   "lastT": 1792253710,
-   "lastPct": 781.1
+   "last": 0.0002916,
+   "lastT": 1792254033,
+   "lastPct": 723.7
   },
   {
    "mint": "2kuY5DHqRvYKfytfLfrey1oB1Z1J3voq343FWMp6pump",
@@ -2943,9 +3077,9 @@
     "1318404489": 78,
     "-1004348482526": 1504
    },
-   "last": 4.42e-05,
-   "lastT": 1792253710,
-   "lastPct": -9.1
+   "last": 4.79e-05,
+   "lastT": 1792254033,
+   "lastPct": -1.5
   },
   {
    "mint": "599h3tRUnep6PeQcEaUadosDyZk3uzs173f6h8NTpump",
@@ -2972,8 +3106,8 @@
     "1318404489": 75,
     "-1004348482526": 1501
    },
-   "last": 2.599e-06,
-   "lastT": 1792253710,
+   "last": 2.588e-06,
+   "lastT": 1792254033,
    "lastPct": -94.8
   },
   {
@@ -3002,7 +3136,7 @@
     "-1004348482526": 1497
    },
    "last": 2.325e-06,
-   "lastT": 1792253710,
+   "lastT": 1792254033,
    "lastPct": -98.2
   },
   {
@@ -3031,7 +3165,7 @@
     "-1004348482526": 1483
    },
    "last": 2.576e-06,
-   "lastT": 1792253710,
+   "lastT": 1792254033,
    "lastPct": -93.3
   },
   {
@@ -3060,7 +3194,7 @@
     "-1004348482526": 1481
    },
    "last": 2.492e-06,
-   "lastT": 1792253710,
+   "lastT": 1792254033,
    "lastPct": -92.9
   },
   {
@@ -3419,11 +3553,11 @@
   }
  ],
  "stats": {
-  "signals": 28,
+  "signals": 29,
   "h1": {
-   "n": 27,
-   "winRate": 33.3,
-   "avg": 9.8,
+   "n": 28,
+   "winRate": 32.1,
+   "avg": 8.7,
    "best": 508.7,
    "worst": -98.1
   },
@@ -3439,65 +3573,65 @@
  },
  "periodStats": {
   "today": {
-   "signals": 14,
-   "n": 14,
-   "wins": 3,
-   "winRate": 21.4,
-   "totalPnl": 362.4,
-   "avgPnl": 25.9,
-   "best": "MAKERS +781%",
+   "signals": 15,
+   "n": 15,
+   "wins": 4,
+   "winRate": 26.7,
+   "totalPnl": 249.8,
+   "avgPnl": 16.7,
+   "best": "MAKERS +724%",
    "worst": "inumask -98%",
    "basis": {
     "24h": 0,
-    "live": 14
+    "live": 15
    },
    "hit2x": 4,
    "hit5x": 2
   },
   "week": {
-   "signals": 28,
-   "n": 28,
-   "wins": 5,
-   "winRate": 17.9,
-   "totalPnl": -549.3,
-   "avgPnl": -19.6,
-   "best": "MAKERS +781%",
+   "signals": 29,
+   "n": 29,
+   "wins": 6,
+   "winRate": 20.7,
+   "totalPnl": -661.9,
+   "avgPnl": -22.8,
+   "best": "MAKERS +724%",
    "worst": "FLEG -98%",
    "basis": {
     "24h": 11,
-    "live": 17
+    "live": 18
    },
    "hit2x": 8,
    "hit5x": 2
   },
   "month": {
-   "signals": 28,
-   "n": 28,
-   "wins": 5,
-   "winRate": 17.9,
-   "totalPnl": -549.3,
-   "avgPnl": -19.6,
-   "best": "MAKERS +781%",
+   "signals": 29,
+   "n": 29,
+   "wins": 6,
+   "winRate": 20.7,
+   "totalPnl": -661.9,
+   "avgPnl": -22.8,
+   "best": "MAKERS +724%",
    "worst": "FLEG -98%",
    "basis": {
     "24h": 11,
-    "live": 17
+    "live": 18
    },
    "hit2x": 8,
    "hit5x": 2
   },
   "all": {
-   "signals": 28,
-   "n": 28,
-   "wins": 5,
-   "winRate": 17.9,
-   "totalPnl": -549.3,
-   "avgPnl": -19.6,
-   "best": "MAKERS +781%",
+   "signals": 29,
+   "n": 29,
+   "wins": 6,
+   "winRate": 20.7,
+   "totalPnl": -661.9,
+   "avgPnl": -22.8,
+   "best": "MAKERS +724%",
    "worst": "FLEG -98%",
    "basis": {
     "24h": 11,
-    "live": 17
+    "live": 18
    },
    "hit2x": 8,
    "hit5x": 2
