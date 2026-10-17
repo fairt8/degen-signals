@@ -109,3 +109,16 @@ Data sources:
 - **2x odds / rug %:** computed only from our own journal (share of past signals ≥1h old that hit 2x, or fell ≥90%), with the sample size shown.
 
 Missing data is shown as `n/a` and never guessed.
+
+## Behaviour alarms, findings & score cap (v8)
+- **Bot-holder %:** share of the sampled top-10 holders with 15+ distinct tokens or 100+ txns in a day. With a GMGN key it uses wallet activity; without one it falls back to RPC signatures and uses the txns/day rule only.
+- **Serial-flipper %:** share of holders that bought 10+ tokens on their entry day. Needs GMGN, otherwise `n/a`.
+- **Fresh ≤7d %:** holder's first tx within 7 days before launch (RPC).
+- **Vol24h/Liq:** 🟠 at `volLiqAmber` (20x), 🔴 at `volLiqRed` (40x).
+- **Score:** the same 0–100 heuristic as the web UI, plus dev and GMGN adjustments. It's capped at `scoreCap` (40) when bots or flippers are red, or when the dev has rug history or mostly dead launches. Shown as "capped at X, would be Y".
+- **Findings:** red and amber issues in plain language, with a "N red, M amber" summary. Alerts show up to 4; the site shows all of them.
+
+All thresholds are in config.js → `behaviour`. No extra RPC calls: these come from the signatures already scanned for funder checks, cached for 24h.
+
+## Multiplier milestones (v9)
+`milestones` in config.js (2, 5, 10, 15, 20, 30, 50–100) plus every `milestoneStep` (50x) beyond. Each journal entry records `milestones` {"10": ts}, `topMilestone` and `topMilestoneT`, based on the max price seen since the alert (sampled each run, tracked for 24h). The first time a signal crosses a milestone, the bot replies to the original alert in every chat, once per milestone. The 12h PnL report and the site table show counts per period: 2x and 5x always, higher ones only when hit. Milestones reached before this feature existed are recorded without sending a message.

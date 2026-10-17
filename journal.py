@@ -40,6 +40,16 @@ def trend_state(e, p):
     if m5 < -5 and h1 < 0: return "fading"
     return e["trend"]
 
+MILESTONES, MILESTONE_STEP = [2, 5, 10, 15, 20, 30, 50, 60, 70, 80, 90, 100], 50
+
+def milestone_list(mult):
+    """Milestones <= mult: configured list, then every MILESTONE_STEP beyond its last value."""
+    out = [m for m in MILESTONES if m <= mult]
+    if MILESTONES and mult >= MILESTONES[-1] + MILESTONE_STEP:
+        x = MILESTONES[-1] + MILESTONE_STEP
+        while x <= mult: out.append(x); x += MILESTONE_STEP
+    return out
+
 def update(journal, now=None):
     """Update outcomes + trend. Returns list of (kind, entry, text) notifications."""
     now = now or time.time()
@@ -61,9 +71,22 @@ def update(journal, now=None):
         e["minPrice"] = min(e.get("minPrice") or price, price)  # for optional TP stop-loss sim
         e["lastPct"] = round((price / e["price0"] - 1) * 100, 1)
         mult = e["maxPrice"] / e["price0"]
-        for k, x in (("hit2x", 2), ("hit5x", 5)):
-            if mult >= x and not e[k]:
-                e[k] = True; notes.append(("hit", e, f"🚀 ${e['symbol']} hit {x}x from alert (max seen {mult:.2f}x)"))
+        # multiplier milestones (config milestones + every milestoneStep beyond the last); one reply per milestone
+        first_init = "milestones" not in e
+        hits = e.setdefault("milestones", {})
+        for x in milestone_list(mult):
+            k = f"{x:g}"
+            if k in hits: continue
+            if first_init or (x == 2 and e.get("hit2x")) or (x == 5 and e.get("hit5x")):
+                hits[k] = None  # reached before milestone tracking existed: record, no new message
+            else:
+                hits[k] = int(now)
+                el = (now - e["t0"]) / 3600
+                notes.append(("hit", e, f"🚀 ${e['symbol']} hit {k}x from alert (max seen {mult:.2f}x, {el:.1f}h after alert)"))
+            if x == 2: e["hit2x"] = True
+            if x == 5: e["hit5x"] = True
+        if hits:
+            top = max(hits, key=float); e["topMilestone"], e["topMilestoneT"] = float(top), hits[top]
         chg = lambda: round((price / e["price0"] - 1) * 100, 1)
         if e["h1"] is None and age >= 1:
             e["h1"] = {"price": price, "pct": chg(), "maxX": round(mult, 2)}
@@ -127,6 +150,14 @@ def tp_ret(e, hold, tp=None):
         return float(sl)
     return hold
 
+def _ms_counts(es):
+    c = {"2": 0, "5": 0}
+    for e in es:
+        hs = e.get("milestones") or ({"2": None} if e.get("hit2x") else {})
+        if e.get("hit5x"): hs = {**hs, "5": None}
+        for k in hs: c[k] = c.get(k, 0) + 1
+    return dict(sorted(c.items(), key=lambda kv: float(kv[0])))
+
 def period_stats(journal, win_pct=0, now=None, tp=None):
     """Per period (WAT boundaries, by alert time): signals, wins, win rate, total & avg PnL %, best/worst, 2x/5x, basis counts."""
     out = {}
@@ -144,7 +175,8 @@ def period_stats(journal, win_pct=0, now=None, tp=None):
                   "best": f"{b[0]['symbol']} {b[1]:+.0f}%" if b else None,
                   "worst": f"{w[0]['symbol']} {w[1]:+.0f}%" if w else None,
                   "basis": {"24h": sum(x[2] == "24h" for x in rs), "live": sum(x[2] == "live" for x in rs)},
-                  "hit2x": sum(e["hit2x"] for e in es), "hit5x": sum(e["hit5x"] for e in es)}
+                  "hit2x": sum(e["hit2x"] for e in es), "hit5x": sum(e["hit5x"] for e in es),
+                  "milestones": _ms_counts(es)}
         tps = [tp_ret(x[0], x[1], tp) for x in rs]
         tw = sum(x > win_pct for x in tps)
         out[p].update(tpWins=tw, tpWinRate=round(tw / len(tps) * 100, 1) if tps else None,

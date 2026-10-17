@@ -30,6 +30,11 @@ window.SIGNAL_CONFIG.filters = {
   // simulated TP strategy (report/site only): sell sellFrac at +atPct if max gain seen reached it, rest at hold basis.
   // stopLossPct: null = off; e.g. -50 exits all at -50% if TP never hit and min price seen fell that far.
   tp: { atPct: 100, sellFrac: 0.5, stopLossPct: null },
+  // behaviour alarms (bots / flippers / fresh wallets / inflated volume) + score cap
+  behaviour: { botTokensDay: 15, botTxDay: 100, flipperTokens: 10, botPctAmber: 15, botPctRed: 30,
+               flipperPctAmber: 15, flipperPctRed: 30, freshPctAmber: 30, freshPctRed: 50, volLiqAmber: 20, volLiqRed: 40, scoreCap: 40 },
+  // multiplier milestones (max gain seen since alert); beyond the last one, every +milestoneStep (150x, 200x, ...)
+  milestones: [2, 5, 10, 15, 20, 30, 50, 60, 70, 80, 90, 100], milestoneStep: 50,
   winThresholdPct: 0,       // journal: a signal "wins" if its PnL % is above this
   // PnL report: standalone Telegram message at 12:00 AM and 12:00 PM WAT (first run in each slot; lastReportSlot in docs/signals.json)
   // ---- optional signals (from @OLeksa_one / Padre-style filters); *_On=false => info/flag only, true => required for 5R

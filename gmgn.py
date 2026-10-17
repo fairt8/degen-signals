@@ -78,3 +78,33 @@ def ath_mc(mint, chain="sol"):
         return ath * sup if ath and sup else None
     except Exception:
         return None
+
+
+def wallet_behaviour(wallets, mint, limit=100):
+    """Per wallet from /v1/user/wallet_activity (last `limit` events): maxTokensDay (distinct tokens traded in one UTC day),
+    maxTxDay, entryDayTokens (distinct tokens bought on the day it first bought `mint`). Cached 1h. Errors -> omitted."""
+    out = {}
+    for w in wallets:
+        if not w: continue
+        hit = _cache.get("wb:" + w)
+        if hit and time.time() - hit[0] < 3600:
+            out[w] = hit[1]; continue
+        try:
+            q = dict(chain="sol", wallet_address=w, limit=limit, timestamp=int(time.time()), client_id=str(uuid.uuid4()))
+            req = urllib.request.Request(f"{HOST}/v1/user/wallet_activity?{urllib.parse.urlencode(q)}",
+                                         headers={"X-APIKEY": os.environ["GMGN_API_KEY"], "User-Agent": "degen-signals/1.0"})
+            acts = (json.loads(urllib.request.urlopen(req, timeout=15).read()).get("data") or {}).get("activities") or []
+        except Exception:
+            continue
+        finally:
+            time.sleep(0.3)
+        days, tx, buys = {}, {}, {}
+        for a in acts:
+            d = int(a.get("timestamp") or 0) // 86400; t = (a.get("token") or {}).get("address")
+            tx[d] = tx.get(d, 0) + 1; days.setdefault(d, set()).add(t)
+            if a.get("event_type") == "buy": buys.setdefault(d, set()).add(t)
+        entry = [int(a["timestamp"]) // 86400 for a in acts if a.get("event_type") == "buy" and (a.get("token") or {}).get("address") == mint]
+        v = {"maxTokensDay": max((len(s) for s in days.values()), default=0), "maxTxDay": max(tx.values(), default=0),
+             "entryDayTokens": len(buys.get(min(entry), set())) if entry else None, "events": len(acts)}
+        _cache["wb:" + w] = (time.time(), v); out[w] = v
+    return out

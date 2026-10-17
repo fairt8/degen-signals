@@ -37,6 +37,9 @@ for r in cheap[:F.get("holderLookupLimit", 15)]:
         r["holders"] = {"top5": h.get("top5"), "top5Pct": h.get("top5Pct"), "count": h.get("totalHolders"),
                         "whalePct": h.get("whalePct"), "insiderPct": h.get("insiderPctRugcheck"),
                         "freshWallets": h.get("freshWallets"), "clusterPct": h.get("clusterPct")}
+        r["behaviour"] = pipeline.behaviour(r, h, F["behaviour"])
+        pipeline.final_score(r, F["behaviour"])
+        r["findings"] = pipeline.findings(r, F["behaviour"])
         del r["checks"]; out.append(r)
 if a.debug:
     fails = {}
@@ -44,6 +47,8 @@ if a.debug:
         for k, v in (r.get("checks") or {}).items(): fails[k] = fails.get(k, 0) + (not v)
     print(json.dumps({"candidates": len(rows), "cheapPass": len(cheap), "failCounts": fails}), file=sys.stderr)
 import journal as J
+if F.get("milestones"): J.MILESTONES = sorted(F["milestones"])
+J.MILESTONE_STEP = F.get("milestoneStep", 50)
 feed = json.load(open(a.signals)) if a.signals and os.path.exists(a.signals) else {"tokens": []}
 jr = feed.get("journal", [])
 # first time the bot saw each candidate (MC at first scan); pruned after 72h

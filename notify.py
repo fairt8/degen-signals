@@ -47,6 +47,13 @@ def stats_block(ps):
     a = ps["all"]["basis"]
     return ("📊 Bot stats (WAT)\n" + "\n".join(e_(period_line(k, ps[k])) for k in ("today", "week", "month", "all"))
             + f"\n<i>{BASIS} (all-time: {a['24h']} at 24h, {a['live']} live)</i>")
+def ms_line(s):
+    """Milestone counts: 2x and 5x always, higher ones only when hit."""
+    ms = s.get("milestones") or {}
+    keys = sorted(ms, key=float)
+    parts = [f"{k}x {ms.get(k, 0)}" for k in keys if k in ("2", "5") or ms.get(k)]
+    return " · ".join(parts) if parts else f"2x {s.get('hit2x', 0)} · 5x {s.get('hit5x', 0)}"
+
 def tp_label():
     try:
         import pipeline; t = pipeline.load_config().get("tp") or {}
@@ -67,7 +74,7 @@ def pnl_report(ps, slot, day_label="Today"):
                     f"Hold: Total {_pct(s['totalPnl'])} · Avg {_pct(s['avgPnl'])} · Win {_wr(s)}\n"
                     + (f"{tp_label()}: Total {_pct(s['tpTotalPnl'])} · Avg {_pct(s['tpAvgPnl'])} · Win "
                        + ("n/a" if s.get('tpWinRate') is None else f"{s['tpWinRate']:.0f}% ({s['tpWins']}/{s['n']})") + "\n" if 'tpTotalPnl' in s else "")
-                    + e_(f"Best {s['best'] or 'n/a'} · Worst {s['worst'] or 'n/a'}") + f" · 2x {s['hit2x']} / 5x {s['hit5x']}")
+                    + e_(f"Best {s['best'] or 'n/a'} · Worst {s['worst'] or 'n/a'}") + "\n🚀 " + ms_line(s))
     a = ps["all"]["basis"]
     return "\n\n".join([f"📊 <b>Degen Signals PnL report: {date} {when} WAT</b>"] + rows +
         [f"<i>{BASIS} (all-time: {a['24h']} at 24h, {a['live']} live). TP = simulated: sell part at the target if the max gain seen reached it, rest at the hold basis. Max gain is sampled about every 15 min, so real peaks may be higher or lower. Win = PnL above the configured threshold. Not financial advice.</i>"])
@@ -134,14 +141,23 @@ def card(r, journal=None):
         mcl = f"${fmt(r['mcap'])}"
     gl = __import__("gmgn").line(G or None)
     ch = r.get("ch24h")
+    sc = r.get("score")
+    scl = ("n/a" if sc is None else f"<b>{sc}/100</b>" + (f" (capped at {sc}, would be {r.get('scoreUncapped')})" if r.get("scoreCapped") else ""))
+    vl = r.get("volLiq"); B = {}
+    try:
+        import pipeline as _pl; B = _pl.load_config().get("behaviour") or {}
+    except Exception: pass
+    vflag = "" if vl is None else (" 🔴 inflated?" if vl >= B.get("volLiqRed", 40) else " 🟠 inflated?" if vl >= B.get("volLiqAmber", 20) else "")
     tok = ["━━ TOKEN DATA ━━",
+           f"⭐ Score: {scl}",
            f"🤖 {odds}",
            f"🎯 {e(gl)}",
            f"🧢 MC: {mcl}",
            f"🏔 ATH MC: {e(('$' + fmt(a) + lbl) if a else 'n/a')}",
            f"💧 Liq: <b>${fmt(r['liq'])}</b> ({_num(r.get('liqPctMc'), 0)}%)",
            f"💲 USD: <b>{_price(r.get('priceUsd'))}</b> ({'n/a' if ch is None else f'{ch:+.0f}%'} 24h)",
-           f"📊 Vol {r['window']}: <b>${fmt(r['vol'])}</b> (🅑{r['buys']}/Ⓢ{r['sells']})"]
+           f"📊 Vol {r['window']}: <b>${fmt(r['vol'])}</b> (🅑{r['buys']}/Ⓢ{r['sells']})",
+           f"🔄 Vol24h/Liq: {'n/a' if vl is None else f'{vl}x'}{vflag}"]
     # DEV INFO
     d = r.get("dev") or {}
     o = r.get("orders") or {}
@@ -164,8 +180,12 @@ def card(r, journal=None):
     hol = ["━━ HOLDERS INFO ━━",
            f"🔝 Top5: {t5l} | {f'{cnt:,}' if cnt else 'n/a'} holders",
            f"🎯 {pct(gp.get('sniper'))} · 📦 {pct(gp.get('bundler'))} · 🕵️ {pct(insider)}",
-           f"🐋 {pct(H.get('whalePct'))} · 🌱 {fresh} · 🧠 {smart}",
+           f"🐋 {pct(H.get('whalePct'))} · 🧠 {smart}" + ("" if r.get("behaviour") else f" · 🌱 {fresh}"),
            f"🔗 Cluster: {pct(H.get('clusterPct', r.get('clusterPct')))}"]
+    bh = r.get("behaviour") or {}
+    bp = lambda k: "n/a" if bh.get(k + "Pct") is None else f"{bh[k + 'Pct']}% ({bh.get(k + 'N')})"
+    hol.append(f"🤖 Bots {bp('bot')} · 🔁 Flippers {bp('flipper')} · 🌱 Fresh≤7d {bp('fresh')}"
+               + (f" <i>[{bh.get('source')}, top {bh.get('sampled')}]</i>" if bh.get("sampled") else ""))
     # MISC
     misc = ["━━ MISC INFO ━━", f"📈 Narrative: {e(' · '.join(r.get('narratives') or []) or 'n/a')}",
             f"1️⃣ First scan @ MC {('$' + fmt(fsn['mc'])) if fsn else 'n/a'}"]
@@ -174,6 +194,12 @@ def card(r, journal=None):
             f"🕐 {_age(r.get('ageH'))} · 👥 {f'{cnt:,}' if cnt else 'n/a'} holders\n"
             + " ".join(soc))
     body = "\n".join(tok) + "\n\n" + "\n".join(dev) + "\n\n" + "\n".join(hol) + "\n\n" + "\n".join(misc)
+    fnd = r.get("findings") or []
+    if fnd:
+        nr = sum(1 for s, _ in fnd if s == "red"); na = len(fnd) - nr
+        body += f"\n\n━━ FINDINGS ━━\n🚦 {nr} red, {na} amber\n" + "\n".join(("🔴 " if s == "red" else "🟠 ") + e(t) for s, t in fnd[:4]) + (f"\n… +{len(fnd)-4} more on site" if len(fnd) > 4 else "")
+    elif r.get("findings") is not None:
+        body += "\n\n━━ FINDINGS ━━\n🚦 0 red, 0 amber"
     text = head + "\n\n<blockquote>" + body + "</blockquote>\n⚠️ Not financial advice. DYOR."
     if (r.get("description") or "").strip():
         text += f"\n\n<i>{e(r['description'].strip()[:400])}</i>"

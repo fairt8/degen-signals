@@ -39,18 +39,21 @@ def first_funder(wallet):
     return wallet_info(wallet)["funder"]
 
 def wallet_info(wallet):
-    """{funder, txCount, firstTs}: earliest SOL inflow source (or first fee payer); scans up to 3k signatures."""
+    """{funder, txCount, firstTs, maxTxDay}: earliest SOL inflow source (or first fee payer); scans up to 3k signatures.
+    maxTxDay = most signatures in any single UTC day among the scanned ones (bot heuristic, no extra RPC calls)."""
     def f():
-        before, oldest, n, ts = None, None, 0, None
+        before, oldest, n, ts, days = None, None, 0, None, {}
         for _ in range(3):
             sigs = rpc("getSignaturesForAddress", [wallet, {"limit": 1000, **({"before": before} if before else {})}])
             if not sigs: break
+            for s in sigs:
+                if s.get("blockTime"): days[s["blockTime"] // 86400] = days.get(s["blockTime"] // 86400, 0) + 1
             oldest = sigs[-1]["signature"]; before = oldest; n += len(sigs); ts = sigs[-1].get("blockTime")
             if len(sigs) < 1000: break
         else:
-            return {"funder": None, "txCount": n, "firstTs": None}  # too old/active to resolve cheaply
-        return {"funder": _funder(wallet, oldest), "txCount": n, "firstTs": ts}
-    return cached("winfo:" + wallet, 86400, f)
+            return {"funder": None, "txCount": n, "firstTs": None, "maxTxDay": max(days.values()) if days else None}
+        return {"funder": _funder(wallet, oldest), "txCount": n, "firstTs": ts, "maxTxDay": max(days.values()) if days else None}
+    return cached("winfo2:" + wallet, 86400, f)
 
 def _funder(wallet, oldest):
         if not oldest: return None
@@ -112,6 +115,9 @@ def holders_and_clusters(mint, cfg=None):
         with cf.ThreadPoolExecutor(3) as ex:
             infos = list(ex.map(lambda h: wallet_info(h.get("owner")), top))
         funders = [i["funder"] for i in infos]
+        out["holderWallets"] = [{"owner": h.get("owner"), "pct": round(h.get("pct", 0), 2), "firstTs": i.get("firstTs"),
+                                 "txCount": i.get("txCount"), "maxTxDay": i.get("maxTxDay"), "old": i.get("firstTs") is None and (i.get("txCount") or 0) >= 3000}
+                                for h, i in zip(top, infos)]
         out["freshWallets"] = sum(1 for i in infos if i["txCount"] and i["txCount"] < 15)  # top-10 holders with <15 txs ever
         dv = out["dev"]
         if dv.get("wallet"):
@@ -160,6 +166,78 @@ def dev_score(dev, W):
     if (dev.get("holdPct") or 0) > W["holdPctMax"]: add(W["highHold"], f"dev holds {dev['holdPct']}%")
     if dev.get("funderSharedWithTopHolders"): add(W["sharedFunder"], "dev funder linked to top holders")
     return pts, why
+
+# ---------- behaviour metrics, score, findings ----------
+def behaviour(r, h, B):
+    """Bot / serial-flipper / fresh-wallet shares of sampled top-10 holders. GMGN wallet activity when a key is set,
+    else Solana RPC signatures (bots + fresh only; flippers n/a). Shares are % of sampled wallets."""
+    ws = (h or {}).get("holderWallets") or []
+    if not ws: return {"sampled": 0, "source": "n/a", "botPct": None, "flipperPct": None, "freshPct": None}
+    import gmgn
+    launch = time.time() - r["ageH"] * 3600 if r.get("ageH") is not None else None
+    gw = gmgn.wallet_behaviour([w["owner"] for w in ws], r["mint"]) if os.environ.get("GMGN_API_KEY") else {}
+    bots = flips = fresh = 0; nb = nf = nfr = 0
+    for w in ws:
+        g = gw.get(w["owner"])
+        if g:  # GMGN: 15+ distinct tokens or 100+ txns in a day; flipper: 10+ tokens bought on entry day
+            nb += 1; bots += (g["maxTokensDay"] >= B["botTokensDay"] or g["maxTxDay"] >= B["botTxDay"])
+            if g.get("entryDayTokens") is not None: nf += 1; flips += g["entryDayTokens"] >= B["flipperTokens"]
+        elif w.get("maxTxDay") is not None:
+            nb += 1; bots += w["maxTxDay"] >= B["botTxDay"]
+        if launch:
+            if w.get("firstTs"): nfr += 1; fresh += w["firstTs"] >= launch - 7 * 86400
+            elif w.get("old"): nfr += 1  # 3000+ txs history -> not fresh
+    pc = lambda a, b: round(a / b * 100) if b else None
+    return {"sampled": len(ws), "source": "gmgn" if gw else "rpc", "botPct": pc(bots, nb), "botN": f"{bots}/{nb}",
+            "flipperPct": pc(flips, nf), "flipperN": f"{flips}/{nf}", "freshPct": pc(fresh, nfr), "freshN": f"{fresh}/{nfr}"}
+
+def base_score(p, narr_count, F):
+    """Same 0-100 heuristic as the web UI (app.js build())."""
+    cl = lambda x, a, b: max(a, min(b, x))
+    liq = (p.get("liquidity") or {}).get("usd", 0); v = p.get("volume") or {}; pc = p.get("priceChange") or {}
+    tx = (p.get("txns") or {}).get("h1") or {"buys": 0, "sells": 0}; ratio = (tx["buys"] + 1) / (tx["sells"] + 1)
+    mc = p.get("marketCap") or p.get("fdv") or 0
+    ageH = (time.time() * 1000 - p["pairCreatedAt"]) / 36e5 if p.get("pairCreatedAt") else None
+    s = cl(math.log10(liq + 1) / 6 * 20, 0, 20) + cl(math.log10(v.get("h1", 0) + 1) / 6 * 12, 0, 12) + cl(math.log10(v.get("m5", 0) + 1) / 5 * 6, 0, 6)
+    s += cl(((pc.get("h1") or 0) + 20) / 60 * 8, 0, 8) + cl(((pc.get("m5") or 0) + 10) / 30 * 6, 0, 6) + cl((ratio - 0.5) / 1.5 * 14, 0, 14)
+    s += 3 if ageH is None else 2 if ageH < 0.5 else 8 if ageH < 6 else 6 if ageH < 72 else 3
+    s += 2 if mc < 1e4 else 8 if mc < 1e6 else 6 if mc < 2e7 else 3
+    s += cl(((p.get("boosts") or {}).get("active") or 0) / 50 * 6, 0, 6) + cl(narr_count * 6, 0, 12)
+    if liq < 5000: s -= 15
+    if ratio < 0.8: s -= 10
+    return round(cl(s, 0, 100))
+
+def findings(r, B):
+    """[(severity, text)] red first. Only from real data present on r."""
+    f = []
+    def add(sev, msg): f.append((sev, msg))
+    bh, d, h, g = r.get("behaviour") or {}, r.get("dev") or {}, r.get("holders") or {}, (r.get("gmgn") or {}).get("pct") or {}
+    for key, name, red, amb in (("botPct", "bot-like holders", B["botPctRed"], B["botPctAmber"]),
+                                ("flipperPct", "serial flippers among holders", B["flipperPctRed"], B["flipperPctAmber"]),
+                                ("freshPct", "fresh wallets (first tx ≤7d before launch)", B["freshPctRed"], B["freshPctAmber"])):
+        v = bh.get(key)
+        if v is not None and v >= amb: add("red" if v >= red else "amber", f"{v}% {name} ({bh.get(key[:-3] + 'N')} of top holders)")
+    vl = r.get("volLiq")
+    if vl is not None and vl >= B["volLiqAmber"]: add("red" if vl >= B["volLiqRed"] else "amber", f"volume {vl}x liquidity, possibly inflated")
+    if d.get("rugHistory"): add("red", "dev has rug history")
+    if d.get("priorTokens", 0) >= 3 and d.get("priorDead", 0) / max(1, d["priorTokens"]) > 0.8:
+        add("red", f"dev launched {d['priorTokens']} tokens, {d['priorDead']} dead")
+    if (d.get("holdPct") or 0) > 5: add("amber", f"dev still holds {d['holdPct']}%")
+    if (r.get("clusterPct") or 0) > 15: add("amber", f"{r['clusterPct']}% supply clustered")
+    if (r.get("liqPctMc") or 100) < 10: add("amber", f"liquidity only {r['liqPctMc']}% of MC")
+    if (h.get("top5Pct") or 0) > 30: add("amber", f"top 5 hold {h['top5Pct']}%")
+    if (g.get("bundler") or 0) > 15: add("red" if g["bundler"] > 25 else "amber", f"bundlers hold {g['bundler']}%")
+    return sorted(f, key=lambda x: x[0] != "red")
+
+def final_score(r, B):
+    """Base + dev + GMGN adj; capped when behaviour alarms fire. Sets r['score'], r['scoreUncapped'], r['scoreCapped']."""
+    raw = max(0, min(100, (r.get("baseScore") or 0) + (r.get("devScore") or 0) + (r.get("gmgnScore") or 0)))
+    bh, d = r.get("behaviour") or {}, r.get("dev") or {}
+    alarm = ((bh.get("botPct") or 0) >= B["botPctRed"] or (bh.get("flipperPct") or 0) >= B["flipperPctRed"]
+             or (d.get("priorTokens", 0) >= 3 and d.get("priorDead", 0) / max(1, d.get("priorTokens") or 1) > 0.8) or d.get("rugHistory"))
+    r["scoreUncapped"] = raw
+    r["scoreCapped"] = bool(alarm and raw > B["scoreCap"])
+    r["score"] = B["scoreCap"] if r["scoreCapped"] else raw
 
 # ---------- DexScreener orders (Dex Paid / CTO) & narratives ----------
 def dex_orders(chain, mint):
@@ -248,7 +326,8 @@ def evaluate(p, m, F, now=None):
     return {"symbol": p["baseToken"]["symbol"], "name": p["baseToken"]["name"], "chain": p["chainId"], "mint": a,
             "dex": p.get("dexId"), "mcap": mc, "liq": liq, "vol": vol, "window": w, "buys": tx["buys"], "sells": tx["sells"],
             "ch5m": c5, "ch1h": c1, "ageH": round(ageH, 2) if ageH else None, "description": m["description"][:200],
-            "ctoProfile": bool(m.get("cto")), "liqPctMc": round(liq / mc * 100, 1) if mc else None,
+            "ctoProfile": bool(m.get("cto")), "volLiq": round((p.get("volume") or {}).get("h24", 0) / liq, 1) if liq else None,
+            "baseScore": base_score(p, len(narratives(f"{p['baseToken']['name']} {p['baseToken']['symbol']} {m['description']}")), F), "liqPctMc": round(liq / mc * 100, 1) if mc else None,
             "ch24h": pc.get("h24"), "narratives": narratives(f"{p['baseToken']['name']} {p['baseToken']['symbol']} {m['description']}"),
             "estFeesSol": estFeesSol, "priceUsd": pu or None, "socials": list(dict.fromkeys(s.split(" ")[0] for s in socials)), "websites": list(dict.fromkeys(webs)), "checks": checks, "cheapPass": all(checks.values()),
             "links": links(p["chainId"], a, p.get("url"), p["baseToken"]["symbol"])}
