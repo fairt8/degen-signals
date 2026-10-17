@@ -32,6 +32,11 @@ for r in cheap[:F.get("holderLookupLimit", 15)]:
            (not F.get("maxSingleHolderOn")) or (h.get("maxSingleHolderPct") or 0) <= F["maxSingleHolderPct"],
            (not F.get("freshWalletsOn")) or (h.get("freshWallets") or 0) <= F["freshWalletsMax"]]
     if h["top10Pct"] < F["top10MaxPct"] and h["clusterPct"] <= F["clusterMaxPct"] and all(opt) and (a.all or r["mint"] not in seen):
+        r["orders"] = pipeline.dex_orders(r["chain"], r["mint"])
+        r["cto"] = True if (r.get("ctoProfile") or r["orders"].get("ctoOrder")) else (False if r["orders"].get("ctoOrder") is not None else None)
+        r["holders"] = {"top5": h.get("top5"), "top5Pct": h.get("top5Pct"), "count": h.get("totalHolders"),
+                        "whalePct": h.get("whalePct"), "insiderPct": h.get("insiderPctRugcheck"),
+                        "freshWallets": h.get("freshWallets"), "clusterPct": h.get("clusterPct")}
         del r["checks"]; out.append(r)
 if a.debug:
     fails = {}
@@ -41,6 +46,13 @@ if a.debug:
 import journal as J
 feed = json.load(open(a.signals)) if a.signals and os.path.exists(a.signals) else {"tokens": []}
 jr = feed.get("journal", [])
+# first time the bot saw each candidate (MC at first scan); pruned after 72h
+_now = int(time.time()); fs = {k: v for k, v in (feed.get("firstSeen") or {}).items() if _now - v[0] < 72 * 3600}
+for r in rows:
+    if r.get("mcap"): fs.setdefault(r["mint"], [_now, r["mcap"]])
+for r in out:
+    v = fs.get(r["mint"]); r["firstScan"] = {"t": v[0], "mc": v[1]} if v else None
+    r["odds"] = J.odds(jr, exclude=r["mint"])
 for t in reversed(feed.get("tokens", [])):  # backfill journal from earlier feed signals
     if t.get("signalAt") and t.get("links"): J.add(jr, t, t0=t["signalAt"])
 jr.sort(key=lambda e: -e["t0"])
@@ -54,7 +66,7 @@ if a.signals:
             "candidates": len(rows), "cheapPass": len(cheap), "tokens": (out + feed["tokens"])[:200],
             "journal": jr[:300], "stats": J.stats(jr),
             "periodStats": J.period_stats(jr, F.get("winThresholdPct", 0), tp=F.get("tp")), "statsBasis": "24h result where available, else live price",
-            "lastReportSlot": feed.get("lastReportSlot")}
+            "lastReportSlot": feed.get("lastReportSlot"), "firstSeen": fs}
     os.makedirs(os.path.dirname(os.path.abspath(a.signals)), exist_ok=True)
     json.dump(feed, open(a.signals, "w"), indent=1)
 if a.telegram:

@@ -91,3 +91,21 @@ Settings are in config.js → `filters.gmgn`. To enable it on GitHub, add the re
 - The website shows a PnL & win rate table at the top.
 
 - **TP strategy (simulated):** set in `config.js` → `tp` (`atPct` 100, `sellFrac` 0.5, optional `stopLossPct`, off by default). If a signal's max gain seen reached +atPct, PnL = sellFrac×atPct + (1−sellFrac)×hold PnL; otherwise it's the same as hold. The result is shown next to hold in the 12h PnL report and in the site's PnL table, but not in alerts. Max gain is sampled about every 15 min, so real peaks may be higher or lower.
+
+## Alert layout (PIRB-style) & extra metrics (v7)
+Alerts start with the contract address (code), then name ($SYMBOL) | chain · DEX, age · holders, and an emoji row of the token's own socials. Below that is a blockquote with sections:
+- **TOKEN DATA:** our historical 2x/rug odds, GMGN, MC first scan ⇨ now [time since], ATH MC, liq (% of MC), USD price (24h %), and volume with buys/sells.
+- **DEV INFO:** wallet, held/sold, prior launches, Dex Paid, CTO.
+- **HOLDERS INFO:** Top5 % [sum] | holders, snipers/bundlers/insiders, whales/fresh/smart money, cluster.
+- **MISC INFO:** narrative, first scan MC.
+
+The description goes at the bottom in italics, and inline URL buttons offer DexScreener, GMGN, Bubblemaps, X search and pump.fun.
+Data sources:
+- **Dex Paid:** DexScreener `/orders/v1` (approved tokenProfile).
+- **CTO:** profile `cto` flag, `/community-takeovers/latest/v1`, or a communityTakeover order.
+- **Top5, holders, whales (non-pool wallets ≥2%), insiders:** rugcheck.
+- **Snipers, bundlers, fresh, smart money:** GMGN when a key is set, otherwise `n/a`. Fresh falls back to the RPC fresh-wallet count.
+- **First scan:** `firstSeen` in docs/signals.json, the first time the bot saw a candidate, pruned after 72h.
+- **2x odds / rug %:** computed only from our own journal (share of past signals ≥1h old that hit 2x, or fell ≥90%), with the sample size shown.
+
+Missing data is shown as `n/a` and never guessed.

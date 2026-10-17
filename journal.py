@@ -150,3 +150,15 @@ def period_stats(journal, win_pct=0, now=None, tp=None):
         out[p].update(tpWins=tw, tpWinRate=round(tw / len(tps) * 100, 1) if tps else None,
                       tpTotalPnl=round(sum(tps), 1) if tps else None, tpAvgPnl=round(sum(tps) / len(tps), 1) if tps else None)
     return out
+
+
+def odds(journal, exclude=None, rug_pct=-90):
+    """Historical outcomes of OUR past signals (>=1h old): share that hit 2x, share that dropped >90% (rug)."""
+    es = [e for e in journal if e.get("mint") != exclude and e.get("h1") and e.get("price0")]
+    if not es: return {"n": 0}
+    def worst(e):
+        v = [x for x in [e.get("lastPct"), (e.get("h1") or {}).get("pct"), (e.get("h24") or {}).get("pct")] if x is not None]
+        if e.get("minPrice"): v.append((e["minPrice"] / e["price0"] - 1) * 100)
+        return min(v) if v else 0
+    n = len(es)
+    return {"n": n, "x2": round(sum(bool(e.get("hit2x")) for e in es) / n * 100), "rug": round(sum(worst(e) <= rug_pct for e in es) / n * 100)}

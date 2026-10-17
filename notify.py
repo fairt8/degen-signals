@@ -12,7 +12,7 @@ def chats():
     raw = _os.environ.get("TELEGRAM_CHAT_IDS") or _os.environ.get("TELEGRAM_CHAT_ID") or ""
     return [c.strip() for c in raw.split(",") if c.strip()]
 
-def post(text, reply_to=None):
+def post(text, reply_to=None, buttons=None):
     """Post to every chat in TELEGRAM_CHAT_ID(S) (comma-separated). DRY_RUN=1 prints instead.
     reply_to: {chat_id: message_id} (or int for legacy single-chat). Returns {chat_id: message_id} for successes."""
     tok, cs = _os.environ.get("TELEGRAM_BOT_TOKEN"), chats()
@@ -25,6 +25,7 @@ def post(text, reply_to=None):
         q = {"chat_id": chat, "text": text, "parse_mode": "HTML", "disable_web_page_preview": "true"}
         rid = reply_to.get(chat) if isinstance(reply_to, dict) else (reply_to if len(cs) == 1 else None)
         if rid and rid > 0: q.update(reply_to_message_id=rid, allow_sending_without_reply="true")
+        if buttons: q["reply_markup"] = json.dumps({"inline_keyboard": buttons})
         try:
             r = json.loads(urllib.request.urlopen(f"https://api.telegram.org/bot{tok}/sendMessage",
                            data=urllib.parse.urlencode(q).encode(), timeout=15).read())
@@ -89,23 +90,98 @@ def ath(r, journal=None):
             return max(e["mcap0"] * e["maxPrice"] / e["price0"], r["mcap"]), " (est., seen by bot)"
     return None, ""
 
-def send(r, journal=None):
+def _num(x, d=1):
+    return "n/a" if x is None else f"{x:.{d}f}"
+
+def _age(h):
+    if h is None: return "n/a"
+    m = h * 60
+    return f"{m:.0f}m" if m < 60 else f"{h:.1f}h" if h < 48 else f"{h/24:.0f}d"
+
+def _price(p):
+    if not p: return "n/a"
+    return f"${p:.10f}".rstrip("0") if p < 0.01 else f"${p:,.4f}"
+
+def _yn(v):
+    return "✅" if v is True else "❌" if v is False else "n/a"
+
+def card(r, journal=None):
+    """PIRB-style alert. Returns (html_text, inline_keyboard). Only real data; 'n/a' when unknown."""
     from html import escape as e
-    L = r["links"]
-    link = lambda k, label: f'<a href="{e(L[k])}">{label}</a>' if L.get(k) else ""
+    import time as _t
+    L, H, G = r["links"], r.get("holders") or {}, r.get("gmgn") or {}
+    gp = G.get("pct") or {} if G.get("status") in ("PASS", "FAIL") else {}
+    dexname = {"pumpfun": "PF", "pumpswap": "PumpSwap"}.get(r.get("dex"), (r.get("dex") or "DEX").title())
+    chain = "SOL" if r.get("chain") == "solana" else (r.get("chain") or "").upper()
+    # emoji link row from the token's own socials/websites
+    soc = []
+    for u in r.get("socials") or []:
+        ul = u.lower()
+        icon = "🐦" if ("twitter" in ul or "x.com" in ul) else "💬" if ("t.me" in ul or "telegram" in ul) else "👾" if "discord" in ul else "🔗"
+        soc.append(f'<a href="{e(u)}">{icon}</a>')
+    soc += [f'<a href="{e(u)}">🌐</a>' for u in (r.get("websites") or [])[:2]]
+    soc.append(f'<a href="{e(L["x_search"])}">🔍</a>')
+    if L.get("pumpfun"): soc.append(f'<a href="{e(L["pumpfun"])}">💊</a>')
+    # TOKEN DATA
+    od = r.get("odds") or {}
+    odds = (f"2x ~{od['x2']}% · Rug ~{od['rug']}% <i>(our past {od['n']} signals)</i>" if od.get("n") else "2x n/a · Rug n/a <i>(no history yet)</i>")
+    fsn = r.get("firstScan")
     a, lbl = ath(r, journal)
-    aths = f"${fmt(a)}{lbl}" if a else "n/a"
-    sections = [
-        f"<code>{e(r['mint'])}</code>\n{e(r['name'])} ${e(r['symbol'])}",
-        f"MC: ${fmt(r['mcap'])} | ATH MC: {e(aths)}\nLiq: ${fmt(r['liq'])} · Age: {r['ageH']}h · 5m {r['ch5m']}% · 1h {r['ch1h']}%",
-        f"Vol {r['window']}: ${fmt(r['vol'])} · Txns: {r['buys']} buys / {r['sells']} sells",
-        f"Top10: {r.get('top10Pct')}% · Cluster: {r.get('clusterPct')}% ({e(str(r.get('clusterSource')))})",
-        e(dev_line(r).strip()) or "Dev: n/a",
-        e(__import__('gmgn').line(r.get('gmgn'))),
-        " | ".join(x for x in [link("dexscreener", "DexScreener"), link("pumpfun", "pump.fun"), link("bubblemaps", "Bubblemaps"),
-                               link("insightx", "InsightX"), link("x_search", "X")] if x) + "\n⚠️ Not financial advice. DYOR.",
-    ]
-    sections = [s for s in sections if s]
+    if fsn and fsn.get("mc"):
+        ago = _age((_t.time() - fsn["t"]) / 3600)
+        mcl = f"<b>${fmt(fsn['mc'])}</b> ⇨ ${fmt(r['mcap'])} [{ago}]"
+    else:
+        mcl = f"${fmt(r['mcap'])}"
+    gl = __import__("gmgn").line(G or None)
+    ch = r.get("ch24h")
+    tok = ["━━ TOKEN DATA ━━",
+           f"🤖 {odds}",
+           f"🎯 {e(gl)}",
+           f"🧢 MC: {mcl}",
+           f"🏔 ATH MC: {e(('$' + fmt(a) + lbl) if a else 'n/a')}",
+           f"💧 Liq: <b>${fmt(r['liq'])}</b> ({_num(r.get('liqPctMc'), 0)}%)",
+           f"💲 USD: <b>{_price(r.get('priceUsd'))}</b> ({'n/a' if ch is None else f'{ch:+.0f}%'} 24h)",
+           f"📊 Vol {r['window']}: <b>${fmt(r['vol'])}</b> (🅑{r['buys']}/Ⓢ{r['sells']})"]
+    # DEV INFO
+    d = r.get("dev") or {}
+    o = r.get("orders") or {}
+    if d.get("wallet"):
+        held = "sold" if d.get("sold") else f"Held: {_num(d.get('holdPct'))}%"
+        devl = (f'<a href="{e(d["links"]["solscan"])}">{e(d["wallet"][:4])}…{e(d["wallet"][-4:])}</a> · {held}'
+                + (" · 🚩rug history" if d.get("rugHistory") else ""))
+        prior = f"Prior launches: {d.get('priorTokens', 'n/a')} ({d.get('priorMigrated', 0)} migrated, {d.get('priorDead', 0)} dead)"
+    else:
+        devl, prior = "n/a", "Prior launches: n/a"
+    dev = ["━━ DEV INFO ━━", f"👨‍💻 {devl}", f"📜 {prior}", f"🦅 Dex Paid: {_yn(o.get('dexPaid'))} · CTO: {_yn(r.get('cto'))}"]
+    # HOLDERS INFO
+    t5 = H.get("top5") or []
+    t5l = ("·".join(f"{x:.1f}" for x in t5) + f" [{_num(H.get('top5Pct'), 0)}%]") if t5 else "n/a"
+    cnt = H.get("count")
+    pct = lambda v: "n/a" if v is None else f"{v:.1f}%"
+    insider = gp.get("insider", H.get("insiderPct"))
+    fresh = pct(gp["fresh"]) if "fresh" in gp else (f"{H['freshWallets']}/10 top" if H.get("freshWallets") is not None else "n/a")
+    smart = pct((gp.get("smart") or 0) + (gp.get("kol") or 0)) if "smart" in gp else "n/a"
+    hol = ["━━ HOLDERS INFO ━━",
+           f"🔝 Top5: {t5l} | {f'{cnt:,}' if cnt else 'n/a'} holders",
+           f"🎯 {pct(gp.get('sniper'))} · 📦 {pct(gp.get('bundler'))} · 🕵️ {pct(insider)}",
+           f"🐋 {pct(H.get('whalePct'))} · 🌱 {fresh} · 🧠 {smart}",
+           f"🔗 Cluster: {pct(H.get('clusterPct', r.get('clusterPct')))}"]
+    # MISC
+    misc = ["━━ MISC INFO ━━", f"📈 Narrative: {e(' · '.join(r.get('narratives') or []) or 'n/a')}",
+            f"1️⃣ First scan @ MC {('$' + fmt(fsn['mc'])) if fsn else 'n/a'}"]
+    head = (f"<code>{e(r['mint'])}</code>\n"
+            f"<b>{e(r['name'])} (${e(r['symbol'])})</b> | {chain} · {e(dexname)}\n"
+            f"🕐 {_age(r.get('ageH'))} · 👥 {f'{cnt:,}' if cnt else 'n/a'} holders\n"
+            + " ".join(soc))
+    body = "\n".join(tok) + "\n\n" + "\n".join(dev) + "\n\n" + "\n".join(hol) + "\n\n" + "\n".join(misc)
+    text = head + "\n\n<blockquote>" + body + "</blockquote>\n⚠️ Not financial advice. DYOR."
     if (r.get("description") or "").strip():
-        sections.append(f"<i>{e(r['description'].strip()[:400])}</i>")
-    return post("\n\n".join(sections))
+        text += f"\n\n<i>{e(r['description'].strip()[:400])}</i>"
+    gm = G.get("link") or f"https://gmgn.ai/sol/token/{r['mint']}"
+    kb = [[{"text": "DexScreener", "url": L["dexscreener"]}, {"text": "GMGN", "url": gm}, {"text": "Bubblemaps", "url": L["bubblemaps"]}],
+          [{"text": "X search", "url": L["x_search"]}] + ([{"text": "pump.fun", "url": L["pumpfun"]}] if L.get("pumpfun") else [])]
+    return text, kb
+
+def send(r, journal=None):
+    text, kb = card(r, journal)
+    return post(text, buttons=kb)

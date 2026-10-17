@@ -41,7 +41,7 @@ def analyze(mint, C, chain="sol"):
     for t in ("sniper", "bundler", "fresh_wallet"):
         for h in held(lists[t]): combo[h["address"]] = h.get("amount_percentage") or 0
     p = {"sniper": pct(lists["sniper"]), "bundler": pct(lists["bundler"]), "fresh": pct(lists["fresh_wallet"]),
-         "rat": pct(lists["rat_trader"]), "combo": round(sum(combo.values()) * 100, 2)}
+         "rat": pct(lists["rat_trader"]), "smart": pct(lists["smart_degen"]), "kol": pct(lists["renowned"]), "combo": round(sum(combo.values()) * 100, 2)}
     smartkol = counts["smart_degen"]["holding"] + counts["renowned"]["holding"]
     reasons, ok = [], True
     def chk(cond, good, bad):

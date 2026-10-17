@@ -74,6 +74,9 @@ def holders_and_clusters(mint, cfg=None):
             pools.update([m.get("pubkey"), m.get("liquidityA"), m.get("liquidityB"), (m.get("lp") or {}).get("lpMint")])
         hs = [h for h in (d.get("topHolders") or []) if h.get("owner") not in pools and h.get("address") not in pools]
         top = hs[:10]
+        out.update(top5=[round(h.get("pct", 0), 1) for h in hs[:5]], top5Pct=round(sum(h.get("pct", 0) for h in hs[:5]), 1),
+                   whalePct=round(sum(h.get("pct", 0) for h in hs if h.get("pct", 0) >= 2), 1),  # non-pool wallets >=2% (rugcheck top holders)
+                   insiderPctRugcheck=round(sum(h.get("pct", 0) for h in hs if h.get("insider")), 1))
         out.update(top10Pct=round(sum(h.get("pct", 0) for h in top), 2), totalHolders=d.get("totalHolders"),
                    excludedPools=len(d.get("topHolders") or []) - len(hs))
         sources = {}
@@ -158,6 +161,33 @@ def dev_score(dev, W):
     if dev.get("funderSharedWithTopHolders"): add(W["sharedFunder"], "dev funder linked to top holders")
     return pts, why
 
+# ---------- DexScreener orders (Dex Paid / CTO) & narratives ----------
+def dex_orders(chain, mint):
+    """{dexPaid, ctoOrder, boosts} from /orders/v1. None values if the call fails (never guessed)."""
+    try:
+        d = get(f"{DS}/orders/v1/{chain}/{mint}")
+        orders = d.get("orders", d if isinstance(d, list) else [])
+        ok = [o for o in orders if o.get("status") == "approved"]
+        return {"dexPaid": any(o.get("type") == "tokenProfile" for o in ok),
+                "ctoOrder": any(o.get("type") == "communityTakeover" for o in ok),
+                "boosts": len(d.get("boosts") or []) if isinstance(d, dict) else 0}
+    except Exception:
+        return {"dexPaid": None, "ctoOrder": None, "boosts": None}
+
+_NARR = None
+def narratives(text):
+    """Keyword match against SIGNAL_CONFIG.narratives in config.js (same lists as the web UI)."""
+    global _NARR
+    if _NARR is None:
+        try:
+            src = open(os.path.join(os.path.dirname(__file__), "config.js")).read()
+            body = re.search(r"narratives:\s*(\{.*?\})\s*,\s*\n", src, re.S).group(1)
+            _NARR = json.loads(body)
+        except Exception:
+            _NARR = {}
+    t = (text or "").lower()
+    return [n for n, kws in _NARR.items() if any(re.search(r"\b" + re.escape(k), t) for k in kws)]
+
 # ---------- candidates & filters ----------
 SOCIAL_RE = re.compile(r"twitter|telegram|discord|x\.com|t\.me|community", re.I)
 
@@ -169,6 +199,11 @@ def candidates():
     for p in safe(DS + "/token-profiles/latest/v1", []) + safe(DS + "/token-boosts/latest/v1", []) + safe(DS + "/token-boosts/top/v1", []):
         k = p["chainId"] + ":" + p["tokenAddress"]; m = meta.setdefault(k, {"links": [], "description": ""})
         m["description"] = m["description"] or (p.get("description") or "").strip(); m["links"] += p.get("links") or []
+        if p.get("cto"): m["cto"] = True
+    for p in safe(DS + "/community-takeovers/latest/v1", []):
+        k = p["chainId"] + ":" + p["tokenAddress"]; m = meta.setdefault(k, {"links": [], "description": ""})
+        m["cto"] = True; m["links"] += p.get("links") or []
+        m["description"] = m["description"] or (p.get("description") or "").strip()
     pairs = []
     for q in ["pumpfun", "pumpswap", "pump", "solana", "meme", "ai"]:
         pairs += safe(f"{DS}/latest/dex/search?q={q}", {}).get("pairs") or []
@@ -213,6 +248,8 @@ def evaluate(p, m, F, now=None):
     return {"symbol": p["baseToken"]["symbol"], "name": p["baseToken"]["name"], "chain": p["chainId"], "mint": a,
             "dex": p.get("dexId"), "mcap": mc, "liq": liq, "vol": vol, "window": w, "buys": tx["buys"], "sells": tx["sells"],
             "ch5m": c5, "ch1h": c1, "ageH": round(ageH, 2) if ageH else None, "description": m["description"][:200],
+            "ctoProfile": bool(m.get("cto")), "liqPctMc": round(liq / mc * 100, 1) if mc else None,
+            "ch24h": pc.get("h24"), "narratives": narratives(f"{p['baseToken']['name']} {p['baseToken']['symbol']} {m['description']}"),
             "estFeesSol": estFeesSol, "priceUsd": pu or None, "socials": list(dict.fromkeys(s.split(" ")[0] for s in socials)), "websites": list(dict.fromkeys(webs)), "checks": checks, "cheapPass": all(checks.values()),
             "links": links(p["chainId"], a, p.get("url"), p["baseToken"]["symbol"])}
 
