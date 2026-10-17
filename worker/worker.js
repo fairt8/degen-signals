@@ -124,9 +124,10 @@ export async function handle(text, env) {
 }
 async function send(env, chat, text, replyTo) {
   const body = { chat_id: chat, text, parse_mode: "HTML", disable_web_page_preview: true };
-  if (replyTo) Object.assign(body, { reply_to_message_id: replyTo, allow_sending_without_reply: true });
-  await fetch(`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`,
+  if (replyTo > 0) Object.assign(body, { reply_to_message_id: replyTo, allow_sending_without_reply: true });
+  const r = await fetch(`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`,
     { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
+  return r.ok;
 }
 export default {
   async fetch(req, env, ctx) {
@@ -135,10 +136,14 @@ export default {
     const u = await req.json(), m = u.message || u.channel_post || {};
     const chat = String(m.chat?.id), ok = (env.ALLOWED_CHATS || "").split(",").map(s => s.trim());
     if (!ok.includes(chat)) return new Response("ignored");
-    ctx.waitUntil((async () => {
-      const msgs = await handle(m.text || "", env);
-      for (let i = 0; msgs && i < msgs.length; i++) await send(env, chat, msgs[i], i === 0 ? m.message_id : null);
-    })());
+    const work = (async () => {
+      const msgs = await handle(m.text || "", env); let sent = 0;
+      for (let i = 0; msgs && i < msgs.length; i++) sent += await send(env, chat, msgs[i], i === 0 ? m.message_id : null) ? 1 : 0;
+      return { replies: msgs ? msgs.length : 0, sent };
+    })();
+    // authenticated self-test (secret header already checked): wait and report delivery
+    if (req.headers.get("X-Degen-Test") === "1") return Response.json(await work);
+    ctx.waitUntil(work);
     return new Response("ok");
   },
 };
