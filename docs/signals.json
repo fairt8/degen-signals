@@ -1,10 +1,102 @@
 {
- "updatedAt": 1792265413,
+ "updatedAt": 1792266149,
  "window": "h1",
  "lastRunErrors": [],
- "candidates": 118,
- "cheapPass": 0,
+ "candidates": 119,
+ "cheapPass": 1,
  "tokens": [
+  {
+   "symbol": "Ventrion",
+   "name": "Ventrion Protocol",
+   "chain": "solana",
+   "mint": "BG35ZgNeSoSw36cQv58kMahU82wfYwzeNYoRNiwMVent",
+   "dex": "pumpswap",
+   "mcap": 78461,
+   "liq": 23054.76,
+   "vol": 146778.55,
+   "window": "h1",
+   "buys": 1337,
+   "sells": 1114,
+   "ch5m": 0.61,
+   "ch1h": 42.36,
+   "ageH": 1.17,
+   "description": "Ventrion allows anyone to tokenize their existing or future Venture. This is the coin funding that mission.",
+   "estFeesSol": 32.92,
+   "priceUsd": 8.157e-05,
+   "socials": [
+    "https://x.com/VentrionLabs"
+   ],
+   "websites": [
+    "http://ventrion.fun/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/9cnx8716x6sjvlw8baw4tpd3jcchjzyhlpbqnfwqs5aq",
+    "pumpfun": "https://pump.fun/coin/BG35ZgNeSoSw36cQv58kMahU82wfYwzeNYoRNiwMVent",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=BG35ZgNeSoSw36cQv58kMahU82wfYwzeNYoRNiwMVent&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/BG35ZgNeSoSw36cQv58kMahU82wfYwzeNYoRNiwMVent",
+    "x_search": "https://x.com/search?q=%24Ventrion&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=Ventrion"
+   },
+   "top10Pct": 22.82,
+   "clusterPct": 15.4,
+   "clusterSource": "rugcheck_insider_networks",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "8BmW7pXuZgswdhbk2JyrjjYEx1QR3Ntwhe2KiG8Mvent",
+    "holdPct": 0.38,
+    "sold": false,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/8BmW7pXuZgswdhbk2JyrjjYEx1QR3Ntwhe2KiG8Mvent",
+     "pumpfun": "https://pump.fun/profile/8BmW7pXuZgswdhbk2JyrjjYEx1QR3Ntwhe2KiG8Mvent"
+    },
+    "funder": null,
+    "firstTs": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 32.92,
+    "maxSingleHolderPct": 3.11,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "brave-gold-donkey",
+      "size": 6,
+      "type": "transfer"
+     },
+     {
+      "id": "mushy-beige-salamander",
+      "size": 4,
+      "type": "transfer"
+     },
+     {
+      "id": "crisp-cinnamon-woodpecker",
+      "size": 4,
+      "type": "transfer"
+     }
+    ]
+   },
+   "signalAt": 1792266149
+  },
   {
    "symbol": "ANIMA",
    "name": "Anima",
@@ -2293,6 +2385,37 @@
  ],
  "journal": [
   {
+   "mint": "BG35ZgNeSoSw36cQv58kMahU82wfYwzeNYoRNiwMVent",
+   "symbol": "Ventrion",
+   "chain": "solana",
+   "t0": 1792266149,
+   "price0": 8.157e-05,
+   "mcap0": 78461,
+   "score": null,
+   "devScore": 0,
+   "link": "https://dexscreener.com/solana/9cnx8716x6sjvlw8baw4tpd3jcchjzyhlpbqnfwqs5aq",
+   "maxPrice": 8.51e-05,
+   "samples": [
+    [
+     1792266149,
+     8.51e-05
+    ]
+   ],
+   "trend": null,
+   "h1": null,
+   "h24": null,
+   "hit2x": false,
+   "hit5x": false,
+   "msgId": {
+    "1318404489": 159,
+    "-1004348482526": 1591
+   },
+   "last": 8.51e-05,
+   "lastT": 1792266149,
+   "minPrice": 8.51e-05,
+   "lastPct": 4.3
+  },
+  {
    "mint": "VFJudeZzRdptxmytqBTVMdmqEgJwTj5fTk9U8kDpump",
    "symbol": "ANIMA",
    "chain": "solana",
@@ -2367,6 +2490,10 @@
     [
      1792265412,
      2.669e-05
+    ],
+    [
+     1792266149,
+     2.486e-05
     ]
    ],
    "trend": "up",
@@ -2382,9 +2509,10 @@
     "1318404489": 146,
     "-1004348482526": 1572
    },
-   "last": 2.669e-05,
-   "lastT": 1792265412,
-   "lastPct": -70.9
+   "last": 2.486e-05,
+   "lastT": 1792266149,
+   "lastPct": -72.9,
+   "minPrice": 2.486e-05
   },
   {
    "mint": "ATkPwdMMvJDFY5Y5BxaZ5998wzx2x8Pg84hYkTm21fam",
@@ -2489,6 +2617,10 @@
     [
      1792265412,
      1.354e-05
+    ],
+    [
+     1792266149,
+     1.308e-05
     ]
    ],
    "trend": "fading",
@@ -2504,9 +2636,10 @@
     "1318404489": 138,
     "-1004348482526": 1564
    },
-   "last": 1.354e-05,
-   "lastT": 1792265412,
-   "lastPct": -53.5
+   "last": 1.308e-05,
+   "lastT": 1792266149,
+   "lastPct": -55.1,
+   "minPrice": 1.308e-05
   },
   {
    "mint": "GxCEZaNR7FPUJq37Zov8tdFWWuwAiEeVqxGykbqNpump",
@@ -2623,6 +2756,10 @@
     [
      1792265412,
      5.638e-06
+    ],
+    [
+     1792266149,
+     5.526e-06
     ]
    ],
    "trend": "fading",
@@ -2638,9 +2775,10 @@
     "1318404489": 133,
     "-1004348482526": 1559
    },
-   "last": 5.638e-06,
-   "lastT": 1792265412,
-   "lastPct": -83.3
+   "last": 5.526e-06,
+   "lastT": 1792266149,
+   "lastPct": -83.6,
+   "minPrice": 5.526e-06
   },
   {
    "mint": "2e3zQiA8JWeDjjVeuqzv9X1Q3aqRRaPqL8UYEbxVpump",
@@ -2757,6 +2895,10 @@
     [
      1792265412,
      4.056e-06
+    ],
+    [
+     1792266149,
+     4.053e-06
     ]
    ],
    "trend": "fading",
@@ -2772,9 +2914,10 @@
     "1318404489": 132,
     "-1004348482526": 1558
    },
-   "last": 4.056e-06,
-   "lastT": 1792265412,
-   "lastPct": -97.8
+   "last": 4.053e-06,
+   "lastT": 1792266149,
+   "lastPct": -97.8,
+   "minPrice": 4.053e-06
   },
   {
    "mint": "GLX4XzV2E8iuaf2uX94HL5AGrmRKNUxCjtGWZMmZpump",
@@ -2899,6 +3042,10 @@
     [
      1792265412,
      1.619e-05
+    ],
+    [
+     1792266149,
+     2.392e-05
     ]
    ],
    "trend": "fading",
@@ -2914,9 +3061,10 @@
     "1318404489": 130,
     "-1004348482526": 1556
    },
-   "last": 1.619e-05,
-   "lastT": 1792265412,
-   "lastPct": -74.9
+   "last": 2.392e-05,
+   "lastT": 1792266149,
+   "lastPct": -62.9,
+   "minPrice": 2.392e-05
   },
   {
    "mint": "6tsykNmR3WDqouj9uVUFZRgR2Kpai4F1Qm1gAcirpump",
@@ -2943,9 +3091,10 @@
     "1318404489": 118,
     "-1004348482526": 1544
    },
-   "last": 0.0001612,
-   "lastT": 1792265412,
-   "lastPct": 18.4
+   "last": 0.0001318,
+   "lastT": 1792266149,
+   "lastPct": -3.2,
+   "minPrice": 0.0001318
   },
   {
    "mint": "ErvkxE8gc7EwmaQfvoGfVfcDJbVG4EcHQr3yweTkpump",
@@ -2972,9 +3121,10 @@
     "1318404489": 116,
     "-1004348482526": 1542
    },
-   "last": 0.0002233,
-   "lastT": 1792265412,
-   "lastPct": 452.7
+   "last": 0.0002277,
+   "lastT": 1792266149,
+   "lastPct": 463.6,
+   "minPrice": 0.0002277
   },
   {
    "mint": "9rS42P1UYS6rjZLNFQQ5HmaknAxsU1phcVHTQ3dgpump",
@@ -3002,8 +3152,9 @@
     "-1004348482526": 1529
    },
    "last": 2e-06,
-   "lastT": 1792265412,
-   "lastPct": -98.1
+   "lastT": 1792266149,
+   "lastPct": -98.1,
+   "minPrice": 2e-06
   },
   {
    "mint": "AeLonprCt3y4dZEWEeRTkPqnUPW2FngSD2YeUmPP6GDk",
@@ -3030,9 +3181,10 @@
     "1318404489": 100,
     "-1004348482526": 1526
    },
-   "last": 1.548e-05,
-   "lastT": 1792265412,
-   "lastPct": -83.2
+   "last": 1.944e-05,
+   "lastT": 1792266149,
+   "lastPct": -78.9,
+   "minPrice": 1.944e-05
   },
   {
    "mint": "CFggXZXwg5pkiB5aHGq1LEoaK1hVhVYVGZpHgVewpump",
@@ -3059,9 +3211,10 @@
     "1318404489": 98,
     "-1004348482526": 1524
    },
-   "last": 4.164e-06,
-   "lastT": 1792265412,
-   "lastPct": -87.3
+   "last": 4.152e-06,
+   "lastT": 1792266149,
+   "lastPct": -87.3,
+   "minPrice": 4.152e-06
   },
   {
    "mint": "GFhszS7cFM4xmcfT4tBCSwcLHWAwj4yXhSwuTXKYpump",
@@ -3089,8 +3242,9 @@
     "-1004348482526": 1518
    },
    "last": 2.564e-06,
-   "lastT": 1792265412,
-   "lastPct": -97.9
+   "lastT": 1792266149,
+   "lastPct": -97.9,
+   "minPrice": 2.564e-06
   },
   {
    "mint": "219ZL89b7TSRSv8bqf7Fy2WrU5BJJVCntg1srHnypurp",
@@ -3117,9 +3271,10 @@
     "1318404489": 88,
     "-1004348482526": 1514
    },
-   "last": 1.856e-05,
-   "lastT": 1792265412,
-   "lastPct": -53.5
+   "last": 1.831e-05,
+   "lastT": 1792266149,
+   "lastPct": -54.1,
+   "minPrice": 1.831e-05
   },
   {
    "mint": "3XEqNHe3jHTRWAZCTHbb1UwpSfNbJL9oU1ErsM86pump",
@@ -3146,9 +3301,10 @@
     "1318404489": 83,
     "-1004348482526": 1509
    },
-   "last": 0.0001518,
-   "lastT": 1792265412,
-   "lastPct": 328.8
+   "last": 0.0001627,
+   "lastT": 1792266149,
+   "lastPct": 359.6,
+   "minPrice": 0.0001627
   },
   {
    "mint": "2kuY5DHqRvYKfytfLfrey1oB1Z1J3voq343FWMp6pump",
@@ -3175,9 +3331,10 @@
     "1318404489": 78,
     "-1004348482526": 1504
    },
-   "last": 7.176e-05,
-   "lastT": 1792265412,
-   "lastPct": 47.6
+   "last": 7.524e-05,
+   "lastT": 1792266149,
+   "lastPct": 54.7,
+   "minPrice": 7.524e-05
   },
   {
    "mint": "599h3tRUnep6PeQcEaUadosDyZk3uzs173f6h8NTpump",
@@ -3205,8 +3362,9 @@
     "-1004348482526": 1501
    },
    "last": 2.596e-06,
-   "lastT": 1792265412,
-   "lastPct": -94.8
+   "lastT": 1792266149,
+   "lastPct": -94.8,
+   "minPrice": 2.596e-06
   },
   {
    "mint": "8jNrFaRyhNh8vccpSQ9o55R4hhinmFc1XfSWwDJhpump",
@@ -3234,8 +3392,9 @@
     "-1004348482526": 1497
    },
    "last": 2.32e-06,
-   "lastT": 1792265412,
-   "lastPct": -98.2
+   "lastT": 1792266149,
+   "lastPct": -98.2,
+   "minPrice": 2.32e-06
   },
   {
    "mint": "GePQb6k4ZjsBDTtn2ZMfYRNJH4fzZ6ExKqRzWnCxpump",
@@ -3659,7 +3818,7 @@
   }
  ],
  "stats": {
-  "signals": 29,
+  "signals": 30,
   "h1": {
    "n": 29,
    "winRate": 31.0,
@@ -3679,68 +3838,84 @@
  },
  "periodStats": {
   "today": {
-   "signals": 15,
-   "n": 15,
+   "signals": 16,
+   "n": 16,
    "wins": 4,
-   "winRate": 26.7,
-   "totalPnl": -47.7,
-   "avgPnl": -3.2,
-   "best": "ZeroFee +453%",
+   "winRate": 25.0,
+   "totalPnl": -4.4,
+   "avgPnl": -0.3,
+   "best": "ZeroFee +464%",
    "worst": "inumask -98%",
    "basis": {
     "24h": 0,
-    "live": 15
+    "live": 16
    },
    "hit2x": 5,
-   "hit5x": 3
+   "hit5x": 3,
+   "tpWins": 6,
+   "tpWinRate": 37.5,
+   "tpTotalPnl": -152.4,
+   "tpAvgPnl": -9.5
   },
   "week": {
-   "signals": 29,
-   "n": 29,
+   "signals": 30,
+   "n": 30,
    "wins": 6,
-   "winRate": 20.7,
-   "totalPnl": -959.7,
-   "avgPnl": -33.1,
-   "best": "ZeroFee +453%",
+   "winRate": 20.0,
+   "totalPnl": -916.4,
+   "avgPnl": -30.5,
+   "best": "ZeroFee +464%",
    "worst": "FLEG -98%",
    "basis": {
     "24h": 13,
-    "live": 16
+    "live": 17
    },
    "hit2x": 9,
-   "hit5x": 3
+   "hit5x": 3,
+   "tpWins": 10,
+   "tpWinRate": 33.3,
+   "tpTotalPnl": -873.8,
+   "tpAvgPnl": -29.1
   },
   "month": {
-   "signals": 29,
-   "n": 29,
+   "signals": 30,
+   "n": 30,
    "wins": 6,
-   "winRate": 20.7,
-   "totalPnl": -959.7,
-   "avgPnl": -33.1,
-   "best": "ZeroFee +453%",
+   "winRate": 20.0,
+   "totalPnl": -916.4,
+   "avgPnl": -30.5,
+   "best": "ZeroFee +464%",
    "worst": "FLEG -98%",
    "basis": {
     "24h": 13,
-    "live": 16
+    "live": 17
    },
    "hit2x": 9,
-   "hit5x": 3
+   "hit5x": 3,
+   "tpWins": 10,
+   "tpWinRate": 33.3,
+   "tpTotalPnl": -873.8,
+   "tpAvgPnl": -29.1
   },
   "all": {
-   "signals": 29,
-   "n": 29,
+   "signals": 30,
+   "n": 30,
    "wins": 6,
-   "winRate": 20.7,
-   "totalPnl": -959.7,
-   "avgPnl": -33.1,
-   "best": "ZeroFee +453%",
+   "winRate": 20.0,
+   "totalPnl": -916.4,
+   "avgPnl": -30.5,
+   "best": "ZeroFee +464%",
    "worst": "FLEG -98%",
    "basis": {
     "24h": 13,
-    "live": 16
+    "live": 17
    },
    "hit2x": 9,
-   "hit5x": 3
+   "hit5x": 3,
+   "tpWins": 10,
+   "tpWinRate": 33.3,
+   "tpTotalPnl": -873.8,
+   "tpAvgPnl": -29.1
   }
  },
  "statsBasis": "24h result where available, else live price",
