@@ -28,7 +28,7 @@ window.SIGNAL_CONFIG.filters = {
   clusterMaxPct: 25,        // fail 5R if clustered / common-funder supply > this %
   holderLookupLimit: 15,
   winThresholdPct: 0,       // journal: a signal "wins" if its PnL % is above this
-  summaryHourWAT: 21,       // daily Telegram summary at/after this hour (WAT), once per day
+  // PnL report: standalone Telegram message at 12:00 AM and 12:00 PM WAT (first run in each slot; lastReportSlot in docs/signals.json)
   // ---- optional signals (from @OLeksa_one / Padre-style filters); *_On=false => info/flag only, true => required for 5R
   feeRate: 0.0125, estFeesMinSol: 1.5, estFeesOn: false,          // est. fees = vol24 * feeRate (pump.fun ~1.25%)
   maxSingleHolderPct: 5, maxSingleHolderOn: false,                // single non-pool wallet > X% = caution

@@ -54,25 +54,33 @@ if a.signals:
             "candidates": len(rows), "cheapPass": len(cheap), "tokens": (out + feed["tokens"])[:200],
             "journal": jr[:300], "stats": J.stats(jr),
             "periodStats": J.period_stats(jr, F.get("winThresholdPct", 0)), "statsBasis": "24h result where available, else live price",
-            "lastSummaryDate": feed.get("lastSummaryDate")}
+            "lastReportSlot": feed.get("lastReportSlot")}
     os.makedirs(os.path.dirname(os.path.abspath(a.signals)), exist_ok=True)
     json.dump(feed, open(a.signals, "w"), indent=1)
 if a.telegram:
     import notify
     ps = J.period_stats(jr, F.get("winThresholdPct", 0))
     for r in out:
-        mid = notify.send(r, jr, ps)
+        mid = notify.send(r, jr)
         for e in jr:
             if e["mint"] == r["mint"] and mid: e["msgId"] = mid
     for kind, e, text in notes:
         notify.post(text, reply_to=e.get("msgId"))
-    # daily summary once per WAT day, first run at/after summaryHourWAT
+    # standalone PnL report twice a day: slot AM (from 00:00 WAT) and PM (from 12:00 WAT), first run in each slot
     import datetime as dt
-    now = dt.datetime.now(J.WAT); today = now.strftime("%Y-%m-%d"); last = feed.get("lastSummaryDate")
-    if a.signals and now.hour >= F.get("summaryHourWAT", 21) and last != today:
-        sent = notify.post(notify.daily_summary(ps, today))
-        if sent or os.environ.get("DRY_RUN"): last = today if not os.environ.get("DRY_RUN") else last
-    if a.signals: json.dump({**json.load(open(a.signals)), "journal": jr[:300], "lastSummaryDate": last}, open(a.signals, "w"), indent=1)
+    now = dt.datetime.now(J.WAT); slot = now.strftime("%Y-%m-%d") + ("-AM" if now.hour < 12 else "-PM")
+    last = feed.get("lastReportSlot")
+    if last is None:
+        last = slot  # first deploy: don't fire for the slot already in progress; next slot sends
+    elif a.signals and last != slot:
+        if slot.endswith("-AM"):  # midnight report covers the day that just ended
+            ref = now.replace(hour=0, minute=0, second=0, microsecond=0).timestamp() - 1
+            rps, day_label = J.period_stats(jr, F.get("winThresholdPct", 0), now=ref), "Yesterday"
+        else:
+            rps, day_label = ps, "Today"
+        sent = notify.post(notify.pnl_report(rps, slot, day_label))
+        if sent and not os.environ.get("DRY_RUN"): last = slot
+    if a.signals: json.dump({**json.load(open(a.signals)), "journal": jr[:300], "lastReportSlot": last}, open(a.signals, "w"), indent=1)
 json.dump(sorted(seen | {r["mint"] for r in out}), open(a.state, "w"))
 print(json.dumps({"generatedAt": time.strftime("%Y-%m-%dT%H:%M:%S%z"), "window": F["window"], "count": len(out), "errors": errors,
                   "disclaimer": "Not financial advice.", "tokens": out}, indent=2))

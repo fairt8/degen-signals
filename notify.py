@@ -46,15 +46,21 @@ def stats_block(ps):
     a = ps["all"]["basis"]
     return ("📊 Bot stats (WAT)\n" + "\n".join(e_(period_line(k, ps[k])) for k in ("today", "week", "month", "all"))
             + f"\n<i>{BASIS} (all-time: {a['24h']} at 24h, {a['live']} live)</i>")
-def daily_summary(ps, date_str):
-    t = ps["today"]
-    return "\n".join([f"🗓 <b>Degen Signals daily summary: {date_str} (WAT)</b>", "",
-        f"Signals today: {t['signals']}", f"Win rate: {_wr(t)}",
-        f"Total PnL: {_pct(t['totalPnl'])} · Avg: {_pct(t['avgPnl'])}",
-        e_(f"Best: {t['best'] or 'n/a'} · Worst: {t['worst'] or 'n/a'}"),
-        f"2x hits: {t['hit2x']} · 5x hits: {t['hit5x']}", "",
-        "\n".join(e_(period_line(k, ps[k])) for k in ("week", "month", "all")), "",
-        f"<i>{BASIS}. Win = PnL above the configured threshold. Not financial advice.</i>"])
+def pnl_report(ps, slot, day_label="Today"):
+    """Standalone PnL report (sent 12:00 AM / 12:00 PM WAT). ps = period_stats; day_label for the 'today' row."""
+    date, half = slot.rsplit("-", 1)
+    when = "12:00 AM" if half == "AM" else "12:00 PM"
+    rows = []
+    for k in ("today", "week", "month", "all"):
+        s = ps[k]; label = day_label if k == "today" else LABELS[k]
+        if not s["signals"]:
+            rows.append(f"<b>{label}</b>: no signals"); continue
+        rows.append(f"<b>{label}</b>: {s['signals']} signals\n"
+                    f"Total PnL {_pct(s['totalPnl'])} · Avg {_pct(s['avgPnl'])} · Win {_wr(s)}\n"
+                    + e_(f"Best {s['best'] or 'n/a'} · Worst {s['worst'] or 'n/a'}") + f" · 2x {s['hit2x']} / 5x {s['hit5x']}")
+    a = ps["all"]["basis"]
+    return "\n\n".join([f"📊 <b>Degen Signals PnL report: {date} {when} WAT</b>"] + rows +
+        [f"<i>{BASIS} (all-time: {a['24h']} at 24h, {a['live']} live). Win = PnL above the configured threshold. Not financial advice.</i>"])
 def e_(s):
     from html import escape; return escape(s, quote=False)
 
@@ -74,7 +80,7 @@ def ath(r, journal=None):
             return max(e["mcap0"] * e["maxPrice"] / e["price0"], r["mcap"]), " (est., seen by bot)"
     return None, ""
 
-def send(r, journal=None, pstats=None):
+def send(r, journal=None):
     from html import escape as e
     L = r["links"]
     link = lambda k, label: f'<a href="{e(L[k])}">{label}</a>' if L.get(k) else ""
@@ -87,7 +93,6 @@ def send(r, journal=None, pstats=None):
         f"Top10: {r.get('top10Pct')}% · Cluster: {r.get('clusterPct')}% ({e(str(r.get('clusterSource')))})",
         e(dev_line(r).strip()) or "Dev: n/a",
         e(__import__('gmgn').line(r.get('gmgn'))),
-        stats_block(pstats),
         " | ".join(x for x in [link("dexscreener", "DexScreener"), link("pumpfun", "pump.fun"), link("bubblemaps", "Bubblemaps"),
                                link("insightx", "InsightX"), link("x_search", "X")] if x) + "\n⚠️ Not financial advice. DYOR.",
     ]

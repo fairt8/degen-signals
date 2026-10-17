@@ -86,6 +86,6 @@ Settings are in config.js → `filters.gmgn`. To enable it on GitHub, add the re
 ## PnL & win rate (v6)
 - `journal.period_stats` computes Today, This week (Mon), This month and All-time in WAT (UTC+1), grouped by alert time. For each it gives signals, wins, win rate, total PnL (sum of % per signal), average PnL, best/worst, and 2x/5x hits. The return used is the 24h result where available, otherwise the live price. Basis counts are shown alongside.
 - Win = PnL above `winThresholdPct` (config.js, default 0).
-- Each Telegram alert includes a "📊 Bot stats" block above Links. The 1h/24h follow-ups show PnL plus the max gain seen.
-- Daily summary goes to all chats on the first run after `summaryHourWAT` (21). `lastSummaryDate` in docs/signals.json ensures it only sends once a day.
+- The 1h/24h follow-ups show PnL plus the max gain seen. Alerts themselves carry no stats block.
+- A standalone PnL report goes to all chats twice a day, on the first run in the 12:00 AM WAT and 12:00 PM WAT slots. `lastReportSlot` (e.g. `2026-10-17-PM`) in docs/signals.json makes sure each slot sends once. The 12 AM report covers the day that just ended ("Yesterday").
 - The website shows a PnL & win rate table at the top.
