@@ -92,10 +92,12 @@ def ath(r, journal=None):
         v = d.get("ath_market_cap") or d.get("athMarketCap")
         if v: return max(float(v), r["mcap"]), ""
     except Exception: pass
+    # fallback: highest MC the bot itself saw (journal max since alert, first-scan MC, current MC)
+    seen = [r.get("mcap") or 0, (r.get("firstScan") or {}).get("mc") or 0]
     for e in journal or []:
         if e.get("mint") == r["mint"] and e.get("price0") and e.get("maxPrice") and e.get("mcap0"):
-            return max(e["mcap0"] * e["maxPrice"] / e["price0"], r["mcap"]), " (est., seen by bot)"
-    return None, ""
+            seen.append(e["mcap0"] * e["maxPrice"] / e["price0"])
+    return (max(seen), " (est., seen by bot)") if max(seen) else (None, "")
 
 def _num(x, d=1):
     return "n/a" if x is None else f"{x:.{d}f}"
