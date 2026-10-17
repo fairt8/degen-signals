@@ -53,13 +53,13 @@ if a.signals:
     feed = {"updatedAt": int(time.time()), "window": F["window"], "lastRunErrors": errors,
             "candidates": len(rows), "cheapPass": len(cheap), "tokens": (out + feed["tokens"])[:200],
             "journal": jr[:300], "stats": J.stats(jr),
-            "periodStats": J.period_stats(jr, F.get("winThresholdPct", 0)), "statsBasis": "24h result where available, else live price",
+            "periodStats": J.period_stats(jr, F.get("winThresholdPct", 0), tp=F.get("tp")), "statsBasis": "24h result where available, else live price",
             "lastReportSlot": feed.get("lastReportSlot")}
     os.makedirs(os.path.dirname(os.path.abspath(a.signals)), exist_ok=True)
     json.dump(feed, open(a.signals, "w"), indent=1)
 if a.telegram:
     import notify
-    ps = J.period_stats(jr, F.get("winThresholdPct", 0))
+    ps = J.period_stats(jr, F.get("winThresholdPct", 0), tp=F.get("tp"))
     for r in out:
         mid = notify.send(r, jr)
         for e in jr:
@@ -75,7 +75,7 @@ if a.telegram:
     elif a.signals and last != slot:
         if slot.endswith("-AM"):  # midnight report covers the day that just ended
             ref = now.replace(hour=0, minute=0, second=0, microsecond=0).timestamp() - 1
-            rps, day_label = J.period_stats(jr, F.get("winThresholdPct", 0), now=ref), "Yesterday"
+            rps, day_label = J.period_stats(jr, F.get("winThresholdPct", 0), now=ref, tp=F.get("tp")), "Yesterday"
         else:
             rps, day_label = ps, "Today"
         sent = notify.post(notify.pnl_report(rps, slot, day_label))

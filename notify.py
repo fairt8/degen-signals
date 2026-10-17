@@ -46,6 +46,13 @@ def stats_block(ps):
     a = ps["all"]["basis"]
     return ("📊 Bot stats (WAT)\n" + "\n".join(e_(period_line(k, ps[k])) for k in ("today", "week", "month", "all"))
             + f"\n<i>{BASIS} (all-time: {a['24h']} at 24h, {a['live']} live)</i>")
+def tp_label():
+    try:
+        import pipeline; t = pipeline.load_config().get("tp") or {}
+    except Exception: t = {}
+    f, at = t.get("sellFrac", 0.5), t.get("atPct", 100)
+    return f"TP {f*100:.0f}% @{1+at/100:g}x" + (f" SL {t['stopLossPct']}%" if t.get("stopLossPct") is not None else "")
+
 def pnl_report(ps, slot, day_label="Today"):
     """Standalone PnL report (sent 12:00 AM / 12:00 PM WAT). ps = period_stats; day_label for the 'today' row."""
     date, half = slot.rsplit("-", 1)
@@ -56,11 +63,13 @@ def pnl_report(ps, slot, day_label="Today"):
         if not s["signals"]:
             rows.append(f"<b>{label}</b>: no signals"); continue
         rows.append(f"<b>{label}</b>: {s['signals']} signals\n"
-                    f"Total PnL {_pct(s['totalPnl'])} · Avg {_pct(s['avgPnl'])} · Win {_wr(s)}\n"
+                    f"Hold: Total {_pct(s['totalPnl'])} · Avg {_pct(s['avgPnl'])} · Win {_wr(s)}\n"
+                    + (f"{tp_label()}: Total {_pct(s['tpTotalPnl'])} · Avg {_pct(s['tpAvgPnl'])} · Win "
+                       + ("n/a" if s.get('tpWinRate') is None else f"{s['tpWinRate']:.0f}% ({s['tpWins']}/{s['n']})") + "\n" if 'tpTotalPnl' in s else "")
                     + e_(f"Best {s['best'] or 'n/a'} · Worst {s['worst'] or 'n/a'}") + f" · 2x {s['hit2x']} / 5x {s['hit5x']}")
     a = ps["all"]["basis"]
     return "\n\n".join([f"📊 <b>Degen Signals PnL report: {date} {when} WAT</b>"] + rows +
-        [f"<i>{BASIS} (all-time: {a['24h']} at 24h, {a['live']} live). Win = PnL above the configured threshold. Not financial advice.</i>"])
+        [f"<i>{BASIS} (all-time: {a['24h']} at 24h, {a['live']} live). TP = simulated: sell part at the target if the max gain seen reached it, rest at the hold basis. Max gain is sampled about every 15 min, so real peaks may be higher or lower. Win = PnL above the configured threshold. Not financial advice.</i>"])
 def e_(s):
     from html import escape; return escape(s, quote=False)
 

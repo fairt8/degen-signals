@@ -58,6 +58,7 @@ def update(journal, now=None):
         age = (now - e["t0"]) / 3600
         e["last"], e["lastT"] = price, int(now)
         e["maxPrice"] = max(e.get("maxPrice") or 0, price)
+        e["minPrice"] = min(e.get("minPrice") or price, price)  # for optional TP stop-loss sim
         e["lastPct"] = round((price / e["price0"] - 1) * 100, 1)
         mult = e["maxPrice"] / e["price0"]
         for k, x in (("hit2x", 2), ("hit5x", 5)):
@@ -111,7 +112,22 @@ def period_bounds(now=None):
     return {"today": day.timestamp(), "week": (day - _dt.timedelta(days=day.weekday())).timestamp(),
             "month": day.replace(day=1).timestamp(), "all": 0}
 
-def period_stats(journal, win_pct=0, now=None):
+TP_DEFAULT = {"atPct": 100, "sellFrac": 0.5, "stopLossPct": None}
+
+def tp_ret(e, hold, tp=None):
+    """Simulated TP strategy %: sell sellFrac at +atPct if max gain seen reached it; rest exits at the hold basis.
+    Optional stopLossPct (e.g. -50): if TP never hit and min price seen fell to it, exit all at stopLossPct."""
+    tp = {**TP_DEFAULT, **(tp or {})}
+    if hold is None or not e.get("price0"): return hold
+    max_gain = ((e.get("maxPrice") or e["price0"]) / e["price0"] - 1) * 100
+    if max_gain >= tp["atPct"]:
+        return round(tp["sellFrac"] * tp["atPct"] + (1 - tp["sellFrac"]) * hold, 1)
+    sl = tp.get("stopLossPct")
+    if sl is not None and e.get("minPrice") and (e["minPrice"] / e["price0"] - 1) * 100 <= sl:
+        return float(sl)
+    return hold
+
+def period_stats(journal, win_pct=0, now=None, tp=None):
     """Per period (WAT boundaries, by alert time): signals, wins, win rate, total & avg PnL %, best/worst, 2x/5x, basis counts."""
     out = {}
     for p, start in period_bounds(now).items():
@@ -129,4 +145,8 @@ def period_stats(journal, win_pct=0, now=None):
                   "worst": f"{w[0]['symbol']} {w[1]:+.0f}%" if w else None,
                   "basis": {"24h": sum(x[2] == "24h" for x in rs), "live": sum(x[2] == "live" for x in rs)},
                   "hit2x": sum(e["hit2x"] for e in es), "hit5x": sum(e["hit5x"] for e in es)}
+        tps = [tp_ret(x[0], x[1], tp) for x in rs]
+        tw = sum(x > win_pct for x in tps)
+        out[p].update(tpWins=tw, tpWinRate=round(tw / len(tps) * 100, 1) if tps else None,
+                      tpTotalPnl=round(sum(tps), 1) if tps else None, tpAvgPnl=round(sum(tps) / len(tps), 1) if tps else None)
     return out

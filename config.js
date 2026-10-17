@@ -27,6 +27,9 @@ window.SIGNAL_CONFIG.filters = {
   top10MaxPct: 25,          // top-10 holders (pools excluded) via rugcheck, through server.py
   clusterMaxPct: 25,        // fail 5R if clustered / common-funder supply > this %
   holderLookupLimit: 15,
+  // simulated TP strategy (report/site only): sell sellFrac at +atPct if max gain seen reached it, rest at hold basis.
+  // stopLossPct: null = off; e.g. -50 exits all at -50% if TP never hit and min price seen fell that far.
+  tp: { atPct: 100, sellFrac: 0.5, stopLossPct: null },
   winThresholdPct: 0,       // journal: a signal "wins" if its PnL % is above this
   // PnL report: standalone Telegram message at 12:00 AM and 12:00 PM WAT (first run in each slot; lastReportSlot in docs/signals.json)
   // ---- optional signals (from @OLeksa_one / Padre-style filters); *_On=false => info/flag only, true => required for 5R

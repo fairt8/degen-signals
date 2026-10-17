@@ -89,3 +89,5 @@ Settings are in config.js → `filters.gmgn`. To enable it on GitHub, add the re
 - The 1h/24h follow-ups show PnL plus the max gain seen. Alerts themselves carry no stats block.
 - A standalone PnL report goes to all chats twice a day, on the first run in the 12:00 AM WAT and 12:00 PM WAT slots. `lastReportSlot` (e.g. `2026-10-17-PM`) in docs/signals.json makes sure each slot sends once. The 12 AM report covers the day that just ended ("Yesterday").
 - The website shows a PnL & win rate table at the top.
+
+- **TP strategy (simulated):** set in `config.js` → `tp` (`atPct` 100, `sellFrac` 0.5, optional `stopLossPct`, off by default). If a signal's max gain seen reached +atPct, PnL = sellFrac×atPct + (1−sellFrac)×hold PnL; otherwise it's the same as hold. The result is shown next to hold in the 12h PnL report and in the site's PnL table, but not in alerts. Max gain is sampled about every 15 min, so real peaks may be higher or lower.
