@@ -1,10 +1,92 @@
 {
- "updatedAt": 1792212813,
+ "updatedAt": 1792213366,
  "window": "h1",
  "lastRunErrors": [],
- "candidates": 124,
- "cheapPass": 0,
+ "candidates": 122,
+ "cheapPass": 2,
  "tokens": [
+  {
+   "symbol": "EGG",
+   "name": "EGG",
+   "chain": "solana",
+   "mint": "219ZL89b7TSRSv8bqf7Fy2WrU5BJJVCntg1srHnypurp",
+   "dex": "pumpswap",
+   "mcap": 37573,
+   "liq": 15717.14,
+   "vol": 87695.27,
+   "window": "h1",
+   "buys": 944,
+   "sells": 689,
+   "ch5m": 28.96,
+   "ch1h": -9.82,
+   "ageH": 0.97,
+   "description": "Jeff said buy your shitcoins with leverage, EGG backed by 10x HYPE long via purps",
+   "estFeesSol": null,
+   "priceUsd": 3.992e-05,
+   "socials": [
+    "https://x.com/nfadyorky/status/2111264371850494284?s=20"
+   ],
+   "websites": [
+    "https://purps.lol/c/219ZL89b7TSRSv8bqf7Fy2WrU5BJJVCntg1srHnypurp"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/j3a6ityqcfzkq3ptrtm9e6nvxtxvageugk2k2nikxsl5",
+    "pumpfun": "https://pump.fun/coin/219ZL89b7TSRSv8bqf7Fy2WrU5BJJVCntg1srHnypurp",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=219ZL89b7TSRSv8bqf7Fy2WrU5BJJVCntg1srHnypurp&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/219ZL89b7TSRSv8bqf7Fy2WrU5BJJVCntg1srHnypurp",
+    "x_search": "https://x.com/search?q=%24EGG&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=EGG"
+   },
+   "top10Pct": 24.56,
+   "clusterPct": 2.65,
+   "clusterSource": "rugcheck_insider_networks",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "5X758sftKwM5T5jWHCbExQXUmC1UTWmas9UuSkasfov7",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/5X758sftKwM5T5jWHCbExQXUmC1UTWmas9UuSkasfov7",
+     "pumpfun": "https://pump.fun/profile/5X758sftKwM5T5jWHCbExQXUmC1UTWmas9UuSkasfov7"
+    },
+    "funder": null,
+    "firstTs": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": null,
+    "maxSingleHolderPct": 4.01,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "dirty-flax-beetle",
+      "size": 4,
+      "type": "transfer"
+     }
+    ]
+   },
+   "signalAt": 1792213366
+  },
   {
    "symbol": "MAKERS",
    "name": "makers.fun",
@@ -1359,6 +1441,36 @@
  ],
  "journal": [
   {
+   "mint": "219ZL89b7TSRSv8bqf7Fy2WrU5BJJVCntg1srHnypurp",
+   "symbol": "EGG",
+   "chain": "solana",
+   "t0": 1792213366,
+   "price0": 3.992e-05,
+   "mcap0": 37573,
+   "score": null,
+   "devScore": 0,
+   "link": "https://dexscreener.com/solana/j3a6ityqcfzkq3ptrtm9e6nvxtxvageugk2k2nikxsl5",
+   "maxPrice": 3.992e-05,
+   "samples": [
+    [
+     1792213366,
+     3.876e-05
+    ]
+   ],
+   "trend": "up",
+   "h1": null,
+   "h24": null,
+   "hit2x": false,
+   "hit5x": false,
+   "msgId": {
+    "1318404489": 88,
+    "-1004348482526": 1514
+   },
+   "last": 3.876e-05,
+   "lastT": 1792213366,
+   "lastPct": -2.9
+  },
+  {
    "mint": "3XEqNHe3jHTRWAZCTHbb1UwpSfNbJL9oU1ErsM86pump",
    "symbol": "MAKERS",
    "chain": "solana",
@@ -1397,6 +1509,10 @@
     [
      1792212813,
      9.184e-05
+    ],
+    [
+     1792213366,
+     7.866e-05
     ]
    ],
    "trend": "up",
@@ -1412,9 +1528,9 @@
     "1318404489": 83,
     "-1004348482526": 1509
    },
-   "last": 9.184e-05,
-   "lastT": 1792212813,
-   "lastPct": 159.4
+   "last": 7.866e-05,
+   "lastT": 1792213366,
+   "lastPct": 122.2
   },
   {
    "mint": "2kuY5DHqRvYKfytfLfrey1oB1Z1J3voq343FWMp6pump",
@@ -1499,6 +1615,10 @@
     [
      1792212813,
      9.779e-05
+    ],
+    [
+     1792213366,
+     9.751e-05
     ]
    ],
    "trend": "fading",
@@ -1514,9 +1634,9 @@
     "1318404489": 78,
     "-1004348482526": 1504
    },
-   "last": 9.779e-05,
-   "lastT": 1792212813,
-   "lastPct": 101.1
+   "last": 9.751e-05,
+   "lastT": 1792213366,
+   "lastPct": 100.5
   },
   {
    "mint": "599h3tRUnep6PeQcEaUadosDyZk3uzs173f6h8NTpump",
@@ -1529,112 +1649,7 @@
    "devScore": 0,
    "link": "https://dexscreener.com/solana/d6dg2aldnkgaujtehvvu5ew7vxfbcoggtvifmirpcee9",
    "maxPrice": 4.966e-05,
-   "samples": [
-    [
-     1792191763,
-     2.87e-05
-    ],
-    [
-     1792192512,
-     1.886e-05
-    ],
-    [
-     1792193413,
-     1.395e-05
-    ],
-    [
-     1792194312,
-     4.658e-06
-    ],
-    [
-     1792195216,
-     3.628e-06
-    ],
-    [
-     1792196110,
-     3.472e-06
-    ],
-    [
-     1792196525,
-     3.294e-06
-    ],
-    [
-     1792197014,
-     3.216e-06
-    ],
-    [
-     1792197986,
-     3.16e-06
-    ],
-    [
-     1792198813,
-     3.055e-06
-    ],
-    [
-     1792199713,
-     3.058e-06
-    ],
-    [
-     1792200611,
-     3.053e-06
-    ],
-    [
-     1792201510,
-     3.053e-06
-    ],
-    [
-     1792202413,
-     3.027e-06
-    ],
-    [
-     1792203315,
-     3.027e-06
-    ],
-    [
-     1792204287,
-     3.027e-06
-    ],
-    [
-     1792205185,
-     3.024e-06
-    ],
-    [
-     1792206089,
-     3.024e-06
-    ],
-    [
-     1792206911,
-     3.001e-06
-    ],
-    [
-     1792207887,
-     3.025e-06
-    ],
-    [
-     1792208711,
-     3.025e-06
-    ],
-    [
-     1792209689,
-     3.025e-06
-    ],
-    [
-     1792210585,
-     3.023e-06
-    ],
-    [
-     1792211488,
-     3.023e-06
-    ],
-    [
-     1792212311,
-     2.962e-06
-    ],
-    [
-     1792212813,
-     2.962e-06
-    ]
-   ],
+   "samples": [],
    "trend": "fading",
    "h1": {
     "price": 3.472e-06,
@@ -1649,7 +1664,7 @@
     "-1004348482526": 1501
    },
    "last": 2.962e-06,
-   "lastT": 1792212813,
+   "lastT": 1792213366,
    "lastPct": -94.0
   },
   {
@@ -1678,7 +1693,7 @@
     "-1004348482526": 1497
    },
    "last": 2.367e-06,
-   "lastT": 1792212813,
+   "lastT": 1792213366,
    "lastPct": -98.2
   },
   {
@@ -1706,8 +1721,8 @@
     "1318404489": 57,
     "-1004348482526": 1483
    },
-   "last": 2.555e-06,
-   "lastT": 1792212813,
+   "last": 2.549e-06,
+   "lastT": 1792213366,
    "lastPct": -93.3
   },
   {
@@ -1736,7 +1751,7 @@
     "-1004348482526": 1481
    },
    "last": 2.434e-06,
-   "lastT": 1792212813,
+   "lastT": 1792213366,
    "lastPct": -93.1
   },
   {
@@ -1765,7 +1780,7 @@
     "-1004348482526": 1477
    },
    "last": 3.485e-06,
-   "lastT": 1792212813,
+   "lastT": 1792213366,
    "lastPct": -85.6
   },
   {
@@ -1794,7 +1809,7 @@
     "-1004348482526": 1468
    },
    "last": 5.793e-06,
-   "lastT": 1792212813,
+   "lastT": 1792213366,
    "lastPct": -91.1
   },
   {
@@ -1822,9 +1837,9 @@
     "1318404489": 41,
     "-1004348482526": 1467
    },
-   "last": 6.118e-06,
-   "lastT": 1792212813,
-   "lastPct": -79.3
+   "last": 5.901e-06,
+   "lastT": 1792213366,
+   "lastPct": -80.0
   },
   {
    "mint": "DdVXE425xZe27FhY41PR8dwfL3VczYdyJJAWDC1jpump",
@@ -1851,9 +1866,9 @@
     "1318404489": 35,
     "-1004348482526": 1461
    },
-   "last": 6.518e-06,
-   "lastT": 1792212813,
-   "lastPct": -86.4
+   "last": 6.508e-06,
+   "lastT": 1792213366,
+   "lastPct": -86.5
   },
   {
    "mint": "6VdcMnBTCj4tJVwtNdJZNzWeYmxzMnygVSzcfY35pump",
@@ -1880,9 +1895,9 @@
     "1318404489": 29,
     "-1004348482526": 1449
    },
-   "last": 1.242e-05,
-   "lastT": 1792212813,
-   "lastPct": -87.7
+   "last": 1.207e-05,
+   "lastT": 1792213366,
+   "lastPct": -88.0
   },
   {
    "mint": "GjkMsvYmuFR37SyKnJoD8DwccLb3HKMQBnNe5Nqbpump",
@@ -1910,7 +1925,7 @@
     "-1004348482526": 1433
    },
    "last": 2.617e-06,
-   "lastT": 1792212813,
+   "lastT": 1792213366,
    "lastPct": -98.2
   },
   {
@@ -1939,7 +1954,7 @@
     "-1004348482526": 1432
    },
    "last": 4.017e-06,
-   "lastT": 1792212813,
+   "lastT": 1792213366,
    "lastPct": -90.4
   },
   {
@@ -1960,7 +1975,11 @@
     "pct": -44.1,
     "maxX": 1.35
    },
-   "h24": null,
+   "h24": {
+    "price": 4.159e-06,
+    "pct": -96.3,
+    "maxX": 1.35
+   },
    "hit2x": false,
    "hit5x": false,
    "msgId": {
@@ -1968,7 +1987,7 @@
     "-1004348482526": 1426
    },
    "last": 4.159e-06,
-   "lastT": 1792212813,
+   "lastT": 1792213366,
    "lastPct": -96.3
   },
   {
@@ -2063,7 +2082,7 @@
   }
  ],
  "stats": {
-  "signals": 17,
+  "signals": 18,
   "h1": {
    "n": 17,
    "winRate": 41.2,
@@ -2072,11 +2091,11 @@
    "worst": -98.1
   },
   "h24": {
-   "n": 3,
-   "winRate": 66.7,
-   "avg": 35.4,
+   "n": 4,
+   "winRate": 50.0,
+   "avg": 2.5,
    "best": 162.0,
-   "worst": -96.0
+   "worst": -96.3
   },
   "hit2x": 6,
   "hit5x": 1
