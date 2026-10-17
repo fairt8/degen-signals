@@ -1,10 +1,87 @@
 {
- "updatedAt": 1792222213,
+ "updatedAt": 1792223186,
  "window": "h1",
  "lastRunErrors": [],
- "candidates": 120,
- "cheapPass": 0,
+ "candidates": 123,
+ "cheapPass": 1,
  "tokens": [
+  {
+   "symbol": "MAC",
+   "name": "catonmac",
+   "chain": "solana",
+   "mint": "CFggXZXwg5pkiB5aHGq1LEoaK1hVhVYVGZpHgVewpump",
+   "dex": "pumpswap",
+   "mcap": 32773,
+   "liq": 13826.9,
+   "vol": 136234.93,
+   "window": "h1",
+   "buys": 2308,
+   "sells": 1794,
+   "ch5m": 31.6,
+   "ch1h": -24.37,
+   "ageH": 0.32,
+   "description": "catonmac",
+   "estFeesSol": 16.21,
+   "priceUsd": 3.277e-05,
+   "socials": [
+    "https://x.com/skrootimburg/status/2111355241585316103?s=46",
+    "https://x.com/numanuk/status/2111351580717162586"
+   ],
+   "websites": [
+    "https://x.com/numanuk/status/2111351580717162586"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/a44qaabfxepvs7on3pa2v8buw8wyetaaifatbogp9e9d",
+    "pumpfun": "https://pump.fun/coin/CFggXZXwg5pkiB5aHGq1LEoaK1hVhVYVGZpHgVewpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=CFggXZXwg5pkiB5aHGq1LEoaK1hVhVYVGZpHgVewpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/CFggXZXwg5pkiB5aHGq1LEoaK1hVhVYVGZpHgVewpump",
+    "x_search": "https://x.com/search?q=%24MAC&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=MAC"
+   },
+   "top10Pct": 21.4,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "2zfLe8dd9bSNnYZCLyPAdK2R9Dv5J2XgpWnvx6M1crZ6",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/2zfLe8dd9bSNnYZCLyPAdK2R9Dv5J2XgpWnvx6M1crZ6",
+     "pumpfun": "https://pump.fun/profile/2zfLe8dd9bSNnYZCLyPAdK2R9Dv5J2XgpWnvx6M1crZ6"
+    },
+    "funder": null,
+    "firstTs": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 16.21,
+    "maxSingleHolderPct": 3.49,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "signalAt": 1792223186
+  },
   {
    "symbol": "Singularity",
    "name": "Singularity Labs",
@@ -1517,6 +1594,36 @@
  ],
  "journal": [
   {
+   "mint": "CFggXZXwg5pkiB5aHGq1LEoaK1hVhVYVGZpHgVewpump",
+   "symbol": "MAC",
+   "chain": "solana",
+   "t0": 1792223186,
+   "price0": 3.277e-05,
+   "mcap0": 32773,
+   "score": null,
+   "devScore": 0,
+   "link": "https://dexscreener.com/solana/a44qaabfxepvs7on3pa2v8buw8wyetaaifatbogp9e9d",
+   "maxPrice": 3.277e-05,
+   "samples": [
+    [
+     1792223186,
+     3.16e-05
+    ]
+   ],
+   "trend": "fading",
+   "h1": null,
+   "h24": null,
+   "hit2x": false,
+   "hit5x": false,
+   "msgId": {
+    "1318404489": 98,
+    "-1004348482526": 1524
+   },
+   "last": 3.16e-05,
+   "lastT": 1792223186,
+   "lastPct": -3.6
+  },
+  {
    "mint": "GFhszS7cFM4xmcfT4tBCSwcLHWAwj4yXhSwuTXKYpump",
    "symbol": "Singularity",
    "chain": "solana",
@@ -1551,6 +1658,10 @@
     [
      1792222212,
      2.328e-06
+    ],
+    [
+     1792223186,
+     2.333e-06
     ]
    ],
    "trend": "fading",
@@ -1566,8 +1677,8 @@
     "1318404489": 92,
     "-1004348482526": 1518
    },
-   "last": 2.328e-06,
-   "lastT": 1792222212,
+   "last": 2.333e-06,
+   "lastT": 1792223186,
    "lastPct": -98.1
   },
   {
@@ -1625,6 +1736,10 @@
     [
      1792222212,
      4.05e-05
+    ],
+    [
+     1792223186,
+     3.382e-05
     ]
    ],
    "trend": "fading",
@@ -1640,9 +1755,9 @@
     "1318404489": 88,
     "-1004348482526": 1514
    },
-   "last": 4.05e-05,
-   "lastT": 1792222212,
-   "lastPct": 1.5
+   "last": 3.382e-05,
+   "lastT": 1792223186,
+   "lastPct": -15.3
   },
   {
    "mint": "3XEqNHe3jHTRWAZCTHbb1UwpSfNbJL9oU1ErsM86pump",
@@ -1727,6 +1842,10 @@
     [
      1792222212,
      6.005e-05
+    ],
+    [
+     1792223186,
+     7.835e-05
     ]
    ],
    "trend": "fading",
@@ -1742,9 +1861,9 @@
     "1318404489": 83,
     "-1004348482526": 1509
    },
-   "last": 6.005e-05,
-   "lastT": 1792222212,
-   "lastPct": 69.6
+   "last": 7.835e-05,
+   "lastT": 1792223186,
+   "lastPct": 121.3
   },
   {
    "mint": "2kuY5DHqRvYKfytfLfrey1oB1Z1J3voq343FWMp6pump",
@@ -1771,9 +1890,9 @@
     "1318404489": 78,
     "-1004348482526": 1504
    },
-   "last": 9.85e-05,
-   "lastT": 1792222212,
-   "lastPct": 102.5
+   "last": 8.931e-05,
+   "lastT": 1792223186,
+   "lastPct": 83.7
   },
   {
    "mint": "599h3tRUnep6PeQcEaUadosDyZk3uzs173f6h8NTpump",
@@ -1800,9 +1919,9 @@
     "1318404489": 75,
     "-1004348482526": 1501
    },
-   "last": 2.857e-06,
-   "lastT": 1792222212,
-   "lastPct": -94.2
+   "last": 2.85e-06,
+   "lastT": 1792223186,
+   "lastPct": -94.3
   },
   {
    "mint": "8jNrFaRyhNh8vccpSQ9o55R4hhinmFc1XfSWwDJhpump",
@@ -1830,7 +1949,7 @@
     "-1004348482526": 1497
    },
    "last": 2.374e-06,
-   "lastT": 1792222212,
+   "lastT": 1792223186,
    "lastPct": -98.2
   },
   {
@@ -1859,7 +1978,7 @@
     "-1004348482526": 1483
    },
    "last": 2.544e-06,
-   "lastT": 1792222212,
+   "lastT": 1792223186,
    "lastPct": -93.3
   },
   {
@@ -1888,7 +2007,7 @@
     "-1004348482526": 1481
    },
    "last": 2.434e-06,
-   "lastT": 1792222212,
+   "lastT": 1792223186,
    "lastPct": -93.1
   },
   {
@@ -1916,8 +2035,8 @@
     "1318404489": 51,
     "-1004348482526": 1477
    },
-   "last": 3.445e-06,
-   "lastT": 1792222212,
+   "last": 3.448e-06,
+   "lastT": 1792223186,
    "lastPct": -85.8
   },
   {
@@ -1945,9 +2064,9 @@
     "1318404489": 42,
     "-1004348482526": 1468
    },
-   "last": 5.95e-06,
-   "lastT": 1792222212,
-   "lastPct": -90.9
+   "last": 5.687e-06,
+   "lastT": 1792223186,
+   "lastPct": -91.3
   },
   {
    "mint": "63UjR7d4xfCDjBqAwS2fJWaZPz7JfN32WtbzSAX3pump",
@@ -1974,9 +2093,9 @@
     "1318404489": 41,
     "-1004348482526": 1467
    },
-   "last": 5.681e-06,
-   "lastT": 1792222212,
-   "lastPct": -80.8
+   "last": 5.653e-06,
+   "lastT": 1792223186,
+   "lastPct": -80.9
   },
   {
    "mint": "DdVXE425xZe27FhY41PR8dwfL3VczYdyJJAWDC1jpump",
@@ -2003,9 +2122,9 @@
     "1318404489": 35,
     "-1004348482526": 1461
    },
-   "last": 7.577e-06,
-   "lastT": 1792222212,
-   "lastPct": -84.2
+   "last": 7.299e-06,
+   "lastT": 1792223186,
+   "lastPct": -84.8
   },
   {
    "mint": "6VdcMnBTCj4tJVwtNdJZNzWeYmxzMnygVSzcfY35pump",
@@ -2032,9 +2151,9 @@
     "1318404489": 29,
     "-1004348482526": 1449
    },
-   "last": 9.255e-06,
-   "lastT": 1792222212,
-   "lastPct": -90.8
+   "last": 9.813e-06,
+   "lastT": 1792223186,
+   "lastPct": -90.3
   },
   {
    "mint": "GjkMsvYmuFR37SyKnJoD8DwccLb3HKMQBnNe5Nqbpump",
@@ -2062,7 +2181,7 @@
     "-1004348482526": 1433
    },
    "last": 2.622e-06,
-   "lastT": 1792222212,
+   "lastT": 1792223186,
    "lastPct": -98.2
   },
   {
@@ -2090,9 +2209,9 @@
     "1318404489": 24,
     "-1004348482526": 1432
    },
-   "last": 3.997e-06,
-   "lastT": 1792222212,
-   "lastPct": -90.5
+   "last": 4.117e-06,
+   "lastT": 1792223186,
+   "lastPct": -90.2
   },
   {
    "mint": "3EC7gRDGKgqPHc9ipJxxChoeyseE2xAbQHZUSSTfpump",
@@ -2219,7 +2338,7 @@
   }
  ],
  "stats": {
-  "signals": 19,
+  "signals": 20,
   "h1": {
    "n": 19,
    "winRate": 42.1,
