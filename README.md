@@ -82,3 +82,10 @@ For each token it looks at holders tagged smart_degen, renowned (KOL), sniper, b
 - **Score:** +5 per smart/KOL holder (cap +15), −10 if the combined cap is exceeded, −5 for rat traders.
 - **Never a gate:** every 5R alert still fires and shows `GMGN: PASS/FAIL — …`. It shows `SKIPPED` without a key and `ERROR` if the API fails.
 Settings are in config.js → `filters.gmgn`. To enable it on GitHub, add the repo secret `GMGN_API_KEY` and add `GMGN_API_KEY: ${{ secrets.GMGN_API_KEY }}` to the workflow's `env:`.
+
+## PnL & win rate (v6)
+- `journal.period_stats` computes Today, This week (Mon), This month and All-time in WAT (UTC+1), grouped by alert time. For each it gives signals, wins, win rate, total PnL (sum of % per signal), average PnL, best/worst, and 2x/5x hits. The return used is the 24h result where available, otherwise the live price. Basis counts are shown alongside.
+- Win = PnL above `winThresholdPct` (config.js, default 0).
+- Each Telegram alert includes a "📊 Bot stats" block above Links. The 1h/24h follow-ups show PnL plus the max gain seen.
+- Daily summary goes to all chats on the first run after `summaryHourWAT` (21). `lastSummaryDate` in docs/signals.json ensures it only sends once a day.
+- The website shows a PnL & win rate table at the top.

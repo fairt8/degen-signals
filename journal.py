@@ -66,10 +66,10 @@ def update(journal, now=None):
         chg = lambda: round((price / e["price0"] - 1) * 100, 1)
         if e["h1"] is None and age >= 1:
             e["h1"] = {"price": price, "pct": chg(), "maxX": round(mult, 2)}
-            notes.append(("h1", e, f"⏱ 1h result ${e['symbol']}: {chg():+}% (max seen {mult:.2f}x)"))
+            notes.append(("h1", e, f"⏱ 1h result ${e['symbol']}: PnL {chg():+}% · max gain {(mult-1)*100:+.0f}% ({mult:.2f}x)"))
         if e["h24"] is None and age >= 24:
             e["h24"] = {"price": price, "pct": chg(), "maxX": round(mult, 2)}
-            notes.append(("h24", e, f"📅 24h result ${e['symbol']}: {chg():+}% (max seen {mult:.2f}x)"))
+            notes.append(("h24", e, f"📅 24h result ${e['symbol']}: PnL {chg():+}% · max gain {(mult-1)*100:+.0f}% ({mult:.2f}x)"))
         if age <= WATCH_HOURS:
             e["samples"] = (e["samples"] + [[int(now), price]])[-MAX_SAMPLES:]
             st = trend_state(e, p)
@@ -92,3 +92,41 @@ def stats(journal):
     n = len(journal)
     return {"signals": n, "h1": agg("h1"), "h24": agg("h24"),
             "hit2x": sum(e["hit2x"] for e in journal), "hit5x": sum(e["hit5x"] for e in journal)}
+
+
+# ---------- period PnL / win rate (WAT = UTC+1) ----------
+import datetime as _dt
+WAT = _dt.timezone(_dt.timedelta(hours=1))
+
+def ret(e):
+    """(pct, basis): 24h result if available, else latest live % (falls back to 1h)."""
+    if e.get("h24"): return e["h24"]["pct"], "24h"
+    if e.get("lastPct") is not None: return e["lastPct"], "live"
+    if e.get("h1"): return e["h1"]["pct"], "live"
+    return None, None
+
+def period_bounds(now=None):
+    n = _dt.datetime.fromtimestamp(now or time.time(), WAT)
+    day = n.replace(hour=0, minute=0, second=0, microsecond=0)
+    return {"today": day.timestamp(), "week": (day - _dt.timedelta(days=day.weekday())).timestamp(),
+            "month": day.replace(day=1).timestamp(), "all": 0}
+
+def period_stats(journal, win_pct=0, now=None):
+    """Per period (WAT boundaries, by alert time): signals, wins, win rate, total & avg PnL %, best/worst, 2x/5x, basis counts."""
+    out = {}
+    for p, start in period_bounds(now).items():
+        es = [e for e in journal if e["t0"] >= start]
+        rs = [(e,) + ret(e) for e in es]
+        rs = [x for x in rs if x[1] is not None]
+        pcts = [x[1] for x in rs]
+        wins = sum(x > win_pct for x in pcts)
+        b, w = (max(rs, key=lambda x: x[1]), min(rs, key=lambda x: x[1])) if rs else (None, None)
+        out[p] = {"signals": len(es), "n": len(pcts), "wins": wins,
+                  "winRate": round(wins / len(pcts) * 100, 1) if pcts else None,
+                  "totalPnl": round(sum(pcts), 1) if pcts else None,
+                  "avgPnl": round(sum(pcts) / len(pcts), 1) if pcts else None,
+                  "best": f"{b[0]['symbol']} {b[1]:+.0f}%" if b else None,
+                  "worst": f"{w[0]['symbol']} {w[1]:+.0f}%" if w else None,
+                  "basis": {"24h": sum(x[2] == "24h" for x in rs), "live": sum(x[2] == "live" for x in rs)},
+                  "hit2x": sum(e["hit2x"] for e in es), "hit5x": sum(e["hit5x"] for e in es)}
+    return out

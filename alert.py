@@ -52,18 +52,27 @@ if a.signals:
     for r in out: r["signalAt"] = int(time.time())
     feed = {"updatedAt": int(time.time()), "window": F["window"], "lastRunErrors": errors,
             "candidates": len(rows), "cheapPass": len(cheap), "tokens": (out + feed["tokens"])[:200],
-            "journal": jr[:300], "stats": J.stats(jr)}
+            "journal": jr[:300], "stats": J.stats(jr),
+            "periodStats": J.period_stats(jr, F.get("winThresholdPct", 0)), "statsBasis": "24h result where available, else live price",
+            "lastSummaryDate": feed.get("lastSummaryDate")}
     os.makedirs(os.path.dirname(os.path.abspath(a.signals)), exist_ok=True)
     json.dump(feed, open(a.signals, "w"), indent=1)
 if a.telegram:
     import notify
+    ps = J.period_stats(jr, F.get("winThresholdPct", 0))
     for r in out:
-        mid = notify.send(r, jr)
+        mid = notify.send(r, jr, ps)
         for e in jr:
             if e["mint"] == r["mint"] and mid: e["msgId"] = mid
     for kind, e, text in notes:
         notify.post(text, reply_to=e.get("msgId"))
-    if a.signals: json.dump({**json.load(open(a.signals)), "journal": jr[:300]}, open(a.signals, "w"), indent=1)
+    # daily summary once per WAT day, first run at/after summaryHourWAT
+    import datetime as dt
+    now = dt.datetime.now(J.WAT); today = now.strftime("%Y-%m-%d"); last = feed.get("lastSummaryDate")
+    if a.signals and now.hour >= F.get("summaryHourWAT", 21) and last != today:
+        sent = notify.post(notify.daily_summary(ps, today))
+        if sent or os.environ.get("DRY_RUN"): last = today if not os.environ.get("DRY_RUN") else last
+    if a.signals: json.dump({**json.load(open(a.signals)), "journal": jr[:300], "lastSummaryDate": last}, open(a.signals, "w"), indent=1)
 json.dump(sorted(seen | {r["mint"] for r in out}), open(a.state, "w"))
 print(json.dumps({"generatedAt": time.strftime("%Y-%m-%dT%H:%M:%S%z"), "window": F["window"], "count": len(out), "errors": errors,
                   "disclaimer": "Not financial advice.", "tokens": out}, indent=2))

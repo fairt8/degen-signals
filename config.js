@@ -27,6 +27,8 @@ window.SIGNAL_CONFIG.filters = {
   top10MaxPct: 25,          // top-10 holders (pools excluded) via rugcheck, through server.py
   clusterMaxPct: 25,        // fail 5R if clustered / common-funder supply > this %
   holderLookupLimit: 15,
+  winThresholdPct: 0,       // journal: a signal "wins" if its PnL % is above this
+  summaryHourWAT: 21,       // daily Telegram summary at/after this hour (WAT), once per day
   // ---- optional signals (from @OLeksa_one / Padre-style filters); *_On=false => info/flag only, true => required for 5R
   feeRate: 0.0125, estFeesMinSol: 1.5, estFeesOn: false,          // est. fees = vol24 * feeRate (pump.fun ~1.25%)
   maxSingleHolderPct: 5, maxSingleHolderOn: false,                // single non-pool wallet > X% = caution
