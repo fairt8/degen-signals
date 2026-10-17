@@ -1,10 +1,86 @@
 {
- "updatedAt": 1792206911,
+ "updatedAt": 1792207887,
  "window": "h1",
  "lastRunErrors": [],
- "candidates": 121,
- "cheapPass": 0,
+ "candidates": 127,
+ "cheapPass": 1,
  "tokens": [
+  {
+   "symbol": "MAKERS",
+   "name": "makers.fun",
+   "chain": "solana",
+   "mint": "3XEqNHe3jHTRWAZCTHbb1UwpSfNbJL9oU1ErsM86pump",
+   "dex": "pumpswap",
+   "mcap": 35401,
+   "liq": 14352.43,
+   "vol": 64561.78,
+   "window": "h1",
+   "buys": 961,
+   "sells": 809,
+   "ch5m": 44.98,
+   "ch1h": -16.17,
+   "ageH": 0.27,
+   "description": "The first Solana launchpad with fully customizable market making strategies. Launch on Pumpfun, automate trading, and put your creator fees to work.",
+   "estFeesSol": 7.71,
+   "priceUsd": 3.54e-05,
+   "socials": [
+    "https://x.com/makersdotfun"
+   ],
+   "websites": [
+    "https://makers.fun/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/d6g4brfhugystkpcbkmueqesnd7gjugzdczenicattmy",
+    "pumpfun": "https://pump.fun/coin/3XEqNHe3jHTRWAZCTHbb1UwpSfNbJL9oU1ErsM86pump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=3XEqNHe3jHTRWAZCTHbb1UwpSfNbJL9oU1ErsM86pump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/3XEqNHe3jHTRWAZCTHbb1UwpSfNbJL9oU1ErsM86pump",
+    "x_search": "https://x.com/search?q=%24MAKERS&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=MAKERS"
+   },
+   "top10Pct": 15.02,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "GjzHNej73hhKTSSHXD8AngKTX6jdHGRbxmyDXThhrMhb",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/GjzHNej73hhKTSSHXD8AngKTX6jdHGRbxmyDXThhrMhb",
+     "pumpfun": "https://pump.fun/profile/GjzHNej73hhKTSSHXD8AngKTX6jdHGRbxmyDXThhrMhb"
+    },
+    "funder": null,
+    "firstTs": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 7.71,
+    "maxSingleHolderPct": 2.72,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "signalAt": 1792207887
+  },
   {
    "symbol": "dev/null",
    "name": "dev/null",
@@ -1283,6 +1359,36 @@
  ],
  "journal": [
   {
+   "mint": "3XEqNHe3jHTRWAZCTHbb1UwpSfNbJL9oU1ErsM86pump",
+   "symbol": "MAKERS",
+   "chain": "solana",
+   "t0": 1792207887,
+   "price0": 3.54e-05,
+   "mcap0": 35401,
+   "score": null,
+   "devScore": 0,
+   "link": "https://dexscreener.com/solana/d6g4brfhugystkpcbkmueqesnd7gjugzdczenicattmy",
+   "maxPrice": 4.317e-05,
+   "samples": [
+    [
+     1792207887,
+     4.317e-05
+    ]
+   ],
+   "trend": "up",
+   "h1": null,
+   "h24": null,
+   "hit2x": false,
+   "hit5x": false,
+   "msgId": {
+    "1318404489": 83,
+    "-1004348482526": 1509
+   },
+   "last": 4.317e-05,
+   "lastT": 1792207887,
+   "lastPct": 21.9
+  },
+  {
    "mint": "2kuY5DHqRvYKfytfLfrey1oB1Z1J3voq343FWMp6pump",
    "symbol": "dev/null",
    "chain": "solana",
@@ -1337,6 +1443,10 @@
     [
      1792206911,
      0.0001199
+    ],
+    [
+     1792207887,
+     0.0001497
     ]
    ],
    "trend": "fading",
@@ -1352,9 +1462,9 @@
     "1318404489": 78,
     "-1004348482526": 1504
    },
-   "last": 0.0001199,
-   "lastT": 1792206911,
-   "lastPct": 146.6
+   "last": 0.0001497,
+   "lastT": 1792207887,
+   "lastPct": 207.8
   },
   {
    "mint": "599h3tRUnep6PeQcEaUadosDyZk3uzs173f6h8NTpump",
@@ -1443,6 +1553,10 @@
     [
      1792206911,
      3.001e-06
+    ],
+    [
+     1792207887,
+     3.025e-06
     ]
    ],
    "trend": "fading",
@@ -1458,9 +1572,9 @@
     "1318404489": 75,
     "-1004348482526": 1501
    },
-   "last": 3.001e-06,
-   "lastT": 1792206911,
-   "lastPct": -94.0
+   "last": 3.025e-06,
+   "lastT": 1792207887,
+   "lastPct": -93.9
   },
   {
    "mint": "8jNrFaRyhNh8vccpSQ9o55R4hhinmFc1XfSWwDJhpump",
@@ -1488,7 +1602,7 @@
     "-1004348482526": 1497
    },
    "last": 2.367e-06,
-   "lastT": 1792206911,
+   "lastT": 1792207887,
    "lastPct": -98.2
   },
   {
@@ -1517,7 +1631,7 @@
     "-1004348482526": 1483
    },
    "last": 2.552e-06,
-   "lastT": 1792206911,
+   "lastT": 1792207887,
    "lastPct": -93.3
   },
   {
@@ -1546,7 +1660,7 @@
     "-1004348482526": 1481
    },
    "last": 2.434e-06,
-   "lastT": 1792206911,
+   "lastT": 1792207887,
    "lastPct": -93.1
   },
   {
@@ -1575,7 +1689,7 @@
     "-1004348482526": 1477
    },
    "last": 3.428e-06,
-   "lastT": 1792206911,
+   "lastT": 1792207887,
    "lastPct": -85.9
   },
   {
@@ -1603,9 +1717,9 @@
     "1318404489": 42,
     "-1004348482526": 1468
    },
-   "last": 6.202e-06,
-   "lastT": 1792206911,
-   "lastPct": -90.5
+   "last": 5.908e-06,
+   "lastT": 1792207887,
+   "lastPct": -90.9
   },
   {
    "mint": "63UjR7d4xfCDjBqAwS2fJWaZPz7JfN32WtbzSAX3pump",
@@ -1632,9 +1746,9 @@
     "1318404489": 41,
     "-1004348482526": 1467
    },
-   "last": 6.988e-06,
-   "lastT": 1792206911,
-   "lastPct": -76.3
+   "last": 6.699e-06,
+   "lastT": 1792207887,
+   "lastPct": -77.3
   },
   {
    "mint": "DdVXE425xZe27FhY41PR8dwfL3VczYdyJJAWDC1jpump",
@@ -1661,9 +1775,9 @@
     "1318404489": 35,
     "-1004348482526": 1461
    },
-   "last": 6.612e-06,
-   "lastT": 1792206911,
-   "lastPct": -86.3
+   "last": 6.781e-06,
+   "lastT": 1792207887,
+   "lastPct": -85.9
   },
   {
    "mint": "6VdcMnBTCj4tJVwtNdJZNzWeYmxzMnygVSzcfY35pump",
@@ -1690,9 +1804,9 @@
     "1318404489": 29,
     "-1004348482526": 1449
    },
-   "last": 1.381e-05,
-   "lastT": 1792206911,
-   "lastPct": -86.3
+   "last": 1.258e-05,
+   "lastT": 1792207887,
+   "lastPct": -87.5
   },
   {
    "mint": "GjkMsvYmuFR37SyKnJoD8DwccLb3HKMQBnNe5Nqbpump",
@@ -1720,7 +1834,7 @@
     "-1004348482526": 1433
    },
    "last": 2.61e-06,
-   "lastT": 1792206911,
+   "lastT": 1792207887,
    "lastPct": -98.2
   },
   {
@@ -1748,9 +1862,9 @@
     "1318404489": 24,
     "-1004348482526": 1432
    },
-   "last": 4.068e-06,
-   "lastT": 1792206911,
-   "lastPct": -90.3
+   "last": 4.012e-06,
+   "lastT": 1792207887,
+   "lastPct": -90.4
   },
   {
    "mint": "3EC7gRDGKgqPHc9ipJxxChoeyseE2xAbQHZUSSTfpump",
@@ -1777,9 +1891,9 @@
     "1318404489": 18,
     "-1004348482526": 1426
    },
-   "last": 4.107e-06,
-   "lastT": 1792206911,
-   "lastPct": -96.4
+   "last": 4.19e-06,
+   "lastT": 1792207887,
+   "lastPct": -96.3
   },
   {
    "mint": "Diy4Q5aiNEcdn7CWhuwYtuoHtHD9rKBTHCa9hi4qpump",
@@ -1873,7 +1987,7 @@
   }
  ],
  "stats": {
-  "signals": 16,
+  "signals": 17,
   "h1": {
    "n": 16,
    "winRate": 37.5,
