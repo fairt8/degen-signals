@@ -1,0 +1,198 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<title>Degen Signals</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+:root{--bg:var(--tg-theme-bg-color,#0e1116);--bg2:var(--tg-theme-secondary-bg-color,#161b22);--tx:var(--tg-theme-text-color,#e6edf3);
+--hint:var(--tg-theme-hint-color,#8b949e);--link:var(--tg-theme-link-color,#58a6ff);--btn:var(--tg-theme-button-color,#2ea043);
+--btx:var(--tg-theme-button-text-color,#fff);--sep:color-mix(in srgb,var(--hint) 25%,transparent);--red:#f85149;--amb:#d29922;--grn:#3fb950}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:14px/1.4 -apple-system,system-ui,Segoe UI,Roboto,sans-serif;padding-bottom:env(safe-area-inset-bottom)}
+header{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 12px 0}
+h1{font-size:17px;margin:0 0 8px}small,.h{color:var(--hint)}a{color:var(--link);text-decoration:none}
+.tabs,.chips{display:flex;gap:6px;overflow-x:auto}.tabs{border-bottom:1px solid var(--sep)}
+.tab{flex:1;padding:9px 4px;text-align:center;border:0;background:none;color:var(--hint);font-weight:600;border-bottom:2px solid transparent}
+.tab.on{color:var(--tx);border-color:var(--btn)}
+.chip{border:1px solid var(--sep);background:var(--bg2);color:var(--tx);border-radius:16px;padding:5px 12px;font-size:13px;white-space:nowrap}
+.chip.on{background:var(--btn);color:var(--btx);border-color:var(--btn)}
+main{padding:10px 12px 80px}.card{background:var(--bg2);border-radius:12px;padding:11px 12px;margin:0 0 10px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px}.sym{font-weight:700;font-size:15px}
+.pos{color:var(--grn)}.neg{color:var(--red)}.amb{color:var(--amb)}
+.ca{font:12px ui-monospace,Menlo,monospace;word-break:break-all;color:var(--hint)}
+.btn{border:0;border-radius:8px;background:var(--btn);color:var(--btx);padding:6px 10px;font-size:12px;font-weight:600}
+.btn.ghost{background:transparent;border:1px solid var(--sep);color:var(--tx)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;margin-top:6px;font-size:13px}
+.pill{display:inline-block;border-radius:6px;padding:1px 6px;font-size:11px;font-weight:600;background:var(--sep)}
+.pill.r{background:color-mix(in srgb,var(--red) 25%,transparent);color:var(--red)}.pill.a{background:color-mix(in srgb,var(--amb) 25%,transparent);color:var(--amb)}
+table{width:100%;border-collapse:collapse;font-size:13px}td,th{padding:5px 3px;text-align:right;border-bottom:1px solid var(--sep)}td:first-child,th:first-child{text-align:left}
+input{width:100%;padding:11px;border-radius:10px;border:1px solid var(--sep);background:var(--bg2);color:var(--tx);font-size:15px}
+.links{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.sec{font-weight:700;margin:10px 0 4px;font-size:13px;color:var(--hint);text-transform:uppercase;letter-spacing:.04em}
+.desc{font-style:italic;color:var(--hint);margin-top:6px}.empty{text-align:center;color:var(--hint);padding:30px 0}
+</style></head><body>
+<header><h1>🎯 Degen Signals</h1>
+<nav class="tabs"><button class="tab on" data-t="signals">Signals</button><button class="tab" data-t="pnl">PnL</button><button class="tab" data-t="lookup">Lookup</button></nav></header>
+<main id="main"><div class="empty">Loading…</div></main>
+<script>
+const tg = window.Telegram?.WebApp, inTg = !!(tg && tg.initData !== undefined && tg.platform && tg.platform !== "unknown");
+const DATA = "../signals.json", DS = "https://api.dexscreener.com", TP = {at: 100, frac: .5};
+let D = null, LIVE = {}, tab = "signals", period = "today", view = null;
+const $ = s => document.querySelector(s), esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmt = n => n == null || isNaN(n) ? "n/a" : n >= 1e6 ? (n/1e6).toFixed(2)+"M" : n >= 1e3 ? (n/1e3).toFixed(1)+"K" : (+n).toFixed(0);
+const money = n => n ? "$" + fmt(n) : "n/a";
+const pct = x => x == null || isNaN(x) ? "n/a" : (x >= 0 ? "+" : "") + (+x).toFixed(1) + "%";
+const cls = x => x == null ? "" : x >= 0 ? "pos" : "neg";
+const price = p => p == null ? "n/a" : p >= 1 ? "$" + p.toFixed(4) : "$" + Number(p.toPrecision(4)).toFixed(Math.max(2, -Math.floor(Math.log10(p)) + 3));
+const WAT = 3600, when = t => { const d = new Date((t + WAT) * 1000), m = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(" ")[d.getUTCMonth()];
+  return `${String(d.getUTCDate()).padStart(2,"0")} ${m} ${String(d.getUTCHours()).padStart(2,"0")}:${String(d.getUTCMinutes()).padStart(2,"0")} WAT`; };
+function bounds(now = Date.now()/1000){ const w = new Date((now+WAT)*1000); w.setUTCHours(0,0,0,0);
+  const day = w.getTime()/1000 - WAT, dow = (w.getUTCDay()+6)%7, m = new Date(w); m.setUTCDate(1);
+  return {today: day, week: day - dow*86400, month: m.getTime()/1000 - WAT, all: 0}; }
+const hap = (k = "light") => { try { tg?.HapticFeedback?.impactOccurred(k); } catch(e){} };
+const open = u => { hap(); if (inTg && /^https:\/\/t\.me\//.test(u)) tg.openTelegramLink(u); else if (inTg) tg.openLink(u); else window.open(u, "_blank"); };
+async function copy(t){ try { await navigator.clipboard.writeText(t); } catch(e){ const a = document.createElement("textarea"); a.value = t; document.body.appendChild(a); a.select(); document.execCommand("copy"); a.remove(); }
+  try { tg?.HapticFeedback?.notificationOccurred("success"); } catch(e){} toast("CA copied"); }
+function toast(m){ if (inTg && tg.showPopup && false) return; const d = document.createElement("div"); d.textContent = m;
+  d.style.cssText = "position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--btn);color:var(--btx);padding:8px 14px;border-radius:18px;z-index:9";
+  document.body.appendChild(d); setTimeout(() => d.remove(), 1400); }
+
+async function live(mints){ const need = mints.filter(m => !LIVE[m] || Date.now() - LIVE[m].t > 60000);
+  for (let i = 0; i < need.length; i += 30) { try {
+    const ps = await (await fetch(`${DS}/tokens/v1/solana/${need.slice(i, i+30).join(",")}`)).json();
+    for (const p of ps) { const m = p.baseToken.address; if (!LIVE[m]?.p || (p.liquidity?.usd||0) > (LIVE[m].p.liquidity?.usd||0)) LIVE[m] = {p, t: Date.now()}; }
+  } catch(e){} } }
+const mcOf = p => p ? (p.marketCap || p.fdv) : null;
+function calc(e){ // hold / TP / max gain, same rules as the bot
+  const p = LIVE[e.mint]?.p, p0 = e.price0, lv = p?.priceUsd ? +p.priceUsd : null;
+  const lp = lv && p0 ? (lv/p0 - 1)*100 : null;
+  let hold, basis; if (e.h24) [hold, basis] = [e.h24.pct, "24h result"]; else if (lp != null) [hold, basis] = [lp, "live"]; else [hold, basis] = [e.lastPct ?? e.h1?.pct ?? null, "last seen"];
+  const mx = p0 ? Math.max(e.maxPrice||0, e.h24 ? 0 : (lv||0), p0) : null, mg = mx ? (mx/p0 - 1)*100 : null;
+  const tp = hold == null ? null : mg >= TP.at ? TP.frac*TP.at + (1-TP.frac)*hold : hold;
+  const ath = Math.max(e.athMc||0, mcOf(p)||0) || null;
+  return {p, lv, livePct: lp, hold, basis, maxGain: mg, tp, ath, mcNow: mcOf(p)};
+}
+const topMs = e => { const k = Object.keys(e.milestones||{}).concat(e.hit2x?["2"]:[], e.hit5x?["5"]:[]); return k.length ? Math.max(...k.map(Number)) + "x" : null; };
+const tokOf = m => D.tokens.find(t => t.mint === m), jrOf = m => D.journal.find(e => e.mint === m);
+
+function render(){
+  document.querySelectorAll(".tab").forEach(b => b.classList.toggle("on", b.dataset.t === tab && !view));
+  if (view) return detail(view);
+  if (inTg) { tg.BackButton.hide(); tab === "lookup" ? null : tg.MainButton.hide(); }
+  if (tab === "signals") signals(); else if (tab === "pnl") pnl(); else lookup();
+}
+function signals(){
+  const b = bounds()[period], J = D.journal.filter(e => e.t0 >= b).sort((a, c) => c.t0 - a.t0);
+  let h = `<div class="chips" style="margin-bottom:10px">${["today","week","month","all"].map(p => `<button class="chip ${p===period?"on":""}" data-p="${p}">${{today:"Today",week:"Week",month:"Month",all:"All"}[p]}</button>`).join("")}</div>`;
+  if (!J.length) h += `<div class="empty">No signals in this period yet.</div>`;
+  h += J.map(e => { const t = tokOf(e.mint) || {}, c = calc(e), f = t.findings || [], nr = f.filter(x => x[0]==="red").length, na = f.length - nr, ms = topMs(e);
+    return `<div class="card" data-m="${esc(e.mint)}"><div class="row"><span class="sym">$${esc(e.symbol)} <small>${esc(t.name||"")}</small></span><b class="${cls(c.hold)}">${pct(c.hold)}</b></div>
+    <div class="row"><span class="ca">${esc(e.mint.slice(0,6))}…${esc(e.mint.slice(-6))}</span><button class="btn ghost" data-copy="${esc(e.mint)}">Copy CA</button></div>
+    <div class="grid"><span>🧢 ${money(e.mcap0)} ⇨ ${money(c.mcNow)}</span><span>🏔 ATH ${money(c.ath)}</span>
+    <span>🚀 max ${pct(c.maxGain)}${ms?` · ${ms}`:""}</span><span>⭐ ${t.score ?? e.score ?? "n/a"}${t.scoreCapped?" (capped)":""}</span>
+    <span>${esc((e.lp||t.lp||{}).label?.split(" (")[0] || "🔐 LP n/a")}</span><span>${nr?`<span class="pill r">${nr} red</span> `:""}${na?`<span class="pill a">${na} amber</span>`:""}${!f.length?'<span class="pill">0 flags</span>':""}</span></div>
+    <small>${when(e.t0)} · ${c.basis}${e.lpEvents&&Object.keys(e.lpEvents).length?' · <span class="neg">⚠️ LP warning</span>':""}</small></div>`; }).join("");
+  $("#main").innerHTML = h;
+  live(J.slice(0, 60).map(e => e.mint)).then(() => { if (tab === "signals" && !view && J.some(e => LIVE[e.mint] && !e._r)) { J.forEach(e => e._r = 1); signals(); } });
+}
+function msCounts(p){ const ms = p.milestones || {"2": p.hit2x, "5": p.hit5x};
+  return Object.entries(ms).sort((a,b) => a[0]-b[0]).filter(([k,v]) => k==="2"||k==="5"||v).map(([k,v]) => `<span class="pill">${k}x ${v}</span>`).join(" "); }
+function pnl(){
+  const P = D.periodStats || {}, L = {today:"Today", week:"This week", month:"This month", all:"All-time"};
+  $("#main").innerHTML = Object.keys(L).map(k => { const p = P[k]; if (!p) return "";
+    return `<div class="card"><div class="row"><b>${L[k]}</b><small>${p.signals} signals</small></div>
+    <table><tr><th></th><th>Win rate</th><th>Total</th><th>Avg</th></tr>
+    <tr><td>Hold</td><td>${p.winRate==null?"n/a":p.winRate+"%"} <small>(${p.wins}/${p.n})</small></td><td class="${cls(p.totalPnl)}"><b>${pct(p.totalPnl)}</b></td><td class="${cls(p.avgPnl)}">${pct(p.avgPnl)}</td></tr>
+    <tr><td>TP 50% @2x</td><td>${p.tpWinRate==null?"n/a":p.tpWinRate+"%"} <small>(${p.tpWins??0}/${p.n})</small></td><td class="${cls(p.tpTotalPnl)}"><b>${pct(p.tpTotalPnl)}</b></td><td class="${cls(p.tpAvgPnl)}">${pct(p.tpAvgPnl)}</td></tr></table>
+    <div style="margin-top:6px">${msCounts(p)}</div><small>Best ${esc(p.best||"–")} · Worst ${esc(p.worst||"–")}</small></div>`; }).join("") +
+    `<small>Total = sum of % per signal since alert. ${esc(D.statsBasis||"")}. TP sim = sell 50% at +100% if max gain reached 2x, the rest at the hold basis. Max gain uses the chart high where available. WAT periods. Not financial advice.</small>`;
+}
+function lookup(q0){
+  $("#main").innerHTML = `<div class="card"><input id="q" placeholder="Contract address or $SYMBOL" autocomplete="off" autocapitalize="off" value="${esc(q0||"")}">
+    ${inTg ? "" : '<button class="btn" id="go" style="margin-top:8px;width:100%;padding:10px">Look up</button>'}</div><div id="res"></div>`;
+  const q = $("#q"), go = () => { const v = q.value.trim(); if (v) { hap("medium"); doLookup(v); } };
+  q.addEventListener("keydown", e => { if (e.key === "Enter") go(); });
+  if (inTg) { const upd = () => q.value.trim() ? tg.MainButton.setText("Look up").show() : tg.MainButton.hide(); q.addEventListener("input", upd); upd(); tg.MainButton.offClick(window._mb||(()=>{})); window._mb = go; tg.MainButton.onClick(go); }
+  else $("#go").onclick = go;
+  if (q0) doLookup(q0);
+}
+const isCA = s => /^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(s);
+async function doLookup(q){
+  const r = $("#res"); r.innerHTML = `<div class="empty">Looking up…</div>`;
+  const hits = isCA(q) ? D.journal.filter(e => e.mint === q) : D.journal.filter(e => e.symbol.toLowerCase() === q.replace(/^\$/,"").toLowerCase()).sort((a,c) => c.t0 - a.t0);
+  if (hits.length) { await live([hits[0].mint]); r.innerHTML = tokenHtml(hits[0], hits.length > 1 ? `${hits.length} signals share this symbol; showing the latest.` : ""); bind(r); return; }
+  let ps = [];
+  try { if (isCA(q)) ps = await (await fetch(`${DS}/tokens/v1/solana/${q}`)).json();
+    else { const s = q.replace(/^\$/,"").toLowerCase(); ps = ((await (await fetch(`${DS}/latest/dex/search?q=${encodeURIComponent(s)}`)).json()).pairs||[]).filter(p => p.chainId==="solana" && p.baseToken.symbol.toLowerCase()===s); } } catch(e){}
+  if (!ps.length) { r.innerHTML = `<div class="card">❔ ${esc(q)} is not a Degen signal, and no live Solana pair was found on DexScreener.</div>`; return; }
+  const p = ps.reduce((a, c) => (c.liquidity?.usd||0) > (a.liquidity?.usd||0) ? c : a), m = p.baseToken.address;
+  r.innerHTML = `<div class="card"><div class="row"><span class="sym">$${esc(p.baseToken.symbol)}</span><span class="pill">not a Degen signal</span></div>
+   <div class="row"><span class="ca">${esc(m)}</span><button class="btn ghost" data-copy="${esc(m)}">Copy</button></div>
+   <div class="grid"><span>💲 ${price(+p.priceUsd)}</span><span>🧢 MC ${money(mcOf(p))}</span><span>💧 Liq ${money(p.liquidity?.usd)}</span><span>24h ${pct(p.priceChange?.h24)}</span></div>
+   ${linkRow({dexscreener: p.url, gmgn: `https://gmgn.ai/sol/token/${m}`, bubblemaps: `https://v2.bubblemaps.io/map?address=${m}&chain=solana`, fomo: `https://fomo.family/tokens/solana/${m}`, pumpfun: `https://pump.fun/coin/${m}`})}</div>`;
+  bind(r);
+}
+function linkRow(L){ const n = {dexscreener:"DexScreener", gmgn:"GMGN", bubblemaps:"Bubblemaps", fomo:"Fomo", x_search:"X search", pumpfun:"pump.fun"};
+  return `<div class="links">${Object.keys(n).filter(k => L[k]).map(k => `<button class="btn ${k==="fomo"?"":"ghost"}" data-open="${esc(L[k])}">${n[k]}</button>`).join("")}</div>`; }
+function tokenHtml(e, note = ""){
+  const t = tokOf(e.mint) || {}, c = calc(e), H = t.holders || {}, B = t.behaviour || {}, d = t.dev || {}, G = t.gmgn || {}, f = t.findings || [];
+  const L = {...(t.links||{}), dexscreener: t.links?.dexscreener || e.link, gmgn: G.link || `https://gmgn.ai/sol/token/${e.mint}`,
+    fomo: `https://fomo.family/tokens/solana/${e.mint}`, bubblemaps: t.links?.bubblemaps || `https://v2.bubblemaps.io/map?address=${e.mint}&chain=solana`,
+    x_search: t.links?.x_search || `https://x.com/search?q=%24${encodeURIComponent(e.symbol)}&f=live`, pumpfun: t.links?.pumpfun || `https://pump.fun/coin/${e.mint}`};
+  const ms = Object.entries(e.milestones||{}).sort((a,b) => a[0]-b[0]);
+  const ev = Object.entries(e.lpEvents||{}), lpn = e.lp || t.lp || {};
+  const pc = v => v == null ? "n/a" : v + "%";
+  return `<div class="card"><div class="row"><span class="sym">$${esc(e.symbol)} <small>${esc(t.name||"")}</small></span><b class="${cls(c.hold)}">${pct(c.hold)}</b></div>
+  <div class="row" style="margin:4px 0"><span class="ca">${esc(e.mint)}</span><button class="btn" data-copy="${esc(e.mint)}">Copy CA</button></div>
+  <small>Alert ${when(e.t0)}${note?" · "+esc(note):""}</small>
+  <div class="sec">Performance</div><div class="grid">
+   <span>💲 ${price(e.price0)} ⇨ ${price(c.lv)}</span><span>🧢 ${money(e.mcap0)} ⇨ ${money(c.mcNow)}</span>
+   <span>Live vs alert <b class="${cls(c.livePct)}">${pct(c.livePct)}</b></span><span>Max <b>${pct(c.maxGain)}</b> <small>(${e.maxSrc==="chart"?"chart":"sampled"})</small></span>
+   <span>1h ${e.h1?pct(e.h1.pct):"pending"}</span><span>24h ${e.h24?pct(e.h24.pct):"pending"}</span>
+   <span>Hold <b class="${cls(c.hold)}">${pct(c.hold)}</b> <small>${c.basis}</small></span><span>TP 50%@2x <b class="${cls(c.tp)}">${pct(c.tp)}</b></span>
+   <span>🏔 ATH MC <b>${money(c.ath)}</b></span><span><small>${e.athT?"chart ATH "+when(e.athT):e.athMc?"chart ATH":"sampled"}</small></span></div>
+  <div class="sec">Milestones</div>${ms.length ? ms.map(([k,ts]) => `<span class="pill">${k}x${ts?" · "+when(ts):""}</span>`).join(" ") : '<small>none yet</small>'}
+  <div class="sec">Liquidity</div><div>${esc(lpn.label||"🔐 n/a")}${lpn.t?` <small>(checked ${when(lpn.t)})</small>`:""}</div>
+   ${ev.length ? ev.map(([k,ts]) => `<div class="neg">⚠️ ${{unlocked:"LIQUIDITY UNLOCKED",pulled:"LIQUIDITY PULLED",unlockPassed:"UNLOCK DATE PASSED"}[k]||esc(k)} · ${when(ts)}</div>`).join("") : '<small>No unlock/pull events</small>'}
+   <div class="grid"><span>💧 Liq ${money(c.p?.liquidity?.usd ?? t.liq)}</span><span>Liq/MC ${t.liqPctMc ?? "n/a"}%</span></div>
+  <div class="sec">Score & findings</div><div>⭐ <b>${t.score ?? e.score ?? "n/a"}/100</b>${t.scoreCapped?` <small>(capped, would be ${t.scoreUncapped})</small>`:""}</div>
+   ${f.length ? f.map(x => `<div class="${x[0]==="red"?"neg":"amb"}">${x[0]==="red"?"🔴":"🟠"} ${esc(x[1])}</div>`).join("") : '<small>No red/amber findings</small>'}
+  <div class="sec">Holders</div><div class="grid">
+   <span>🔝 Top5 ${H.top5Pct ?? "n/a"}%</span><span>👥 ${H.count?.toLocaleString() ?? "n/a"} holders</span>
+   <span>🤖 Bots ${pc(B.botPct)}</span><span>🔁 Flippers ${pc(B.flipperPct)}</span><span>🌱 Fresh ${pc(B.freshPct)}</span><span>🐋 Whales ${pc(H.whalePct)}</span>
+   <span>🔗 Cluster ${pc(H.clusterPct ?? t.clusterPct)}</span><span>🕵️ Insiders ${pc(H.insiderPct)}</span></div>
+  <div class="sec">GMGN</div><div><b>${esc(G.status||"SKIPPED")}</b> <small>${esc((G.reasons||[]).join("; "))}</small></div>
+  <div class="sec">Dev</div><div>${d.wallet ? `<a href="#" data-open="${esc(d.links?.solscan||"https://solscan.io/account/"+d.wallet)}">${esc(d.wallet.slice(0,4))}…${esc(d.wallet.slice(-4))}</a> · ${d.sold?"sold":"holds "+d.holdPct+"%"} · ${d.priorTokens??"n/a"} prior (${d.priorMigrated??0} migrated, ${d.priorDead??0} dead)${d.rugHistory?' · <span class="neg">🚩 rug history</span>':""}` : "n/a"}</div>
+   <div class="grid"><span>Dex Paid ${t.orders?.dexPaid===true?"✅":t.orders?.dexPaid===false?"❌":"n/a"}</span><span>CTO ${t.cto===true?"✅":t.cto===false?"❌":"n/a"}</span></div>
+  ${linkRow(L)}${t.description?`<div class="desc">${esc(t.description)}</div>`:""}
+  <p><small>Not financial advice. DYOR.</small></p></div>`;
+}
+function detail(m){
+  const e = jrOf(m); if (!e) { view = null; return render(); }
+  if (inTg) { tg.BackButton.show(); tg.MainButton.hide(); }
+  $("#main").innerHTML = tokenHtml(e) + (inTg ? "" : `<button class="btn ghost" id="back" style="width:100%">← Back</button>`);
+  bind($("#main")); $("#back")?.addEventListener("click", back); window.scrollTo(0, 0);
+  live([m]).then(() => { if (view === m && !e._d) { e._d = 1; detail(m); } });
+}
+function back(){ hap(); view = null; render(); }
+function bind(root){
+  root.querySelectorAll("[data-copy]").forEach(b => b.onclick = ev => { ev.stopPropagation(); copy(b.dataset.copy); });
+  root.querySelectorAll("[data-open]").forEach(b => b.onclick = ev => { ev.preventDefault(); ev.stopPropagation(); open(b.dataset.open); });
+}
+document.addEventListener("click", ev => {
+  const tb = ev.target.closest(".tab"); if (tb) { hap(); tab = tb.dataset.t; view = null; return render(); }
+  const ch = ev.target.closest("[data-p]"); if (ch) { hap(); period = ch.dataset.p; return render(); }
+  if (ev.target.closest("[data-copy],[data-open]")) return;
+  const cd = ev.target.closest(".card[data-m]"); if (cd) { hap(); view = cd.dataset.m; render(); }
+});
+document.addEventListener("click", ev => { const b = ev.target.closest("[data-copy]"); if (b && !b.onclick) { ev.stopPropagation(); copy(b.dataset.copy); } }, true);
+async function load(){
+  try { D = await (await fetch(DATA + "?t=" + Date.now())).json(); }
+  catch(e) { $("#main").innerHTML = `<div class="empty">Could not load signals (${esc(e.message)})</div>`; return; }
+  const start = tg?.initDataUnsafe?.start_param || new URLSearchParams(location.search).get("ca") || new URLSearchParams(location.search).get("tgWebAppStartParam");
+  const q = new URLSearchParams(location.search).get("q"), tb = new URLSearchParams(location.search).get("tab");
+  if (["signals","pnl","lookup"].includes(tb)) tab = tb;
+  if (q) { tab = "lookup"; render(); return lookup(q); }
+  if (start && jrOf(start)) view = start; else if (start && isCA(start)) { tab = "lookup"; render(); return lookup(start); }
+  render();
+}
+if (tg) { try { tg.ready(); tg.expand(); tg.BackButton.onClick(back); tg.setHeaderColor?.("bg_color"); } catch(e){} }
+load(); setInterval(async () => { try { D = await (await fetch(DATA + "?t=" + Date.now())).json(); if (!view && tab !== "lookup") render(); } catch(e){} }, 120000);
+</script></body></html>

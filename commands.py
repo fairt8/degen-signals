@@ -10,9 +10,10 @@ PAGE, LIMIT = 20, 3800
 HELP = ("<b>Degen bot commands</b>\n"
         "/tokens today|week|month|all [page]: signals in that period (WAT), with CA, alert time, alert MC → now, PnL, top milestone\n"
         "/pnl &lt;CA or $SYMBOL&gt;: live price/MC vs alert, PnL, max gain, milestones, hold vs TP\n"
-        "/help: this list\n<i>Not financial advice.</i>")
+        "/app: open the Degen mini app\n/help: this list\n<i>Not financial advice.</i>")
 COMMANDS = [{"command": "tokens", "description": "Signals: today | week | month | all [page]"},
             {"command": "pnl", "description": "PnL for a CA or $SYMBOL"},
+            {"command": "app", "description": "Open the Degen mini app"},
             {"command": "help", "description": "How to use the bot"}]
 _cache = {"t": 0, "d": None}
 
@@ -152,7 +153,8 @@ def handle(text, bot_username=None):
     try:
         if cmd == "tokens": return cmd_tokens(parts[1:])
         if cmd == "pnl": return cmd_pnl(parts[1:])
-        if cmd in ("help", "start"): return [HELP]
+        if cmd == "help": return [HELP]
+        if cmd in ("app", "start"): return "APP"
     except Exception as x:
         print("command error:", repr(x), file=sys.stderr); return ["⚠️ Error handling that command, try again shortly."]
     return None
@@ -170,9 +172,19 @@ def api(method, http_timeout=40, **q):
 def allowed():
     return {str(c) for c in notify.chats()} | {c.strip() for c in os.environ.get("TELEGRAM_ALLOWED_CHATS", "").split(",") if c.strip()}
 
+APP_URL = os.environ.get("APP_URL", "https://fairt8.github.io/degen-signals/app/")
+def app_reply(chat_type):
+    tme = os.environ.get("APP_TME_LINK") or (pipeline.load_config().get("app") or {}).get("tme")
+    btn = {"text": "📱 Open Degen app", "web_app": {"url": APP_URL}} if chat_type == "private" else {"text": "📱 Open Degen app", "url": tme or APP_URL}
+    return {"text": "📱 <b>Degen Signals app</b>: signals feed, PnL dashboard, token lookup and per-token details.\n<i>Not financial advice.</i>",
+            "markup": {"inline_keyboard": [[btn]]}}
+
 def reply(chat, mid, msgs):
     for i, m in enumerate(msgs):
+        mk = None
+        if isinstance(m, dict): m, mk = m["text"], m["markup"]
         q = {"chat_id": chat, "text": m, "parse_mode": "HTML", "disable_web_page_preview": "true"}
+        if mk: q["reply_markup"] = mk
         if i == 0 and mid: q.update(reply_to_message_id=mid, allow_sending_without_reply="true")
         api("sendMessage", http_timeout=20, **q)
 
@@ -185,6 +197,7 @@ def process(updates, bot_username, ok_chats):
         chat = str((m.get("chat") or {}).get("id"))
         if chat not in ok_chats: continue
         msgs = handle(m.get("text") or "", bot_username)
+        if msgs == "APP": msgs = [app_reply((m.get("chat") or {}).get("type"))]
         if msgs:
             try: reply(chat, m.get("message_id"), msgs)
             except Exception as x: print("reply failed:", x, file=sys.stderr)

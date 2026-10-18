@@ -215,8 +215,17 @@ def card(r, journal=None):
     gm = G.get("link") or f"https://gmgn.ai/sol/token/{r['mint']}"
     kb = [[{"text": "DexScreener", "url": L["dexscreener"]}, {"text": "GMGN", "url": gm}, {"text": "Bubblemaps", "url": L["bubblemaps"]}],
           [{"text": "Fomo", "url": L.get("fomo") or f"https://fomo.family/tokens/solana/{r['mint']}"}, {"text": "X search", "url": L["x_search"]}]
-          + ([{"text": "pump.fun", "url": L["pumpfun"]}] if L.get("pumpfun") else [])]
+          + ([{"text": "pump.fun", "url": L["pumpfun"]}] if L.get("pumpfun") else []),
+          [{"text": "📱 Open in Degen app", "url": app_link(r["mint"])}]]
     return text, kb
+
+def app_link(mint):
+    """t.me Mini App deep link (works in groups, opens inside Telegram) once configured in BotFather, else the website."""
+    try:
+        import pipeline as _pl; a = _pl.load_config().get("app") or {}
+    except Exception: a = {}
+    if a.get("tme"): return f"{a['tme']}?startapp={mint}"
+    return f"{a.get('url') or 'https://fairt8.github.io/degen-signals/app/'}?ca={mint}"
 
 def send(r, journal=None):
     text, kb = card(r, journal)

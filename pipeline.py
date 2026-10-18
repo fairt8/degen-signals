@@ -18,8 +18,8 @@ def load_config(path=os.path.join(os.path.dirname(__file__), "config.js")):
     """Reads the filters block from config.js (JS object literal -> JSON)."""
     src = open(path).read()
     m = re.search(r"filters\s*=\s*(\{.*?\});", src, re.S)
-    body = re.sub(r"//[^\n]*", "", m.group(1))
-    body = re.sub(r"(\w+)\s*:", r'"\1":', body)
+    body = re.sub(r"(?<!:)//[^\n]*", "", m.group(1))          # comments (not the // in "https://")
+    body = re.sub(r"([{,]\s*)(\w+)\s*:", r'\1"\2":', body)  # keys only (after { or ,), not "https:" inside strings
     body = re.sub(r",\s*}", "}", body)
     return json.loads(body)
 

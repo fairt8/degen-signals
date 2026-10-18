@@ -39,6 +39,8 @@ window.SIGNAL_CONFIG.filters = {
   // keep workflowPolling false while the box listener (listener.py) or a Cloudflare Worker webhook is running.
   // Repo variable / env TG_COMMANDS_POLL=1 or 0 overrides this.
   commands: { workflowPolling: false },
+  // Mini app: website URL; tme = t.me Mini App link after BotFather /newapp (e.g. "https://t.me/DegenGainsBot/app"), used for buttons in groups/alerts
+  app: { url: "https://fairt8.github.io/degen-signals/app/", tme: "" },
   winThresholdPct: 0,       // journal: a signal "wins" if its PnL % is above this
   // PnL report: standalone Telegram message at 12:00 AM and 12:00 PM WAT (first run in each slot; lastReportSlot in docs/signals.json)
   // ---- optional signals (from @OLeksa_one / Padre-style filters); *_On=false => info/flag only, true => required for 5R

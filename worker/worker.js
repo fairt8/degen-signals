@@ -112,7 +112,7 @@ async function cmdPnl(args, env) {
   return [out];
 }
 const HELP = "<b>Degen bot commands</b>\n/tokens today|week|month|all [page]: signals in that period (WAT), with CA, alert time, alert MC → now, PnL, top milestone\n" +
-  "/pnl &lt;CA or $SYMBOL&gt;: live price/MC vs alert, PnL, max gain, milestones, hold vs TP\n/help: this list\n<i>Not financial advice.</i>";
+  "/pnl &lt;CA or $SYMBOL&gt;: live price/MC vs alert, PnL, max gain, milestones, hold vs TP\n/app: open the Degen mini app\n/help: this list\n<i>Not financial advice.</i>";
 export async function handle(text, env) {
   if (!text || !text.startsWith("/")) return null;
   const parts = text.trim().split(/\s+/); let [cmd, who] = parts[0].slice(1).split("@");
@@ -121,12 +121,21 @@ export async function handle(text, env) {
   try {
     if (cmd === "tokens") return await cmdTokens(parts.slice(1), env);
     if (cmd === "pnl") return await cmdPnl(parts.slice(1), env);
-    if (cmd === "help" || cmd === "start") return [HELP];
+    if (cmd === "help") return [HELP];
+    if (cmd === "app" || cmd === "start") return "APP";
   } catch (e) { return ["⚠️ Error handling that command, try again shortly."]; }
   return null;
 }
-async function send(env, chat, text, replyTo) {
+export function appReply(env, chatType) {
+  // web_app buttons only work in private chats; groups get a url button (t.me Mini App link once set in BotFather, else the website)
+  const url = env.APP_URL || "https://fairt8.github.io/degen-signals/app/";
+  const btn = chatType === "private" ? { text: "📱 Open Degen app", web_app: { url } } : { text: "📱 Open Degen app", url: env.APP_TME_LINK || url };
+  return { text: "📱 <b>Degen Signals app</b>: signals feed, PnL dashboard, token lookup and per-token details (chart ATH, LP status, findings, links).\n<i>Not financial advice.</i>",
+           markup: { inline_keyboard: [[btn]] } };
+}
+async function send(env, chat, text, replyTo, markup) {
   const body = { chat_id: chat, text, parse_mode: "HTML", disable_web_page_preview: true };
+  if (markup) body.reply_markup = markup;
   if (replyTo > 0) Object.assign(body, { reply_to_message_id: replyTo, allow_sending_without_reply: true });
   const r = await fetch(`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`,
     { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
@@ -140,8 +149,12 @@ export default {
     const chat = String(m.chat?.id), ok = (env.ALLOWED_CHATS || "").split(",").map(s => s.trim());
     if (!ok.includes(chat)) return new Response("ignored");
     const work = (async () => {
-      const msgs = await handle(m.text || "", env); let sent = 0;
-      for (let i = 0; msgs && i < msgs.length; i++) sent += await send(env, chat, msgs[i], i === 0 ? m.message_id : null) ? 1 : 0;
+      let msgs = await handle(m.text || "", env), sent = 0;
+      if (msgs === "APP") msgs = [appReply(env, m.chat?.type)];
+      for (let i = 0; msgs && i < msgs.length; i++) {
+        const x = typeof msgs[i] === "string" ? { text: msgs[i] } : msgs[i];
+        sent += await send(env, chat, x.text, i === 0 ? m.message_id : null, x.markup) ? 1 : 0;
+      }
       return { replies: msgs ? msgs.length : 0, sent };
     })();
     // authenticated self-test (secret header already checked): wait and report delivery
