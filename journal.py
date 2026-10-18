@@ -104,7 +104,9 @@ def update(journal, now=None):
         age = (now - e["t0"]) / 3600
         e["last"], e["lastT"] = price, int(now)
         e["maxPrice"] = max(e.get("maxPrice") or 0, price)
-        silent = chart_max(e, p, now)  # real chart high since alert (GeckoTerminal); first pass on older entries is silent
+        # real chart high since alert (GeckoTerminal); re-read at most every 30 min per entry so a rate-limited
+        # run spreads its few calls across entries; first pass on entries older than 2h is silent
+        silent = chart_max(e, p, now) if not (e.get("chartT") and now - e["chartT"] < 1800) else False
         e["minPrice"] = min(e.get("minPrice") or price, price)  # for optional TP stop-loss sim
         e["lastPct"] = round((price / e["price0"] - 1) * 100, 1)
         mult = e["maxPrice"] / e["price0"]
