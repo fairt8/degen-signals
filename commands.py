@@ -80,7 +80,7 @@ def cmd_tokens(args):
         lines.append(f"{i}. <b>${e(x['symbol'])}</b> · {when(x['t0'])}\n<code>{x['mint']}</code>\n"
                      f"MC {money(x.get('mcap0'))} → {money(mc_of(p))} · PnL <b>{pct(v['hold'])}</b> ({v['basis']}) · "
                      f"max {pct(v['maxGain'])} · 🏆 {top_ms(x)}"
-                     + (f" · ATH {money(x.get('athMc'))}" if x.get("athMc") else "") + "\n")
+                     + (f" · ATH {money(max(x['athMc'], mc_of(p) or 0))}" if x.get("athMc") else "") + "\n")
     head = f"📋 <b>{label} signals (WAT)</b>: {len(es)} total" + (f" · page {page}/{pages}" if pages > 1 else "") + "\n\n"
     msgs = chunks(lines, head)
     if page < pages: msgs[-1] += f"\nMore: /tokens {period} {page + 1}"

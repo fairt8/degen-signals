@@ -74,7 +74,7 @@ async function cmdTokens(args, env) {
   const lines = sel.map((e, i) => { const p = px[e.mint], v = view(e, p, env);
     return `${(page - 1) * PAGE + i + 1}. <b>$${esc(e.symbol)}</b> · ${when(e.t0)}\n<code>${e.mint}</code>\n` +
       `MC ${money(e.mcap0)} → ${money(mcOf(p))} · PnL <b>${pct(v.hold)}</b> (${v.basis}) · max ${pct(v.maxGain)} · 🏆 ${topMs(e)}` +
-      (e.athMc ? ` · ATH ${money(e.athMc)}` : "") + "\n"; });
+      (e.athMc ? ` · ATH ${money(Math.max(e.athMc, mcOf(p) || 0))}` : "") + "\n"; });
   const msgs = chunks(lines, `📋 <b>${LABEL[period]} signals (WAT)</b>: ${es.length} total` + (pages > 1 ? ` · page ${page}/${pages}` : "") + "\n\n");
   if (page < pages) msgs[msgs.length - 1] += `\nMore: /tokens ${period} ${page + 1}`;
   return msgs;
@@ -104,7 +104,7 @@ async function cmdPnl(args, env) {
     `Price: ${price(e.price0)} → ${price(v.live)}\nMC: ${money(e.mcap0)} → ${money(mcOf(p))}\nLive vs alert: <b>${pct(v.livePct)}</b>\n` +
     `${e.h1 ? "1h: " + pct(e.h1.pct) : "1h: pending"} · ${e.h24 ? "24h: " + pct(e.h24.pct) : "24h: pending"}\n` +
     `Max gain since alert: ${pct(v.maxGain)} (${e.maxSrc === "chart" ? "chart high" : "sampled ~15 min"})\n` +
-    `🏔 ATH MC: ${e.athMc ? money(e.athMc) + " (chart ATH" + (e.athT ? ", " + when(e.athT) : "") + ")" : (e.maxPrice && e.price0 ? money(e.mcap0 * e.maxPrice / e.price0) + " (sampled since alert, est.)" : "n/a")}\n` +
+    `🏔 ATH MC: ${e.athMc ? (mcOf(p) > e.athMc ? money(mcOf(p)) + " (new high now)" : money(e.athMc) + " (chart ATH" + (e.athT ? ", " + when(e.athT) : "") + ")") : (e.maxPrice && e.price0 ? money(e.mcap0 * e.maxPrice / e.price0) + " (sampled since alert, est.)" : "n/a")}\n` +
     `🔐 LP: ${esc(e.lp?.label || "n/a")}${e.lp?.t ? " <i>(checked " + when(e.lp.t) + ")</i>" : ""}\n🏆 Milestones: ${ms}\n` +
     `Hold PnL: <b>${pct(v.hold)}</b> (${v.basis}) · TP ${v.f * 100}% @ +${v.at}%: <b>${pct(v.tp)}</b>\n` +
     `<a href="${esc(e.link || "https://dexscreener.com/solana/" + e.mint)}">DexScreener</a> · <a href="https://fomo.family/tokens/solana/${e.mint}">Fomo</a>`;
