@@ -14,3 +14,5 @@ and answers `/tokens`, `/pnl` and `/help` in the allowed chats within about a se
 To go back to polling: `curl https://api.telegram.org/bot<TOKEN>/deleteWebhook`, then restart the box listener or enable workflowPolling.
 One-shot alternative to steps 2-5 (with rollback to the box listener on failure): `./deploy.sh` (WEBHOOK_SECRET is generated into ~/.degen/webhook_secret, outside the repo).
 Local logic test: `node test.mjs`.
+
+**Status (18 Oct 2026):** deployed at https://degen-bot.degen-signals.workers.dev (workers.dev subdomain `degen-signals`). The Telegram webhook points there and the box listener is stopped.
