@@ -1,10 +1,148 @@
 {
- "updatedAt": 1792282510,
+ "updatedAt": 1792283488,
  "window": "h1",
  "lastRunErrors": [],
- "candidates": 123,
- "cheapPass": 0,
+ "candidates": 127,
+ "cheapPass": 1,
  "tokens": [
+  {
+   "symbol": "INK",
+   "name": "inkonpaper",
+   "chain": "solana",
+   "mint": "Aes5BcDUQKd2VGA38gchnTNYLYAehxx5R69TMy84pump",
+   "dex": "pumpswap",
+   "mcap": 54229,
+   "liq": 19435.78,
+   "vol": 93111.33,
+   "window": "h1",
+   "buys": 917,
+   "sells": 779,
+   "ch5m": 39.27,
+   "ch1h": 44.03,
+   "ageH": 0.86,
+   "description": "buy $INK. mint drips. farm $PAPER on papertrade.",
+   "ctoProfile": false,
+   "volLiq": 4.8,
+   "baseScore": 65,
+   "liqPctMc": 35.8,
+   "ch24h": 44.03,
+   "narratives": [],
+   "estFeesSol": 11.27,
+   "priceUsd": 6.121e-05,
+   "socials": [
+    "https://x.com/inkonpaperxyz"
+   ],
+   "websites": [
+    "https://inkonpaper.xyz"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/8hmzb2p2ey2wlufuvvhdew2iw5ut4rgbkdp6ec1zy7nb",
+    "pumpfun": "https://pump.fun/coin/Aes5BcDUQKd2VGA38gchnTNYLYAehxx5R69TMy84pump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=Aes5BcDUQKd2VGA38gchnTNYLYAehxx5R69TMy84pump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/Aes5BcDUQKd2VGA38gchnTNYLYAehxx5R69TMy84pump",
+    "x_search": "https://x.com/search?q=%24INK&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=INK"
+   },
+   "top10Pct": 22.99,
+   "clusterPct": 14.54,
+   "clusterSource": "rugcheck_insider_networks",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "NpwCXNQBvxJjHrv6BNJ1mtwn3NYpkMMXqnmDqgQ4FAd",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/NpwCXNQBvxJjHrv6BNJ1mtwn3NYpkMMXqnmDqgQ4FAd",
+     "pumpfun": "https://pump.fun/profile/NpwCXNQBvxJjHrv6BNJ1mtwn3NYpkMMXqnmDqgQ4FAd"
+    },
+    "funder": null,
+    "firstTs": null,
+    "maxTxDay": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 11.27,
+    "maxSingleHolderPct": 3.04,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "kind-sienna-falcon",
+      "size": 32,
+      "type": "transfer"
+     },
+     {
+      "id": "damp-ochre-frog",
+      "size": 5,
+      "type": "transfer"
+     }
+    ]
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     3.0,
+     2.7,
+     2.5,
+     2.3,
+     2.3
+    ],
+    "top5Pct": 12.9,
+    "count": 795,
+    "whalePct": 19.3,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 14.54
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": null,
+    "botN": "0/0",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": null,
+    "freshN": "0/0"
+   },
+   "scoreUncapped": 65,
+   "scoreCapped": false,
+   "score": 65,
+   "findings": [],
+   "firstScan": {
+    "t": 1792283488,
+    "mc": 54229
+   },
+   "odds": {
+    "n": 31,
+    "x2": 29,
+    "rug": 45
+   },
+   "signalAt": 1792283488
+  },
   {
    "symbol": "FRFR",
    "name": "FRFR",
@@ -2503,6 +2641,38 @@
  ],
  "journal": [
   {
+   "mint": "Aes5BcDUQKd2VGA38gchnTNYLYAehxx5R69TMy84pump",
+   "symbol": "INK",
+   "chain": "solana",
+   "t0": 1792283488,
+   "price0": 6.121e-05,
+   "mcap0": 54229,
+   "score": 65,
+   "devScore": 0,
+   "link": "https://dexscreener.com/solana/8hmzb2p2ey2wlufuvvhdew2iw5ut4rgbkdp6ec1zy7nb",
+   "maxPrice": 6.121e-05,
+   "samples": [
+    [
+     1792283488,
+     5.881e-05
+    ]
+   ],
+   "trend": "up",
+   "h1": null,
+   "h24": null,
+   "hit2x": false,
+   "hit5x": false,
+   "msgId": {
+    "1318404489": 186,
+    "-1004348482526": 1624
+   },
+   "last": 5.881e-05,
+   "lastT": 1792283488,
+   "minPrice": 5.881e-05,
+   "lastPct": -3.9,
+   "milestones": {}
+  },
+  {
    "mint": "5V9D4nQk2wexMi1euYg8vN89oH9gS9vWHEuNAG2kpump",
    "symbol": "FRFR",
    "chain": "solana",
@@ -2597,6 +2767,10 @@
     [
      1792282510,
      9.17e-06
+    ],
+    [
+     1792283488,
+     8.399e-06
     ]
    ],
    "trend": "fading",
@@ -2612,10 +2786,10 @@
     "1318404489": 164,
     "-1004348482526": 1602
    },
-   "last": 9.17e-06,
-   "lastT": 1792282510,
+   "last": 8.399e-06,
+   "lastT": 1792283488,
    "minPrice": 5.476e-06,
-   "lastPct": -66.4,
+   "lastPct": -69.2,
    "milestones": {}
   },
   {
@@ -2729,6 +2903,10 @@
     [
      1792282510,
      2.18e-05
+    ],
+    [
+     1792283488,
+     2.147e-05
     ]
    ],
    "trend": "fading",
@@ -2744,10 +2922,10 @@
     "1318404489": 159,
     "-1004348482526": 1591
    },
-   "last": 2.18e-05,
-   "lastT": 1792282510,
+   "last": 2.147e-05,
+   "lastT": 1792283488,
    "minPrice": 2.119e-05,
-   "lastPct": -73.3,
+   "lastPct": -73.7,
    "milestones": {}
   },
   {
@@ -2775,9 +2953,9 @@
     "1318404489": 146,
     "-1004348482526": 1572
    },
-   "last": 1.002e-05,
-   "lastT": 1792282510,
-   "lastPct": -89.1,
+   "last": 9.919e-06,
+   "lastT": 1792283488,
+   "lastPct": -89.2,
    "minPrice": 8.881e-06,
    "milestones": {}
   },
@@ -2806,10 +2984,10 @@
     "1318404489": 138,
     "-1004348482526": 1564
    },
-   "last": 6.034e-06,
-   "lastT": 1792282510,
-   "lastPct": -79.3,
-   "minPrice": 6.034e-06,
+   "last": 5.882e-06,
+   "lastT": 1792283488,
+   "lastPct": -79.8,
+   "minPrice": 5.882e-06,
    "milestones": {}
   },
   {
@@ -2837,9 +3015,9 @@
     "1318404489": 133,
     "-1004348482526": 1559
    },
-   "last": 3.817e-06,
-   "lastT": 1792282510,
-   "lastPct": -88.7,
+   "last": 4.042e-06,
+   "lastT": 1792283488,
+   "lastPct": -88.0,
    "minPrice": 3.711e-06,
    "milestones": {}
   },
@@ -2868,8 +3046,8 @@
     "1318404489": 132,
     "-1004348482526": 1558
    },
-   "last": 3.618e-06,
-   "lastT": 1792282510,
+   "last": 3.627e-06,
+   "lastT": 1792283488,
    "lastPct": -98.0,
    "minPrice": 3.618e-06,
    "milestones": {}
@@ -2899,9 +3077,9 @@
     "1318404489": 130,
     "-1004348482526": 1556
    },
-   "last": 1.35e-05,
-   "lastT": 1792282510,
-   "lastPct": -79.1,
+   "last": 1.299e-05,
+   "lastT": 1792283488,
+   "lastPct": -79.9,
    "minPrice": 1.261e-05,
    "milestones": {}
   },
@@ -2930,9 +3108,9 @@
     "1318404489": 118,
     "-1004348482526": 1544
    },
-   "last": 5.467e-05,
-   "lastT": 1792282510,
-   "lastPct": -59.9,
+   "last": 5.932e-05,
+   "lastT": 1792283488,
+   "lastPct": -56.4,
    "minPrice": 5.21e-05,
    "milestones": {
     "2": null
@@ -2965,9 +3143,9 @@
     "1318404489": 116,
     "-1004348482526": 1542
    },
-   "last": 0.0001488,
-   "lastT": 1792282510,
-   "lastPct": 268.3,
+   "last": 0.000178,
+   "lastT": 1792283488,
+   "lastPct": 340.6,
    "minPrice": 0.0001471,
    "milestones": {
     "2": null,
@@ -3002,7 +3180,7 @@
     "-1004348482526": 1529
    },
    "last": 1.983e-06,
-   "lastT": 1792282510,
+   "lastT": 1792283488,
    "lastPct": -98.1,
    "minPrice": 1.983e-06,
    "milestones": {}
@@ -3032,8 +3210,8 @@
     "1318404489": 100,
     "-1004348482526": 1526
    },
-   "last": 1.471e-05,
-   "lastT": 1792282510,
+   "last": 1.473e-05,
+   "lastT": 1792283488,
    "lastPct": -84.0,
    "minPrice": 1.103e-05,
    "milestones": {
@@ -3067,8 +3245,8 @@
     "1318404489": 98,
     "-1004348482526": 1524
    },
-   "last": 3.915e-06,
-   "lastT": 1792282510,
+   "last": 3.913e-06,
+   "lastT": 1792283488,
    "lastPct": -88.1,
    "minPrice": 3.88e-06,
    "milestones": {}
@@ -3099,7 +3277,7 @@
     "-1004348482526": 1518
    },
    "last": 2.533e-06,
-   "lastT": 1792282510,
+   "lastT": 1792283488,
    "lastPct": -97.9,
    "minPrice": 2.533e-06,
    "milestones": {}
@@ -3129,9 +3307,9 @@
     "1318404489": 88,
     "-1004348482526": 1514
    },
-   "last": 7.2e-06,
-   "lastT": 1792282510,
-   "lastPct": -82.0,
+   "last": 7e-06,
+   "lastT": 1792283488,
+   "lastPct": -82.5,
    "minPrice": 6.789e-06,
    "milestones": {}
   },
@@ -3160,9 +3338,9 @@
     "1318404489": 83,
     "-1004348482526": 1509
    },
-   "last": 0.0001834,
-   "lastT": 1792282510,
-   "lastPct": 418.1,
+   "last": 0.000162,
+   "lastT": 1792283488,
+   "lastPct": 357.6,
    "minPrice": 0.0001609,
    "milestones": {
     "2": null,
@@ -3199,9 +3377,9 @@
     "1318404489": 78,
     "-1004348482526": 1504
    },
-   "last": 0.0001376,
-   "lastT": 1792282510,
-   "lastPct": 183.0,
+   "last": 0.0001109,
+   "lastT": 1792283488,
+   "lastPct": 128.0,
    "minPrice": 5.122e-05,
    "milestones": {
     "2": null,
@@ -3701,7 +3879,7 @@
   }
  ],
  "stats": {
-  "signals": 31,
+  "signals": 32,
   "h1": {
    "n": 31,
    "winRate": 29.0,
@@ -3721,17 +3899,17 @@
  },
  "periodStats": {
   "today": {
-   "signals": 0,
-   "n": 0,
+   "signals": 1,
+   "n": 1,
    "wins": 0,
-   "winRate": null,
-   "totalPnl": null,
-   "avgPnl": null,
-   "best": null,
-   "worst": null,
+   "winRate": 0.0,
+   "totalPnl": -3.9,
+   "avgPnl": -3.9,
+   "best": "INK -4%",
+   "worst": "INK -4%",
    "basis": {
     "24h": 0,
-    "live": 0
+    "live": 1
    },
    "hit2x": 0,
    "hit5x": 0,
@@ -3740,22 +3918,22 @@
     "5": 0
    },
    "tpWins": 0,
-   "tpWinRate": null,
-   "tpTotalPnl": null,
-   "tpAvgPnl": null
+   "tpWinRate": 0.0,
+   "tpTotalPnl": -3.9,
+   "tpAvgPnl": -3.9
   },
   "week": {
-   "signals": 31,
-   "n": 31,
+   "signals": 32,
+   "n": 32,
    "wins": 5,
-   "winRate": 16.1,
-   "totalPnl": -1221.4,
-   "avgPnl": -39.4,
-   "best": "MAKERS +418%",
+   "winRate": 15.6,
+   "totalPnl": -1269.4,
+   "avgPnl": -39.7,
+   "best": "MAKERS +358%",
    "worst": "FLEG -98%",
    "basis": {
     "24h": 15,
-    "live": 16
+    "live": 17
    },
    "hit2x": 9,
    "hit5x": 3,
@@ -3767,22 +3945,22 @@
     "20": 1
    },
    "tpWins": 9,
-   "tpWinRate": 29.0,
-   "tpTotalPnl": -1143.4,
-   "tpAvgPnl": -36.9
+   "tpWinRate": 28.1,
+   "tpTotalPnl": -1171.7,
+   "tpAvgPnl": -36.6
   },
   "month": {
-   "signals": 31,
-   "n": 31,
+   "signals": 32,
+   "n": 32,
    "wins": 5,
-   "winRate": 16.1,
-   "totalPnl": -1221.4,
-   "avgPnl": -39.4,
-   "best": "MAKERS +418%",
+   "winRate": 15.6,
+   "totalPnl": -1269.4,
+   "avgPnl": -39.7,
+   "best": "MAKERS +358%",
    "worst": "FLEG -98%",
    "basis": {
     "24h": 15,
-    "live": 16
+    "live": 17
    },
    "hit2x": 9,
    "hit5x": 3,
@@ -3794,22 +3972,22 @@
     "20": 1
    },
    "tpWins": 9,
-   "tpWinRate": 29.0,
-   "tpTotalPnl": -1143.4,
-   "tpAvgPnl": -36.9
+   "tpWinRate": 28.1,
+   "tpTotalPnl": -1171.7,
+   "tpAvgPnl": -36.6
   },
   "all": {
-   "signals": 31,
-   "n": 31,
+   "signals": 32,
+   "n": 32,
    "wins": 5,
-   "winRate": 16.1,
-   "totalPnl": -1221.4,
-   "avgPnl": -39.4,
-   "best": "MAKERS +418%",
+   "winRate": 15.6,
+   "totalPnl": -1269.4,
+   "avgPnl": -39.7,
+   "best": "MAKERS +358%",
    "worst": "FLEG -98%",
    "basis": {
     "24h": 15,
-    "live": 16
+    "live": 17
    },
    "hit2x": 9,
    "hit5x": 3,
@@ -3821,9 +3999,9 @@
     "20": 1
    },
    "tpWins": 9,
-   "tpWinRate": 29.0,
-   "tpTotalPnl": -1143.4,
-   "tpAvgPnl": -36.9
+   "tpWinRate": 28.1,
+   "tpTotalPnl": -1171.7,
+   "tpAvgPnl": -36.6
   }
  },
  "statsBasis": "24h result where available, else live price",
@@ -4856,6 +5034,34 @@
   "6JVe4NQPab3NkKxE6vaKcEiJVsz8hpSZYvdHh54hpump": [
    1792282510,
    239960
+  ],
+  "Eg9JBFThqf6EqGCAv3qJLzb6GaVqerTNre3Rqo3apump": [
+   1792283488,
+   13863.79
+  ],
+  "AgTgwEL3WgFm7LbJ8Sk59hswj15W4iXhe9tGt4gZasEt": [
+   1792283488,
+   18237.01
+  ],
+  "qj8d81W47eqD7NyWBeB2k3hxBsEDnPYyWmooWMhpump": [
+   1792283488,
+   12579
+  ],
+  "H416oBu1655KR9BnyxRmiYs7bjYUSrzetNqsfBFTpump": [
+   1792283488,
+   76019
+  ],
+  "Aes5BcDUQKd2VGA38gchnTNYLYAehxx5R69TMy84pump": [
+   1792283488,
+   54229
+  ],
+  "0xC25d86Bc1e8D0d23F4521BFAb8bf37E1dB5DC798": [
+   1792283488,
+   163952
+  ],
+  "0x768488C988Cf2493F0e7CCb3d56547F2384E2c27": [
+   1792283488,
+   15569
   ]
  },
  "tgOffset": null
