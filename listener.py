@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Always-on Telegram command listener (long polling). Env: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID(S).
+"""Always-on Telegram command listener (long polling). Env: DEGEN_TELEGRAM_BOT_TOKEN (box), TELEGRAM_CHAT_ID(S).
 While this runs, keep workflow polling OFF (config.js commands.workflowPolling=false), since Telegram allows
 only one getUpdates consumer at a time (409 Conflict otherwise), and no webhook may be set."""
 import fcntl, os, sys, time
@@ -9,6 +9,7 @@ lock = open("/tmp/degen-listener.lock", "w")
 try: fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
 except OSError: print("listener already running", file=sys.stderr); sys.exit(0)
 me = C.api("getMe", http_timeout=15)["result"]["username"]
+if me.lower() != "degengainsbot": print(f"refusing: token belongs to @{me}, not @DegenGainsBot", file=sys.stderr); sys.exit(2)
 ok = C.allowed()
 print(time.strftime("%F %T"), f"listening as @{me} for {len(ok)} chats", file=sys.stderr, flush=True)
 offset, back = None, 1

@@ -1,4 +1,5 @@
-"""Telegram poster. Env: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID or TELEGRAM_CHAT_IDS (comma-separated, e.g. 123,-100456)."""
+"""Telegram poster. Token: DEGEN_TELEGRAM_BOT_TOKEN on the box; TELEGRAM_BOT_TOKEN only in GitHub Actions (repo secret name).
+Chats: TELEGRAM_CHAT_ID or TELEGRAM_CHAT_IDS (comma-separated, e.g. 123,-100456)."""
 import json, os, sys, urllib.error, urllib.parse, urllib.request
 def fmt(n): return f"{n/1e6:.2f}M" if n >= 1e6 else f"{n/1e3:.1f}K" if n >= 1e3 else f"{n:.0f}"
 def dev_line(r):
@@ -8,6 +9,13 @@ def dev_line(r):
     return (f"Dev: {flags}· {d.get('priorTokens')} prior ({d.get('priorMigrated')} migrated, {d.get('priorDead')} dead) "
             f"· dev score {r.get('devScore', 0):+d}\n")
 import os as _os
+def bot_token():
+    """Degen bot token. On the box only DEGEN_TELEGRAM_BOT_TOKEN is used (TELEGRAM_BOT_TOKEN there may belong to
+    another bot); GitHub Actions uses the TELEGRAM_BOT_TOKEN secret."""
+    if _os.environ.get("DEGEN_TELEGRAM_BOT_TOKEN"): return _os.environ["DEGEN_TELEGRAM_BOT_TOKEN"]
+    if _os.environ.get("GITHUB_ACTIONS") == "true": return _os.environ.get("TELEGRAM_BOT_TOKEN")
+    return None
+
 def chats():
     raw = _os.environ.get("TELEGRAM_CHAT_IDS") or _os.environ.get("TELEGRAM_CHAT_ID") or ""
     return [c.strip() for c in raw.split(",") if c.strip()]
@@ -15,11 +23,11 @@ def chats():
 def post(text, reply_to=None, buttons=None):
     """Post to every chat in TELEGRAM_CHAT_ID(S) (comma-separated). DRY_RUN=1 prints instead.
     reply_to: {chat_id: message_id} (or int for legacy single-chat). Returns {chat_id: message_id} for successes."""
-    tok, cs = _os.environ.get("TELEGRAM_BOT_TOKEN"), chats()
+    tok, cs = bot_token(), chats()
     if _os.environ.get("DRY_RUN"):
         print(f"[DRY_RUN telegram -> {len(cs)} chats]", text.replace("\n", " | ")[:300], file=sys.stderr); return {}
     if not tok or not cs:
-        print("telegram: TELEGRAM_BOT_TOKEN/TELEGRAM_CHAT_ID not set, skipping", file=sys.stderr); return {}
+        print("telegram: Degen bot token (DEGEN_TELEGRAM_BOT_TOKEN on box / TELEGRAM_BOT_TOKEN in Actions) or TELEGRAM_CHAT_ID not set, skipping", file=sys.stderr); return {}
     out = {}
     for chat in cs:
         q = {"chat_id": chat, "text": text, "parse_mode": "HTML", "disable_web_page_preview": "true"}

@@ -165,7 +165,8 @@ def poll(offset, wait=0):
     return api("getUpdates", http_timeout=wait + 15, offset=offset or 0, allowed_updates=["message", "channel_post"], **{"timeout": wait})
 
 def api(method, http_timeout=40, **q):
-    tok = os.environ["TELEGRAM_BOT_TOKEN"]
+    tok = notify.bot_token()
+    if not tok: raise RuntimeError("Degen bot token not set (DEGEN_TELEGRAM_BOT_TOKEN on the box)")
     data = urllib.parse.urlencode({k: (json.dumps(v) if isinstance(v, (list, dict)) else v) for k, v in q.items()}).encode()
     return json.loads(urllib.request.urlopen(f"https://api.telegram.org/bot{tok}/{method}", data=data, timeout=http_timeout).read())
 

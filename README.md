@@ -58,7 +58,7 @@ Files: `.github/workflows/signals.yml` (cron every 10 min) · `alert.py` + `pipe
 4. Settings → Actions → General → Workflow permissions: **Read and write**.
 5. Settings → Pages → Deploy from branch `main`, folder `/docs`. The site goes live at `https://<you>.github.io/<repo>/` and can be installed as an app.
 6. Actions tab → "5R signals" → Run workflow (first run). After that the cron runs on its own. GitHub can delay scheduled runs, and it disables them after 60 days without repo activity, but the bot's commits count as activity.
-Local run: `TELEGRAM_BOT_TOKEN=... TELEGRAM_CHAT_ID=@ch python3 alert.py --signals docs/signals.json --telegram`
+Local run (box): `DEGEN_TELEGRAM_BOT_TOKEN=... TELEGRAM_CHAT_ID=@ch python3 alert.py --signals docs/signals.json --telegram`. On the box only `DEGEN_TELEGRAM_BOT_TOKEN` is used; `TELEGRAM_BOT_TOKEN` is read only in GitHub Actions (repo secret) and the Worker (secret).
 Graceful failures: if rugcheck or RPC blocks the GitHub runner, the token is skipped (never posted unverified) and the error appears in `lastRunErrors` in signals.json and on the site. pump.fun is not needed by the pipeline.
 
 ## Dev lookup & optional signals (v4)

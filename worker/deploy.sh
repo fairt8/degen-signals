@@ -1,11 +1,14 @@
 #!/bin/bash
 # One-shot deploy of the Degen command Worker + webhook switch, with rollback to the box listener on failure.
-# Needs: wrangler authenticated (npx wrangler whoami), $TELEGRAM_BOT_TOKEN in env. Secret kept in ~/.degen/webhook_secret (never in repo).
+# Needs: wrangler authenticated (npx wrangler whoami), $DEGEN_TELEGRAM_BOT_TOKEN in env (box; the Worker secret is still named TELEGRAM_BOT_TOKEN). Secret kept in ~/.degen/webhook_secret (never in repo).
 set -uo pipefail
 cd "$(dirname "$0")"
 W="npx --yes wrangler@4"
 SECRET_FILE=~/.degen/webhook_secret
-TG="https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN:?TELEGRAM_BOT_TOKEN not set}"
+TOK="${DEGEN_TELEGRAM_BOT_TOKEN:?DEGEN_TELEGRAM_BOT_TOKEN not set}"
+TG="https://api.telegram.org/bot$TOK"
+who=$(curl -s "$TG/getMe" | python3 -c "import json,sys;print(json.load(sys.stdin).get('result',{}).get('username',''))")
+[ "$who" = "DegenGainsBot" ] || { echo "token is for @$who, not @DegenGainsBot: aborting"; exit 1; }
 rollback() {
   echo "!! $1: rolling back to box listener"
   curl -s "$TG/deleteWebhook" >/dev/null
@@ -17,7 +20,7 @@ $W whoami 2>&1 | grep -q "You are logged in" || { echo "wrangler not authenticat
 OUT=$($W deploy 2>&1); echo "$OUT" | grep -vi secret | tail -8
 URL=$(echo "$OUT" | grep -oE 'https://[a-z0-9.-]+\.workers\.dev' | head -1)
 [ -n "$URL" ] || { echo "no workers.dev URL (register a subdomain: dashboard > Workers & Pages, or 'wrangler subdomain')"; exit 1; }
-printf %s "$TELEGRAM_BOT_TOKEN" | $W secret put TELEGRAM_BOT_TOKEN >/dev/null 2>&1 || { echo "secret put TELEGRAM_BOT_TOKEN failed"; exit 1; }
+printf %s "$TOK" | $W secret put TELEGRAM_BOT_TOKEN >/dev/null 2>&1 || { echo "secret put TELEGRAM_BOT_TOKEN failed"; exit 1; }
 tr -d '\n' < "$SECRET_FILE" | $W secret put WEBHOOK_SECRET >/dev/null 2>&1 || { echo "secret put WEBHOOK_SECRET failed"; exit 1; }
 echo "$URL" > ~/.degen/worker_url
 sleep 5
