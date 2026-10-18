@@ -4,19 +4,28 @@ import sys, time
 import pipeline
 GT = "https://api.geckoterminal.com/api/v2/networks/solana"
 QUOTES = ("SOL", "WSOL", "USDC", "USDT")
+import os
 _last = [0.0]
+# per-run budget so a slow/rate-limited GeckoTerminal can't stall the 8-min workflow; after a 429 we stop calling it this run
+_state = {"deadline": time.time() + float(os.environ.get("CHART_BUDGET_S", "150")), "blocked": False, "calls": 0}
+MAX_CALLS = int(os.environ.get("CHART_MAX_CALLS", "60"))
 
 def _gt(path):
-    """Rate-limited GeckoTerminal GET (>=2.1s apart), 1 retry on 429."""
-    for attempt in range(2):
-        wait = 2.1 - (time.time() - _last[0])
-        if wait > 0: time.sleep(wait)
-        _last[0] = time.time()
-        try:
-            return pipeline.get(GT + path, headers={"Accept": "application/json;version=20230302"})
-        except Exception as x:
-            if "429" in str(x) and attempt == 0: time.sleep(15); continue
-            raise
+    """Rate-limited GeckoTerminal GET (>=2.1s apart). Raises when the run budget is spent or after a 429."""
+    if _state["blocked"] or time.time() > _state["deadline"] or _state["calls"] >= MAX_CALLS:
+        raise RuntimeError("chart budget exhausted / rate limited this run")
+    wait = 2.1 - (time.time() - _last[0])
+    if wait > 0: time.sleep(wait)
+    _last[0] = time.time(); _state["calls"] += 1
+    try:
+        return pipeline.get(GT + path, headers={"Accept": "application/json;version=20230302"}, timeout=10)
+    except Exception as x:
+        if "429" in str(x): _state["blocked"] = True
+        raise
+
+def reset_budget(seconds=30):
+    """For long-running processes (command listener): fresh budget per request."""
+    _state.update(deadline=time.time() + seconds, blocked=False, calls=0)
 
 def pools(mint):
     """Top pools where the token is the base and quote is SOL/USDC/USDT (avoids thin token/token pools with silly wicks)."""
@@ -69,4 +78,6 @@ def ath(mint, mcap=None, price=None, since=None, pool=None, fallback_pool=None, 
         supply = (mcap / price) if mcap and price else None
         return {"price": best[0], "mc": round(best[0] * supply) if supply else None, "t": best[1], "src": "chart"}
     except Exception as x:
-        print("chart ath failed:", str(x)[:120], file=sys.stderr); return None
+        if "budget" not in str(x) or not _state.get("warned"):
+            print("chart ath failed:", str(x)[:120], file=sys.stderr); _state["warned"] = "budget" in str(x)
+        return None

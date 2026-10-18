@@ -98,6 +98,7 @@ def cmd_pnl(args):
         return [not_signal(q)]
     x = hits[0]; p = J.prices([x["mint"]]).get(x["mint"]); v = live_view(x, p)
     import chart, liquidity
+    chart.reset_budget(30)
     a = chart.ath(x["mint"], mc_of(p), v["live"], fallback_pool=(p or {}).get("pairAddress")) if p else None
     if a and a.get("mc"): ath_txt = f"{money(a['mc'])} (chart ATH, {when(a['t'])})" if a.get("t") else f"{money(a['mc'])} (chart ATH)"
     elif x.get("athMc"): ath_txt = f"{money(x['athMc'])} (chart ATH, stored)"

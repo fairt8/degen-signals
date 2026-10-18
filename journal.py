@@ -65,8 +65,8 @@ def chart_max(e, p, now, until=None):
     mc, pr = p.get("marketCap") or p.get("fdv"), float(p.get("priceUsd") or 0)
     a = chart.ath(e["mint"], mc, pr, fallback_pool=pool)
     if a and a.get("mc"): e["athMc"], e["athT"], e["athSrc"] = max(a["mc"], e.get("athMc") or 0), a["t"], "chart"
-    e["chartT"] = int(now)
-    return first and (now - e["t0"]) > 2 * 3600
+    if h or a: e["chartT"] = int(now)  # only mark when the chart was actually read (retry next run otherwise)
+    return first and bool(h) and (now - e["t0"]) > 2 * 3600
 
 def backfill_chart(journal, n=4, now=None):
     """Entries already past 24h without a chart pass: chart high within the 24h window + ATH MC (silent; no replies)."""
