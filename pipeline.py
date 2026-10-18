@@ -324,7 +324,7 @@ def evaluate(p, m, F, now=None):
     }
     a = p["baseToken"]["address"]
     return {"symbol": p["baseToken"]["symbol"], "name": p["baseToken"]["name"], "chain": p["chainId"], "mint": a,
-            "dex": p.get("dexId"), "mcap": mc, "liq": liq, "vol": vol, "window": w, "buys": tx["buys"], "sells": tx["sells"],
+            "dex": p.get("dexId"), "pair": p.get("pairAddress"), "mcap": mc, "liq": liq, "vol": vol, "window": w, "buys": tx["buys"], "sells": tx["sells"],
             "ch5m": c5, "ch1h": c1, "ageH": round(ageH, 2) if ageH else None, "description": m["description"][:200],
             "ctoProfile": bool(m.get("cto")), "volLiq": round((p.get("volume") or {}).get("h24", 0) / liq, 1) if liq else None,
             "baseScore": base_score(p, len(narratives(f"{p['baseToken']['name']} {p['baseToken']['symbol']} {m['description']}")), F), "liqPctMc": round(liq / mc * 100, 1) if mc else None,
@@ -337,4 +337,5 @@ def links(chain, a, ds_url, sym):
     return {"dexscreener": ds_url, "pumpfun": f"https://pump.fun/coin/{a}" if chain == "solana" else None,
             "bubblemaps": f"https://v2.bubblemaps.io/map?address={a}&chain={c}",
             "insightx": f"https://app.insightx.network/bubblemaps/{'solana' if chain=='solana' else chain}/{a}",
+            "fomo": f"https://fomo.family/tokens/{'solana' if chain == 'solana' else chain}/{a}",
             "x_search": f"https://x.com/search?q=%24{sym}&f=live", "tiktok": f"https://www.tiktok.com/search?q={sym}"}

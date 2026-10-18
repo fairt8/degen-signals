@@ -10,7 +10,10 @@ def add(journal, r, t0=None):
     journal.insert(0, {"mint": r["mint"], "symbol": r["symbol"], "chain": r["chain"], "t0": int(t0 or time.time()),
         "price0": r.get("priceUsd"), "mcap0": r["mcap"], "score": r.get("score"), "devScore": r.get("devScore", 0),
         "link": r["links"]["dexscreener"], "maxPrice": r.get("priceUsd"), "samples": [], "trend": None,
-        "h1": None, "h24": None, "hit2x": False, "hit5x": False, "msgId": None})
+        "h1": None, "h24": None, "hit2x": False, "hit5x": False, "msgId": None,
+        "athMc": (r.get("chartAth") or {}).get("mc"), "athT": (r.get("chartAth") or {}).get("t"),
+        "lp": ({k: (r.get("lp") or {}).get(k) for k in ("status", "label", "pct", "unlock")}
+               | {"t": int(time.time()), "pctMax": (r.get("lp") or {}).get("pct"), "liq": r.get("liq"), "liqMax": r.get("liq")}) if r.get("lp") else None})
 
 def prices(mints):
     """Best-liquidity pair price per mint via /tokens/v1 (30 per call). Errors -> missing."""
@@ -50,6 +53,39 @@ def milestone_list(mult):
         while x <= mult: out.append(x); x += MILESTONE_STEP
     return out
 
+def chart_max(e, p, now, until=None):
+    """Raise e['maxPrice'] to the chart high since the alert; refresh all-time chart ATH MC. Returns True if this was
+    the first chart pass for an entry older than 2h (milestones found then are recorded without a reply)."""
+    import chart
+    first = not e.get("chartT")
+    pool = p.get("pairAddress")
+    h = chart.ath(e["mint"], since=e["t0"], until=until, pool=pool) if pool else None
+    if h and h["price"] > (e.get("maxPrice") or 0):
+        e["maxPrice"], e["maxSrc"] = h["price"], "chart"
+    mc, pr = p.get("marketCap") or p.get("fdv"), float(p.get("priceUsd") or 0)
+    a = chart.ath(e["mint"], mc, pr, fallback_pool=pool)
+    if a and a.get("mc"): e["athMc"], e["athT"], e["athSrc"] = max(a["mc"], e.get("athMc") or 0), a["t"], "chart"
+    e["chartT"] = int(now)
+    return first and (now - e["t0"]) > 2 * 3600
+
+def backfill_chart(journal, n=4, now=None):
+    """Entries already past 24h without a chart pass: chart high within the 24h window + ATH MC (silent; no replies)."""
+    now = now or time.time()
+    todo = [e for e in journal if e.get("h24") and not e.get("chartT") and e.get("chain") == "solana" and e.get("price0")][:n]
+    if not todo: return
+    px = prices([e["mint"] for e in todo])
+    for e in todo:
+        if px.get(e["mint"]):
+            chart_max(e, px[e["mint"]], now, until=e["t0"] + 24 * 3600)
+            mult = e["maxPrice"] / e["price0"]
+            hits = e.setdefault("milestones", {})
+            for x in milestone_list(mult):
+                hits.setdefault(f"{x:g}", None)
+                if x == 2: e["hit2x"] = True
+                if x == 5: e["hit5x"] = True
+            if hits:
+                top = max(hits, key=float); e["topMilestone"], e["topMilestoneT"] = float(top), hits[top]
+
 def update(journal, now=None):
     """Update outcomes + trend. Returns list of (kind, entry, text) notifications."""
     now = now or time.time()
@@ -68,6 +104,7 @@ def update(journal, now=None):
         age = (now - e["t0"]) / 3600
         e["last"], e["lastT"] = price, int(now)
         e["maxPrice"] = max(e.get("maxPrice") or 0, price)
+        silent = chart_max(e, p, now)  # real chart high since alert (GeckoTerminal); first pass on older entries is silent
         e["minPrice"] = min(e.get("minPrice") or price, price)  # for optional TP stop-loss sim
         e["lastPct"] = round((price / e["price0"] - 1) * 100, 1)
         mult = e["maxPrice"] / e["price0"]
@@ -77,12 +114,13 @@ def update(journal, now=None):
         for x in milestone_list(mult):
             k = f"{x:g}"
             if k in hits: continue
-            if first_init or (x == 2 and e.get("hit2x")) or (x == 5 and e.get("hit5x")):
+            if first_init or silent or (x == 2 and e.get("hit2x")) or (x == 5 and e.get("hit5x")):
                 hits[k] = None  # reached before milestone tracking existed: record, no new message
             else:
                 hits[k] = int(now)
                 el = (now - e["t0"]) / 3600
-                notes.append(("hit", e, f"🚀 ${e['symbol']} hit {k}x from alert (max seen {mult:.2f}x, {el:.1f}h after alert)"))
+                src = "chart high" if e.get("maxSrc") == "chart" else "max seen"
+                notes.append(("hit", e, f"🚀 ${e['symbol']} hit {k}x from alert ({src} {mult:.2f}x, {el:.1f}h after alert)"))
             if x == 2: e["hit2x"] = True
             if x == 5: e["hit5x"] = True
         if hits:

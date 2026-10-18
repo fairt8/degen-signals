@@ -85,7 +85,12 @@ def ath(r, journal=None):
     """(ath_mc, label). GMGN token info -> pump.fun ath field -> highest MC seen in our journal (est.)."""
     import gmgn
     v = gmgn.ath_mc(r["mint"]) if r.get("chain") == "solana" else None
-    if v: return max(v, r["mcap"]), ""
+    if v: return max(v, r["mcap"]), " (GMGN)"
+    c = r.get("chartAth") or {}
+    if c.get("mc"):  # real high from OHLCV candles (GeckoTerminal)
+        import time as _t
+        when = _t.strftime("%d %b %H:%M", _t.gmtime(c["t"] + 3600)) + " WAT" if c.get("t") else ""
+        return max(c["mc"], r["mcap"]), f" (chart ATH{', ' + when if when else ''})"
     try:
         req = urllib.request.Request(f"https://frontend-api-v3.pump.fun/coins/{r['mint']}", headers={"User-Agent": "Mozilla/5.0"})
         d = json.loads(urllib.request.urlopen(req, timeout=8).read())
@@ -131,6 +136,7 @@ def card(r, journal=None):
     soc += [f'<a href="{e(u)}">🌐</a>' for u in (r.get("websites") or [])[:2]]
     soc.append(f'<a href="{e(L["x_search"])}">🔍</a>')
     if L.get("pumpfun"): soc.append(f'<a href="{e(L["pumpfun"])}">💊</a>')
+    if L.get("fomo"): soc.append(f'<a href="{e(L["fomo"])}">🟢 Fomo</a>')
     # TOKEN DATA
     od = r.get("odds") or {}
     odds = (f"2x ~{od['x2']}% · Rug ~{od['rug']}% <i>(our past {od['n']} signals)</i>" if od.get("n") else "2x n/a · Rug n/a <i>(no history yet)</i>")
@@ -154,9 +160,10 @@ def card(r, journal=None):
            f"⭐ Score: {scl}",
            f"🤖 {odds}",
            f"🎯 {e(gl)}",
-           f"🧢 MC: {mcl}",
+           f"🧢 MC: {mcl}" + (f" | ATH <b>${fmt(a)}</b>" if a else ""),
            f"🏔 ATH MC: {e(('$' + fmt(a) + lbl) if a else 'n/a')}",
            f"💧 Liq: <b>${fmt(r['liq'])}</b> ({_num(r.get('liqPctMc'), 0)}%)",
+           f"🔐 LP: {e((r.get('lp') or {}).get('label') or 'n/a')}",
            f"💲 USD: <b>{_price(r.get('priceUsd'))}</b> ({'n/a' if ch is None else f'{ch:+.0f}%'} 24h)",
            f"📊 Vol {r['window']}: <b>${fmt(r['vol'])}</b> (🅑{r['buys']}/Ⓢ{r['sells']})",
            f"🔄 Vol24h/Liq: {'n/a' if vl is None else f'{vl}x'}{vflag}"]
@@ -207,7 +214,8 @@ def card(r, journal=None):
         text += f"\n\n<i>{e(r['description'].strip()[:400])}</i>"
     gm = G.get("link") or f"https://gmgn.ai/sol/token/{r['mint']}"
     kb = [[{"text": "DexScreener", "url": L["dexscreener"]}, {"text": "GMGN", "url": gm}, {"text": "Bubblemaps", "url": L["bubblemaps"]}],
-          [{"text": "X search", "url": L["x_search"]}] + ([{"text": "pump.fun", "url": L["pumpfun"]}] if L.get("pumpfun") else [])]
+          [{"text": "Fomo", "url": L.get("fomo") or f"https://fomo.family/tokens/solana/{r['mint']}"}, {"text": "X search", "url": L["x_search"]}]
+          + ([{"text": "pump.fun", "url": L["pumpfun"]}] if L.get("pumpfun") else [])]
     return text, kb
 
 def send(r, journal=None):

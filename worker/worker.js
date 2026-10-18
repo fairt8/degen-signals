@@ -73,7 +73,8 @@ async function cmdTokens(args, env) {
   const sel = es.slice((page - 1) * PAGE, page * PAGE), px = await prices(sel.map(e => e.mint));
   const lines = sel.map((e, i) => { const p = px[e.mint], v = view(e, p, env);
     return `${(page - 1) * PAGE + i + 1}. <b>$${esc(e.symbol)}</b> · ${when(e.t0)}\n<code>${e.mint}</code>\n` +
-      `MC ${money(e.mcap0)} → ${money(mcOf(p))} · PnL <b>${pct(v.hold)}</b> (${v.basis}) · max ${pct(v.maxGain)} · 🏆 ${topMs(e)}\n`; });
+      `MC ${money(e.mcap0)} → ${money(mcOf(p))} · PnL <b>${pct(v.hold)}</b> (${v.basis}) · max ${pct(v.maxGain)} · 🏆 ${topMs(e)}` +
+      (e.athMc ? ` · ATH ${money(e.athMc)}` : "") + "\n"; });
   const msgs = chunks(lines, `📋 <b>${LABEL[period]} signals (WAT)</b>: ${es.length} total` + (pages > 1 ? ` · page ${page}/${pages}` : "") + "\n\n");
   if (page < pages) msgs[msgs.length - 1] += `\nMore: /tokens ${period} ${page + 1}`;
   return msgs;
@@ -89,7 +90,7 @@ async function notSignal(q) {
   if (!ps.length) return `❔ ${esc(q)} is not a Degen signal, and no live Solana pair was found on DexScreener.`;
   const p = ps.reduce((a, c) => (c.liquidity?.usd || 0) > (a.liquidity?.usd || 0) ? c : a);
   return `❔ <b>$${esc(p.baseToken.symbol)}</b> is <b>not a Degen signal</b> (not in our journal).\n<code>${p.baseToken.address}</code>\n` +
-    `Live price: ${price(p.priceUsd ? +p.priceUsd : null)} · MC: ${money(mcOf(p))} · Liq: ${money(p.liquidity?.usd)}\n<a href="${esc(p.url)}">DexScreener</a>`;
+    `Live price: ${price(p.priceUsd ? +p.priceUsd : null)} · MC: ${money(mcOf(p))} · Liq: ${money(p.liquidity?.usd)}\n<a href="${esc(p.url)}">DexScreener</a> · <a href="https://fomo.family/tokens/solana/${p.baseToken.address}">Fomo</a>`;
 }
 async function cmdPnl(args, env) {
   if (!args.length) return ["Usage: /pnl &lt;contract address or $SYMBOL&gt;"];
@@ -102,9 +103,11 @@ async function cmdPnl(args, env) {
   let out = `📈 <b>$${esc(e.symbol)}</b> (Degen signal)\n<code>${e.mint}</code>\nAlert: ${when(e.t0)}\n` +
     `Price: ${price(e.price0)} → ${price(v.live)}\nMC: ${money(e.mcap0)} → ${money(mcOf(p))}\nLive vs alert: <b>${pct(v.livePct)}</b>\n` +
     `${e.h1 ? "1h: " + pct(e.h1.pct) : "1h: pending"} · ${e.h24 ? "24h: " + pct(e.h24.pct) : "24h: pending"}\n` +
-    `Max gain seen: ${pct(v.maxGain)} (sampled ~15 min)\n🏆 Milestones: ${ms}\n` +
+    `Max gain since alert: ${pct(v.maxGain)} (${e.maxSrc === "chart" ? "chart high" : "sampled ~15 min"})\n` +
+    `🏔 ATH MC: ${e.athMc ? money(e.athMc) + " (chart ATH" + (e.athT ? ", " + when(e.athT) : "") + ")" : (e.maxPrice && e.price0 ? money(e.mcap0 * e.maxPrice / e.price0) + " (sampled since alert, est.)" : "n/a")}\n` +
+    `🔐 LP: ${esc(e.lp?.label || "n/a")}${e.lp?.t ? " <i>(checked " + when(e.lp.t) + ")</i>" : ""}\n🏆 Milestones: ${ms}\n` +
     `Hold PnL: <b>${pct(v.hold)}</b> (${v.basis}) · TP ${v.f * 100}% @ +${v.at}%: <b>${pct(v.tp)}</b>\n` +
-    `<a href="${esc(e.link || "https://dexscreener.com/solana/" + e.mint)}">DexScreener</a>`;
+    `<a href="${esc(e.link || "https://dexscreener.com/solana/" + e.mint)}">DexScreener</a> · <a href="https://fomo.family/tokens/solana/${e.mint}">Fomo</a>`;
   if (hits.length > 1) out += `\n<i>${hits.length} signals share this symbol; showing the latest. Use the CA for others.</i>`;
   return [out];
 }

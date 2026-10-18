@@ -79,7 +79,8 @@ def cmd_tokens(args):
         p = px.get(x["mint"]); v = live_view(x, p)
         lines.append(f"{i}. <b>${e(x['symbol'])}</b> · {when(x['t0'])}\n<code>{x['mint']}</code>\n"
                      f"MC {money(x.get('mcap0'))} → {money(mc_of(p))} · PnL <b>{pct(v['hold'])}</b> ({v['basis']}) · "
-                     f"max {pct(v['maxGain'])} · 🏆 {top_ms(x)}\n")
+                     f"max {pct(v['maxGain'])} · 🏆 {top_ms(x)}"
+                     + (f" · ATH {money(x.get('athMc'))}" if x.get("athMc") else "") + "\n")
     head = f"📋 <b>{label} signals (WAT)</b>: {len(es)} total" + (f" · page {page}/{pages}" if pages > 1 else "") + "\n\n"
     msgs = chunks(lines, head)
     if page < pages: msgs[-1] += f"\nMore: /tokens {period} {page + 1}"
@@ -96,6 +97,14 @@ def cmd_pnl(args):
     if not hits:
         return [not_signal(q)]
     x = hits[0]; p = J.prices([x["mint"]]).get(x["mint"]); v = live_view(x, p)
+    import chart, liquidity
+    a = chart.ath(x["mint"], mc_of(p), v["live"], fallback_pool=(p or {}).get("pairAddress")) if p else None
+    if a and a.get("mc"): ath_txt = f"{money(a['mc'])} (chart ATH, {when(a['t'])})" if a.get("t") else f"{money(a['mc'])} (chart ATH)"
+    elif x.get("athMc"): ath_txt = f"{money(x['athMc'])} (chart ATH, stored)"
+    elif x.get("maxPrice") and x.get("price0") and x.get("mcap0"): ath_txt = f"{money(x['mcap0'] * x['maxPrice'] / x['price0'])} (sampled since alert, est.)"
+    else: ath_txt = "n/a"
+    lp = liquidity.status(x["mint"], (p or {}).get("pairAddress"), (p or {}).get("dexId")) if p else (x.get("lp") or {})
+    lp_txt = lp.get("label") or "n/a"
     ms = x.get("milestones") or {}
     msl = " · ".join(f"{k}x" + (f" ({when(t)})" if t else "") for k, t in sorted(ms.items(), key=lambda kv: float(kv[0]))) or "none yet"
     tpc = {**J.TP_DEFAULT, **(tp_cfg() or {})}
@@ -106,10 +115,13 @@ def cmd_pnl(args):
            f"Live vs alert: <b>{pct(v['livePct'])}</b>\n"
            + (f"1h: {pct(x['h1']['pct'])}" if x.get("h1") else "1h: pending") + " · "
            + (f"24h: {pct(x['h24']['pct'])}" if x.get("h24") else "24h: pending") + "\n"
-           f"Max gain seen: {pct(v['maxGain'])} (sampled ~15 min)\n"
+           f"Max gain since alert: {pct(v['maxGain'])} ({'chart high' if x.get('maxSrc') == 'chart' else 'sampled ~15 min'})\n"
+           f"🏔 ATH MC: {ath_txt}\n"
+           f"🔐 LP: {e(lp_txt)}\n"
            f"🏆 Milestones: {msl}\n"
            f"Hold PnL: <b>{pct(v['hold'])}</b> ({v['basis']}) · TP {tpc['sellFrac']*100:.0f}% @ +{tpc['atPct']:.0f}%: <b>{pct(v['tp'])}</b>\n"
-           f'<a href="{e(x.get("link") or "https://dexscreener.com/solana/" + x["mint"])}">DexScreener</a>')
+           f'<a href="{e(x.get("link") or "https://dexscreener.com/solana/" + x["mint"])}">DexScreener</a> · '
+           f'<a href="https://fomo.family/tokens/solana/{x["mint"]}">Fomo</a>')
     if len(hits) > 1: out += f"\n<i>{len(hits)} signals share this symbol; showing the latest. Use the CA for others.</i>"
     return [out]
 
@@ -126,7 +138,7 @@ def not_signal(q):
     return (f"❔ <b>${e(p['baseToken']['symbol'])}</b> is <b>not a Degen signal</b> (not in our journal).\n"
             f"<code>{p['baseToken']['address']}</code>\nLive price: {notify._price(float(p['priceUsd']) if p.get('priceUsd') else None)} · "
             f"MC: {money(mc_of(p))} · Liq: {money((p.get('liquidity') or {}).get('usd'))}\n"
-            f'<a href="{e(p.get("url") or "")}">DexScreener</a>')
+            f'<a href="{e(p.get("url") or "")}">DexScreener</a> · <a href="https://fomo.family/tokens/solana/{p["baseToken"]["address"]}">Fomo</a>')
 
 def handle(text, bot_username=None):
     """Returns list of HTML messages, or None if not a command for us."""

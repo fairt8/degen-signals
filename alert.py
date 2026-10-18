@@ -40,6 +40,9 @@ for r in cheap[:F.get("holderLookupLimit", 15)]:
         r["behaviour"] = pipeline.behaviour(r, h, F["behaviour"])
         pipeline.final_score(r, F["behaviour"])
         r["findings"] = pipeline.findings(r, F["behaviour"])
+        import chart, liquidity
+        r["lp"] = liquidity.status(r["mint"], r.get("pair"), r.get("dex"))
+        r["chartAth"] = chart.ath(r["mint"], r["mcap"], r.get("priceUsd"), fallback_pool=r.get("pair"))
         del r["checks"]; out.append(r)
 if a.debug:
     fails = {}
@@ -65,6 +68,12 @@ for r in out:
     r["priceUsd"] = r.get("priceUsd"); J.add(jr, r)
 try: notes = J.update(jr)
 except Exception as e: notes = []; errors.append(f"journal update failed: {str(e)[:100]}")
+try: J.backfill_chart(jr)
+except Exception as e: errors.append(f"chart backfill failed: {str(e)[:100]}")
+try:
+    import liquidity
+    notes += liquidity.monitor(jr)
+except Exception as e: errors.append(f"LP monitor failed: {str(e)[:100]}")
 if a.signals:
     for r in out: r["signalAt"] = int(time.time())
     feed = {"updatedAt": int(time.time()), "window": F["window"], "lastRunErrors": errors,
