@@ -186,7 +186,9 @@ document.addEventListener("click", ev => { const b = ev.target.closest("[data-co
 async function load(){
   try { D = await (await fetch(DATA + "?t=" + Date.now())).json(); }
   catch(e) { $("#main").innerHTML = `<div class="empty">Could not load signals (${esc(e.message)})</div>`; return; }
-  const start = tg?.initDataUnsafe?.start_param || new URLSearchParams(location.search).get("ca") || new URLSearchParams(location.search).get("tgWebAppStartParam");
+  // token param: t.me/DegenGainsBot/app?startapp=<mint> (start_param / tgWebAppStartParam in query or hash), or website ?ca=<mint>
+  const qs = new URLSearchParams(location.search), hs = new URLSearchParams(location.hash.slice(1));
+  const start = tg?.initDataUnsafe?.start_param || qs.get("tgWebAppStartParam") || hs.get("tgWebAppStartParam") || qs.get("startapp") || qs.get("ca");
   const q = new URLSearchParams(location.search).get("q"), tb = new URLSearchParams(location.search).get("tab");
   if (["signals","pnl","lookup"].includes(tb)) tab = tb;
   if (q) { tab = "lookup"; render(); return lookup(q); }
