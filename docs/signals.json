@@ -1,9 +1,12 @@
 {
- "updatedAt": 1792399531,
+ "updatedAt": 1792400430,
  "window": "h1",
- "lastRunErrors": [],
- "candidates": 113,
- "cheapPass": 0,
+ "lastRunErrors": [
+  "holder lookup failed LSCW: <urlopen error [Errno -2] Name or service not known>",
+  "holder lookup failed KAHO: <urlopen error [Errno -2] Name or service not known>"
+ ],
+ "candidates": 114,
+ "cheapPass": 2,
  "tokens": [
   {
    "symbol": "Deadpool ",
@@ -4384,13 +4387,13 @@
     "liq": 20894.63,
     "liqMax": 23381.95
    },
-   "last": 6.67e-05,
-   "lastT": 1792399516,
+   "last": 6.297e-05,
+   "lastT": 1792400415,
    "maxSrc": "chart",
    "athSrc": "chart",
-   "chartT": 1792398615,
+   "chartT": 1792400415,
    "minPrice": 4.492e-05,
-   "lastPct": 17.7,
+   "lastPct": 11.1,
    "milestones": {},
    "lpEvents": {}
   },
@@ -4426,17 +4429,17 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792398626,
+    "t": 1792400426,
     "pctMax": 100,
-    "liq": 17751.67,
+    "liq": 16905.33,
     "liqMax": 27530.65
    },
-   "last": 4.149e-05,
-   "lastT": 1792399516,
+   "last": 4.004e-05,
+   "lastT": 1792400415,
    "athSrc": "chart",
-   "chartT": 1792398615,
+   "chartT": 1792400415,
    "minPrice": 3.027e-05,
-   "lastPct": -59.9,
+   "lastPct": -61.3,
    "milestones": {},
    "lpEvents": {},
    "maxSrc": "chart"
@@ -4478,12 +4481,12 @@
     "liq": 21288.22,
     "liqMax": 41393.98
    },
-   "last": 6.551e-05,
-   "lastT": 1792399516,
+   "last": 6.79e-05,
+   "lastT": 1792400415,
    "athSrc": "chart",
-   "chartT": 1792398615,
+   "chartT": 1792400415,
    "minPrice": 3.721e-05,
-   "lastPct": 18.9,
+   "lastPct": 23.3,
    "milestones": {
     "2": 1792345510,
     "5": 1792346413
@@ -4525,13 +4528,13 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792398626,
+    "t": 1792400426,
     "pctMax": 100,
     "liq": 2810.66,
     "liqMax": 19827.04
    },
    "last": 2.891e-06,
-   "lastT": 1792399516,
+   "lastT": 1792400415,
    "maxSrc": "chart",
    "athSrc": "chart",
    "chartT": 1792399516,
@@ -4576,9 +4579,9 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792397721,
+    "t": 1792400426,
     "pctMax": 100,
-    "liq": 12110.54,
+    "liq": 11059.8,
     "liqMax": 22042.39
    },
    "last": 2.751e-05,
@@ -4733,9 +4736,9 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792397721,
+    "t": 1792400426,
     "pctMax": 100,
-    "liq": 10926.66,
+    "liq": 10622.36,
     "liqMax": 18857.04
    },
    "last": 1.933e-05,
@@ -4992,9 +4995,9 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792397721,
+    "t": 1792400426,
     "pctMax": 100,
-    "liq": 3481.09,
+    "liq": 3462.15,
     "liqMax": 4191.43
    },
    "maxSrc": "chart",
@@ -5043,9 +5046,9 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792397721,
+    "t": 1792400426,
     "pctMax": 100,
-    "liq": 4488.73,
+    "liq": 4469.07,
     "liqMax": 10104.25
    },
    "maxSrc": "chart",
@@ -5330,9 +5333,9 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792397721,
+    "t": 1792400426,
     "pctMax": 100,
-    "liq": 10627.18,
+    "liq": 11120.47,
     "liqMax": 23468.33
    }
   },
@@ -5381,9 +5384,9 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792397721,
+    "t": 1792400426,
     "pctMax": 100,
-    "liq": 30639.19,
+    "liq": 32246.66,
     "liqMax": 43478.56
    }
   },
@@ -5427,7 +5430,7 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792397721,
+    "t": 1792400426,
     "pctMax": 100,
     "liq": 2008.53,
     "liqMax": 2077.79
@@ -5943,9 +5946,9 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792397721,
+    "t": 1792400426,
     "pctMax": 100,
-    "liq": 2968.08,
+    "liq": 2970.82,
     "liqMax": 2986.05
    }
   },
@@ -5987,9 +5990,9 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792397721,
+    "t": 1792400426,
     "pctMax": 100,
-    "liq": 3745.49,
+    "liq": 3725.3,
     "liqMax": 4578.36
    }
   },
@@ -6031,9 +6034,9 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792397721,
+    "t": 1792400426,
     "pctMax": 100,
-    "liq": 3517.51,
+    "liq": 3555.52,
     "liqMax": 3647.55
    }
   },
@@ -6075,9 +6078,9 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792397721,
+    "t": 1792400426,
     "pctMax": 100,
-    "liq": 3264.64,
+    "liq": 3252.8,
     "liqMax": 3279.82
    }
   },
@@ -6119,9 +6122,9 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792397721,
+    "t": 1792400426,
     "pctMax": 100,
-    "liq": 4108.05,
+    "liq": 4265.04,
     "liqMax": 5420.05
    }
   },
@@ -6163,7 +6166,7 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792397721,
+    "t": 1792400426,
     "pctMax": 100,
     "liq": 3179.02,
     "liqMax": 3179.02
@@ -6454,7 +6457,7 @@
    "n": 43,
    "wins": 8,
    "winRate": 18.6,
-   "totalPnl": -1834.3,
+   "totalPnl": -1837.9,
    "avgPnl": -42.7,
    "best": "ZeroFee +382%",
    "worst": "Eternia -99%",
@@ -6473,15 +6476,15 @@
    },
    "tpWins": 13,
    "tpWinRate": 30.2,
-   "tpTotalPnl": -1602.7,
-   "tpAvgPnl": -37.3
+   "tpTotalPnl": -1608.6,
+   "tpAvgPnl": -37.4
   },
   "all": {
    "signals": 43,
    "n": 43,
    "wins": 8,
    "winRate": 18.6,
-   "totalPnl": -1834.3,
+   "totalPnl": -1837.9,
    "avgPnl": -42.7,
    "best": "ZeroFee +382%",
    "worst": "Eternia -99%",
@@ -6500,8 +6503,8 @@
    },
    "tpWins": 13,
    "tpWinRate": 30.2,
-   "tpTotalPnl": -1602.7,
-   "tpAvgPnl": -37.3
+   "tpTotalPnl": -1608.6,
+   "tpAvgPnl": -37.4
   }
  },
  "statsBasis": "24h result where available, else live price",
@@ -9930,6 +9933,18 @@
   "0xB8a1881D89623bF9C03aCdE9Af5B47a8aD427777": [
    1792399516,
    7628
+  ],
+  "FAGNYttgah3tfEPgdoPxE38fF7viTcKK6dFmzgT3pump": [
+   1792400415,
+   9972.08
+  ],
+  "BVpFpksfdEwDgaUhZxdG8kSyfAekeYfKV4BdUfNJpump": [
+   1792400415,
+   62014
+  ],
+  "CR9RokqJs8DBNkHvEkdKWTGr87jvityMtye5FAvLpump": [
+   1792400415,
+   10164
   ]
  },
  "tgOffset": null
