@@ -1,9 +1,12 @@
 {
- "updatedAt": 1792379727,
+ "updatedAt": 1792380627,
  "window": "h1",
- "lastRunErrors": [],
- "candidates": 123,
- "cheapPass": 0,
+ "lastRunErrors": [
+  "holder lookup failed Echo: <urlopen error [Errno -2] Name or service not known>",
+  "holder lookup failed PCAT: <urlopen error [Errno -2] Name or service not known>"
+ ],
+ "candidates": 128,
+ "cheapPass": 2,
  "tokens": [
   {
    "symbol": "Deadpool ",
@@ -4454,6 +4457,10 @@
     [
      1792379711,
      4.859e-05
+    ],
+    [
+     1792380611,
+     5.406e-05
     ]
    ],
    "trend": "fading",
@@ -4476,18 +4483,18 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792378825,
+    "t": 1792380622,
     "pctMax": 100,
-    "liq": 19195.93,
+    "liq": 18705.39,
     "liqMax": 23381.95
    },
-   "last": 4.859e-05,
-   "lastT": 1792379711,
+   "last": 5.406e-05,
+   "lastT": 1792380611,
    "maxSrc": "chart",
    "athSrc": "chart",
    "chartT": 1792379711,
    "minPrice": 4.531e-05,
-   "lastPct": -14.3,
+   "lastPct": -4.6,
    "milestones": {},
    "lpEvents": {}
   },
@@ -4528,12 +4535,12 @@
     "liq": 21576.09,
     "liqMax": 27530.65
    },
-   "last": 6.081e-05,
-   "lastT": 1792379711,
+   "last": 5.609e-05,
+   "lastT": 1792380611,
    "athSrc": "chart",
    "chartT": 1792379711,
    "minPrice": 3.027e-05,
-   "lastPct": -41.2,
+   "lastPct": -45.8,
    "milestones": {},
    "lpEvents": {},
    "maxSrc": "chart"
@@ -4570,13 +4577,13 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792378825,
+    "t": 1792380622,
     "pctMax": 100,
-    "liq": 19447.91,
+    "liq": 19023.71,
     "liqMax": 41393.98
    },
    "last": 5.373e-05,
-   "lastT": 1792379711,
+   "lastT": 1792380611,
    "athSrc": "chart",
    "chartT": 1792379711,
    "minPrice": 3.721e-05,
@@ -4628,7 +4635,7 @@
     "liqMax": 19827.04
    },
    "last": 2.876e-06,
-   "lastT": 1792379711,
+   "lastT": 1792380611,
    "maxSrc": "chart",
    "athSrc": "chart",
    "chartT": 1792378814,
@@ -4674,13 +4681,13 @@
     "liq": 10778.72,
     "liqMax": 22042.39
    },
-   "last": 2.035e-05,
-   "lastT": 1792379711,
+   "last": 2.377e-05,
+   "lastT": 1792380611,
    "maxSrc": "chart",
    "athSrc": "chart",
    "chartT": 1792378814,
    "minPrice": 1.579e-05,
-   "lastPct": -64.1,
+   "lastPct": -58.1,
    "milestones": {},
    "lpEvents": {}
   },
@@ -4716,16 +4723,16 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792377921,
+    "t": 1792380622,
     "pctMax": 100,
-    "liq": 3142.67,
+    "liq": 3127.36,
     "liqMax": 35876.56
    },
-   "last": 3.147e-06,
-   "lastT": 1792379711,
+   "last": 3.14e-06,
+   "lastT": 1792380611,
    "maxSrc": "chart",
    "athSrc": "chart",
-   "chartT": 1792376111,
+   "chartT": 1792380611,
    "minPrice": 3.022e-06,
    "lastPct": -96.0,
    "milestones": {
@@ -4772,13 +4779,13 @@
     "liq": 24028.03,
     "liqMax": 37870.5
    },
-   "last": 6.669e-05,
-   "lastT": 1792379711,
+   "last": 6.924e-05,
+   "lastT": 1792380611,
    "maxSrc": "chart",
    "athSrc": "chart",
-   "chartT": 1792377012,
+   "chartT": 1792380611,
    "minPrice": 2.47e-05,
-   "lastPct": -62.4,
+   "lastPct": -61.0,
    "milestones": {},
    "lpEvents": {}
   },
@@ -4819,12 +4826,12 @@
     "liq": 13256.5,
     "liqMax": 18857.04
    },
-   "last": 2.759e-05,
-   "lastT": 1792379711,
+   "last": 2.451e-05,
+   "lastT": 1792380611,
    "athSrc": "chart",
-   "chartT": 1792377012,
+   "chartT": 1792380611,
    "minPrice": 1.316e-05,
-   "lastPct": -46.7,
+   "lastPct": -52.7,
    "milestones": {},
    "maxSrc": "chart",
    "lpEvents": {}
@@ -4854,10 +4861,10 @@
     "1318404489": 196,
     "-1004348482526": 1634
    },
-   "last": 0.0003045,
-   "lastT": 1792379711,
+   "last": 0.000357,
+   "lastT": 1792380611,
    "minPrice": 8.03e-05,
-   "lastPct": 214.2,
+   "lastPct": 268.4,
    "milestones": {
     "2": 1792298713,
     "5": null
@@ -4872,9 +4879,9 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792377921,
+    "t": 1792380622,
     "pctMax": 100,
-    "liq": 48907.81,
+    "liq": 57409.15,
     "liqMax": 77417.18
    },
    "athMc": 839602,
@@ -4972,9 +4979,9 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792377921,
+    "t": 1792380622,
     "pctMax": 100,
-    "liq": 5185.94,
+    "liq": 5550.76,
     "liqMax": 12282.91
    }
   },
@@ -5171,9 +5178,9 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792377921,
+    "t": 1792380622,
     "pctMax": 100,
-    "liq": 3310.89,
+    "liq": 3327.9,
     "liqMax": 4917.68
    },
    "maxSrc": "chart",
@@ -5265,9 +5272,9 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792377921,
+    "t": 1792380622,
     "pctMax": 100,
-    "liq": 4290.65,
+    "liq": 4155.79,
     "liqMax": 5424.73
    }
   },
@@ -5554,9 +5561,9 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792377921,
+    "t": 1792380622,
     "pctMax": 100,
-    "liq": 4599.63,
+    "liq": 3923.7,
     "liqMax": 8989.65
    }
   },
@@ -5600,7 +5607,7 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792377921,
+    "t": 1792380622,
     "pctMax": 100,
     "liq": 3176.3,
     "liqMax": 3469.61
@@ -5646,7 +5653,7 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792377921,
+    "t": 1792380622,
     "pctMax": 100,
     "liq": 2591.05,
     "liqMax": 2663.35
@@ -6284,7 +6291,7 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792377921,
+    "t": 1792380622,
     "pctMax": 100,
     "liq": 3341.93,
     "liqMax": 3665.76
@@ -6328,7 +6335,7 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792377921,
+    "t": 1792380622,
     "pctMax": 100,
     "liq": 4029.54,
     "liqMax": 4165.15
@@ -6369,9 +6376,9 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792377921,
+    "t": 1792380622,
     "pctMax": 100,
-    "liq": 12736.01,
+    "liq": 12693.58,
     "liqMax": 18596.55
    }
   },
@@ -6410,9 +6417,9 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792377921,
+    "t": 1792380622,
     "pctMax": 100,
-    "liq": 41942.22,
+    "liq": 43195.34,
     "liqMax": 53567.71
    }
   },
@@ -6451,7 +6458,7 @@
     "label": "n/a (rugcheck unavailable)",
     "pct": null,
     "unlock": null,
-    "t": 1792377921,
+    "t": 1792380622,
     "pctMax": 100,
     "liq": 2439.77,
     "liqMax": 2635.86
@@ -6531,8 +6538,8 @@
    "n": 43,
    "wins": 6,
    "winRate": 14.0,
-   "totalPnl": -1910.1,
-   "avgPnl": -44.4,
+   "totalPnl": -1849.4,
+   "avgPnl": -43.0,
    "best": "ZeroFee +382%",
    "worst": "Eternia -99%",
    "basis": {
@@ -6550,16 +6557,16 @@
    },
    "tpWins": 12,
    "tpWinRate": 27.9,
-   "tpTotalPnl": -1653.2,
-   "tpAvgPnl": -38.4
+   "tpTotalPnl": -1619.6,
+   "tpAvgPnl": -37.7
   },
   "all": {
    "signals": 43,
    "n": 43,
    "wins": 6,
    "winRate": 14.0,
-   "totalPnl": -1910.1,
-   "avgPnl": -44.4,
+   "totalPnl": -1849.4,
+   "avgPnl": -43.0,
    "best": "ZeroFee +382%",
    "worst": "Eternia -99%",
    "basis": {
@@ -6577,8 +6584,8 @@
    },
    "tpWins": 12,
    "tpWinRate": 27.9,
-   "tpTotalPnl": -1653.2,
-   "tpAvgPnl": -38.4
+   "tpTotalPnl": -1619.6,
+   "tpAvgPnl": -37.7
   }
  },
  "statsBasis": "24h result where available, else live price",
@@ -9707,6 +9714,30 @@
   "4sDXjyUx2XGmuJbAUZLwZbGD58zsERtP3YyL4L5xNZh3": [
    1792379711,
    18177
+  ],
+  "7cJ3cAptfr9hZXfYgtqwFfhk4rrLPCdxef9d1mWnpump": [
+   1792380611,
+   8967.9
+  ],
+  "9mBi6hL2omjfeQ5JiNdLDf7zEAmXVuSBsSU3kNm9pump": [
+   1792380611,
+   107692
+  ],
+  "6C7hgz2RhinRFMyv8717DCnBRncqqsrkHUmii8Xkpump": [
+   1792380611,
+   2035
+  ],
+  "4zDpuoFi95a4Mc1MgXPJVwpkhcbfaJMtXx8Ps6CPpump": [
+   1792380611,
+   3345.41
+  ],
+  "0x0aB17eB61dd02Ea3585F61B120F9572EB5f53753": [
+   1792380611,
+   239739
+  ],
+  "0x012A6709a971Cf03F379AFE909769E15cc7F0143": [
+   1792380611,
+   189029
   ]
  },
  "tgOffset": null
