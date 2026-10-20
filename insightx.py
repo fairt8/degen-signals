@@ -19,5 +19,8 @@ def overview(mint):
             return {"error": str(e)[:100]}
         keys = {"cluster_pct": "cluster", "snipers_pct": "sniper", "bundlers_pct": "bundler",
                 "dev_pct": "dev", "insiders_pct": "insider", "top10_pct": "top10"}
-        return {v: round(float(d[k2]), 2) for k2, v in keys.items() if d.get(k2) is not None}
+        out = {v: round(float(d[k2]), 2) for k2, v in keys.items() if d.get(k2) is not None}
+        if out and not any(out.values()):  # all zeros = token not indexed yet by InsightX; don't show fake 0%
+            return {"error": "not indexed yet"}
+        return out
     return pipeline.cached("ix:" + mint, 3600, f)
