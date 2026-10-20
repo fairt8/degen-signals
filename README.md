@@ -149,3 +149,9 @@ Command data: the journal comes from `signals.json` (GitHub raw, refreshed by ea
 - InsightX free plan: 5 req/min, 1,000 req/month. Key (UUID) from https://hub.insightx.network → add repo secret `INSIGHTX_API_KEY`. Degen calls it once per NEW alert only.
 - GMGN is dormant: used automatically only if `GMGN_API_KEY` ever appears.
 - Links: Axiom `https://axiom.trade/t/<CA>?chain=sol`, BullX NEO `https://neo.bullx.io/terminal?chainId=1399811149&address=<CA>`, Shuriken bot `https://t.me/shuriken_trade_bot` (paste the CA; no documented token deep link). These terminals have no free public data API (Shuriken's API needs an account Agent Key; Axiom/BullX none).
+
+## Box fallback scanner (while GitHub Actions is disabled)
+The same "5R signals" job runs from the Grok Bot box every 15 min (:00/:15/:30/:45 +20s) via `~/.degen/run_scan.sh`
+(separate clone in `~/.degen/repo`, secrets in `~/.degen/scan.env` chmod 600, log `~/.degen/scan.log`, flock-guarded, nohup loop + watchdog).
+- Stop (switch back to Actions): `~/.degen/stop.sh`
+- Resume: `~/.degen/start.sh`
