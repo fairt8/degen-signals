@@ -23,7 +23,7 @@ def _get(path, **q):
 def analyze(mint, C, chain="sol"):
     """Returns {status: PASS/FAIL/SKIPPED/ERROR, pass, reasons, scoreAdj, counts, pct}. Cached 10 min."""
     if not os.environ.get("GMGN_API_KEY"):
-        return {"status": "SKIPPED", "pass": None, "reasons": ["no GMGN_API_KEY"], "scoreAdj": 0}
+        return route_check(mint, C)  # free, no-key GMGN router quote (sellability / round-trip cost)
     hit = _cache.get(mint)
     if hit and time.time() - hit[0] < 600: return hit[1]
     try:
@@ -108,3 +108,63 @@ def wallet_behaviour(wallets, mint, limit=100):
              "entryDayTokens": len(buys.get(min(entry), set())) if entry else None, "events": len(acts)}
         _cache["wb:" + w] = (time.time(), v); out[w] = v
     return out
+
+
+# ---------- free, no-key GMGN trading router: QUOTE ONLY (never signs or submits a transaction) ----------
+ROUTER = "https://gmgn.ai/defi/router/v1/sol/tx/get_swap_route"
+SOL = "So11111111111111111111111111111111111111112"
+QUOTE_WALLET = "2kpJ5QRh16aRQ4oLZ5LnucHFDAZtEFz6omqWWMzDSNrx"  # example address from GMGN's doc; route is quoted only
+
+def _route(tin, tout, amount, slippage=10):
+    q = urllib.parse.urlencode(dict(token_in_address=tin, token_out_address=tout, in_amount=str(int(amount)),
+                                    from_address=QUOTE_WALLET, slippage=slippage))
+    req = urllib.request.Request(f"{ROUTER}?{q}", headers={"User-Agent": "Mozilla/5.0", "Accept": "application/json"})
+    try:
+        d = json.loads(urllib.request.urlopen(req, timeout=12).read())
+    except urllib.error.HTTPError as e:
+        if e.code == 403: raise PermissionError("GMGN blocked this IP (Cloudflare)")
+        raise
+    if d.get("code") not in (0, None) or not (d.get("data") or {}).get("quote"):
+        return None, d.get("msg") or "no route"
+    return d["data"]["quote"], None
+
+def route_check(mint, C=None, sol=0.1):
+    """Sellability check via GMGN router quotes: buy `sol` SOL of the token, then quote selling that amount back.
+    PASS if a sell route exists and round-trip loss <= C['maxRoundTripPct'] (default 25%). Read-only."""
+    C = C or {}
+    hit = _cache.get("rt:" + mint)
+    if hit and time.time() - hit[0] < 600: return hit[1]
+    lam = int(sol * 1e9)
+    try:
+        buy, err = _route(SOL, mint, lam)
+        if not buy: res = {"status": "FAIL", "pass": False, "reasons": [f"no buy route ({err})"], "scoreAdj": 0}
+        else:
+            time.sleep(0.5)
+            sell, err2 = _route(mint, SOL, int(buy["outAmount"]))
+            if not sell:
+                res = {"status": "FAIL", "pass": False, "reasons": [f"not sellable: no sell route ({err2})"], "scoreAdj": -10}
+            else:
+                rt = round((int(sell["outAmount"]) / lam - 1) * 100, 1)
+                imp = max(float(buy.get("priceImpactPct") or 0), float(sell.get("priceImpactPct") or 0)) * (100 if max(float(buy.get("priceImpactPct") or 0), float(sell.get("priceImpactPct") or 0)) < 1 else 1)
+                lim = C.get("maxRoundTripPct", 25)
+                ok = -rt <= lim
+                res = {"status": "PASS" if ok else "FAIL", "pass": ok, "scoreAdj": 0 if ok else -10, "source": "router",
+                       "reasons": [f"sellable, round-trip {rt:+.1f}% on {sol:g} SOL" + ("" if ok else f" (> {lim}% loss)"),
+                                   f"price impact {imp:.1f}%"],
+                       "route": {"roundTripPct": rt, "impactPct": round(imp, 2), "sol": sol,
+                                 "dex": " → ".join(dict.fromkeys((r.get("swapInfo") or {}).get("label") or "?" for r in sell.get("routePlan") or []))}}
+    except PermissionError as e:
+        res = {"status": "SKIPPED", "pass": None, "reasons": [str(e) + "; no GMGN_API_KEY"], "scoreAdj": 0}
+    except Exception as e:
+        res = {"status": "ERROR", "pass": None, "reasons": [f"router: {str(e)[:80]}"], "scoreAdj": 0}
+    res["link"] = f"https://gmgn.ai/sol/token/{mint}"
+    _cache["rt:" + mint] = (time.time(), res)
+    return res
+
+def probe(mint="7gUDvf45et6627atavR45Md4BjgYqJHMZe9EPqeR9Sya"):
+    """One router quote to see if this IP can reach GMGN (for --debug logs)."""
+    try:
+        q, err = _route(SOL, mint, 10_000_000)
+        return "ok" if q else f"reachable, no route ({err})"
+    except Exception as e:
+        return f"blocked/error: {str(e)[:80]}"

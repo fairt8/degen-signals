@@ -49,6 +49,7 @@ if a.debug:
     for r in rows:
         for k, v in (r.get("checks") or {}).items(): fails[k] = fails.get(k, 0) + (not v)
     print(json.dumps({"candidates": len(rows), "cheapPass": len(cheap), "failCounts": fails}), file=sys.stderr)
+    import gmgn as _g; print("gmgn router probe:", _g.probe(), file=sys.stderr)
 import journal as J
 if F.get("milestones"): J.MILESTONES = sorted(F["milestones"])
 J.MILESTONE_STEP = F.get("milestoneStep", 50)
