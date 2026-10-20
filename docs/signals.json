@@ -1,10 +1,158 @@
 {
- "updatedAt": 1792517630,
+ "updatedAt": 1792518207,
  "window": "h1",
  "lastRunErrors": [],
  "candidates": 125,
- "cheapPass": 0,
+ "cheapPass": 1,
  "tokens": [
+  {
+   "symbol": "Duke",
+   "name": "Duke Nukem",
+   "chain": "solana",
+   "mint": "3ovfq2cy9mtjhgXeZcKAJTazTJH2wGtvd4afJ8ckpump",
+   "dex": "pumpswap",
+   "pair": "33RPikkTvztF4U1Chpv8L5sg4VwZWL1Wy8LTpCBc2MU5",
+   "mcap": 79295,
+   "liq": 22758.83,
+   "vol": 107542.7,
+   "window": "h1",
+   "buys": 782,
+   "sells": 823,
+   "ch5m": 20.34,
+   "ch1h": 72.41,
+   "ageH": 0.35,
+   "description": "Duke Nukem is an iconic video game franchise, best known for the 1996 first person shooter Duke Nukem 3D. Jon St. John is Duke Nukem. Every line and everything about the gaming\u2019s most famous action he",
+   "ctoProfile": false,
+   "volLiq": 4.7,
+   "baseScore": 64,
+   "liqPctMc": 28.7,
+   "ch24h": 72.41,
+   "narratives": [
+    "Gaming / Culture"
+   ],
+   "estFeesSol": 12.62,
+   "priceUsd": 7.929e-05,
+   "socials": [
+    "https://x.com/i/communities/2028854430217716158"
+   ],
+   "websites": [
+    "https://dukenukem.fun/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/33rpikktvztf4u1chpv8l5sg4vwzwl1wy8ltpcbc2mu5",
+    "pumpfun": "https://pump.fun/coin/3ovfq2cy9mtjhgXeZcKAJTazTJH2wGtvd4afJ8ckpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=3ovfq2cy9mtjhgXeZcKAJTazTJH2wGtvd4afJ8ckpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/3ovfq2cy9mtjhgXeZcKAJTazTJH2wGtvd4afJ8ckpump",
+    "fomo": "https://fomo.family/tokens/solana/3ovfq2cy9mtjhgXeZcKAJTazTJH2wGtvd4afJ8ckpump",
+    "x_search": "https://x.com/search?q=%24Duke&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=Duke"
+   },
+   "top10Pct": 19.0,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY; free router blocked by Cloudflare"
+    ],
+    "scoreAdj": 0,
+    "link": "https://gmgn.ai/sol/token/3ovfq2cy9mtjhgXeZcKAJTazTJH2wGtvd4afJ8ckpump"
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "Aw287Kem7E54DbVe1KkebmiSQubKp22WwSDAxExDdDEf",
+    "holdPct": 2.05,
+    "sold": false,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/Aw287Kem7E54DbVe1KkebmiSQubKp22WwSDAxExDdDEf",
+     "pumpfun": "https://pump.fun/profile/Aw287Kem7E54DbVe1KkebmiSQubKp22WwSDAxExDdDEf"
+    },
+    "funder": null,
+    "firstTs": null,
+    "maxTxDay": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 12.62,
+    "maxSingleHolderPct": 2.7,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     2.7,
+     2.4,
+     2.0,
+     1.9,
+     1.7
+    ],
+    "top5Pct": 10.7,
+    "count": 465,
+    "whalePct": 5.1,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": null,
+    "botN": "0/0",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": null,
+    "freshN": "0/0"
+   },
+   "scoreUncapped": 64,
+   "scoreCapped": false,
+   "score": 64,
+   "findings": [],
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 23893,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "chartAth": {
+    "price": 0.00010543263043277343,
+    "mc": 105439,
+    "t": 1792516800,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1792517531,
+    "mc": 64043
+   },
+   "odds": {
+    "n": 67,
+    "x2": 28,
+    "rug": 57
+   },
+   "signalAt": 1792518207
+  },
   {
    "symbol": "ARTEMI",
    "name": "ARTEMI",
@@ -8008,6 +8156,59 @@
  ],
  "journal": [
   {
+   "mint": "3ovfq2cy9mtjhgXeZcKAJTazTJH2wGtvd4afJ8ckpump",
+   "symbol": "Duke",
+   "chain": "solana",
+   "t0": 1792518186,
+   "price0": 7.929e-05,
+   "mcap0": 79295,
+   "score": 64,
+   "devScore": 0,
+   "link": "https://dexscreener.com/solana/33rpikktvztf4u1chpv8l5sg4vwzwl1wy8ltpcbc2mu5",
+   "maxPrice": 9.613150034056983e-05,
+   "samples": [
+    [
+     1792518186,
+     8.251e-05
+    ]
+   ],
+   "trend": "up",
+   "h1": null,
+   "h24": null,
+   "hit2x": false,
+   "hit5x": false,
+   "msgId": {
+    "1318404489": 411,
+    "-1004348482526": 1846
+   },
+   "gmgn": {
+    "status": "SKIPPED",
+    "reasons": [
+     "no GMGN_API_KEY; free router blocked by Cloudflare"
+    ]
+   },
+   "athMc": 105444,
+   "athT": 1792516800,
+   "lp": {
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
+    "pct": 100,
+    "unlock": null,
+    "t": 1792518186,
+    "pctMax": 100,
+    "liq": 22758.83,
+    "liqMax": 22758.83
+   },
+   "last": 8.251e-05,
+   "lastT": 1792518186,
+   "maxSrc": "chart",
+   "athSrc": "chart",
+   "chartT": 1792518186,
+   "minPrice": 8.251e-05,
+   "lastPct": 4.1,
+   "milestones": {}
+  },
+  {
    "mint": "7gUDvf45et6627atavR45Md4BjgYqJHMZe9EPqeR9Sya",
    "symbol": "ARTEMI",
    "chain": "solana",
@@ -8042,9 +8243,13 @@
     [
      1792517605,
      0.000155
+    ],
+    [
+     1792518186,
+     0.0001018
     ]
    ],
-   "trend": "up",
+   "trend": "fading",
    "h1": {
     "price": 0.0001478,
     "pct": -14.8,
@@ -8069,12 +8274,12 @@
     "liq": 34244.63,
     "liqMax": 36539.92
    },
-   "last": 0.000155,
-   "lastT": 1792517605,
+   "last": 0.0001018,
+   "lastT": 1792518186,
    "athSrc": "chart",
    "chartT": 1792516513,
-   "minPrice": 0.0001192,
-   "lastPct": -10.6,
+   "minPrice": 0.0001018,
+   "lastPct": -41.3,
    "milestones": {},
    "maxSrc": "chart",
    "lpEvents": {}
@@ -8134,6 +8339,10 @@
     [
      1792517605,
      7.42e-05
+    ],
+    [
+     1792518186,
+     7.901e-05
     ]
    ],
    "trend": "fading",
@@ -8161,12 +8370,12 @@
     "liq": 22960.76,
     "liqMax": 26521.24
    },
-   "last": 7.42e-05,
-   "lastT": 1792517605,
+   "last": 7.901e-05,
+   "lastT": 1792518186,
    "athSrc": "chart",
    "chartT": 1792516513,
    "minPrice": 6.422e-05,
-   "lastPct": 20.0,
+   "lastPct": 27.8,
    "milestones": {},
    "maxSrc": "chart",
    "lpEvents": {}
@@ -8242,6 +8451,10 @@
     [
      1792517605,
      2.13e-06
+    ],
+    [
+     1792518186,
+     2.13e-06
     ]
    ],
    "trend": "fading",
@@ -8270,7 +8483,7 @@
     "liqMax": 17693.57
    },
    "last": 2.13e-06,
-   "lastT": 1792517605,
+   "lastT": 1792518186,
    "maxSrc": "chart",
    "athSrc": "chart",
    "chartT": 1792517531,
@@ -8370,6 +8583,10 @@
     [
      1792517605,
      5.003e-06
+    ],
+    [
+     1792518186,
+     5e-06
     ]
    ],
    "trend": "fading",
@@ -8392,13 +8609,13 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792515703,
+    "t": 1792518194,
     "pctMax": 100,
-    "liq": 4426.08,
+    "liq": 4434.28,
     "liqMax": 30238.3
    },
-   "last": 5.003e-06,
-   "lastT": 1792517605,
+   "last": 5e-06,
+   "lastT": 1792518186,
    "maxSrc": "chart",
    "athSrc": "chart",
    "chartT": 1792517531,
@@ -8522,6 +8739,10 @@
     [
      1792517605,
      6.745e-06
+    ],
+    [
+     1792518186,
+     6.251e-06
     ]
    ],
    "trend": "fading",
@@ -8549,12 +8770,12 @@
     "liq": 5258.22,
     "liqMax": 11913.96
    },
-   "last": 6.745e-06,
-   "lastT": 1792517605,
+   "last": 6.251e-06,
+   "lastT": 1792518186,
    "athSrc": "chart",
    "chartT": 1792517531,
    "minPrice": 4.141e-06,
-   "lastPct": -73.7,
+   "lastPct": -75.6,
    "milestones": {},
    "maxSrc": "chart",
    "lpEvents": {}
@@ -8591,13 +8812,13 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792515703,
+    "t": 1792518194,
     "pctMax": 100,
-    "liq": 2926.49,
+    "liq": 2968.85,
     "liqMax": 12459.46
    },
    "last": 2.989e-06,
-   "lastT": 1792517605,
+   "lastT": 1792518186,
    "minPrice": 2.773e-06,
    "lastPct": -88.5,
    "milestones": {},
@@ -8640,13 +8861,13 @@
     "liq": 3073.23,
     "liqMax": 38374.96
    },
-   "last": 2.705e-06,
-   "lastT": 1792517605,
+   "last": 2.739e-06,
+   "lastT": 1792518186,
    "maxSrc": "chart",
    "athSrc": "chart",
    "chartT": 1792517605,
    "minPrice": 2.673e-06,
-   "lastPct": -98.0,
+   "lastPct": -97.9,
    "milestones": {
     "2": 1792493112
    },
@@ -8692,10 +8913,10 @@
     "liqMax": 36624.19
    },
    "last": 2.435e-06,
-   "lastT": 1792517605,
+   "lastT": 1792518186,
    "maxSrc": "chart",
    "athSrc": "chart",
-   "chartT": 1792515690,
+   "chartT": 1792518186,
    "minPrice": 2.435e-06,
    "lastPct": -98.7,
    "milestones": {},
@@ -8738,13 +8959,13 @@
     "liq": 8132.28,
     "liqMax": 34175.48
    },
-   "last": 1.034e-05,
-   "lastT": 1792517605,
+   "last": 1.101e-05,
+   "lastT": 1792518186,
    "maxSrc": "chart",
    "athSrc": "chart",
    "chartT": 1792512912,
    "minPrice": 1.009e-05,
-   "lastPct": -93.6,
+   "lastPct": -93.2,
    "milestones": {},
    "lpEvents": {}
   },
@@ -8786,7 +9007,7 @@
     "liqMax": 24210.71
    },
    "last": 2.303e-06,
-   "lastT": 1792517605,
+   "lastT": 1792518186,
    "maxSrc": "chart",
    "athSrc": "chart",
    "chartT": 1792511187,
@@ -8836,12 +9057,12 @@
     "liq": 2826.06,
     "liqMax": 10876.21
    },
-   "last": 2.871e-06,
-   "lastT": 1792517605,
+   "last": 2.882e-06,
+   "lastT": 1792518186,
    "athSrc": "chart",
    "chartT": 1792511187,
    "minPrice": 2.786e-06,
-   "lastPct": -86.5,
+   "lastPct": -86.4,
    "milestones": {},
    "lpEvents": {}
   },
@@ -8877,13 +9098,13 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792515703,
+    "t": 1792518194,
     "pctMax": 100,
-    "liq": 3328.12,
+    "liq": 3381.14,
     "liqMax": 38665.98
    },
    "last": 3.389e-06,
-   "lastT": 1792517605,
+   "lastT": 1792518186,
    "minPrice": 3.252e-06,
    "lastPct": -96.4,
    "milestones": {
@@ -8930,12 +9151,12 @@
     "liq": 5093.61,
     "liqMax": 29727.66
    },
-   "last": 5.77e-06,
-   "lastT": 1792517605,
+   "last": 6.355e-06,
+   "lastT": 1792518186,
    "athSrc": "chart",
    "chartT": 1792511187,
    "minPrice": 5.678e-06,
-   "lastPct": -94.3,
+   "lastPct": -93.7,
    "milestones": {},
    "maxSrc": "chart",
    "lpEvents": {}
@@ -8972,18 +9193,18 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792515703,
+    "t": 1792518194,
     "pctMax": 100,
-    "liq": 18962.04,
+    "liq": 19713.33,
     "liqMax": 25286.15
    },
-   "last": 5.827e-05,
-   "lastT": 1792517605,
+   "last": 5.624e-05,
+   "lastT": 1792518186,
    "maxSrc": "chart",
    "athSrc": "chart",
    "chartT": 1792511187,
    "minPrice": 4.463e-05,
-   "lastPct": 85.2,
+   "lastPct": 78.7,
    "milestones": {
     "2": 1792455394,
     "5": 1792461614
@@ -9024,18 +9245,18 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792515703,
+    "t": 1792518194,
     "pctMax": 100,
-    "liq": 22222.55,
+    "liq": 20737.18,
     "liqMax": 43874.64
    },
-   "last": 6.37e-05,
-   "lastT": 1792517605,
+   "last": 5.936e-05,
+   "lastT": 1792518186,
    "maxSrc": "chart",
    "athSrc": "chart",
    "chartT": 1792511187,
-   "minPrice": 6.37e-05,
-   "lastPct": -69.5,
+   "minPrice": 5.936e-05,
+   "lastPct": -71.6,
    "milestones": {},
    "lpEvents": {}
   },
@@ -9077,7 +9298,7 @@
     "liqMax": 23304.1
    },
    "last": 5.996e-05,
-   "lastT": 1792517605,
+   "lastT": 1792518186,
    "maxSrc": "chart",
    "athSrc": "chart",
    "chartT": 1792511187,
@@ -9124,7 +9345,7 @@
     "liqMax": 60661.02
    },
    "last": 5.439e-06,
-   "lastT": 1792517605,
+   "lastT": 1792518186,
    "maxSrc": "chart",
    "athSrc": "chart",
    "chartT": 1792511187,
@@ -9171,7 +9392,7 @@
     "liqMax": 15625.61
    },
    "last": 3.776e-06,
-   "lastT": 1792517605,
+   "lastT": 1792518186,
    "maxSrc": "chart",
    "athSrc": "chart",
    "chartT": 1792511187,
@@ -9417,9 +9638,9 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792515703,
+    "t": 1792518194,
     "pctMax": 100,
-    "liq": 3204.44,
+    "liq": 3144.02,
     "liqMax": 16619.29
    },
    "last": 3.37e-06,
@@ -9889,9 +10110,9 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792514801,
+    "t": 1792518194,
     "pctMax": 100,
-    "liq": 5285.26,
+    "liq": 5373.47,
     "liqMax": 18857.04
    },
    "last": 1.933e-05,
@@ -9951,9 +10172,9 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792515703,
+    "t": 1792518194,
     "pctMax": 100,
-    "liq": 32947.77,
+    "liq": 33402.83,
     "liqMax": 77417.18
    },
    "athMc": 839602,
@@ -10000,7 +10221,7 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792515703,
+    "t": 1792518194,
     "pctMax": 100,
     "liq": 5388.94,
     "liqMax": 40698.02
@@ -10401,7 +10622,7 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792514801,
+    "t": 1792518194,
     "pctMax": 100,
     "liq": 3842.35,
     "liqMax": 4870.14
@@ -10798,7 +11019,7 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792514801,
+    "t": 1792518194,
     "pctMax": 100,
     "liq": 3533.27,
     "liqMax": 5711.37
@@ -10852,9 +11073,9 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792514801,
+    "t": 1792518194,
     "pctMax": 100,
-    "liq": 10371.6,
+    "liq": 10834.51,
     "liqMax": 27330.88
    }
   },
@@ -11214,7 +11435,7 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792514801,
+    "t": 1792518194,
     "pctMax": 100,
     "liq": 3182.28,
     "liqMax": 3647.55
@@ -11258,9 +11479,9 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792514801,
+    "t": 1792518194,
     "pctMax": 100,
-    "liq": 3227.28,
+    "liq": 3166.48,
     "liqMax": 3279.82
    }
   },
@@ -11434,9 +11655,9 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792514801,
+    "t": 1792518194,
     "pctMax": 100,
-    "liq": 4049.47,
+    "liq": 3991.3,
     "liqMax": 4235.12
    }
   },
@@ -11565,7 +11786,7 @@
   }
  ],
  "stats": {
-  "signals": 67,
+  "signals": 68,
   "h1": {
    "n": 67,
    "winRate": 29.9,
@@ -11585,17 +11806,17 @@
  },
  "periodStats": {
   "today": {
-   "signals": 15,
-   "n": 15,
-   "wins": 2,
-   "winRate": 13.3,
-   "totalPnl": -992.5,
-   "avgPnl": -66.2,
-   "best": "NEWS +85%",
+   "signals": 16,
+   "n": 16,
+   "wins": 3,
+   "winRate": 18.8,
+   "totalPnl": -1020.6,
+   "avgPnl": -63.8,
+   "best": "NEWS +79%",
    "worst": "Twyne -99%",
    "basis": {
     "24h": 0,
-    "live": 15
+    "live": 16
    },
    "hit2x": 5,
    "hit5x": 1,
@@ -11603,23 +11824,23 @@
     "2": 5,
     "5": 1
    },
-   "tpWins": 6,
-   "tpWinRate": 40.0,
-   "tpTotalPnl": -591.8,
-   "tpAvgPnl": -39.5
+   "tpWins": 7,
+   "tpWinRate": 43.8,
+   "tpTotalPnl": -616.8,
+   "tpAvgPnl": -38.5
   },
   "week": {
-   "signals": 24,
-   "n": 24,
-   "wins": 2,
-   "winRate": 8.3,
-   "totalPnl": -1765.2,
-   "avgPnl": -73.5,
-   "best": "NEWS +85%",
+   "signals": 25,
+   "n": 25,
+   "wins": 3,
+   "winRate": 12.0,
+   "totalPnl": -1793.3,
+   "avgPnl": -71.7,
+   "best": "NEWS +79%",
    "worst": "RWA -99%",
    "basis": {
     "24h": 6,
-    "live": 18
+    "live": 19
    },
    "hit2x": 6,
    "hit5x": 1,
@@ -11627,23 +11848,23 @@
     "2": 6,
     "5": 1
    },
-   "tpWins": 7,
-   "tpWinRate": 29.2,
-   "tpTotalPnl": -1266.7,
-   "tpAvgPnl": -52.8
+   "tpWins": 8,
+   "tpWinRate": 32.0,
+   "tpTotalPnl": -1291.7,
+   "tpAvgPnl": -51.7
   },
   "month": {
-   "signals": 67,
-   "n": 67,
-   "wins": 9,
-   "winRate": 13.4,
-   "totalPnl": -3693.0,
-   "avgPnl": -55.1,
+   "signals": 68,
+   "n": 68,
+   "wins": 10,
+   "winRate": 14.7,
+   "totalPnl": -3721.1,
+   "avgPnl": -54.7,
    "best": "ZeroFee +382%",
    "worst": "RWA -99%",
    "basis": {
     "24h": 49,
-    "live": 18
+    "live": 19
    },
    "hit2x": 19,
    "hit5x": 6,
@@ -11654,23 +11875,23 @@
     "15": 1,
     "20": 1
    },
-   "tpWins": 20,
-   "tpWinRate": 29.9,
-   "tpTotalPnl": -2892.7,
-   "tpAvgPnl": -43.2
+   "tpWins": 21,
+   "tpWinRate": 30.9,
+   "tpTotalPnl": -2917.7,
+   "tpAvgPnl": -42.9
   },
   "all": {
-   "signals": 67,
-   "n": 67,
-   "wins": 9,
-   "winRate": 13.4,
-   "totalPnl": -3693.0,
-   "avgPnl": -55.1,
+   "signals": 68,
+   "n": 68,
+   "wins": 10,
+   "winRate": 14.7,
+   "totalPnl": -3721.1,
+   "avgPnl": -54.7,
    "best": "ZeroFee +382%",
    "worst": "RWA -99%",
    "basis": {
     "24h": 49,
-    "live": 18
+    "live": 19
    },
    "hit2x": 19,
    "hit5x": 6,
@@ -11681,10 +11902,10 @@
     "15": 1,
     "20": 1
    },
-   "tpWins": 20,
-   "tpWinRate": 29.9,
-   "tpTotalPnl": -2892.7,
-   "tpAvgPnl": -43.2
+   "tpWins": 21,
+   "tpWinRate": 30.9,
+   "tpTotalPnl": -2917.7,
+   "tpAvgPnl": -42.9
   }
  },
  "statsBasis": "24h result where available, else live price",
@@ -18193,6 +18414,26 @@
   "0x367a9dB294A5EE82EbC3783c61Cc14aC2287eE76": [
    1792517531,
    109651
+  ],
+  "3vpvkgxLTMtpff5BjNwfqKmVcpdyTbqihG8gEZAwpump": [
+   1792518186,
+   19065.2
+  ],
+  "EsWuDusx8B139GCRNEE6g1ULsvFL12XhjYJw2zigpump": [
+   1792518186,
+   26773.73
+  ],
+  "0xd417DA78E3CE742dEB8A16638B473F5B7cdb1111": [
+   1792518186,
+   136533
+  ],
+  "BLr7LaB55PLj8DxchLZKRVCtXx7ugzXWiwzpJhVtpump": [
+   1792518186,
+   154349
+  ],
+  "0xeE3a179974997acC5d7dbe8603f60B9E5981FCc4": [
+   1792518186,
+   47446
   ]
  },
  "tgOffset": null
