@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Headless 5R hunter. Prints JSON of NEW passing tokens; remembers seen mints in a state file.
 Usage: python3 alert.py [--state seen.json] [--window h1|h24] [--all] [--debug]
-Env (optional): INSIGHTX_API_KEY, BUBBLEMAPS_API_KEY, SOLANA_RPC"""
+Env (optional): INSIGHTX_API_KEY, BUBBLEMAPS_API_KEY, GMGN_API_KEY, SOLANA_RPC"""
 import argparse, json, os, sys, time
 import pipeline
 ap = argparse.ArgumentParser()
@@ -23,8 +23,7 @@ for r in cheap[:F.get("holderLookupLimit", 15)]:
     except Exception as e:
         errors.append(f"holder lookup failed {r['symbol']}: {str(e)[:100]}"); print(errors[-1], file=sys.stderr); continue
     r["top10Pct"], r["clusterPct"], r["clusterSource"], r["clusters"] = h["top10Pct"], h["clusterPct"], h["clusterSource"], h["clusters"]
-    import gmgn
-    r["gmgn"] = gmgn.analyze(r["mint"], F["gmgn"]); r["gmgnScore"] = r["gmgn"]["scoreAdj"]
+    r["rugcheck"] = h.get("rugcheck")
     r["dev"] = h.get("dev"); r["devScore"], r["devNotes"] = pipeline.dev_score(r["dev"], F["devScore"])
     r["extras"] = {"estFeesSol": r["estFeesSol"], "maxSingleHolderPct": h.get("maxSingleHolderPct"),
                    "freshWallets": h.get("freshWallets"), "insiderNetworks": h.get("insiderNetworks")}
@@ -38,10 +37,14 @@ for r in cheap[:F.get("holderLookupLimit", 15)]:
                         "whalePct": h.get("whalePct"), "insiderPct": h.get("insiderPctRugcheck"),
                         "freshWallets": h.get("freshWallets"), "clusterPct": h.get("clusterPct")}
         r["behaviour"] = pipeline.behaviour(r, h, F["behaviour"])
+        import chart, liquidity, gmgn, insightx, safety
+        r["lp"] = liquidity.status(r["mint"], r.get("pair"), r.get("dex"))
+        if os.environ.get("GMGN_API_KEY"): r["gmgn"] = gmgn.analyze(r["mint"], F["gmgn"])  # dormant without a key
+        r["insightx"] = insightx.overview(r["mint"]) if r["mint"] not in seen else None  # free tier: 1 call per new alert
+        r["safety"] = safety.check(r, F["safety"])
+        r["gmgnScore"] = (r["gmgn"] or {}).get("scoreAdj", 0) if r.get("gmgn") else r["safety"]["scoreAdj"]
         pipeline.final_score(r, F["behaviour"])
         r["findings"] = pipeline.findings(r, F["behaviour"])
-        import chart, liquidity
-        r["lp"] = liquidity.status(r["mint"], r.get("pair"), r.get("dex"))
         r["chartAth"] = chart.ath(r["mint"], r["mcap"], r.get("priceUsd"), fallback_pool=r.get("pair"))
         del r["checks"]; out.append(r)
 if a.debug:
@@ -49,7 +52,17 @@ if a.debug:
     for r in rows:
         for k, v in (r.get("checks") or {}).items(): fails[k] = fails.get(k, 0) + (not v)
     print(json.dumps({"candidates": len(rows), "cheapPass": len(cheap), "failCounts": fails}), file=sys.stderr)
-    import gmgn as _g; print("gmgn router probe:", _g.probe(), file=sys.stderr)
+    print("keys:", {k: bool(os.environ.get(k)) for k in ("INSIGHTX_API_KEY", "GMGN_API_KEY", "BUBBLEMAPS_API_KEY")}, file=sys.stderr)
+    import urllib.request, urllib.error
+    def _st(u):  # reachability only (unauthenticated GET status), no data used
+        try: return urllib.request.urlopen(urllib.request.Request(u, headers=pipeline.UA), timeout=10).status
+        except urllib.error.HTTPError as x: return x.code
+        except Exception as x: return type(x).__name__
+    _m = "So11111111111111111111111111111111111111112"
+    print("reach:", {"insightx_api": _st(f"https://api.insightx.network/dex-metrics/v1/sol/{_m}"),
+                     "shuriken_api": _st("https://api.shuriken.trade/api/v2/tokens/search?chain=solana&q=bonk"),
+                     "bullx_neo": _st(f"https://neo.bullx.io/terminal?chainId=1399811149&address={_m}"),
+                     "axiom": _st(f"https://axiom.trade/t/{_m}?chain=sol")}, file=sys.stderr)
 import journal as J
 if F.get("milestones"): J.MILESTONES = sorted(F["milestones"])
 J.MILESTONE_STEP = F.get("milestoneStep", 50)
@@ -69,6 +82,8 @@ for r in out:
     r["priceUsd"] = r.get("priceUsd"); J.add(jr, r)
 try: notes = J.update(jr)
 except Exception as e: notes = []; errors.append(f"journal update failed: {str(e)[:100]}")
+try: J.backfill_safety(jr, F["safety"])
+except Exception as e: errors.append(f"safety backfill failed: {str(e)[:100]}")
 try: J.backfill_chart(jr)
 except Exception as e: errors.append(f"chart backfill failed: {str(e)[:100]}")
 try:

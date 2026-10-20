@@ -159,7 +159,7 @@ function devCell(r) {
   const h = HOLD[r.p.baseToken.address], d = h?.dev;
   const extra = `<small>fees≈${r.estFeesSol!=null?r.estFeesSol.toFixed(1)+" SOL":"?"}${h?` · max holder ${h.maxSingleHolderPct}% · fresh ${h.freshWallets}/10`+(h.insiderNetworks?.length?` · ${h.insiderNetworks.length} insider net`:""):""}</small>`;
   if (!d) return extra + (r.chain==="solana" ? "<br><small>dev: looked up when cheap filters pass</small>" : "");
-  const g = h?.gmgn, gl = !g ? "" : `<br><small><b>GMGN: <span class="${g.status==="PASS"?"pos":g.status==="FAIL"?"neg":""}">${g.status}</span></b> ${esc((g.reasons||[]).join("; "))}${g.scoreAdj?` (score ${g.scoreAdj>0?"+":""}${g.scoreAdj})`:""}${g.link?` <a href="${g.link}" target=_blank>gmgn</a>`:""}</small>`;
+  const g = h?.gmgn, gl = (!g || !["PASS","FAIL"].includes(g.status)) ? "" : `<br><small><b>GMGN: <span class="${g.status==="PASS"?"pos":g.status==="FAIL"?"neg":""}">${g.status}</span></b> ${esc((g.reasons||[]).join("; "))}${g.scoreAdj?` (score ${g.scoreAdj>0?"+":""}${g.scoreAdj})`:""}${g.link?` <a href="${g.link}" target=_blank>gmgn</a>`:""}</small>`;
   return extra + gl + `<br><small><b>Dev</b> <a href="${d.links.solscan}" target=_blank>${d.wallet.slice(0,4)}…</a> ${d.rugHistory?'<span class="neg">🚩rug history</span> ':''}${d.sold?'sold':'holds '+d.holdPct+'%'} · ${d.priorTokens} prior (${d.priorMigrated} migr, ${d.priorDead} dead)${d.funder?` · funded by ${d.funder.slice(0,4)}…`:''}<br>dev score <b class="${r.devScore<0?'neg':'pos'}">${r.devScore>0?'+':''}${r.devScore}</b> ${r.devNotes.join(", ")}</small>`;
 }
 async function lookupHolders() {

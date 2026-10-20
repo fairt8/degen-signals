@@ -67,6 +67,15 @@ def _funder(wallet, oldest):
         payer = msg["accountKeys"][0]["pubkey"]
         return payer if payer != wallet else None
 
+def rc_summary(d):
+    """Safety-relevant bits of a rugcheck report."""
+    tf = d.get("transferFee") or {}
+    return {"mintAuth": d.get("mintAuthority"), "freezeAuth": d.get("freezeAuthority"), "rugged": bool(d.get("rugged")),
+            "score": d.get("score_normalised"), "transferFeePct": tf.get("pct") or 0,
+            "graphInsiders": d.get("graphInsidersDetected") or 0,
+            "danger": [x.get("name") for x in d.get("risks") or [] if x.get("level") == "danger"
+                       and "liquidity" not in (x.get("name") or "").lower() and "lp " not in (x.get("name") or "").lower()]}
+
 def holders_and_clusters(mint, cfg=None):
     """Returns {top10Pct, clusterPct, clusterSource, clusters, ...}. Cached 15 min."""
     def f():
@@ -82,17 +91,9 @@ def holders_and_clusters(mint, cfg=None):
                    insiderPctRugcheck=round(sum(h.get("pct", 0) for h in hs if h.get("insider")), 1))
         out.update(top10Pct=round(sum(h.get("pct", 0) for h in top), 2), totalHolders=d.get("totalHolders"),
                    excludedPools=len(d.get("topHolders") or []) - len(hs))
+        out["rugcheck"] = rc_summary(d)
         sources = {}
-        # 1) InsightX (needs INSIGHTX_API_KEY)
-        k = os.environ.get("INSIGHTX_API_KEY")
-        if k:
-            try:
-                r = get(f"https://api.insightx.network/dex-metrics/v1/sol/{mint}/clusters", {"X-API-Key": k})
-                pct = r.get("total_cluster_percentage") or r.get("totalClusterPercentage")
-                if pct is None:
-                    pct = sum(c.get("percentage", 0) for c in r.get("clusters", []) if not set(c.get("tags") or []) & {"liquidity_pool", "exchange"})
-                sources["insightx"] = round(float(pct), 2)
-            except Exception as e: out["insightxError"] = str(e)[:120]
+        # 1) InsightX: queried once per NEW alert in alert.py (free tier is 1,000 req/month), not here
         # 2) Bubblemaps (needs BUBBLEMAPS_API_KEY)
         k = os.environ.get("BUBBLEMAPS_API_KEY")
         if k:
@@ -211,7 +212,7 @@ def findings(r, B):
     """[(severity, text)] red first. Only from real data present on r."""
     f = []
     def add(sev, msg): f.append((sev, msg))
-    bh, d, h, g = r.get("behaviour") or {}, r.get("dev") or {}, r.get("holders") or {}, (r.get("gmgn") or {}).get("pct") or {}
+    bh, d, h, g = r.get("behaviour") or {}, r.get("dev") or {}, r.get("holders") or {}, ((r.get("safety") or {}).get("pct") or {})
     for key, name, red, amb in (("botPct", "bot-like holders", B["botPctRed"], B["botPctAmber"]),
                                 ("flipperPct", "serial flippers among holders", B["flipperPctRed"], B["flipperPctAmber"]),
                                 ("freshPct", "fresh wallets (first tx ≤7d before launch)", B["freshPctRed"], B["freshPctAmber"])):
@@ -338,4 +339,7 @@ def links(chain, a, ds_url, sym):
             "bubblemaps": f"https://v2.bubblemaps.io/map?address={a}&chain={c}",
             "insightx": f"https://app.insightx.network/bubblemaps/{'solana' if chain=='solana' else chain}/{a}",
             "fomo": f"https://fomo.family/tokens/{'solana' if chain == 'solana' else chain}/{a}",
+            "axiom": f"https://axiom.trade/t/{a}?chain=sol" if chain == "solana" else None,
+            "bullx": f"https://neo.bullx.io/terminal?chainId=1399811149&address={a}" if chain == "solana" else None,
+            "shuriken": "https://t.me/shuriken_trade_bot" if chain == "solana" else None,
             "x_search": f"https://x.com/search?q=%24{sym}&f=live", "tiktok": f"https://www.tiktok.com/search?q={sym}"}

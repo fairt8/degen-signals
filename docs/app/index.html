@@ -126,15 +126,17 @@ async function doLookup(q){
   r.innerHTML = `<div class="card"><div class="row"><span class="sym">$${esc(p.baseToken.symbol)}</span><span class="pill">not a Degen signal</span></div>
    <div class="row"><span class="ca">${esc(m)}</span><button class="btn ghost" data-copy="${esc(m)}">Copy</button></div>
    <div class="grid"><span>💲 ${price(+p.priceUsd)}</span><span>🧢 MC ${money(mcOf(p))}</span><span>💧 Liq ${money(p.liquidity?.usd)}</span><span>24h ${pct(p.priceChange?.h24)}</span></div>
-   ${linkRow({dexscreener: p.url, gmgn: `https://gmgn.ai/sol/token/${m}`, bubblemaps: `https://v2.bubblemaps.io/map?address=${m}&chain=solana`, fomo: `https://fomo.family/tokens/solana/${m}`, pumpfun: `https://pump.fun/coin/${m}`})}</div>`;
+   ${linkRow({dexscreener: p.url, gmgn: `https://gmgn.ai/sol/token/${m}`, bubblemaps: `https://v2.bubblemaps.io/map?address=${m}&chain=solana`, fomo: `https://fomo.family/tokens/solana/${m}`, axiom: `https://axiom.trade/t/${m}?chain=sol`, bullx: `https://neo.bullx.io/terminal?chainId=1399811149&address=${m}`, pumpfun: `https://pump.fun/coin/${m}`})}</div>`;
   bind(r);
 }
-function linkRow(L){ const n = {dexscreener:"DexScreener", gmgn:"GMGN", bubblemaps:"Bubblemaps", fomo:"Fomo", x_search:"X search", pumpfun:"pump.fun"};
+function linkRow(L){ const n = {dexscreener:"DexScreener", gmgn:"GMGN", bubblemaps:"Bubblemaps", fomo:"Fomo", axiom:"Axiom", bullx:"BullX", shuriken:"Shuriken bot", x_search:"X search", pumpfun:"pump.fun"};
   return `<div class="links">${Object.keys(n).filter(k => L[k]).map(k => `<button class="btn ${k==="fomo"?"":"ghost"}" data-open="${esc(L[k])}">${n[k]}</button>`).join("")}</div>`; }
 function tokenHtml(e, note = ""){
   const t = tokOf(e.mint) || {}, c = calc(e), H = t.holders || {}, B = t.behaviour || {}, d = t.dev || {}, G = t.gmgn || {}, f = t.findings || [];
+  const S0 = t.safety || {}, S = e.safety || (S0.status ? {status: S0.status, reasons: [...(S0.fails||[]), ...(S0.warns||[]), ...(S0.oks||[])], pct: S0.pct, sources: S0.sources} : {});
   const L = {...(t.links||{}), dexscreener: t.links?.dexscreener || e.link, gmgn: G.link || `https://gmgn.ai/sol/token/${e.mint}`,
-    fomo: `https://fomo.family/tokens/solana/${e.mint}`, bubblemaps: t.links?.bubblemaps || `https://v2.bubblemaps.io/map?address=${e.mint}&chain=solana`,
+    fomo: `https://fomo.family/tokens/solana/${e.mint}`, axiom: `https://axiom.trade/t/${e.mint}?chain=sol`,
+    bullx: `https://neo.bullx.io/terminal?chainId=1399811149&address=${e.mint}`, shuriken: "https://t.me/shuriken_trade_bot", bubblemaps: t.links?.bubblemaps || `https://v2.bubblemaps.io/map?address=${e.mint}&chain=solana`,
     x_search: t.links?.x_search || `https://x.com/search?q=%24${encodeURIComponent(e.symbol)}&f=live`, pumpfun: t.links?.pumpfun || `https://pump.fun/coin/${e.mint}`};
   const ms = Object.entries(e.milestones||{}).sort((a,b) => a[0]-b[0]);
   const ev = Object.entries(e.lpEvents||{}), lpn = e.lp || t.lp || {};
@@ -158,7 +160,9 @@ function tokenHtml(e, note = ""){
    <span>🔝 Top5 ${H.top5Pct ?? "n/a"}%</span><span>👥 ${H.count?.toLocaleString() ?? "n/a"} holders</span>
    <span>🤖 Bots ${pc(B.botPct)}</span><span>🔁 Flippers ${pc(B.flipperPct)}</span><span>🌱 Fresh ${pc(B.freshPct)}</span><span>🐋 Whales ${pc(H.whalePct)}</span>
    <span>🔗 Cluster ${pc(H.clusterPct ?? t.clusterPct)}</span><span>🕵️ Insiders ${pc(H.insiderPct)}</span></div>
-  <div class="sec">GMGN</div><div><b>${esc(G.status||"SKIPPED")}</b> <small>${esc((G.reasons||[]).join("; "))}</small></div>
+  <div class="sec">🎯 Safety check</div><div><b class="${S.status==="FAIL"?"neg":S.status==="WARN"?"amb":"pos"}">${esc(S.status||"n/a")}</b> <small>${esc((S.reasons||[]).join("; "))}${S.sources?.length?" ["+esc(S.sources.join(" · "))+"]":""}</small></div>
+   ${S.pct && Object.keys(S.pct).length ? `<div class="grid">${Object.entries(S.pct).map(([k,v]) => `<span>${esc(k)} ${v}%</span>`).join("")}</div>` : ""}
+   ${["PASS","FAIL"].includes(G.status) ? `<div><small>GMGN: ${esc(G.status)} ${esc((G.reasons||[]).join("; "))}</small></div>` : ""}
   <div class="sec">Dev</div><div>${d.wallet ? `<a href="#" data-open="${esc(d.links?.solscan||"https://solscan.io/account/"+d.wallet)}">${esc(d.wallet.slice(0,4))}…${esc(d.wallet.slice(-4))}</a> · ${d.sold?"sold":"holds "+d.holdPct+"%"} · ${d.priorTokens??"n/a"} prior (${d.priorMigrated??0} migrated, ${d.priorDead??0} dead)${d.rugHistory?' · <span class="neg">🚩 rug history</span>':""}` : "n/a"}</div>
    <div class="grid"><span>Dex Paid ${t.orders?.dexPaid===true?"✅":t.orders?.dexPaid===false?"❌":"n/a"}</span><span>CTO ${t.cto===true?"✅":t.cto===false?"❌":"n/a"}</span></div>
   ${linkRow(L)}${t.description?`<div class="desc">${esc(t.description)}</div>`:""}

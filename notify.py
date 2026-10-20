@@ -133,6 +133,7 @@ def card(r, journal=None):
     import time as _t
     L, H, G = r["links"], r.get("holders") or {}, r.get("gmgn") or {}
     gp = G.get("pct") or {} if G.get("status") in ("PASS", "FAIL") else {}
+    gp = {**((r.get("safety") or {}).get("pct") or {}), **gp}  # InsightX / rugcheck / RPC %s, GMGN on top when keyed
     dexname = {"pumpfun": "PF", "pumpswap": "PumpSwap"}.get(r.get("dex"), (r.get("dex") or "DEX").title())
     chain = "SOL" if r.get("chain") == "solana" else (r.get("chain") or "").upper()
     # emoji link row from the token's own socials/websites
@@ -145,6 +146,8 @@ def card(r, journal=None):
     soc.append(f'<a href="{e(L["x_search"])}">🔍</a>')
     if L.get("pumpfun"): soc.append(f'<a href="{e(L["pumpfun"])}">💊</a>')
     if L.get("fomo"): soc.append(f'<a href="{e(L["fomo"])}">🟢 Fomo</a>')
+    if L.get("axiom"): soc.append(f'<a href="{e(L["axiom"])}">⚡ Axiom</a>')
+    if L.get("bullx"): soc.append(f'<a href="{e(L["bullx"])}">🐂 BullX</a>')
     # TOKEN DATA
     od = r.get("odds") or {}
     odds = (f"2x ~{od['x2']}% · Rug ~{od['rug']}% <i>(our past {od['n']} signals)</i>" if od.get("n") else "2x n/a · Rug n/a <i>(no history yet)</i>")
@@ -155,7 +158,8 @@ def card(r, journal=None):
         mcl = f"<b>${fmt(fsn['mc'])}</b> ⇨ ${fmt(r['mcap'])} [{ago}]"
     else:
         mcl = f"${fmt(r['mcap'])}"
-    gl = __import__("gmgn").line(G or None)
+    gl = __import__("safety").line(r.get("safety"))
+    if G.get("status") in ("PASS", "FAIL"): gl += " | " + __import__("gmgn").line(G)
     ch = r.get("ch24h")
     sc = r.get("score")
     scl = ("n/a" if sc is None else f"<b>{sc}/100</b>" + (f" (capped at {sc}, would be {r.get('scoreUncapped')})" if r.get("scoreCapped") else ""))
@@ -222,7 +226,10 @@ def card(r, journal=None):
         text += f"\n\n<i>{e(r['description'].strip()[:400])}</i>"
     gm = G.get("link") or f"https://gmgn.ai/sol/token/{r['mint']}"
     kb = [[{"text": "DexScreener", "url": L["dexscreener"]}, {"text": "GMGN", "url": gm}, {"text": "Bubblemaps", "url": L["bubblemaps"]}],
-          [{"text": "Fomo", "url": L.get("fomo") or f"https://fomo.family/tokens/solana/{r['mint']}"}, {"text": "X search", "url": L["x_search"]}]
+          [{"text": "⚡ Axiom", "url": L.get("axiom") or f"https://axiom.trade/t/{r['mint']}?chain=sol"},
+           {"text": "🐂 BullX", "url": L.get("bullx") or f"https://neo.bullx.io/terminal?chainId=1399811149&address={r['mint']}"},
+           {"text": "🟢 Fomo", "url": L.get("fomo") or f"https://fomo.family/tokens/solana/{r['mint']}"}],
+          [{"text": "🥷 Shuriken", "url": L.get("shuriken") or "https://t.me/shuriken_trade_bot"}, {"text": "X search", "url": L["x_search"]}]
           + ([{"text": "pump.fun", "url": L["pumpfun"]}] if L.get("pumpfun") else []),
           [{"text": "📱 Open in Degen app", "url": app_link(r["mint"])}]]
     return text, kb

@@ -1,5 +1,5 @@
 """GMGN official OpenAPI (https://openapi.gmgn.ai) - optional smart-money / sniper / bundler layer.
-Needs GMGN_API_KEY (free key from https://gmgn.ai/ai). No key -> status SKIPPED. Read-only routes only.
+DORMANT unless GMGN_API_KEY is set (key needs a paid/high-volume GMGN account). No key -> SKIPPED, never displayed. Read-only routes only.
 Auth: header X-APIKEY + query timestamp + client_id (uuid). Free plan ~5 req/s -> we pace calls."""
 import json, os, time, uuid, urllib.error, urllib.parse, urllib.request
 HOST = os.environ.get("GMGN_HOST", "https://openapi.gmgn.ai")
@@ -23,7 +23,7 @@ def _get(path, **q):
 def analyze(mint, C, chain="sol"):
     """Returns {status: PASS/FAIL/SKIPPED/ERROR, pass, reasons, scoreAdj, counts, pct}. Cached 10 min."""
     if not os.environ.get("GMGN_API_KEY"):
-        return route_check(mint, C)  # free, no-key GMGN router quote (sellability / round-trip cost)
+        return {"status": "SKIPPED", "pass": None, "reasons": ["no GMGN_API_KEY (dormant)"], "scoreAdj": 0}
     hit = _cache.get(mint)
     if hit and time.time() - hit[0] < 600: return hit[1]
     try:

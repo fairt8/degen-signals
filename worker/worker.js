@@ -105,10 +105,12 @@ async function cmdPnl(args, env) {
     `${e.h1 ? "1h: " + pct(e.h1.pct) : "1h: pending"} · ${e.h24 ? "24h: " + pct(e.h24.pct) : "24h: pending"}\n` +
     `Max gain since alert: ${pct(v.maxGain)} (${e.maxSrc === "chart" ? "chart high" : "sampled ~15 min"})\n` +
     `🏔 ATH MC: ${e.athMc ? (mcOf(p) > e.athMc ? money(mcOf(p)) + " (new high now)" : money(e.athMc) + " (chart ATH" + (e.athT ? ", " + when(e.athT) : "") + ")") : (e.maxPrice && e.price0 ? money(e.mcap0 * e.maxPrice / e.price0) + " (sampled since alert, est.)" : "n/a")}\n` +
-    `🎯 GMGN: ${esc(e.gmgn?.status || "n/a")}${e.gmgn?.reasons?.length ? " · " + esc(e.gmgn.reasons.slice(0, 2).join("; ")) : ""}\n` +
+    `🎯 Safety check: ${esc(e.safety?.status || "n/a")}${({PASS: " ✅", WARN: " 🟠", FAIL: " ❌"})[e.safety?.status] || ""}${e.safety?.reasons?.length ? " · " + esc(e.safety.reasons.slice(0, 3).join("; ")) : ""}` +
+    `${["PASS", "FAIL"].includes(e.gmgn?.status) ? " | GMGN: " + e.gmgn.status : ""}\n` +
     `🔐 LP: ${esc(e.lp?.label || "n/a")}${e.lp?.t ? " <i>(checked " + when(e.lp.t) + ")</i>" : ""}\n🏆 Milestones: ${ms}\n` +
     `Hold PnL: <b>${pct(v.hold)}</b> (${v.basis}) · TP ${v.f * 100}% @ +${v.at}%: <b>${pct(v.tp)}</b>\n` +
-    `<a href="${esc(e.link || "https://dexscreener.com/solana/" + e.mint)}">DexScreener</a> · <a href="https://fomo.family/tokens/solana/${e.mint}">Fomo</a>`;
+    `<a href="${esc(e.link || "https://dexscreener.com/solana/" + e.mint)}">DexScreener</a> · <a href="https://fomo.family/tokens/solana/${e.mint}">Fomo</a> · ` +
+    `<a href="https://axiom.trade/t/${e.mint}?chain=sol">Axiom</a> · <a href="https://neo.bullx.io/terminal?chainId=1399811149&address=${e.mint}">BullX</a> · <a href="https://t.me/shuriken_trade_bot">Shuriken</a>`;
   if (hits.length > 1) out += `\n<i>${hits.length} signals share this symbol; showing the latest. Use the CA for others.</i>`;
   return [out];
 }

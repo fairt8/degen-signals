@@ -12,6 +12,8 @@ def add(journal, r, t0=None):
         "link": r["links"]["dexscreener"], "maxPrice": r.get("priceUsd"), "samples": [], "trend": None,
         "h1": None, "h24": None, "hit2x": False, "hit5x": False, "msgId": None,
         "gmgn": {"status": (r.get("gmgn") or {}).get("status"), "reasons": ((r.get("gmgn") or {}).get("reasons") or [])[:3]} if r.get("gmgn") else None,
+        "safety": {"status": r["safety"]["status"], "reasons": __import__("safety").reasons(r["safety"])[:4],
+                   "pct": r["safety"].get("pct"), "sources": r["safety"].get("sources")} if r.get("safety") else None,
         "athMc": (r.get("chartAth") or {}).get("mc"), "athT": (r.get("chartAth") or {}).get("t"),
         "lp": ({k: (r.get("lp") or {}).get(k) for k in ("status", "label", "pct", "unlock")}
                | {"t": int(time.time()), "pctMax": (r.get("lp") or {}).get("pct"), "liq": r.get("liq"), "liqMax": r.get("liq")}) if r.get("lp") else None})
@@ -235,3 +237,20 @@ def odds(journal, exclude=None, rug_pct=-90):
         return min(v) if v else 0
     n = len(es)
     return {"n": n, "x2": round(sum(bool(e.get("hit2x")) for e in es) / n * 100), "rug": round(sum(worst(e) <= rug_pct for e in es) / n * 100)}
+
+def backfill_safety(journal, C, days=7, per_run=4):
+    """Light safety check (rugcheck authorities/risks/insiders + stored LP) for recent entries alerted before it existed."""
+    import safety
+    now, n = time.time(), 0
+    for e in journal:
+        if n >= per_run: break
+        if e.get("safety") or e.get("chain") != "solana" or now - e["t0"] > days * 86400: continue
+        n += 1
+        try:
+            d = pipeline.cached("rc:" + e["mint"], 120, lambda: pipeline.get(f"https://api.rugcheck.xyz/v1/tokens/{e['mint']}/report"))
+        except Exception as x:
+            print("safety backfill error", e["symbol"], str(x)[:80]); continue
+        hs = [h for h in d.get("topHolders") or []]
+        s = safety.check({"rugcheck": pipeline.rc_summary(d), "lp": e.get("lp"),
+                          "holders": {"insiderPct": round(sum(h.get("pct", 0) for h in hs if h.get("insider")), 1)}}, C)
+        e["safety"] = {"status": s["status"], "reasons": safety.reasons(s)[:4], "pct": s["pct"], "sources": s["sources"], "backfilled": True}

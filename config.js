@@ -51,5 +51,8 @@ window.SIGNAL_CONFIG.filters = {
   // ---- GMGN (optional, needs GMGN_API_KEY; info + score only, never blocks a 5R alert)
   gmgn: { minSmartKol: 1, maxComboPct: 25, maxSniperPct: 10, maxBundlerPct: 15, maxRatPct: 10,
           smartKolBonusEach: 5, smartKolBonusCap: 15, comboPenalty: -10, ratPenalty: -5 },
+  // ---- combined safety check (rugcheck + LP + RPC dev/holders + InsightX if INSIGHTX_API_KEY); info + score adj only
+  safety: { maxSniperPct: 10, maxBundlerPct: 15, maxInsiderPct: 15, maxClusterPct: 25, maxComboPct: 30, maxDevPct: 5,
+            graphInsidersWarn: 5, botPctFail: 60, failPenalty: -10, warnPenalty: -3 },
   devScore: { rugHistory: -20, migratedBonus: 5, serialLauncher: -10, serialLauncherMin: 5, holdPctMax: 5, highHold: -10, sharedFunder: -10 }
 };

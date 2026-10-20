@@ -107,8 +107,10 @@ def cmd_pnl(args):
     else: ath_txt = "n/a"
     lp = liquidity.status(x["mint"], (p or {}).get("pairAddress"), (p or {}).get("dexId")) if p else (x.get("lp") or {})
     lp_txt = lp.get("label") or "n/a"
-    g = (x.get("gmgn") or {})
-    gm_txt = f"GMGN: {g.get('status') or 'n/a'}" + (" · " + "; ".join(g.get("reasons") or []) if g.get("reasons") else "")
+    g = x.get("safety") or {}
+    icon = {"PASS": " ✅", "WARN": " 🟠", "FAIL": " ❌"}.get(g.get("status"), "")
+    gm_txt = f"Safety check: {g.get('status') or 'n/a'}{icon}" + (" · " + "; ".join(g.get("reasons")[:3]) if g.get("reasons") else "")
+    if (x.get("gmgn") or {}).get("status") in ("PASS", "FAIL"): gm_txt += f" | GMGN: {x['gmgn']['status']}"
     ms = x.get("milestones") or {}
     msl = " · ".join(f"{k}x" + (f" ({when(t)})" if t else "") for k, t in sorted(ms.items(), key=lambda kv: float(kv[0]))) or "none yet"
     tpc = {**J.TP_DEFAULT, **(tp_cfg() or {})}
@@ -126,7 +128,10 @@ def cmd_pnl(args):
            f"🏆 Milestones: {msl}\n"
            f"Hold PnL: <b>{pct(v['hold'])}</b> ({v['basis']}) · TP {tpc['sellFrac']*100:.0f}% @ +{tpc['atPct']:.0f}%: <b>{pct(v['tp'])}</b>\n"
            f'<a href="{e(x.get("link") or "https://dexscreener.com/solana/" + x["mint"])}">DexScreener</a> · '
-           f'<a href="https://fomo.family/tokens/solana/{x["mint"]}">Fomo</a>')
+           f'<a href="https://fomo.family/tokens/solana/{x["mint"]}">Fomo</a> · '
+           f'<a href="https://axiom.trade/t/{x["mint"]}?chain=sol">Axiom</a> · '
+           f'<a href="https://neo.bullx.io/terminal?chainId=1399811149&address={x["mint"]}">BullX</a> · '
+           f'<a href="https://t.me/shuriken_trade_bot">Shuriken</a>')
     if len(hits) > 1: out += f"\n<i>{len(hits)} signals share this symbol; showing the latest. Use the CA for others.</i>"
     return [out]
 
