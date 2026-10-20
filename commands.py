@@ -107,6 +107,8 @@ def cmd_pnl(args):
     else: ath_txt = "n/a"
     lp = liquidity.status(x["mint"], (p or {}).get("pairAddress"), (p or {}).get("dexId")) if p else (x.get("lp") or {})
     lp_txt = lp.get("label") or "n/a"
+    g = (x.get("gmgn") or {})
+    gm_txt = f"GMGN: {g.get('status') or 'n/a'}" + (" · " + "; ".join(g.get("reasons") or []) if g.get("reasons") else "")
     ms = x.get("milestones") or {}
     msl = " · ".join(f"{k}x" + (f" ({when(t)})" if t else "") for k, t in sorted(ms.items(), key=lambda kv: float(kv[0]))) or "none yet"
     tpc = {**J.TP_DEFAULT, **(tp_cfg() or {})}
@@ -119,6 +121,7 @@ def cmd_pnl(args):
            + (f"24h: {pct(x['h24']['pct'])}" if x.get("h24") else "24h: pending") + "\n"
            f"Max gain since alert: {pct(v['maxGain'])} ({'chart high' if x.get('maxSrc') == 'chart' else 'sampled ~15 min'})\n"
            f"🏔 ATH MC: {ath_txt}\n"
+           f"🎯 {e(gm_txt)}\n"
            f"🔐 LP: {e(lp_txt)}\n"
            f"🏆 Milestones: {msl}\n"
            f"Hold PnL: <b>{pct(v['hold'])}</b> ({v['basis']}) · TP {tpc['sellFrac']*100:.0f}% @ +{tpc['atPct']:.0f}%: <b>{pct(v['tp'])}</b>\n"

@@ -11,6 +11,7 @@ def add(journal, r, t0=None):
         "price0": r.get("priceUsd"), "mcap0": r["mcap"], "score": r.get("score"), "devScore": r.get("devScore", 0),
         "link": r["links"]["dexscreener"], "maxPrice": r.get("priceUsd"), "samples": [], "trend": None,
         "h1": None, "h24": None, "hit2x": False, "hit5x": False, "msgId": None,
+        "gmgn": {"status": (r.get("gmgn") or {}).get("status"), "reasons": ((r.get("gmgn") or {}).get("reasons") or [])[:3]} if r.get("gmgn") else None,
         "athMc": (r.get("chartAth") or {}).get("mc"), "athT": (r.get("chartAth") or {}).get("t"),
         "lp": ({k: (r.get("lp") or {}).get(k) for k in ("status", "label", "pct", "unlock")}
                | {"t": int(time.time()), "pctMax": (r.get("lp") or {}).get("pct"), "liq": r.get("liq"), "liqMax": r.get("liq")}) if r.get("lp") else None})

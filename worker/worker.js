@@ -105,6 +105,7 @@ async function cmdPnl(args, env) {
     `${e.h1 ? "1h: " + pct(e.h1.pct) : "1h: pending"} · ${e.h24 ? "24h: " + pct(e.h24.pct) : "24h: pending"}\n` +
     `Max gain since alert: ${pct(v.maxGain)} (${e.maxSrc === "chart" ? "chart high" : "sampled ~15 min"})\n` +
     `🏔 ATH MC: ${e.athMc ? (mcOf(p) > e.athMc ? money(mcOf(p)) + " (new high now)" : money(e.athMc) + " (chart ATH" + (e.athT ? ", " + when(e.athT) : "") + ")") : (e.maxPrice && e.price0 ? money(e.mcap0 * e.maxPrice / e.price0) + " (sampled since alert, est.)" : "n/a")}\n` +
+    `🎯 GMGN: ${esc(e.gmgn?.status || "n/a")}${e.gmgn?.reasons?.length ? " · " + esc(e.gmgn.reasons.slice(0, 2).join("; ")) : ""}\n` +
     `🔐 LP: ${esc(e.lp?.label || "n/a")}${e.lp?.t ? " <i>(checked " + when(e.lp.t) + ")</i>" : ""}\n🏆 Milestones: ${ms}\n` +
     `Hold PnL: <b>${pct(v.hold)}</b> (${v.basis}) · TP ${v.f * 100}% @ +${v.at}%: <b>${pct(v.tp)}</b>\n` +
     `<a href="${esc(e.link || "https://dexscreener.com/solana/" + e.mint)}">DexScreener</a> · <a href="https://fomo.family/tokens/solana/${e.mint}">Fomo</a>`;

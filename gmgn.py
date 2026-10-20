@@ -154,7 +154,7 @@ def route_check(mint, C=None, sol=0.1):
                        "route": {"roundTripPct": rt, "impactPct": round(imp, 2), "sol": sol,
                                  "dex": " → ".join(dict.fromkeys((r.get("swapInfo") or {}).get("label") or "?" for r in sell.get("routePlan") or []))}}
     except PermissionError as e:
-        res = {"status": "SKIPPED", "pass": None, "reasons": [str(e) + "; no GMGN_API_KEY"], "scoreAdj": 0}
+        res = {"status": "SKIPPED", "pass": None, "reasons": ["no GMGN_API_KEY; free router blocked by Cloudflare"], "scoreAdj": 0}
     except Exception as e:
         res = {"status": "ERROR", "pass": None, "reasons": [f"router: {str(e)[:80]}"], "scoreAdj": 0}
     res["link"] = f"https://gmgn.ai/sol/token/{mint}"
@@ -162,9 +162,14 @@ def route_check(mint, C=None, sol=0.1):
     return res
 
 def probe(mint="7gUDvf45et6627atavR45Md4BjgYqJHMZe9EPqeR9Sya"):
-    """One router quote to see if this IP can reach GMGN (for --debug logs)."""
+    """Reachability from this IP (for --debug logs): free router + keyed OpenAPI host (no key sent -> expect JSON 401)."""
     try:
-        q, err = _route(SOL, mint, 10_000_000)
-        return "ok" if q else f"reachable, no route ({err})"
-    except Exception as e:
-        return f"blocked/error: {str(e)[:80]}"
+        q, err = _route(SOL, mint, 10_000_000); router = "ok" if q else f"reachable, no route ({err})"
+    except Exception as e: router = f"blocked/error: {str(e)[:60]}"
+    try:
+        urllib.request.urlopen(urllib.request.Request(f"{HOST}/v1/token/info?chain=sol&address={mint}", headers={"User-Agent": "degen-signals/1.0"}), timeout=10)
+        api = "200"
+    except urllib.error.HTTPError as e:
+        api = f"{e.code} " + ("json (reachable)" if e.read()[:1] == b"{" else "html (blocked)")
+    except Exception as e: api = f"error {str(e)[:60]}"
+    return f"router: {router} | openapi: {api} | key: {'set' if os.environ.get('GMGN_API_KEY') else 'none'}"
