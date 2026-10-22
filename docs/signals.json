@@ -1,9 +1,9 @@
 {
- "updatedAt": 1792684825,
+ "updatedAt": 1792694440,
  "window": "h1",
  "lastRunErrors": [],
- "candidates": 121,
- "cheapPass": 1,
+ "candidates": 125,
+ "cheapPass": 0,
  "tokens": [
   {
    "symbol": "Rebuild",
@@ -9356,15 +9356,23 @@
    "score": 40,
    "devScore": 0,
    "link": "https://dexscreener.com/solana/h8m9j11he8tvp58d61lrmfqb2ma4slsi6jx53zdb6jtk",
-   "maxPrice": 3.267e-05,
+   "maxPrice": 3.723785269211131e-05,
    "samples": [
     [
      1792681250,
      3.267e-05
+    ],
+    [
+     1792694368,
+     4.395e-06
     ]
    ],
    "trend": null,
-   "h1": null,
+   "h1": {
+    "price": 4.395e-06,
+    "pct": -86.4,
+    "maxX": 1.15
+   },
    "h24": null,
    "hit2x": false,
    "hit5x": false,
@@ -9403,13 +9411,14 @@
     "liq": 13684.45,
     "liqMax": 13684.45
    },
-   "last": 3.267e-05,
-   "lastT": 1792681250,
+   "last": 4.395e-06,
+   "lastT": 1792694368,
    "athSrc": "chart",
-   "chartT": 1792681250,
-   "minPrice": 3.267e-05,
-   "lastPct": 1.1,
-   "milestones": {}
+   "chartT": 1792694368,
+   "minPrice": 4.395e-06,
+   "lastPct": -86.4,
+   "milestones": {},
+   "maxSrc": "chart"
   },
   {
    "mint": "5vSf2wnmuqV54mQqyxzdbPahwAXxJnvycm7w3B7gpump",
@@ -9430,10 +9439,18 @@
     [
      1792681250,
      2.567e-06
+    ],
+    [
+     1792694368,
+     2.526e-06
     ]
    ],
    "trend": null,
-   "h1": null,
+   "h1": {
+    "price": 2.526e-06,
+    "pct": -98.2,
+    "maxX": 1.0
+   },
    "h24": null,
    "hit2x": false,
    "hit5x": false,
@@ -9472,11 +9489,11 @@
     "liq": 51501.57,
     "liqMax": 51501.57
    },
-   "last": 2.567e-06,
-   "lastT": 1792681250,
+   "last": 2.526e-06,
+   "lastT": 1792694368,
    "athSrc": "chart",
-   "chartT": 1792681012,
-   "minPrice": 2.567e-06,
+   "chartT": 1792694368,
+   "minPrice": 2.526e-06,
    "lastPct": -98.2,
    "milestones": {}
   },
@@ -9491,20 +9508,7 @@
    "devScore": 0,
    "link": "https://dexscreener.com/solana/8wfw1zazt6trvovtgg18pcntmbkkqe24ks8agza6jgmi",
    "maxPrice": 0.0001727,
-   "samples": [
-    [
-     1792667751,
-     0.000167
-    ],
-    [
-     1792681012,
-     3.708e-05
-    ],
-    [
-     1792681250,
-     3.697e-05
-    ]
-   ],
+   "samples": [],
    "trend": "up",
    "h1": {
     "price": 3.708e-05,
@@ -9549,10 +9553,10 @@
     "liq": 36252.63,
     "liqMax": 36252.63
    },
-   "last": 3.697e-05,
-   "lastT": 1792681250,
-   "minPrice": 3.697e-05,
-   "lastPct": -78.6,
+   "last": 2.314e-05,
+   "lastT": 1792694368,
+   "minPrice": 2.314e-05,
+   "lastPct": -86.6,
    "milestones": {}
   },
   {
@@ -9566,24 +9570,7 @@
    "devScore": -30,
    "link": "https://dexscreener.com/solana/6wfszfs6uojt4gjyxjnojc78qujyngrexj834zyvluja",
    "maxPrice": 0.00011652133211844309,
-   "samples": [
-    [
-     1792666871,
-     7.886e-05
-    ],
-    [
-     1792667751,
-     9.355e-05
-    ],
-    [
-     1792681012,
-     2.612e-06
-    ],
-    [
-     1792681250,
-     2.612e-06
-    ]
-   ],
+   "samples": [],
    "trend": "up",
    "h1": {
     "price": 2.612e-06,
@@ -9617,30 +9604,31 @@
      "RPC funders"
     ]
    },
-   "athMc": 376670,
+   "athMc": 376748,
    "athT": 1792646100,
    "lp": {
     "status": "burned",
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792666871,
+    "t": 1792694414,
     "pctMax": 100,
-    "liq": 20071.68,
+    "liq": 3161.68,
     "liqMax": 20071.68
    },
-   "last": 2.612e-06,
-   "lastT": 1792681250,
+   "last": 2.655e-06,
+   "lastT": 1792694368,
    "athSrc": "chart",
-   "chartT": 1792681012,
+   "chartT": 1792694368,
    "minPrice": 2.612e-06,
-   "lastPct": -95.3,
+   "lastPct": -95.2,
    "milestones": {
     "2": 1792681012
    },
    "maxSrc": "chart",
    "topMilestone": 2.0,
-   "topMilestoneT": 1792681012
+   "topMilestoneT": 1792681012,
+   "lpEvents": {}
   },
   {
    "mint": "B28EEeqoZ8NhCtkXLmNkWQp2NUp9mixH54V4etaLpump",
@@ -9653,24 +9641,7 @@
    "devScore": 0,
    "link": "https://dexscreener.com/solana/8xs4xal95ggvwbtytejcuykuu6jigdfmukfyw8flgnum",
    "maxPrice": 0.0001503,
-   "samples": [
-    [
-     1792666871,
-     5.811e-05
-    ],
-    [
-     1792667751,
-     5.142e-05
-    ],
-    [
-     1792681012,
-     2.578e-05
-    ],
-    [
-     1792681250,
-     2.805e-05
-    ]
-   ],
+   "samples": [],
    "trend": "up",
    "h1": {
     "price": 2.578e-05,
@@ -9704,25 +9675,26 @@
      "RPC funders"
     ]
    },
-   "athMc": 502360,
+   "athMc": 502401,
    "athT": 1792663800,
    "lp": {
     "status": "burned",
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792666871,
+    "t": 1792694414,
     "pctMax": 100,
-    "liq": 33293.69,
+    "liq": 9856.94,
     "liqMax": 33293.69
    },
-   "last": 2.805e-05,
-   "lastT": 1792681250,
+   "last": 1.589e-05,
+   "lastT": 1792694368,
    "athSrc": "chart",
-   "chartT": 1792681012,
-   "minPrice": 2.578e-05,
-   "lastPct": -81.3,
-   "milestones": {}
+   "chartT": 1792694368,
+   "minPrice": 1.589e-05,
+   "lastPct": -89.4,
+   "milestones": {},
+   "lpEvents": {}
   },
   {
    "mint": "3GsH56aE5TYHiDjxqdDmLZKpwVwMJHscgsDPyCAVpump",
@@ -9735,24 +9707,7 @@
    "devScore": 0,
    "link": "https://dexscreener.com/solana/f3kjkeuiw3mwp7er5enqejxg7k6m9ovjmyuqisdjg9tu",
    "maxPrice": 2.734e-05,
-   "samples": [
-    [
-     1792666871,
-     1.755e-05
-    ],
-    [
-     1792667751,
-     1.561e-05
-    ],
-    [
-     1792681012,
-     1.291e-05
-    ],
-    [
-     1792681250,
-     1.313e-05
-    ]
-   ],
+   "samples": [],
    "trend": "fading",
    "h1": {
     "price": 1.291e-05,
@@ -9793,16 +9748,17 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792666871,
+    "t": 1792694414,
     "pctMax": 100,
-    "liq": 12724.32,
+    "liq": 5285.52,
     "liqMax": 12724.32
    },
-   "last": 1.313e-05,
-   "lastT": 1792681250,
-   "minPrice": 1.291e-05,
-   "lastPct": -52.0,
-   "milestones": {}
+   "last": 6.586e-06,
+   "lastT": 1792694368,
+   "minPrice": 6.586e-06,
+   "lastPct": -75.9,
+   "milestones": {},
+   "lpEvents": {}
   },
   {
    "mint": "3ovfq2cy9mtjhgXeZcKAJTazTJH2wGtvd4afJ8ckpump",
@@ -10182,9 +10138,9 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792666886,
+    "t": 1792694414,
     "pctMax": 100,
-    "liq": 2699.9,
+    "liq": 2697.5,
     "liqMax": 11913.96
    },
    "last": 3.242e-06,
@@ -10383,9 +10339,9 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792666886,
+    "t": 1792694414,
     "pctMax": 100,
-    "liq": 2720.31,
+    "liq": 2697.19,
     "liqMax": 36624.19
    },
    "last": 2.44e-06,
@@ -10588,9 +10544,9 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792666886,
+    "t": 1792694414,
     "pctMax": 100,
-    "liq": 2605.68,
+    "liq": 2576.67,
     "liqMax": 10876.21
    },
    "last": 2.664e-06,
@@ -11061,7 +11017,7 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792666886,
+    "t": 1792694414,
     "pctMax": 100,
     "liq": 2255.97,
     "liqMax": 15625.61
@@ -11327,9 +11283,9 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792666886,
+    "t": 1792694414,
     "pctMax": 100,
-    "liq": 7662.21,
+    "liq": 6612.56,
     "liqMax": 22689.92
    },
    "last": 1.644e-05,
@@ -12148,9 +12104,9 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792654247,
+    "t": 1792694414,
     "pctMax": 100,
-    "liq": 5179.46,
+    "liq": 5199.68,
     "liqMax": 40698.02
    },
    "maxSrc": "chart",
@@ -12675,9 +12631,9 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792654247,
+    "t": 1792694414,
     "pctMax": 100,
-    "liq": 3394.21,
+    "liq": 3391.74,
     "liqMax": 4870.14
    },
    "maxSrc": "chart",
@@ -13209,9 +13165,9 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792654247,
+    "t": 1792694414,
     "pctMax": 100,
-    "liq": 3464.79,
+    "liq": 3389.4,
     "liqMax": 5711.37
    },
    "safety": {
@@ -13279,9 +13235,9 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792654247,
+    "t": 1792694414,
     "pctMax": 100,
-    "liq": 8383.6,
+    "liq": 7480.87,
     "liqMax": 27330.88
    },
    "maxSrc": "chart",
@@ -13778,9 +13734,9 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792654247,
+    "t": 1792694414,
     "pctMax": 100,
-    "liq": 3227.98,
+    "liq": 3294.38,
     "liqMax": 3647.55
    },
    "safety": {
@@ -13837,9 +13793,9 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792654247,
+    "t": 1792694414,
     "pctMax": 100,
-    "liq": 3205.12,
+    "liq": 3083.77,
     "liqMax": 3279.82
    },
    "safety": {
@@ -14076,9 +14032,9 @@
     "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
     "pct": 100,
     "unlock": null,
-    "t": 1792654247,
+    "t": 1792694414,
     "pctMax": 100,
-    "liq": 4027,
+    "liq": 3969.4,
     "liqMax": 4235.12
    },
    "safety": {
@@ -14272,9 +14228,9 @@
  "stats": {
   "signals": 74,
   "h1": {
-   "n": 72,
-   "winRate": 27.8,
-   "avg": -12.1,
+   "n": 74,
+   "winRate": 27.0,
+   "avg": -14.2,
    "best": 508.7,
    "worst": -98.8
   },
@@ -14292,11 +14248,11 @@
   "today": {
    "signals": 6,
    "n": 6,
-   "wins": 1,
-   "winRate": 16.7,
-   "totalPnl": -404.3,
-   "avgPnl": -67.4,
-   "best": "Rebuild +1%",
+   "wins": 0,
+   "winRate": 0.0,
+   "totalPnl": -531.7,
+   "avgPnl": -88.6,
+   "best": "UberChad -76%",
    "worst": "\u62b1\u64c1 -98%",
    "basis": {
     "24h": 0,
@@ -14308,18 +14264,18 @@
     "2": 1,
     "5": 0
    },
-   "tpWins": 2,
-   "tpWinRate": 33.3,
-   "tpTotalPnl": -306.6,
-   "tpAvgPnl": -51.1
+   "tpWins": 1,
+   "tpWinRate": 16.7,
+   "tpTotalPnl": -434.1,
+   "tpAvgPnl": -72.4
   },
   "week": {
    "signals": 31,
    "n": 31,
-   "wins": 2,
-   "winRate": 6.5,
-   "totalPnl": -2503.5,
-   "avgPnl": -80.8,
+   "wins": 1,
+   "winRate": 3.2,
+   "totalPnl": -2630.9,
+   "avgPnl": -84.9,
    "best": "NEWS +19%",
    "worst": "RWA -99%",
    "basis": {
@@ -14332,18 +14288,18 @@
     "2": 7,
     "5": 1
    },
-   "tpWins": 8,
-   "tpWinRate": 25.8,
-   "tpTotalPnl": -1873.6,
-   "tpAvgPnl": -60.4
+   "tpWins": 7,
+   "tpWinRate": 22.6,
+   "tpTotalPnl": -2001.1,
+   "tpAvgPnl": -64.6
   },
   "month": {
    "signals": 74,
    "n": 74,
-   "wins": 9,
-   "winRate": 12.2,
-   "totalPnl": -4431.3,
-   "avgPnl": -59.9,
+   "wins": 8,
+   "winRate": 10.8,
+   "totalPnl": -4558.7,
+   "avgPnl": -61.6,
    "best": "ZeroFee +382%",
    "worst": "RWA -99%",
    "basis": {
@@ -14360,18 +14316,18 @@
     "20": 1,
     "30": 1
    },
-   "tpWins": 21,
-   "tpWinRate": 28.4,
-   "tpTotalPnl": -3499.6,
-   "tpAvgPnl": -47.3
+   "tpWins": 20,
+   "tpWinRate": 27.0,
+   "tpTotalPnl": -3627.1,
+   "tpAvgPnl": -49.0
   },
   "all": {
    "signals": 74,
    "n": 74,
-   "wins": 9,
-   "winRate": 12.2,
-   "totalPnl": -4431.3,
-   "avgPnl": -59.9,
+   "wins": 8,
+   "winRate": 10.8,
+   "totalPnl": -4558.7,
+   "avgPnl": -61.6,
    "best": "ZeroFee +382%",
    "worst": "RWA -99%",
    "basis": {
@@ -14388,487 +14344,15 @@
     "20": 1,
     "30": 1
    },
-   "tpWins": 21,
-   "tpWinRate": 28.4,
-   "tpTotalPnl": -3499.6,
-   "tpAvgPnl": -47.3
+   "tpWins": 20,
+   "tpWinRate": 27.0,
+   "tpTotalPnl": -3627.1,
+   "tpAvgPnl": -49.0
   }
  },
  "statsBasis": "24h result where available, else live price",
  "lastReportSlot": "2026-10-22-PM",
  "firstSeen": {
-  "9zZaVu5LhxkwCZEjNhEYEQfhhFxXdkn4KrpoV2nFpump": [
-   1792422913,
-   12218.6
-  ],
-  "9gJkjqQmWsVvh5U8qoxxekzK3pu122kbmHPkxXLcpump": [
-   1792422913,
-   8012.87
-  ],
-  "DURNeFdg7ws8ZVGrQBstxGeRRECYV9Jn3PLwLkFpump": [
-   1792422913,
-   34371.88
-  ],
-  "0x1FFb3792A2445662B59654a163a861040a571223": [
-   1792422913,
-   179705
-  ],
-  "0xB4f019Cd48770f8232c92d9E398390b9Ac0C627C": [
-   1792422913,
-   151447
-  ],
-  "HvYk4gLXKYuU5wvN9tkL24dWaHuWRmS9YKQy3HYD8GWy": [
-   1792422913,
-   20421
-  ],
-  "0x7AB8d02CBb51Ff7223fDe700eAaa2a91Bf750314": [
-   1792422913,
-   14711203
-  ],
-  "1qV5QEr1DXFUHPTP5uMZaJvrBGnNGEccoRy4CUvpump": [
-   1792423814,
-   32680.56
-  ],
-  "BkhbP6uTywbRFcQzrREbTbpKW98PNzVZ9fidRbG7pump": [
-   1792423814,
-   8692.42
-  ],
-  "9cBZ7REEoGBuSzDWKs24Des3X55jL58hYKrkRTCXpump": [
-   1792423814,
-   11857.92
-  ],
-  "FQJ79arbfYH8ojR6iWrsw2wesgUv7rXAvFaD5mTgpump": [
-   1792423814,
-   5813.55
-  ],
-  "BfJphhAGBYWigoeikWtxxiKc5d85qNaeHVwS5n4Fpump": [
-   1792423814,
-   92416
-  ],
-  "nearsight.v2-launchpad.justhoot.near": [
-   1792423814,
-   13081
-  ],
-  "CAjD5gJBY5gDE6G3STtTLPe1GHjeBiSCPtJrKwUkpump": [
-   1792424793,
-   11590.89
-  ],
-  "5rjHbiZSztesWXG6WVwJCQ5gEdy5a3YC2rAXuhoZpump": [
-   1792424793,
-   26466.36
-  ],
-  "VcojebnWkceasp2v72p68zpNca4yW8Q4sJ3SjLnpump": [
-   1792424793,
-   35178.89
-  ],
-  "Fxbabq6WjbkP5SFF9kwFFEk5TGhTNTMgXpkCCUS1GaT2": [
-   1792424793,
-   3529.77
-  ],
-  "7eJxFRUDewbnxhFTsrV7drBeBLHm3VuRjuGTbDYXpump": [
-   1792424793,
-   3133.6
-  ],
-  "CxrS8vVxHEktLdCUdmyWk11tPRBSiGt2YwLW77pJpump": [
-   1792424793,
-   36737
-  ],
-  "A4H4qjZPnQPSyhHgP276RhZYFAGmPPK4HQsvNCyxpump": [
-   1792424793,
-   990897
-  ],
-  "w16qoALFz66AEdRJM56jAAionWb5FhVyjGjznrYpump": [
-   1792424793,
-   265540
-  ],
-  "6NoJLiM9RuMVjgXDPnY5tL14Zm589Dhb3gBwJou4pump": [
-   1792424793,
-   2933.5
-  ],
-  "Privmh19vUQL5DWZukegskZgnvKTj7eXgDjbz3LR1yG": [
-   1792425618,
-   26475.29
-  ],
-  "z1YjH3V5CVxK4HkUSJbTJbbCN9qY8SURNrB5T3kpump": [
-   1792425618,
-   16791.72
-  ],
-  "4hJUvD8HrMZcFKHvoWWrVxUhrZWRLuEj5mpY9fkdqboE": [
-   1792425618,
-   12404.63
-  ],
-  "HSqyRwZXJJRWu3XARJQAFrDfpty4Z7tYbpJHRD54qpad": [
-   1792425618,
-   5533.32
-  ],
-  "DZC4LQwQs9h4zDv4YDiyhupYBKVYggcSnUmZcFi1pump": [
-   1792425618,
-   12106.6
-  ],
-  "H3H8C9Bn2XoJSti8hSFbSzAVdwZviBSF2okXgPjdpump": [
-   1792425618,
-   5093.59
-  ],
-  "Fh9zHrRkWHxjkVN5c2ERr16VfEHaa6F5jZk5Q5qipump": [
-   1792425618,
-   8049.55
-  ],
-  "C8rL5GEsVHMmbg3jTvtsSa93bUxpUyLCThE6HKttpump": [
-   1792425618,
-   10703.41
-  ],
-  "9JeFE6apEvFotefu1ocjWgSceEc3LG1LhgMxQNB4pump": [
-   1792425618,
-   6409.25
-  ],
-  "Hht3ozgbgvBsoD6h1fgDzfrViWvf5tQuLqJcUptwAq4z": [
-   1792425618,
-   361504
-  ],
-  "GicxSBiZPMuGEUBmDDqhg2yrxgjDCY1Euof83Gi8pump": [
-   1792425618,
-   142013
-  ],
-  "DVMfDdYRoQX4XMEbD9eKNBYZUxuaTVCpbunYQV9Lpump": [
-   1792425618,
-   55981
-  ],
-  "0xd57CAe4D54F7a8119119136d578e8dC743cF708e": [
-   1792425618,
-   3625
-  ],
-  "0x83C644bF682D331E65973e884d69541dF002Ae6E": [
-   1792425618,
-   1008868
-  ],
-  "0x5bA5108C56766aaC0EAE783793d43e08B488a626": [
-   1792425618,
-   7737
-  ],
-  "GcJRW5SeczCMorDw8wiFEyMXF6mPb5W2L1ZtCHQCpump": [
-   1792426513,
-   18988.86
-  ],
-  "5ZGFfasnNphC8opkjEt1Q4F6KGPKCW5VBczbo5tdpump": [
-   1792426513,
-   17258.12
-  ],
-  "8ikpycSs6M3zvdYFhLBh7CvcKuAKqf689yXNdy2wAgit": [
-   1792426513,
-   10876.73
-  ],
-  "2jhnKMxKrdw4czykRe1sTntAZcErkQWGmypn2WXtpump": [
-   1792426513,
-   42834.26
-  ],
-  "8gvMq8nVFfUg4Evq2i1B3mZJ2cwbYR9mVHdUTXawpump": [
-   1792426513,
-   18293
-  ],
-  "C4Q1PjZWQ3mYwNPBvtHzbqUEvJ1FULQX46NNMVzMpump": [
-   1792426513,
-   3338.79
-  ],
-  "A8mGLUsfGQPrcwE83B7bvQykTW5Y8kRAeKzgPzjwpump": [
-   1792426513,
-   5418.69
-  ],
-  "h2eZNEC4E4nUSDHtbgCkU46idD9BCvj7qwXZmyppump": [
-   1792426513,
-   107945
-  ],
-  "0x834e80509b23dC82d79F982510a32348986B06b5": [
-   1792426513,
-   874
-  ],
-  "0xE01aDA02FB4d1951cDb8cBb761d509db2FF02C94": [
-   1792426513,
-   16112597
-  ],
-  "0xea0071a8778fA02C12378E88868255E0e0952Be6": [
-   1792426513,
-   205899
-  ],
-  "0x26C7f6faE89fD5De55CFc5cdc4C245E6BfCb48D5": [
-   1792426513,
-   43699
-  ],
-  "G2nLEHYf9YBfsqNmNfRxr9GC24P6DRkAHxMFPiMKpump": [
-   1792427495,
-   16109.61
-  ],
-  "4VmQUatnfUabKLegfNUQ4FGDZckrfehR3vAFDaYDpump": [
-   1792427495,
-   16925.77
-  ],
-  "2NuZgtFu1mapWrG463skJSgoqHEJN59Cm4F4VR2qpump": [
-   1792427495,
-   7069.14
-  ],
-  "GYR1HdhWCbnJGHkUTaZMxinYJjxXiyY7ZTuoDNmnru74": [
-   1792427495,
-   2605
-  ],
-  "EGsA9tCQJ9EoeaJRNWMya999mUeuH7yDw2ejaQTTpump": [
-   1792427495,
-   7705.4
-  ],
-  "Ndj1deSF5wGxVHP1GYghzFN5ir9Kx6TMzCgee3miXrh": [
-   1792427495,
-   30141
-  ],
-  "0x22Ad3b2a5d3924c9E813fcc1A537f24FED6a17D7": [
-   1792427495,
-   13207
-  ],
-  "0xFAFDe84f08aBe540Fb20940a7741d7B44a478CCD": [
-   1792427495,
-   11334
-  ],
-  "0x6D8933Adb13d3e776085D0D483ea55CA82E7F376": [
-   1792427495,
-   88513
-  ],
-  "9dtRye5nnLvoC63kGuTSRfmLc4AMQMWRA2XxZprzpump": [
-   1792428317,
-   4138.58
-  ],
-  "AjNCdzzJEP3yokZyz1uwryvfjxgUwg3YBDTwpnwPpump": [
-   1792428317,
-   6865.95
-  ],
-  "0x84E777bC0F3DFf6adD2dd49Fa2E841845541678C": [
-   1792428317,
-   41824
-  ],
-  "BcKHDvDTi6d83WYHcX1NnYzF11Yax9Q8M8NCqXJJnSXe": [
-   1792428317,
-   127966
-  ],
-  "Hh52rRAdRof5m2neKDXzEaJeVZQZLUm6q169mu1jdFGJ": [
-   1792428317,
-   133993
-  ],
-  "J2v6BRnMHtfi3oewTgwmNjXHA4YrypZoBwPwNaXbpump": [
-   1792428317,
-   3469.02
-  ],
-  "BU9hz1JXJZCjJwMdBPggxdEF1FEsJzyHiRwAkU8qpump": [
-   1792428317,
-   22960
-  ],
-  "0x47A60741A595B89640b6fC22127977fb872E8439": [
-   1792428317,
-   14826
-  ],
-  "0x6B5b4Cc9F07d10Cc48e75D234cFE04a0931B7777": [
-   1792428317,
-   56239
-  ],
-  "GaNDz4FXgLLgUW5FPgeaRKj7knERQRgxdCkfpcbipump": [
-   1792429215,
-   21323.42
-  ],
-  "Fac1eX37NLZShprpPjo5zYYwNySEjx47sCikkSoGLAZE": [
-   1792429215,
-   3598.68
-  ],
-  "FNzyJWPfkix581gEK75CtuyCfuMR3MMoshjvgqACpump": [
-   1792429215,
-   2918.92
-  ],
-  "87w3p3UGaJJfrjcnhobMAjttAjL1SFgZijpqqW4jWjms": [
-   1792429215,
-   75487
-  ],
-  "0xCcf785cdA233e264DA75EdF30452e867DFDCEF42": [
-   1792429215,
-   33484
-  ],
-  "0x5Acd735F50c16C7618Fb0Af48B2A2e0e682a647f": [
-   1792429215,
-   977519
-  ],
-  "0x9DF72f508f7F44748a55831875d3d459E559d3C1": [
-   1792429215,
-   6212664
-  ],
-  "0x48d134b04238ab7Fb9134e6fc47149C39F3D022c": [
-   1792429215,
-   40623
-  ],
-  "AG2Ujez24nxm146HEbr3YPKPSMjfW97dZV9eVxizpump": [
-   1792430111,
-   18013.08
-  ],
-  "9T1DbbiKfhfubEabDj5SWSMzBuyU4tJHkpSgR51Tpump": [
-   1792430111,
-   24354.56
-  ],
-  "3qSd27nb3zyRmqbhLzH4PdeYcADqeLtjgYy2Fp4Apump": [
-   1792430111,
-   66606
-  ],
-  "7wG9Qhnke5FCDpXb3YqhAs6i6gZtVrk8qkPBKZq7pump": [
-   1792430111,
-   194506
-  ],
-  "A1r97iaUSrB12nAnYzaT24maVs71L4nqppQqZCRdpump": [
-   1792430111,
-   42863.02
-  ],
-  "2wZu25DbwRGZ6kTKqR551EP1QFoxLSNNQKwMAgBmxK3j": [
-   1792430111,
-   41683.07
-  ],
-  "6v2Xpt3Qd3YRBJ5v68E9eRLYqBDKMc5YYwcTpor7pump": [
-   1792430111,
-   1987
-  ],
-  "C2JjfByqXrXsL3ryWrfPUgVY85kYxPgE56jskuGLpump": [
-   1792431017,
-   15768.59
-  ],
-  "HsN1cDwMeAaMMRpvkB1AJgvaj4P3eyzKTbxDNzYqpump": [
-   1792431017,
-   20440.04
-  ],
-  "FnUYkyPNX6xmva2Ym6wNjHCTj8PDBdNNKbeCU82Hpump": [
-   1792431017,
-   11097.84
-  ],
-  "AHD7t7MQFW5giYajnkgXNkC13T2QGCXi5zpSxFZTpump": [
-   1792431017,
-   8637.27
-  ],
-  "3NYjvJ85SHTj6U4wXh8eJqLZZJuQYBJhgR16Vjvkpump": [
-   1792431017,
-   3755.27
-  ],
-  "6t7XgUW2q2KcXFAUexPXCwLekXemczRdNx5RG2Tfpump": [
-   1792431017,
-   5181.32
-  ],
-  "Ce2gx9KGXJ6C9Mp5b5x1sn9Mg87JwEbrQby4Zqo3pump": [
-   1792431017,
-   32901953
-  ],
-  "Av5v2nu9fFSE5JhLn1ivewLj1TG82bQ34pKPtAXCpump": [
-   1792431017,
-   40207
-  ],
-  "FoV6PirGWo82XtC9QdcXy9ezEo3LKKjWAJrTt8GFpump": [
-   1792431017,
-   40901
-  ],
-  "GNXbqbibZ1MVi7tyCfjSM8CxgfUEzRSDTdDrDtNhatch": [
-   1792431017,
-   40377.18
-  ],
-  "F6JxE8j95WyeXBmv7EMPCjRrqB4JNYmhpF6eBBiTpump": [
-   1792431017,
-   3526.02
-  ],
-  "0xbdb0f51F64a61017d25adeD86F59A30CE3560221": [
-   1792431017,
-   333844
-  ],
-  "0x0e7d0FD3402546AEBD05C463a096cDB2D2210AAd": [
-   1792431017,
-   18056
-  ],
-  "0x983225D91f04E48016CE9Cbe170A19046256C775": [
-   1792431017,
-   2303
-  ],
-  "0x8C106BE0e58F89f033483b5b5cCA6B61796c7777": [
-   1792431017,
-   265838
-  ],
-  "0x0aAA50b0EBE72f330A5594CAe255b57f19806ba7": [
-   1792431017,
-   61317
-  ],
-  "d9ReUwEFvWcLwS3oJEYkjci6mWwJJy2qm68zd7mpump": [
-   1792431989,
-   13291.89
-  ],
-  "ABLMQjh1aeqdR47UGQsPrzL33PSiSZbyXegWuVP9pump": [
-   1792431989,
-   15306.8
-  ],
-  "4F94MPjEfEDZjW1p4ALgTecmvFvnhgNDtfMwV5YKPair": [
-   1792431989,
-   8328.13
-  ],
-  "9vnk4LwbxhHdGiGbGzan9hjKYjNv7Uypy88pByG9pump": [
-   1792431989,
-   5629.79
-  ],
-  "3tcKxQqAmjXK4triGmz46MX9yS6gug8YWfEVYGkDnMUk": [
-   1792431989,
-   9897.05
-  ],
-  "0xBdDd48Fe7a97C4c8601Cc6c22276D7fd4E2c8513": [
-   1792431989,
-   76793
-  ],
-  "0x774b0e022477e83108530A975e9eDF26Cc4301BF": [
-   1792431989,
-   682805
-  ],
-  "J34sjwqUYsicH2A6aNoMn91MAPYkUUdXsyfFBLBNDoLL": [
-   1792431989,
-   137065
-  ],
-  "7PvDXoFaHGoAAfPopE3vNfqRJcDCsz2fVbVYionopump": [
-   1792431989,
-   3208.74
-  ],
-  "BrdhmnMUAx9SJkosCLhbFs1DvmsYM7s5CNNbXKa8pump": [
-   1792432815,
-   6350.93
-  ],
-  "0xd24738F04029eb2EebB7B375AE7923BEF6A5A42B": [
-   1792432815,
-   68345
-  ],
-  "0xe4f00e3286C39C74D431904Bca00b193f7E0B1dA": [
-   1792432815,
-   268749
-  ],
-  "EKzoDk5CP4tf1Gy6xomBqb6TizYWKZBdskcxvv9Zpump": [
-   1792433712,
-   16440.46
-  ],
-  "JRKArxoRSKywxLSW2RHduvqa9zE3tVLJRDGxHFqpump": [
-   1792433712,
-   10387.87
-  ],
-  "GJLB7Box46h1RQrxcREHGnDcRWDk2pdu8dw2hSwwpump": [
-   1792433712,
-   29140.22
-  ],
-  "Dt9EAQYTN2RrSG6Gv2DrB68xfAvau3Ntyjtpmmnfpump": [
-   1792433712,
-   8152.51
-  ],
-  "9DfrwEji2mmqNL9panHetpSx4psbp4XwuE8oEemspump": [
-   1792433712,
-   257455
-  ],
-  "5rqqBQSsA5fo2znzmudV3vGD6uKfe7K7wafYS9N9pump": [
-   1792434614,
-   235621
-  ],
-  "0x6B5545173177848e58b85aD66FEFDee62Cf1578e": [
-   1792434614,
-   270036
-  ],
-  "0xeb5e4f655eee663A01419bEC7Dd74b5ee45b5f67": [
-   1792434614,
-   492499
-  ],
   "D734ExdJNZ4wh3iDzcx8EDA6Nt4Vk9idGnk9e9Jgpump": [
    1792435592,
    28697.3
@@ -19548,6 +19032,150 @@
   "0x1F93ac207EC284Ba3b0bAbe477327c013bA06E9C": [
    1792681250,
    2
+  ],
+  "66PcGP5fjGKr1ds1QKkKP2dt5cua319J3HZtdqEhpump": [
+   1792694368,
+   7038.17
+  ],
+  "EdNSCBBxsM9oYLnMoKG6mLj67Z3uJrSS9Wv1Bzuvpump": [
+   1792694368,
+   19213.02
+  ],
+  "HeZAZRLXP2R61WyW6dkcNU5bLHQCBShSrXtdvD1zpump": [
+   1792694368,
+   15360.28
+  ],
+  "8kLt6YZ8vx86h2PAPsXhBsE5DwUJ8u1cVXRTbrcXpump": [
+   1792694368,
+   27416.69
+  ],
+  "FX1nYoan17vnNAafdCGdzbRsYySfunNh4pktT4bapump": [
+   1792694368,
+   5578.92
+  ],
+  "Baw61KXAJk4MMnNJPBa87S8F77oNhMy7gQ63S8SLpump": [
+   1792694368,
+   1395988
+  ],
+  "635BZjhhzBvn7EsErsL3ABMRmfsfEjGi8YJTCia9pump": [
+   1792694368,
+   88572
+  ],
+  "BK7TyDvEbvNTqokhW5BkT2HmJFdk2WKkCQRq7Amgpump": [
+   1792694368,
+   105016
+  ],
+  "0x4666a07D06C481ed9ec8B92ca65C9ed02B87B614": [
+   1792694368,
+   15936
+  ],
+  "0xe0b5E9B42F35e03Eb0b11FCce6c8a37e4D4E7777": [
+   1792694368,
+   317607
+  ],
+  "0x04f750A7ae4aFDbE79148731B4a69bAC3B0a1b22": [
+   1792694368,
+   91170
+  ],
+  "9vrLKXVJsWpdEuykBPGvyh5APLuLGCynAnNTm59uvibe": [
+   1792694368,
+   4665
+  ],
+  "7PNm3TKhAMbkzB9GyDQ17EuuX7dFzYpdF9b8yVhmBnK3": [
+   1792694368,
+   39276
+  ],
+  "4krFcF31xNiRQseavbJ579r9fYfaqmbycXEZi49gpump": [
+   1792694368,
+   250475
+  ],
+  "HxhkTcK9opedJTz2oR38gH72m3n8WNC6S1Rp7BGgRPRA": [
+   1792694368,
+   10335.02
+  ],
+  "DwfUT6u6vKYsoA3mPzLC8VPPU7MquMphegdgicKPpump": [
+   1792694368,
+   377992
+  ],
+  "88SWYquV2PpUDyMDBHxBuvA9m7q9rKBcggDiKCuzpump": [
+   1792694368,
+   2971.04
+  ],
+  "7jRao2X5ZwxUdgTnHKFEucP8WiiFKQG1eDhfPWZLpump": [
+   1792694368,
+   13047.86
+  ],
+  "BpsCTaPPniHEkYR7eQP27TwpxxsLateaJcjGzYTcpump": [
+   1792694368,
+   183562
+  ],
+  "5xDymv7d9t9bER46ghR1tPCEDzprLS47pB88oWa3pump": [
+   1792694368,
+   2923.49
+  ],
+  "HqaUT1abZq6WkeRpCYD7yHNdcxgu6biXejNkeJUNpump": [
+   1792694368,
+   125707
+  ],
+  "C4qyYKMGYedLyjLq6spRzEXian5EK55CaRVNnbPApump": [
+   1792694368,
+   3193.52
+  ],
+  "AcYFbwFa4pKirDsSQp2zrCiCDk9KQFS3RF2GwQdSBNiA": [
+   1792694368,
+   4093.54
+  ],
+  "2paTpkR1vaNaVS4K6xQnm2R4U5Mcr2WJrp9z6jQGpump": [
+   1792694368,
+   3199.82
+  ],
+  "7pBcE1JoDiSA89pAbEE9FdwmK66aANbDPWmNMUUTFLf2": [
+   1792694368,
+   3094.24
+  ],
+  "xmrXNXzcgvU6JxsePQwMPZuYivSWqJSQdKnCChZwSoL": [
+   1792694368,
+   5720.45
+  ],
+  "9LjsJwcoDSJmkEsM31EtDMN1oagsVyHuwthaPooipump": [
+   1792694368,
+   3902.69
+  ],
+  "EVQtaC7JhakRZr4deKv8nbhqs9YaRt3eVDxt6DyQo6ea": [
+   1792694368,
+   166334
+  ],
+  "8TiMkgvsrat9tM2esko8zVTt99LZLpefUM4SnZaziXaQ": [
+   1792694368,
+   186448
+  ],
+  "PRVT6TB7uss3FrUd2D9xs2zqDBsa3GbMJMwCQsgmeta": [
+   1792694368,
+   6053187
+  ],
+  "0x0b7719C5B695FD990f165492ff5Dbb760c89B1a3": [
+   1792694368,
+   580550
+  ],
+  "0xaD087314857A6295a6F388D95B6f32E7610616ea": [
+   1792694368,
+   55641
+  ],
+  "0x1CC148dAfCB372840dDf1B3A0427Dc1434122138": [
+   1792694368,
+   27342
+  ],
+  "0xFAFDe84f08aBe540Fb20940a7741d7B44a478CCD": [
+   1792694368,
+   12696
+  ],
+  "0x689622b39D36A25a6de1a83acFDDFDCEa2F70d82": [
+   1792694368,
+   6245
+  ],
+  "0x170FC64A94975C8556F6c0e699d3cc565D664473": [
+   1792694368,
+   9611521
   ]
  },
  "tgOffset": null
