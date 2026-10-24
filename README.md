@@ -155,3 +155,17 @@ The same "5R signals" job runs from the Grok Bot box every 15 min (:00/:15/:30/:
 (separate clone in `~/.degen/repo`, secrets in `~/.degen/scan.env` chmod 600, log `~/.degen/scan.log`, flock-guarded, nohup loop + watchdog).
 - Stop (switch back to Actions): `~/.degen/stop.sh`
 - Resume: `~/.degen/start.sh`
+
+## Data size: archive, commit gate, local candidate detail
+
+- **`docs/signals.json` keeps the last 30 days** (max 200 tokens / 300 journal). Older signals move to
+  `docs/archive/YYYY-MM.json` (month in WAT, deduped by mint; `docs/archive/index.json` lists them) and the feed's
+  `archive` key names the files. Nothing is dropped: `stats`/`periodStats` (site, mini app PnL, 12h reports, milestones
+  odds) are computed on recent + archived signals, and the Worker's `/tokens all|month…` and `/pnl` merge the archive
+  when a period reaches past the feed or a lookup misses. The site and mini app load the archive files too.
+- **Commit gate (`persist.py`)**: the scan commits only on meaningful change (new signals, seen.json, results,
+  milestones, ATH/max, LP status, report slot, tgOffset, archive), or a heartbeat every ~2h (`DEGEN_HEARTBEAT_S`).
+  updatedAt / candidates / lastRunErrors / live price ticks alone don't commit; they're kept as pending local state
+  (box `~/.degen/state`, Actions `.state` cache) and restored on the next run.
+- **Per-candidate detail (`firstSeen`) is off the public repo**: `alert.py --firstseen PATH` keeps it in a local
+  untracked file (box `~/.degen/state/firstseen.json`, Actions `.state/`). The feed only has counts.

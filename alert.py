@@ -9,6 +9,7 @@ ap.add_argument("--state", default=os.path.join(os.path.dirname(os.path.abspath(
 ap.add_argument("--window", choices=["h1", "h24"]); ap.add_argument("--all", action="store_true", help="ignore state (report seen too)")
 ap.add_argument("--signals", help="append new signals to this JSON feed (e.g. docs/signals.json)")
 ap.add_argument("--telegram", action="store_true", help="post new signals via TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID env")
+ap.add_argument("--firstseen", default=os.environ.get("FIRSTSEEN_PATH"), help="local (untracked) file for per-scan first-seen MCs; default: inside the feed (legacy)")
 ap.add_argument("--debug", action="store_true", help="print filter stats to stderr")
 a = ap.parse_args()
 F = pipeline.load_config()
@@ -63,47 +64,68 @@ if a.debug:
                      "shuriken_api": _st("https://api.shuriken.trade/api/v2/tokens/search?chain=solana&q=bonk"),
                      "bullx_neo": _st(f"https://neo.bullx.io/terminal?chainId=1399811149&address={_m}"),
                      "axiom": _st(f"https://axiom.trade/t/{_m}?chain=sol")}, file=sys.stderr)
-import journal as J
+import journal as J, archive
 if F.get("milestones"): J.MILESTONES = sorted(F["milestones"])
 J.MILESTONE_STEP = F.get("milestoneStep", 50)
 feed = json.load(open(a.signals)) if a.signals and os.path.exists(a.signals) else {"tokens": []}
 jr = feed.get("journal", [])
-# first time the bot saw each candidate (MC at first scan); pruned after 72h
-_now = int(time.time()); fs = {k: v for k, v in (feed.get("firstSeen") or {}).items() if _now - v[0] < 72 * 3600}
+arch_tokens, arch_jr = archive.load(a.signals) if a.signals else ([], [])
+arch_mints = {e["mint"] for e in arch_jr}
+# first time the bot saw each candidate (MC at first scan); pruned after 72h. Kept in a local untracked file when
+# --firstseen is set (box: ~/.degen/state/firstseen.json, Actions: cached .state/), not in the public feed.
+_now = int(time.time())
+_fs_src = json.load(open(a.firstseen)) if a.firstseen and os.path.exists(a.firstseen) else (feed.get("firstSeen") or {})
+fs = {k: v for k, v in _fs_src.items() if _now - v[0] < 72 * 3600}
 for r in rows:
     if r.get("mcap"): fs.setdefault(r["mint"], [_now, r["mcap"]])
+if a.firstseen:
+    os.makedirs(os.path.dirname(os.path.abspath(a.firstseen)), exist_ok=True); json.dump(fs, open(a.firstseen, "w"))
+full = archive.merge_journal(jr, arch_jr)  # all-time journal: recent feed + archive
 for r in out:
     v = fs.get(r["mint"]); r["firstScan"] = {"t": v[0], "mc": v[1]} if v else None
-    r["odds"] = J.odds(jr, exclude=r["mint"])
+    r["odds"] = J.odds(full, exclude=r["mint"])
 for t in reversed(feed.get("tokens", [])):  # backfill journal from earlier feed signals
-    if t.get("signalAt") and t.get("links"): J.add(jr, t, t0=t["signalAt"])
+    if t.get("signalAt") and t.get("links") and t["mint"] not in arch_mints: J.add(jr, t, t0=t["signalAt"])
 jr.sort(key=lambda e: -e["t0"])
 for r in out:
-    r["priceUsd"] = r.get("priceUsd"); J.add(jr, r)
+    r["priceUsd"] = r.get("priceUsd")
+    if r["mint"] not in arch_mints: J.add(jr, r)
 try: notes = J.update(jr)
 except Exception as e: notes = []; errors.append(f"journal update failed: {str(e)[:100]}")
 try: J.backfill_safety(jr, F["safety"])
 except Exception as e: errors.append(f"safety backfill failed: {str(e)[:100]}")
-try: J.backfill_chart(jr)
+full = archive.merge_journal(jr, arch_jr)
+try: J.backfill_chart(full)  # may also fill archived entries (saved back to the archive below)
 except Exception as e: errors.append(f"chart backfill failed: {str(e)[:100]}")
 try:
     import liquidity
     notes += liquidity.monitor(jr)
 except Exception as e: errors.append(f"LP monitor failed: {str(e)[:100]}")
-if a.signals:
-    for r in out: r["signalAt"] = int(time.time())
-    feed = {"updatedAt": int(time.time()), "window": F["window"], "lastRunErrors": errors,
-            "candidates": len(rows), "cheapPass": len(cheap), "tokens": (out + feed["tokens"])[:200],
-            "journal": jr[:300], "stats": J.stats(jr),
-            "periodStats": J.period_stats(jr, F.get("winThresholdPct", 0), tp=F.get("tp")), "statsBasis": "24h result where available, else live price",
-            "lastReportSlot": feed.get("lastReportSlot"), "firstSeen": fs, "tgOffset": feed.get("tgOffset")}
+for r in out: r["signalAt"] = int(time.time())
+WIN, TPC = F.get("winThresholdPct", 0), F.get("tp")
+def save_feed(extra=None):
+    """Recent (<= archive.ARCHIVE_DAYS, capped) stays in the feed; older/overflow moves to docs/archive/. Stats are all-time."""
+    if not a.signals: return
+    kt, kj, ot, oj = archive.split(out + [t for t in feed.get("tokens", []) if t["mint"] not in {r["mint"] for r in out}], jr)
+    arch_ids = {e["mint"] for e in oj}
+    summary = archive.save(a.signals, ot + [t for t in arch_tokens if t["mint"] not in {x["mint"] for x in ot}],
+                           oj + [e for e in full if e["mint"] in arch_mints and e["mint"] not in arch_ids])
+    allj = archive.merge_journal(kj, oj + [e for e in full if e["mint"] in arch_mints])
+    d = {"updatedAt": int(time.time()), "window": F["window"], "lastRunErrors": errors,
+         "candidates": len(rows), "cheapPass": len(cheap), "tokens": kt, "journal": kj,
+         "stats": J.stats(allj), "periodStats": J.period_stats(allj, WIN, tp=TPC),
+         "statsBasis": "24h result where available, else live price; all-time includes archived signals",
+         "archive": summary, "lastReportSlot": feed.get("lastReportSlot"), "tgOffset": feed.get("tgOffset")}
+    if not a.firstseen: d["firstSeen"] = fs
+    d.update(extra or {})
     os.makedirs(os.path.dirname(os.path.abspath(a.signals)), exist_ok=True)
-    json.dump(feed, open(a.signals, "w"), indent=1)
+    json.dump(d, open(a.signals, "w"), indent=1)
+save_feed()
 if a.telegram:
     import notify
-    ps = J.period_stats(jr, F.get("winThresholdPct", 0), tp=F.get("tp"))
+    ps = J.period_stats(full, WIN, tp=TPC)
     for r in out:
-        mid = notify.send(r, jr)
+        mid = notify.send(r, full)
         for e in jr:
             if e["mint"] == r["mint"] and mid: e["msgId"] = mid
     for kind, e, text in notes:
@@ -117,7 +139,7 @@ if a.telegram:
     elif a.signals and last != slot:
         if slot.endswith("-AM"):  # midnight report covers the day that just ended
             ref = now.replace(hour=0, minute=0, second=0, microsecond=0).timestamp() - 1
-            rps, day_label = J.period_stats(jr, F.get("winThresholdPct", 0), now=ref, tp=F.get("tp")), "Yesterday"
+            rps, day_label = J.period_stats(full, WIN, now=ref, tp=TPC), "Yesterday"
         else:
             rps, day_label = ps, "Today"
         sent = notify.post(notify.pnl_report(rps, slot, day_label))
@@ -128,7 +150,7 @@ if a.telegram:
     if (pol == "1" or (pol is None and (F.get("commands") or {}).get("workflowPolling"))) and not os.environ.get("DRY_RUN"):
         import commands
         tgo = commands.poll_once(tgo)
-    if a.signals: json.dump({**json.load(open(a.signals)), "journal": jr[:300], "lastReportSlot": last, "tgOffset": tgo}, open(a.signals, "w"), indent=1)
+    save_feed({"lastReportSlot": last, "tgOffset": tgo})
 json.dump(sorted(seen | {r["mint"] for r in out}), open(a.state, "w"))
 print(json.dumps({"generatedAt": time.strftime("%Y-%m-%dT%H:%M:%S%z"), "window": F["window"], "count": len(out), "errors": errors,
                   "disclaimer": "Not financial advice.", "tokens": out}, indent=2))

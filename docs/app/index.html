@@ -187,8 +187,21 @@ document.addEventListener("click", ev => {
   const cd = ev.target.closest(".card[data-m]"); if (cd) { hap(); view = cd.dataset.m; render(); }
 });
 document.addEventListener("click", ev => { const b = ev.target.closest("[data-copy]"); if (b && !b.onclick) { ev.stopPropagation(); copy(b.dataset.copy); } }, true);
+// signals.json holds the last 30 days; older signals are in ../archive/YYYY-MM.json (feed.archive.files), merged here
+let ARCH = {t: 0, key: "", tokens: [], journal: []};
+async function getData(){
+  const d = await (await fetch(DATA + "?t=" + Date.now())).json(), files = d.archive?.files || [], key = files.join(",");
+  if (files.length && (key !== ARCH.key || Date.now() - ARCH.t > 600000)) {
+    const ds = await Promise.all(files.map(f => fetch("../archive/" + f + "?t=" + Math.floor(Date.now()/600000)).then(r => r.ok ? r.json() : {}).catch(() => ({}))));
+    ARCH = {t: Date.now(), key, tokens: ds.flatMap(x => x.tokens || []), journal: ds.flatMap(x => x.journal || [])};
+  }
+  if (files.length) { const jm = new Set((d.journal||[]).map(e => e.mint)), tm = new Set((d.tokens||[]).map(t => t.mint));
+    d.journal = (d.journal||[]).concat(ARCH.journal.filter(e => !jm.has(e.mint))).sort((a, c) => c.t0 - a.t0);
+    d.tokens = (d.tokens||[]).concat(ARCH.tokens.filter(t => !tm.has(t.mint))); }
+  return d;
+}
 async function load(){
-  try { D = await (await fetch(DATA + "?t=" + Date.now())).json(); }
+  try { D = await getData(); }
   catch(e) { $("#main").innerHTML = `<div class="empty">Could not load signals (${esc(e.message)})</div>`; return; }
   // token param: t.me/DegenGainsBot/app?startapp=<mint> (start_param / tgWebAppStartParam in query or hash), or website ?ca=<mint>
   const qs = new URLSearchParams(location.search), hs = new URLSearchParams(location.hash.slice(1));
@@ -200,5 +213,5 @@ async function load(){
   render();
 }
 if (tg) { try { tg.ready(); tg.expand(); tg.BackButton.onClick(back); tg.setHeaderColor?.("bg_color"); } catch(e){} }
-load(); setInterval(async () => { try { D = await (await fetch(DATA + "?t=" + Date.now())).json(); if (!view && tab !== "lookup") render(); } catch(e){} }, 120000);
+load(); setInterval(async () => { try { D = await getData(); if (!view && tab !== "lookup") render(); } catch(e){} }, 120000);
 </script></body></html>

@@ -27,6 +27,24 @@ async function feed(env) {
   const r = await fetch(env.SIGNALS_URL + "?t=" + Math.floor(Date.now() / 60000), { cf: { cacheTtl: 60 } });
   return r.json();
 }
+// signals.json keeps the last 30 days; older signals live in archive/YYYY-MM.json (listed in feed.archive.files).
+async function archived(env, f) {
+  const files = f.archive?.files || [], base = env.SIGNALS_URL.replace(/signals\.json$/, "archive/"), out = [];
+  const ds = await Promise.all(files.map(n => fetch(base + n + "?t=" + Math.floor(Date.now() / 600000), { cf: { cacheTtl: 600 } })
+    .then(r => r.ok ? r.json() : {}).catch(() => ({}))));
+  for (const d of ds) out.push(...(d.journal || []));
+  return out;
+}
+// journal incl. archive when needed (periods reaching past the feed's oldest entry, or a lookup miss)
+async function journal(env, since = null, mint = null, sym = null) {
+  const f = await feed(env), jr = f.journal || [];
+  if (!(f.archive?.files || []).length) return jr;
+  const oldest = jr.length ? Math.min(...jr.map(e => e.t0)) : Infinity;
+  const miss = (mint && !jr.some(e => e.mint === mint)) || (sym && !jr.some(e => e.symbol.toLowerCase() === sym));
+  if (!(since !== null && since < oldest) && !miss) return jr;
+  const seen = new Set(jr.map(e => e.mint));
+  return jr.concat((await archived(env, f)).filter(e => !seen.has(e.mint)));
+}
 async function prices(mints) {
   const out = {};
   for (let i = 0; i < mints.length; i += 30) {
@@ -66,7 +84,7 @@ async function cmdTokens(args, env) {
   period = { day: "today", daily: "today", weekly: "week", monthly: "month", alltime: "all" }[period] || period;
   if (!LABEL[period]) return ["Usage: /tokens today|week|month|all [page]"];
   let page = Math.max(1, parseInt(args[1]) || 1);
-  const jr = (await feed(env)).journal || [], b = bounds()[period];
+  const b = bounds()[period], jr = await journal(env, b);
   const es = jr.filter(e => e.t0 >= b).sort((a, c) => c.t0 - a.t0);
   if (!es.length) return [`No Degen signals in ${LABEL[period]} (WAT) yet.`];
   const pages = Math.ceil(es.length / PAGE); page = Math.min(page, pages);
@@ -94,7 +112,7 @@ async function notSignal(q) {
 }
 async function cmdPnl(args, env) {
   if (!args.length) return ["Usage: /pnl &lt;contract address or $SYMBOL&gt;"];
-  const q = args[0].trim(), jr = (await feed(env)).journal || [];
+  const q = args[0].trim(), jr = CA.test(q) ? await journal(env, null, q) : await journal(env, null, null, q.replace(/^\$/, "").toLowerCase());
   const hits = CA.test(q) ? jr.filter(e => e.mint === q)
     : jr.filter(e => e.symbol.toLowerCase() === q.replace(/^\$/, "").toLowerCase()).sort((a, c) => c.t0 - a.t0);
   if (!hits.length) return [await notSignal(q)];

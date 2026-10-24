@@ -19,14 +19,28 @@ _cache = {"t": 0, "d": None}
 
 def feed(local_first=False):
     """signals.json: GitHub raw (fresh from workflow commits, 60s cache) else the local copy."""
-    if local_first and os.path.exists(LOCAL): return json.load(open(LOCAL))
+    if local_first and os.path.exists(LOCAL):
+        d = json.load(open(LOCAL)); return {**d, "journal": with_archive(d)}
     if time.time() - _cache["t"] < 60 and _cache["d"]: return _cache["d"]
     try:
         d = json.loads(urllib.request.urlopen(urllib.request.Request(f"{SIGNALS_URL}?t={int(time.time())}",
                        headers={"User-Agent": "degen-bot"}), timeout=15).read())
     except Exception as x:
         print("feed fetch failed, using local:", x, file=sys.stderr); d = json.load(open(LOCAL))
+    d = {**d, "journal": with_archive(d)}
     _cache.update(t=time.time(), d=d); return d
+
+def with_archive(d):
+    """Recent journal + archived signals (docs/archive/YYYY-MM.json, listed in feed.archive.files): nothing is dropped."""
+    import archive
+    jr, old = d.get("journal") or [], []
+    base = SIGNALS_URL.rsplit("/", 1)[0] + "/archive/"
+    for f in (d.get("archive") or {}).get("files") or []:
+        try: old += json.loads(urllib.request.urlopen(urllib.request.Request(base + f, headers={"User-Agent": "degen-bot"}), timeout=15).read()).get("journal") or []
+        except Exception:
+            p = os.path.join(os.path.dirname(LOCAL), "archive", f)
+            if os.path.exists(p): old += json.load(open(p)).get("journal") or []
+    return archive.merge_journal(jr, old)
 
 def tp_cfg():
     try: return pipeline.load_config().get("tp")
