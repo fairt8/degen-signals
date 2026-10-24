@@ -139,7 +139,7 @@ Command data: the journal comes from `signals.json` (GitHub raw, refreshed by ea
 - **Monitor**: each run re-checks up to 15 of the last 7 days' signals (least recently checked first) and replies once per event to the original alert in all chats: `⚠️ LIQUIDITY UNLOCKED` (burned/locked % falls ≥20 points from the max seen), `⚠️ LIQUIDITY PULLED` (DexScreener liquidity < 5% of the max seen, from ≥$2k), `⚠️ LIQUIDITY UNLOCK DATE PASSED`. Events are stored in `journal[].lpEvents`.
 
 ## Telegram Mini App (v12)
-`docs/app/` is served at https://fairt8.github.io/degen-signals/app/. It's a single page with no build step. It uses telegram-web-app.js, theme colors, BackButton, MainButton and haptics, and also works in a normal browser.
+`docs/app/` is served at https://degen-signals.pages.dev/app/ (Cloudflare Pages; GitHub Pages is only a backup). It's a single page with no build step. It uses telegram-web-app.js, theme colors, BackButton, MainButton and haptics, and also works in a normal browser.
 - **Tabs:** Signals (Today/Week/Month/All, copy CA, MC ⇨ now live from DexScreener, chart ATH, LP, score and red/amber flags), PnL (hold vs TP, win rate, milestones per period) and Lookup (CA or $SYMBOL; non-signals show live DexScreener data). Tapping a signal opens a detail view with performance, milestones history, LP status and unlock/pull warnings, findings, holders/behaviour, GMGN, dev, links (opened with WebApp.openLink) and the description.
 - **Deep links:** `?ca=<mint>` (detail), `?q=<query>` (lookup), `?tab=pnl`, and the Telegram `startapp=<mint>` parameter.
 - **Bot:** the menu button (default) is a web_app button. `/app` replies with a web_app button in private chats and a url button in groups (groups can't use web_app buttons). Alerts get "📱 Open in Degen app": once `config.js app.tme` is set to the BotFather Mini App link, it opens inside Telegram via `<tme>?startapp=<mint>`; until then it opens the website.
@@ -169,3 +169,10 @@ The same "5R signals" job runs from the Grok Bot box every 15 min (:00/:15/:30/:
   (box `~/.degen/state`, Actions `.state` cache) and restored on the next run.
 - **Per-candidate detail (`firstSeen`) is off the public repo**: `alert.py --firstseen PATH` keeps it in a local
   untracked file (box `~/.degen/state/firstseen.json`, Actions `.state/`). The feed only has counts.
+
+## Hosting (Cloudflare Pages)
+
+The site, mini app, feed and archive are served from **https://degen-signals.pages.dev/** (`/app/`, `/signals.json`,
+`/archive/`). The box scanner runs `wrangler pages deploy docs --project-name degen-signals --branch main` after each
+persisted (meaningful-change or ~2h heartbeat) commit; a failed deploy is logged and never breaks the scan. GitHub
+pushes stay as the backup/history. The Worker reads `SIGNALS_URL` (wrangler.toml) from Pages.

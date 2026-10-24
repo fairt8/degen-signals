@@ -240,7 +240,7 @@ def app_link(mint):
         import pipeline as _pl; a = _pl.load_config().get("app") or {}
     except Exception: a = {}
     if a.get("tme"): return f"{a['tme']}?startapp={mint}"
-    return f"{a.get('url') or 'https://fairt8.github.io/degen-signals/app/'}?ca={mint}"
+    return f"{a.get('url') or 'https://degen-signals.pages.dev/app/'}?ca={mint}"
 
 def send(r, journal=None):
     text, kb = card(r, journal)

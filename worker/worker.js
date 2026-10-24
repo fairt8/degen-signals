@@ -149,7 +149,7 @@ export async function handle(text, env) {
 }
 export function appReply(env, chatType) {
   // web_app buttons only work in private chats; groups get a url button (t.me Mini App link once set in BotFather, else the website)
-  const url = env.APP_URL || "https://fairt8.github.io/degen-signals/app/";
+  const url = env.APP_URL || "https://degen-signals.pages.dev/app/";
   const btn = chatType === "private" ? { text: "📱 Open Degen app", web_app: { url } } : { text: "📱 Open Degen app", url: env.APP_TME_LINK || url };
   return { text: "📱 <b>Degen Signals app</b>: signals feed, PnL dashboard, token lookup and per-token details (chart ATH, LP status, findings, links).\n<i>Not financial advice.</i>",
            markup: { inline_keyboard: [[btn]] } };

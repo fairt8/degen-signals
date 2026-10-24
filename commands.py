@@ -4,7 +4,7 @@ import datetime as dt, json, os, re, sys, time, urllib.parse, urllib.request
 from html import escape as e
 import journal as J, notify, pipeline
 
-SIGNALS_URL = os.environ.get("SIGNALS_URL", "https://raw.githubusercontent.com/fairt8/degen-signals/main/docs/signals.json")
+SIGNALS_URL = os.environ.get("SIGNALS_URL", "https://degen-signals.pages.dev/signals.json")
 LOCAL = os.path.join(os.path.dirname(os.path.abspath(__file__)), "docs", "signals.json")
 PAGE, LIMIT = 20, 3800
 HELP = ("<b>Degen bot commands</b>\n"
@@ -195,7 +195,7 @@ def api(method, http_timeout=40, **q):
 def allowed():
     return {str(c) for c in notify.chats()} | {c.strip() for c in os.environ.get("TELEGRAM_ALLOWED_CHATS", "").split(",") if c.strip()}
 
-APP_URL = os.environ.get("APP_URL", "https://fairt8.github.io/degen-signals/app/")
+APP_URL = os.environ.get("APP_URL", "https://degen-signals.pages.dev/app/")
 def app_reply(chat_type):
     tme = os.environ.get("APP_TME_LINK") or (pipeline.load_config().get("app") or {}).get("tme")
     btn = {"text": "📱 Open Degen app", "web_app": {"url": APP_URL}} if chat_type == "private" else {"text": "📱 Open Degen app", "url": tme or APP_URL}

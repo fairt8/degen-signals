@@ -6,11 +6,11 @@ preview_urls = false
 
 [vars]
 ALLOWED_CHATS = "1318404489,-1004348482526"
-SIGNALS_URL = "https://raw.githubusercontent.com/fairt8/degen-signals/main/docs/signals.json"
+SIGNALS_URL = "https://degen-signals.pages.dev/signals.json"
 BOT_USERNAME = "DegenGainsBot"
 TP_AT_PCT = "100"
 TP_SELL_FRAC = "0.5"
-APP_URL = "https://fairt8.github.io/degen-signals/app/"
+APP_URL = "https://degen-signals.pages.dev/app/"
 # set after BotFather /newapp (short name "app"): "https://t.me/DegenGainsBot/app"
 APP_TME_LINK = "https://t.me/DegenGainsBot/app"
 # secrets (wrangler secret put): TELEGRAM_BOT_TOKEN, WEBHOOK_SECRET
