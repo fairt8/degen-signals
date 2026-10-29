@@ -115,7 +115,8 @@ def save_feed(extra=None):
          "candidates": len(rows), "cheapPass": len(cheap), "tokens": kt, "journal": kj,
          "stats": J.stats(allj), "periodStats": J.period_stats(allj, WIN, tp=TPC),
          "statsBasis": "24h result where available, else live price; all-time includes archived signals",
-         "archive": summary, "lastReportSlot": feed.get("lastReportSlot"), "tgOffset": feed.get("tgOffset")}
+         "archive": summary, "lastReportSlot": feed.get("lastReportSlot"), "tgOffset": feed.get("tgOffset"),
+         "reportProgress": feed.get("reportProgress")}
     if not a.firstseen: d["firstSeen"] = fs
     d.update(extra or {})
     os.makedirs(os.path.dirname(os.path.abspath(a.signals)), exist_ok=True)
@@ -133,7 +134,7 @@ if a.telegram:
     # standalone PnL report twice a day: slot AM (from 00:00 WAT) and PM (from 12:00 WAT), first run in each slot
     import datetime as dt
     now = dt.datetime.now(J.WAT); slot = now.strftime("%Y-%m-%d") + ("-AM" if now.hour < 12 else "-PM")
-    last = feed.get("lastReportSlot")
+    last = feed.get("lastReportSlot"); report_progress = feed.get("reportProgress")
     if last is None:
         last = slot  # first deploy: don't fire for the slot already in progress; next slot sends
     elif a.signals and last != slot:
@@ -142,15 +143,20 @@ if a.telegram:
             rps, day_label = J.period_stats(full, WIN, now=ref, tp=TPC), "Yesterday"
         else:
             rps, day_label = ps, "Today"
-        sent = notify.post(notify.pnl_report(rps, slot, day_label))
-        if sent and not os.environ.get("DRY_RUN"): last = slot
+        # latest due slot only (older missed slots are never back-filled); parts resume per chat so none repeat
+        late = now.hour % 12 >= 1 and f"Delayed report, sent {now.strftime('%I:%M %p')} WAT" or ""
+        prog = feed.get("reportProgress") or {}
+        prog = prog.get("done") if prog.get("slot") == slot else {}
+        done, ok = notify.post_parts(notify.split_message(notify.pnl_report(rps, slot, day_label, late)), prog)
+        report_progress = {"slot": slot, "done": done}
+        if ok and not os.environ.get("DRY_RUN"): last = slot
     # bot commands via getUpdates once per run, only when no always-on listener/webhook owns the updates
     tgo = feed.get("tgOffset")
     pol = os.environ.get("TG_COMMANDS_POLL")
     if (pol == "1" or (pol is None and (F.get("commands") or {}).get("workflowPolling"))) and not os.environ.get("DRY_RUN"):
         import commands
         tgo = commands.poll_once(tgo)
-    save_feed({"lastReportSlot": last, "tgOffset": tgo})
+    save_feed({"lastReportSlot": last, "tgOffset": tgo, "reportProgress": report_progress})
 json.dump(sorted(seen | {r["mint"] for r in out}), open(a.state, "w"))
 print(json.dumps({"generatedAt": time.strftime("%Y-%m-%dT%H:%M:%S%z"), "window": F["window"], "count": len(out), "errors": errors,
                   "disclaimer": "Not financial advice.", "tokens": out}, indent=2))

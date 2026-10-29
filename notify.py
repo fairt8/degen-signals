@@ -56,11 +56,16 @@ def stats_block(ps):
     return ("📊 Bot stats (WAT)\n" + "\n".join(e_(period_line(k, ps[k])) for k in ("today", "week", "month", "all"))
             + f"\n<i>{BASIS} (all-time: {a['24h']} at 24h, {a['live']} live)</i>")
 def ms_line(s):
-    """Milestone counts: 2x and 5x always, higher ones only when hit."""
+    """Milestone counts: 2x and 5x always, higher ones only when hit. Consecutive milestones with the same count are
+    collapsed into a range (e.g. "50x-300x 2") so a token with a huge max gain can't blow up the message."""
     ms = s.get("milestones") or {}
-    keys = sorted(ms, key=float)
-    parts = [f"{k}x {ms.get(k, 0)}" for k in keys if k in ("2", "5") or ms.get(k)]
-    return " · ".join(parts) if parts else f"2x {s.get('hit2x', 0)} · 5x {s.get('hit5x', 0)}"
+    keys = [k for k in sorted(ms, key=float) if k in ("2", "5") or ms.get(k)]
+    if not keys: return f"2x {s.get('hit2x', 0)} · 5x {s.get('hit5x', 0)}"
+    runs = []
+    for k in keys:
+        if runs and runs[-1][2] == ms.get(k, 0) and k not in ("2", "5"): runs[-1][1] = k
+        else: runs.append([k, k, ms.get(k, 0)])
+    return " · ".join(f"{a}x {n}" if a == b else f"{a}x-{b}x {n}" for a, b, n in runs)
 
 def tp_label():
     try:
@@ -69,7 +74,48 @@ def tp_label():
     f, at = t.get("sellFrac", 0.5), t.get("atPct", 100)
     return f"TP {f*100:.0f}% @{1+at/100:g}x" + (f" SL {t['stopLossPct']}%" if t.get("stopLossPct") is not None else "")
 
-def pnl_report(ps, slot, day_label="Today"):
+TG_LIMIT = 3900  # Telegram max is 4096 chars after entity parsing; keep headroom
+def split_message(text, limit=TG_LIMIT):
+    """Split at section boundaries (blank lines), then lines, never mid-tag. Each part <= limit chars."""
+    parts, cur = [], ""
+    for sec in text.split("\n\n"):
+        chunks = [sec] if len(sec) <= limit else [l[:limit] for l in sec.split("\n")]
+        for c in chunks:
+            if cur and len(cur) + 2 + len(c) > limit: parts.append(cur); cur = c
+            else: cur = f"{cur}\n\n{c}" if cur else c
+    if cur: parts.append(cur)
+    if len(parts) > 1: parts = [f"{p}\n\n<i>({i}/{len(parts)})</i>" for i, p in enumerate(parts, 1)]
+    return parts
+
+def post_parts(parts, progress=None):
+    """Send a multi-part message to every chat, resuming per chat from progress {chat_index: parts_done} so a retry
+    never repeats a part that already went out. Returns (progress, all_done)."""
+    cs = chats(); progress = {str(k): v for k, v in (progress or {}).items()}
+    if _os.environ.get("DRY_RUN"):
+        for p in parts: post(p)
+        return progress, False
+    for i, chat in enumerate(cs):
+        done = progress.get(str(i), 0)
+        while done < len(parts):
+            if not _post_one(chat, i, parts[done]): break
+            done += 1
+        progress[str(i)] = done
+    return progress, bool(cs) and all(progress.get(str(i), 0) >= len(parts) for i in range(len(cs)))
+
+def _post_one(chat, idx, text):
+    tok = bot_token()
+    if not tok: return False
+    q = {"chat_id": chat, "text": text, "parse_mode": "HTML", "disable_web_page_preview": "true"}
+    try:
+        json.loads(urllib.request.urlopen(f"https://api.telegram.org/bot{tok}/sendMessage",
+                   data=urllib.parse.urlencode(q).encode(), timeout=15).read()); return True
+    except urllib.error.HTTPError as e:
+        print(f"telegram error chat#{idx}: {e} {e.read()[:200]!r}", file=sys.stderr)
+    except Exception as e:
+        print(f"telegram error chat#{idx}: {e}", file=sys.stderr)
+    return False
+
+def pnl_report(ps, slot, day_label="Today", late_note=""):
     """Standalone PnL report (sent 12:00 AM / 12:00 PM WAT). ps = period_stats; day_label for the 'today' row."""
     date, half = slot.rsplit("-", 1)
     when = "12:00 AM" if half == "AM" else "12:00 PM"
@@ -84,7 +130,9 @@ def pnl_report(ps, slot, day_label="Today"):
                        + ("n/a" if s.get('tpWinRate') is None else f"{s['tpWinRate']:.0f}% ({s['tpWins']}/{s['n']})") + "\n" if 'tpTotalPnl' in s else "")
                     + e_(f"Best {s['best'] or 'n/a'} · Worst {s['worst'] or 'n/a'}") + "\n🚀 " + ms_line(s))
     a = ps["all"]["basis"]
-    return "\n\n".join([f"📊 <b>Degen Signals PnL report: {date} {when} WAT</b>"] + rows +
+    site = "https://degen-signals.pages.dev/app/?tab=pnl"
+    return "\n\n".join([f"📊 <b>Degen Signals PnL report: {date} {when} WAT</b>" + (f"\n<i>{e_(late_note)}</i>" if late_note else "")] + rows +
+        [f'Full breakdown: <a href="{site}">PnL tab</a>'] +
         [f"<i>{BASIS} (all-time: {a['24h']} at 24h, {a['live']} live). TP = simulated: sell part at the target if the max gain seen reached it, rest at the hold basis. Max gain is sampled about every 15 min, so real peaks may be higher or lower. Win = PnL above the configured threshold. Not financial advice.</i>"])
 def e_(s):
     from html import escape; return escape(s, quote=False)
