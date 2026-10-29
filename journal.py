@@ -62,7 +62,8 @@ def chart_max(e, p, now, until=None):
     import chart
     first = not e.get("chartT")
     pool = p.get("pairAddress")
-    h = chart.ath(e["mint"], since=e["t0"], until=until, pool=pool) if pool else None
+    live = float(p.get("priceUsd") or 0) or None
+    h = chart.ath(e["mint"], since=e["t0"], until=until, pool=pool, ref=live) if pool else None
     if h and h["price"] > (e.get("maxPrice") or 0):
         e["maxPrice"], e["maxSrc"] = h["price"], "chart"
     mc, pr = p.get("marketCap") or p.get("fdv"), float(p.get("priceUsd") or 0)
