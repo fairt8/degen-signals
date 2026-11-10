@@ -2,6 +2,10 @@
 
 > ⚠️ **NOT FINANCIAL ADVICE.** These are automated heuristic signals on extremely high-risk tokens. Do your own research.
 
+## Projects guide
+
+See [docs/PROJECTS_GUIDE.md](docs/PROJECTS_GUIDE.md) for each project's type, outputs, completion checklist and template status. A printable copy is [docs/Degen-Guide.pdf](docs/Degen-Guide.pdf).
+
 ## What it does
 - Pulls live data from **DexScreener** (token-profiles/latest, token-boosts latest+top, search for pumpfun/pumpswap pairs, `/tokens/v1` batch lookup) and **Pump.fun** (`frontend-api-v3.pump.fun/coins` through the optional proxy).
 - **Hard filter:** only tokens with at least one social link (X, Telegram, Discord, or community).
