@@ -3,6 +3,82 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "MAKERS",
+   "name": "makers.fun",
+   "chain": "solana",
+   "mint": "3XEqNHe3jHTRWAZCTHbb1UwpSfNbJL9oU1ErsM86pump",
+   "dex": "pumpswap",
+   "mcap": 35401,
+   "liq": 14352.43,
+   "vol": 64561.78,
+   "window": "h1",
+   "buys": 961,
+   "sells": 809,
+   "ch5m": 44.98,
+   "ch1h": -16.17,
+   "ageH": 0.27,
+   "description": "The first Solana launchpad with fully customizable market making strategies. Launch on Pumpfun, automate trading, and put your creator fees to work.",
+   "estFeesSol": 7.71,
+   "priceUsd": 3.54e-05,
+   "socials": [
+    "https://x.com/makersdotfun"
+   ],
+   "websites": [
+    "https://makers.fun/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/d6g4brfhugystkpcbkmueqesnd7gjugzdczenicattmy",
+    "pumpfun": "https://pump.fun/coin/3XEqNHe3jHTRWAZCTHbb1UwpSfNbJL9oU1ErsM86pump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=3XEqNHe3jHTRWAZCTHbb1UwpSfNbJL9oU1ErsM86pump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/3XEqNHe3jHTRWAZCTHbb1UwpSfNbJL9oU1ErsM86pump",
+    "x_search": "https://x.com/search?q=%24MAKERS&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=MAKERS"
+   },
+   "top10Pct": 15.02,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "GjzHNej73hhKTSSHXD8AngKTX6jdHGRbxmyDXThhrMhb",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/GjzHNej73hhKTSSHXD8AngKTX6jdHGRbxmyDXThhrMhb",
+     "pumpfun": "https://pump.fun/profile/GjzHNej73hhKTSSHXD8AngKTX6jdHGRbxmyDXThhrMhb"
+    },
+    "funder": null,
+    "firstTs": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 7.71,
+    "maxSingleHolderPct": 2.72,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "signalAt": 1792207887
+  },
+  {
    "symbol": "dev/null",
    "name": "dev/null",
    "chain": "solana",
