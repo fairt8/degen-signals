@@ -3,6 +3,167 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "OPEQ",
+   "name": "OPEQ",
+   "chain": "solana",
+   "mint": "9tpHqTJ2d8jMZJjZzsf9MCfnCEmbAjsqjPJ56PzSpump",
+   "dex": "pumpswap",
+   "pair": "85rtDkpkSGiaWZDwzBs62XuPEtvGCq7KJjCu1gfyrAcd",
+   "mcap": 52496,
+   "liq": 18320.56,
+   "vol": 170856.58,
+   "window": "h1",
+   "buys": 2214,
+   "sells": 1871,
+   "ch5m": 33.65,
+   "ch1h": 31.36,
+   "ageH": 0.84,
+   "description": "Post-quantum wallets.",
+   "ctoProfile": false,
+   "volLiq": 9.3,
+   "baseScore": 65,
+   "liqPctMc": 34.9,
+   "ch24h": 31.36,
+   "narratives": [],
+   "estFeesSol": 20.9,
+   "priceUsd": 5.509e-05,
+   "socials": [
+    "https://x.com/opeqio"
+   ],
+   "websites": [
+    "https://opeq.io/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/85rtdkpksgiawzdwzbs62xupetvgcq7kjjcu1gfyracd",
+    "pumpfun": "https://pump.fun/coin/9tpHqTJ2d8jMZJjZzsf9MCfnCEmbAjsqjPJ56PzSpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=9tpHqTJ2d8jMZJjZzsf9MCfnCEmbAjsqjPJ56PzSpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/9tpHqTJ2d8jMZJjZzsf9MCfnCEmbAjsqjPJ56PzSpump",
+    "fomo": "https://fomo.family/tokens/solana/9tpHqTJ2d8jMZJjZzsf9MCfnCEmbAjsqjPJ56PzSpump",
+    "x_search": "https://x.com/search?q=%24OPEQ&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=OPEQ"
+   },
+   "top10Pct": 24.19,
+   "clusterPct": 9.91,
+   "clusterSource": "rugcheck_insider_networks",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "Gud4kSGGcug3q5o77pgN5pywJxk2sfSBNCDTWkyWE8rk",
+    "holdPct": 0.53,
+    "sold": false,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/Gud4kSGGcug3q5o77pgN5pywJxk2sfSBNCDTWkyWE8rk",
+     "pumpfun": "https://pump.fun/profile/Gud4kSGGcug3q5o77pgN5pywJxk2sfSBNCDTWkyWE8rk"
+    },
+    "funder": null,
+    "firstTs": null,
+    "maxTxDay": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 20.9,
+    "maxSingleHolderPct": 3.83,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "charming-denim-ant",
+      "size": 11,
+      "type": "transfer"
+     },
+     {
+      "id": "tired-sienna-puffin",
+      "size": 4,
+      "type": "transfer"
+     },
+     {
+      "id": "tame-steel-termite",
+      "size": 4,
+      "type": "transfer"
+     }
+    ]
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     3.8,
+     3.2,
+     3.2,
+     3.1,
+     2.3
+    ],
+    "top5Pct": 15.6,
+    "count": 1043,
+    "whalePct": 15.6,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 9.91
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": null,
+    "botN": "0/0",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": null,
+    "freshN": "0/0"
+   },
+   "scoreUncapped": 65,
+   "scoreCapped": false,
+   "score": 65,
+   "findings": [],
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 16611,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "chartAth": {
+    "price": 6.513319299740728e-05,
+    "mc": 62066,
+    "t": 1792340700,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1792342814,
+    "mc": 22515
+   },
+   "odds": {
+    "n": 39,
+    "x2": 28,
+    "rug": 54
+   },
+   "signalAt": 1792343816
+  },
+  {
    "symbol": "RIOT",
    "name": "Paris Riot",
    "chain": "solana",
