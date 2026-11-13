@@ -3,6 +3,159 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "MASSIVE",
+   "name": "Massive.gg",
+   "chain": "solana",
+   "mint": "7UAWdJjrBykopzco6bCBmMLdggaiec6bd4bTKmQqpump",
+   "dex": "pumpswap",
+   "pair": "2EuQkDnsiPTDqdYm63UWiTReqGw2v8R2e2KJTEttGaxQ",
+   "mcap": 175530,
+   "liq": 36493.01,
+   "vol": 972417.79,
+   "window": "h1",
+   "buys": 9798,
+   "sells": 8665,
+   "ch5m": 0.95,
+   "ch1h": -35.46,
+   "ageH": 1.04,
+   "description": "THE MEMECOINS ATTENTION MARKET",
+   "ctoProfile": false,
+   "volLiq": 33.6,
+   "baseScore": 62,
+   "liqPctMc": 20.8,
+   "ch24h": 331,
+   "narratives": [
+    "Meme culture"
+   ],
+   "estFeesSol": 148.25,
+   "priceUsd": 0.0001774,
+   "socials": [
+    "https://x.com/massivedotgg"
+   ],
+   "websites": [
+    "https://massive.gg/",
+    "https://massive.gg/tokenomics"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/2euqkdnsiptdqdym63uwitreqgw2v8r2e2kjtettgaxq",
+    "pumpfun": "https://pump.fun/coin/7UAWdJjrBykopzco6bCBmMLdggaiec6bd4bTKmQqpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=7UAWdJjrBykopzco6bCBmMLdggaiec6bd4bTKmQqpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/7UAWdJjrBykopzco6bCBmMLdggaiec6bd4bTKmQqpump",
+    "fomo": "https://fomo.family/tokens/solana/7UAWdJjrBykopzco6bCBmMLdggaiec6bd4bTKmQqpump",
+    "x_search": "https://x.com/search?q=%24MASSIVE&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=MASSIVE"
+   },
+   "top10Pct": 10.81,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "HwHzPpNsQYEdFs2xmE6jwqSTSQKSYkkmykb8574TjLfJ",
+    "holdPct": 2.02,
+    "sold": false,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/HwHzPpNsQYEdFs2xmE6jwqSTSQKSYkkmykb8574TjLfJ",
+     "pumpfun": "https://pump.fun/profile/HwHzPpNsQYEdFs2xmE6jwqSTSQKSYkkmykb8574TjLfJ"
+    },
+    "funder": null,
+    "firstTs": null,
+    "maxTxDay": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 148.25,
+    "maxSingleHolderPct": 2.12,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     2.1,
+     1.2,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "top5Pct": 6.4,
+    "count": 4146,
+    "whalePct": 2.1,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": null,
+    "botN": "0/0",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": null,
+    "freshN": "0/0"
+   },
+   "scoreUncapped": 62,
+   "scoreCapped": false,
+   "score": 62,
+   "findings": [
+    [
+     "amber",
+     "volume 33.6x liquidity, possibly inflated"
+    ]
+   ],
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 36733,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "chartAth": {
+    "price": 0.0003146680438783068,
+    "mc": 311351,
+    "t": 1792301700,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1792303204,
+    "mc": 237417
+   },
+   "odds": {
+    "n": 35,
+    "x2": 29,
+    "rug": 43
+   },
+   "signalAt": 1792305112
+  },
+  {
    "symbol": "FLUENCER",
    "name": "fluencer",
    "chain": "solana",
