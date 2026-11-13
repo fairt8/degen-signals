@@ -3,6 +3,177 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "FLUENCER",
+   "name": "fluencer",
+   "chain": "solana",
+   "mint": "FLU4Js9mbEFP6iaurnwLsZksFUirpZGRDdaXdEjZRXSW",
+   "dex": "pumpswap",
+   "pair": "5BK8DHz2bgLC5hLWSCqyEws84aA5DAZMxpwVNYuzgcVS",
+   "mcap": 49974,
+   "liq": 18548.2,
+   "vol": 50499.78,
+   "window": "h1",
+   "buys": 635,
+   "sells": 546,
+   "ch5m": 2.28,
+   "ch1h": -25.65,
+   "ageH": 2.01,
+   "description": "launch a coin. give it a custom influencer.\n\nit films its own videos, talks, posts every day, and does (almost) anything you pay it to.",
+   "ctoProfile": false,
+   "volLiq": 36.4,
+   "baseScore": 52,
+   "liqPctMc": 37.1,
+   "ch24h": 19.93,
+   "narratives": [],
+   "estFeesSol": 81.79,
+   "priceUsd": 5.178e-05,
+   "socials": [
+    "https://x.com/fluencerfun"
+   ],
+   "websites": [
+    "https://fluencer.fun/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/5bk8dhz2bglc5hlwscqyews84aa5dazmxpwvnyuzgcvs",
+    "pumpfun": "https://pump.fun/coin/FLU4Js9mbEFP6iaurnwLsZksFUirpZGRDdaXdEjZRXSW",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=FLU4Js9mbEFP6iaurnwLsZksFUirpZGRDdaXdEjZRXSW&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/FLU4Js9mbEFP6iaurnwLsZksFUirpZGRDdaXdEjZRXSW",
+    "fomo": "https://fomo.family/tokens/solana/FLU4Js9mbEFP6iaurnwLsZksFUirpZGRDdaXdEjZRXSW",
+    "x_search": "https://x.com/search?q=%24FLUENCER&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=FLUENCER"
+   },
+   "top10Pct": 21.99,
+   "clusterPct": 4.16,
+   "clusterSource": "rugcheck_insider_networks",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "6dxi6r5DCdN2hAUe3KLoFcmUFF73rcYkayEsrDc8uthU",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/6dxi6r5DCdN2hAUe3KLoFcmUFF73rcYkayEsrDc8uthU",
+     "pumpfun": "https://pump.fun/profile/6dxi6r5DCdN2hAUe3KLoFcmUFF73rcYkayEsrDc8uthU"
+    },
+    "funder": null,
+    "firstTs": null,
+    "maxTxDay": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 81.79,
+    "maxSingleHolderPct": 3.3,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "hidden-wisteria-condor",
+      "size": 9,
+      "type": "transfer"
+     },
+     {
+      "id": "intense-slate-parrot",
+      "size": 6,
+      "type": "transfer"
+     },
+     {
+      "id": "proud-ivory-elk",
+      "size": 12,
+      "type": "transfer"
+     },
+     {
+      "id": "narrow-jasmine-parrot",
+      "size": 4,
+      "type": "transfer"
+     }
+    ]
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     3.3,
+     3.2,
+     2.6,
+     2.2,
+     2.1
+    ],
+    "top5Pct": 13.4,
+    "count": 2874,
+    "whalePct": 13.4,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 4.16
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": null,
+    "botN": "0/0",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": null,
+    "freshN": "0/0"
+   },
+   "scoreUncapped": 52,
+   "scoreCapped": false,
+   "score": 52,
+   "findings": [
+    [
+     "amber",
+     "volume 36.4x liquidity, possibly inflated"
+    ]
+   ],
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 18567,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "chartAth": {
+    "price": 0.0001814143870146353,
+    "mc": 175087,
+    "t": 1792296300,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1792296089,
+    "mc": 55782
+   },
+   "odds": {
+    "n": 35,
+    "x2": 29,
+    "rug": 40
+   },
+   "signalAt": 1792303222
+  },
+  {
    "symbol": "SUPERCORE",
    "name": "SUPERCORE",
    "chain": "solana",
