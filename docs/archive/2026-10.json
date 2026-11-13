@@ -3,6 +3,144 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "INK",
+   "name": "inkonpaper",
+   "chain": "solana",
+   "mint": "Aes5BcDUQKd2VGA38gchnTNYLYAehxx5R69TMy84pump",
+   "dex": "pumpswap",
+   "mcap": 54229,
+   "liq": 19435.78,
+   "vol": 93111.33,
+   "window": "h1",
+   "buys": 917,
+   "sells": 779,
+   "ch5m": 39.27,
+   "ch1h": 44.03,
+   "ageH": 0.86,
+   "description": "buy $INK. mint drips. farm $PAPER on papertrade.",
+   "ctoProfile": false,
+   "volLiq": 4.8,
+   "baseScore": 65,
+   "liqPctMc": 35.8,
+   "ch24h": 44.03,
+   "narratives": [],
+   "estFeesSol": 11.27,
+   "priceUsd": 6.121e-05,
+   "socials": [
+    "https://x.com/inkonpaperxyz"
+   ],
+   "websites": [
+    "https://inkonpaper.xyz"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/8hmzb2p2ey2wlufuvvhdew2iw5ut4rgbkdp6ec1zy7nb",
+    "pumpfun": "https://pump.fun/coin/Aes5BcDUQKd2VGA38gchnTNYLYAehxx5R69TMy84pump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=Aes5BcDUQKd2VGA38gchnTNYLYAehxx5R69TMy84pump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/Aes5BcDUQKd2VGA38gchnTNYLYAehxx5R69TMy84pump",
+    "x_search": "https://x.com/search?q=%24INK&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=INK"
+   },
+   "top10Pct": 22.99,
+   "clusterPct": 14.54,
+   "clusterSource": "rugcheck_insider_networks",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "NpwCXNQBvxJjHrv6BNJ1mtwn3NYpkMMXqnmDqgQ4FAd",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/NpwCXNQBvxJjHrv6BNJ1mtwn3NYpkMMXqnmDqgQ4FAd",
+     "pumpfun": "https://pump.fun/profile/NpwCXNQBvxJjHrv6BNJ1mtwn3NYpkMMXqnmDqgQ4FAd"
+    },
+    "funder": null,
+    "firstTs": null,
+    "maxTxDay": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 11.27,
+    "maxSingleHolderPct": 3.04,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "kind-sienna-falcon",
+      "size": 32,
+      "type": "transfer"
+     },
+     {
+      "id": "damp-ochre-frog",
+      "size": 5,
+      "type": "transfer"
+     }
+    ]
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     3.0,
+     2.7,
+     2.5,
+     2.3,
+     2.3
+    ],
+    "top5Pct": 12.9,
+    "count": 795,
+    "whalePct": 19.3,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 14.54
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": null,
+    "botN": "0/0",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": null,
+    "freshN": "0/0"
+   },
+   "scoreUncapped": 65,
+   "scoreCapped": false,
+   "score": 65,
+   "findings": [],
+   "firstScan": {
+    "t": 1792283488,
+    "mc": 54229
+   },
+   "odds": {
+    "n": 31,
+    "x2": 29,
+    "rug": 45
+   },
+   "signalAt": 1792283488
+  },
+  {
    "symbol": "FRFR",
    "name": "FRFR",
    "chain": "solana",
