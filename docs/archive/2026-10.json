@@ -3,6 +3,151 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "RIOT",
+   "name": "Paris Riot",
+   "chain": "solana",
+   "mint": "Fd61znB4XAdwqrFexC91aoxKcz1iheqx5j4VZCG4pump",
+   "dex": "pumpswap",
+   "pair": "9NUXbp7BGWJoXx3CdZ1hrKU1vrfCmVy1j3V6jTxwZJox",
+   "mcap": 63619,
+   "liq": 19827.04,
+   "vol": 94118.04,
+   "window": "h1",
+   "buys": 1088,
+   "sells": 955,
+   "ch5m": 32.8,
+   "ch1h": 52.19,
+   "ageH": 0.33,
+   "description": "Paris is on fire again. Wear the helmet or throw the cobble. The side holding the city at payday takes the pot.",
+   "ctoProfile": false,
+   "volLiq": 4.7,
+   "baseScore": 59,
+   "liqPctMc": 31.2,
+   "ch24h": 52.19,
+   "narratives": [],
+   "estFeesSol": 11.54,
+   "priceUsd": 6.375e-05,
+   "socials": [
+    "https://x.com/parisriotgame"
+   ],
+   "websites": [
+    "https://parisriot.fun"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/9nuxbp7bgwjoxx3cdz1hrku1vrfcmvy1j3v6jtxwzjox",
+    "pumpfun": "https://pump.fun/coin/Fd61znB4XAdwqrFexC91aoxKcz1iheqx5j4VZCG4pump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=Fd61znB4XAdwqrFexC91aoxKcz1iheqx5j4VZCG4pump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/Fd61znB4XAdwqrFexC91aoxKcz1iheqx5j4VZCG4pump",
+    "fomo": "https://fomo.family/tokens/solana/Fd61znB4XAdwqrFexC91aoxKcz1iheqx5j4VZCG4pump",
+    "x_search": "https://x.com/search?q=%24RIOT&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=RIOT"
+   },
+   "top10Pct": 16.27,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "6Fs9iShBY613p4zihAYFv55NYwPxvwr6byNiWwhmzwPD",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/6Fs9iShBY613p4zihAYFv55NYwPxvwr6byNiWwhmzwPD",
+     "pumpfun": "https://pump.fun/profile/6Fs9iShBY613p4zihAYFv55NYwPxvwr6byNiWwhmzwPD"
+    },
+    "funder": null,
+    "firstTs": null,
+    "maxTxDay": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 11.54,
+    "maxSingleHolderPct": 3.46,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     3.5,
+     1.9,
+     1.8,
+     1.7,
+     1.3
+    ],
+    "top5Pct": 10.2,
+    "count": 885,
+    "whalePct": 3.5,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": null,
+    "botN": "0/0",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": null,
+    "freshN": "0/0"
+   },
+   "scoreUncapped": 59,
+   "scoreCapped": false,
+   "score": 59,
+   "findings": [],
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 20693,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "chartAth": {
+    "price": 7.106549704021598e-05,
+    "mc": 70919,
+    "t": 1792340100,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1792339214,
+    "mc": 26272
+   },
+   "odds": {
+    "n": 39,
+    "x2": 28,
+    "rug": 51
+   },
+   "signalAt": 1792340217
+  },
+  {
    "symbol": "Scotty",
    "name": "Scotty the Barn Owl",
    "chain": "solana",
