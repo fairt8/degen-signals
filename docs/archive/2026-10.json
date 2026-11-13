@@ -3,6 +3,303 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "SUPERCORE",
+   "name": "SUPERCORE",
+   "chain": "solana",
+   "mint": "3ZAnpeVBHAvZsySNMXp4g9nYaE1jsx6khgh29VYKpump",
+   "dex": "pumpswap",
+   "mcap": 93440,
+   "liq": 26194.76,
+   "vol": 170005.97,
+   "window": "h1",
+   "buys": 1319,
+   "sells": 1254,
+   "ch5m": 8.96,
+   "ch1h": -6.06,
+   "ageH": 1.75,
+   "description": "SUPERCORE is pop culture from the future. Fees help fund future films and music videos. We're just getting started. Keep up.",
+   "ctoProfile": true,
+   "volLiq": 26.8,
+   "baseScore": 62,
+   "liqPctMc": 28.0,
+   "ch24h": 124,
+   "narratives": [
+    "Gaming / Culture"
+   ],
+   "estFeesSol": 84.22,
+   "priceUsd": 9.69e-05,
+   "socials": [
+    "https://x.com/xellarey"
+   ],
+   "websites": [
+    "https://www.xellarey.com/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/6axb1e6utmsz77zhncryfe7augzbxxcunhcodhd3odag",
+    "pumpfun": "https://pump.fun/coin/3ZAnpeVBHAvZsySNMXp4g9nYaE1jsx6khgh29VYKpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=3ZAnpeVBHAvZsySNMXp4g9nYaE1jsx6khgh29VYKpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/3ZAnpeVBHAvZsySNMXp4g9nYaE1jsx6khgh29VYKpump",
+    "x_search": "https://x.com/search?q=%24SUPERCORE&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=SUPERCORE"
+   },
+   "top10Pct": 18.39,
+   "clusterPct": 17.63,
+   "clusterSource": "rugcheck_insider_networks",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "E28CEfr3gnXiNvxxPiQZE5fuDV7w8dS5e8a5iH3JLs1V",
+    "holdPct": 0.19,
+    "sold": false,
+    "priorTokens": 1,
+    "priorMigrated": 0,
+    "priorDead": 1,
+    "bestPriorMcap": 478.0,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/E28CEfr3gnXiNvxxPiQZE5fuDV7w8dS5e8a5iH3JLs1V",
+     "pumpfun": "https://pump.fun/profile/E28CEfr3gnXiNvxxPiQZE5fuDV7w8dS5e8a5iH3JLs1V"
+    },
+    "funder": null,
+    "firstTs": null,
+    "maxTxDay": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 84.22,
+    "maxSingleHolderPct": 2.66,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "hollow-heather-hamster",
+      "size": 7,
+      "type": "transfer"
+     },
+     {
+      "id": "naughty-sunset-shark",
+      "size": 4,
+      "type": "transfer"
+     },
+     {
+      "id": "loud-chocolate-grasshopper",
+      "size": 7,
+      "type": "transfer"
+     },
+     {
+      "id": "giant-raspberry-turtle",
+      "size": 7,
+      "type": "transfer"
+     }
+    ]
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": true,
+    "boosts": 0
+   },
+   "cto": true,
+   "holders": {
+    "top5": [
+     2.7,
+     2.4,
+     2.3,
+     2.2,
+     2.1
+    ],
+    "top5Pct": 11.6,
+    "count": 2167,
+    "whalePct": 11.6,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 17.63
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": null,
+    "botN": "0/0",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": null,
+    "freshN": "0/0"
+   },
+   "scoreUncapped": 62,
+   "scoreCapped": false,
+   "score": 62,
+   "findings": [
+    [
+     "amber",
+     "volume 26.8x liquidity, possibly inflated"
+    ],
+    [
+     "amber",
+     "17.63% supply clustered"
+    ]
+   ],
+   "firstScan": {
+    "t": 1792294214,
+    "mc": 83308
+   },
+   "odds": {
+    "n": 34,
+    "x2": 26,
+    "rug": 41
+   },
+   "signalAt": 1792295187
+  },
+  {
+   "symbol": "Eternia",
+   "name": "Eternia",
+   "chain": "solana",
+   "mint": "CY27QvCQBCmLBuz3V7c8snEeD4z67iyoSTkwo35Ypump",
+   "dex": "pumpswap",
+   "mcap": 269311,
+   "liq": 55909.5,
+   "vol": 283613.81,
+   "window": "h1",
+   "buys": 962,
+   "sells": 753,
+   "ch5m": 7.67,
+   "ch1h": -36.17,
+   "ageH": 23.21,
+   "description": "Every movement\nbelongs to a phase.\nMarkets rarely move in a straight line. Activity forms, accelerates, rotates and eventually resets. Eternia turns those changes into a visible cycle.",
+   "ctoProfile": false,
+   "volLiq": 215.1,
+   "baseScore": 62,
+   "liqPctMc": 20.8,
+   "ch24h": 545,
+   "narratives": [],
+   "estFeesSol": 1450.72,
+   "priceUsd": 0.0002758,
+   "socials": [
+    "https://x.com/eternia_sys"
+   ],
+   "websites": [
+    "https://eternialabs.xyz/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/abqxgs5c78p8nix49kqsbtnqjammahcbh2mvjq1zqqz2",
+    "pumpfun": "https://pump.fun/coin/CY27QvCQBCmLBuz3V7c8snEeD4z67iyoSTkwo35Ypump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=CY27QvCQBCmLBuz3V7c8snEeD4z67iyoSTkwo35Ypump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/CY27QvCQBCmLBuz3V7c8snEeD4z67iyoSTkwo35Ypump",
+    "x_search": "https://x.com/search?q=%24Eternia&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=Eternia"
+   },
+   "top10Pct": 10.07,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "FTtMrjemM4rm9Vq3MNgtbhbPyAt3tA5aZJpD8YmND52Y",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/FTtMrjemM4rm9Vq3MNgtbhbPyAt3tA5aZJpD8YmND52Y",
+     "pumpfun": "https://pump.fun/profile/FTtMrjemM4rm9Vq3MNgtbhbPyAt3tA5aZJpD8YmND52Y"
+    },
+    "funder": null,
+    "firstTs": null,
+    "maxTxDay": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 1450.72,
+    "maxSingleHolderPct": 1.36,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "zany-olive-octopus",
+      "size": 23,
+      "type": "trade"
+     }
+    ]
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 1
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     1.4,
+     1.1,
+     1.1,
+     1.1,
+     1.0
+    ],
+    "top5Pct": 5.6,
+    "count": 2947,
+    "whalePct": 0,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": null,
+    "botN": "0/0",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": null,
+    "freshN": "0/0"
+   },
+   "scoreUncapped": 62,
+   "scoreCapped": false,
+   "score": 62,
+   "findings": [
+    [
+     "red",
+     "volume 215.1x liquidity, possibly inflated"
+    ]
+   ],
+   "firstScan": {
+    "t": 1792268110,
+    "mc": 218596
+   },
+   "odds": {
+    "n": 32,
+    "x2": 28,
+    "rug": 44
+   },
+   "signalAt": 1792288890
+  },
+  {
    "symbol": "harold",
    "name": "harold",
    "chain": "solana",
