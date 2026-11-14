@@ -5115,5 +5115,63 @@
    "signalAt": 1792066768
   }
  ],
- "journal": []
+ "journal": [
+  {
+   "mint": "vaJ2tXfvML8sFstrEYtza7tmJGvbmBAp8Dvx3Qxpump",
+   "symbol": "UNSUB",
+   "chain": "solana",
+   "t0": 1792066768,
+   "price0": 8.12339441474395e-05,
+   "mcap0": 78293,
+   "score": null,
+   "devScore": 0,
+   "link": "https://dexscreener.com/solana/2p9rmzjxy9egpfy6wrchsnkc5rx4wdxlfpzgmxyn2pan",
+   "maxPrice": 8.12339441474395e-05,
+   "samples": [],
+   "trend": null,
+   "h1": {
+    "price": 1.475e-05,
+    "pct": -81.8,
+    "maxX": 1.0
+   },
+   "h24": {
+    "price": 3.25e-06,
+    "pct": -96.0,
+    "maxX": 1.0
+   },
+   "hit2x": false,
+   "hit5x": false,
+   "msgId": null,
+   "last": 3.25e-06,
+   "lastT": 1792153890,
+   "lastPct": -96.0,
+   "lpEvents": {},
+   "lp": {
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
+    "pct": 100,
+    "unlock": null,
+    "t": 1792652608,
+    "pctMax": 100,
+    "liq": 2350.4,
+    "liqMax": 2635.86
+   },
+   "safety": {
+    "status": "WARN",
+    "reasons": [
+     "rugcheck: Creator history of rugged tokens",
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "pct": {
+     "insider": 0
+    },
+    "sources": [
+     "rugcheck",
+     "LP"
+    ],
+    "backfilled": true
+   }
+  }
+ ]
 }
