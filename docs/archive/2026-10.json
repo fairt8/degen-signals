@@ -3,6 +3,176 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "KAHO",
+   "name": "KAHO",
+   "chain": "solana",
+   "mint": "ApaBcYvNMACofNdurMCgp8tRAZWsc5AhysABLsLDpump",
+   "dex": "pumpswap",
+   "pair": "Dqnx6Tiw9CbxTUb59inY4Wt8nXii8rehn8GJDnVAPruQ",
+   "mcap": 56585,
+   "liq": 20714.32,
+   "vol": 135598.13,
+   "window": "h1",
+   "buys": 552,
+   "sells": 865,
+   "ch5m": 5.38,
+   "ch1h": -18.31,
+   "ageH": 5.85,
+   "description": "$KAHO is a legendary meme coin forged in golden mystique, embodying rarity, elite identity, and a community destined to leave its mark on the crypto realm.",
+   "ctoProfile": false,
+   "volLiq": 65.5,
+   "baseScore": 47,
+   "liqPctMc": 36.6,
+   "ch24h": 34.54,
+   "narratives": [
+    "Meme culture"
+   ],
+   "estFeesSol": 160.95,
+   "priceUsd": 5.851e-05,
+   "socials": [
+    "https://x.com/thekaho_horn"
+   ],
+   "websites": [
+    "https://kahohorn.fun/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/dqnx6tiw9cbxtub59iny4wt8nxii8rehn8gjdnvapruq",
+    "pumpfun": "https://pump.fun/coin/ApaBcYvNMACofNdurMCgp8tRAZWsc5AhysABLsLDpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=ApaBcYvNMACofNdurMCgp8tRAZWsc5AhysABLsLDpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/ApaBcYvNMACofNdurMCgp8tRAZWsc5AhysABLsLDpump",
+    "fomo": "https://fomo.family/tokens/solana/ApaBcYvNMACofNdurMCgp8tRAZWsc5AhysABLsLDpump",
+    "x_search": "https://x.com/search?q=%24KAHO&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=KAHO"
+   },
+   "top10Pct": 11.46,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "8ih8KkF2vwdTLqzdUqWvGvS63ULei1URyKwdWQ9egiTz",
+    "holdPct": 0.02,
+    "sold": false,
+    "priorTokens": 4,
+    "priorMigrated": 0,
+    "priorDead": 4,
+    "bestPriorMcap": 2964.0,
+    "rugHistory": true,
+    "launchpad": "Pump.Fun",
+    "riskNames": [
+     "Creator history of rugged tokens"
+    ],
+    "links": {
+     "solscan": "https://solscan.io/account/8ih8KkF2vwdTLqzdUqWvGvS63ULei1URyKwdWQ9egiTz",
+     "pumpfun": "https://pump.fun/profile/8ih8KkF2vwdTLqzdUqWvGvS63ULei1URyKwdWQ9egiTz"
+    },
+    "funder": null,
+    "firstTs": null,
+    "maxTxDay": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": -20,
+   "devNotes": [
+    "-20 dev rug history"
+   ],
+   "extras": {
+    "estFeesSol": 160.95,
+    "maxSingleHolderPct": 2.21,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "zany-olive-octopus",
+      "size": 24,
+      "type": "trade"
+     }
+    ]
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 1
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     2.2,
+     1.3,
+     1.1,
+     1.1,
+     1.0
+    ],
+    "top5Pct": 6.7,
+    "count": 2528,
+    "whalePct": 2.2,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": null,
+    "botN": "0/0",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": null,
+    "freshN": "0/0"
+   },
+   "scoreUncapped": 27,
+   "scoreCapped": false,
+   "score": 27,
+   "findings": [
+    [
+     "red",
+     "volume 65.5x liquidity, possibly inflated"
+    ],
+    [
+     "red",
+     "dev has rug history"
+    ],
+    [
+     "red",
+     "dev launched 4 tokens, 4 dead"
+    ]
+   ],
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 20560,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "chartAth": {
+    "price": 0.00041813978748372595,
+    "mc": 404383,
+    "t": 1792395900,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1792384214,
+    "mc": 94287
+   },
+   "odds": {
+    "n": 43,
+    "x2": 30,
+    "rug": 51
+   },
+   "signalAt": 1792404172
+  },
+  {
    "symbol": "Deadpool ",
    "name": "The french savior",
    "chain": "solana",
