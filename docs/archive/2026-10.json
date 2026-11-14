@@ -3,6 +3,151 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "NEWS",
+   "name": "Newscheck",
+   "chain": "solana",
+   "mint": "wNedNtJcdFKtdLP4FwpgGgspd6J6fepyngEND53pump",
+   "dex": "pumpswap",
+   "pair": "DPTQwXGNRvRQj4oxFdF2Pw7XES4eauQ322CRuMZrnEvC",
+   "mcap": 31480,
+   "liq": 13655.46,
+   "vol": 137155.44,
+   "window": "h1",
+   "buys": 1874,
+   "sells": 1391,
+   "ch5m": 29.99,
+   "ch1h": -25.54,
+   "ageH": 0.36,
+   "description": "Newscheck",
+   "ctoProfile": false,
+   "volLiq": 10.0,
+   "baseScore": 53,
+   "liqPctMc": 43.4,
+   "ch24h": -25.54,
+   "narratives": [],
+   "estFeesSol": 16.31,
+   "priceUsd": 3.147e-05,
+   "socials": [
+    "https://x.com/AndrewwwSol/status/2112321202853216418"
+   ],
+   "websites": [
+    "https://newscheck.app/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/dptqwxgnrvrqj4oxfdf2pw7xes4eauq322crumzrnevc",
+    "pumpfun": "https://pump.fun/coin/wNedNtJcdFKtdLP4FwpgGgspd6J6fepyngEND53pump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=wNedNtJcdFKtdLP4FwpgGgspd6J6fepyngEND53pump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/wNedNtJcdFKtdLP4FwpgGgspd6J6fepyngEND53pump",
+    "fomo": "https://fomo.family/tokens/solana/wNedNtJcdFKtdLP4FwpgGgspd6J6fepyngEND53pump",
+    "x_search": "https://x.com/search?q=%24NEWS&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=NEWS"
+   },
+   "top10Pct": 20.7,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "6UrMZUQTKT952aEddJQva93AuLd7azCCAh429gYbqsmi",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/6UrMZUQTKT952aEddJQva93AuLd7azCCAh429gYbqsmi",
+     "pumpfun": "https://pump.fun/profile/6UrMZUQTKT952aEddJQva93AuLd7azCCAh429gYbqsmi"
+    },
+    "funder": null,
+    "firstTs": null,
+    "maxTxDay": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 16.31,
+    "maxSingleHolderPct": 3.46,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     3.5,
+     2.9,
+     2.6,
+     2.0,
+     1.7
+    ],
+    "top5Pct": 12.7,
+    "count": 1137,
+    "whalePct": 11.0,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": null,
+    "botN": "0/0",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": null,
+    "freshN": "0/0"
+   },
+   "scoreUncapped": 53,
+   "scoreCapped": false,
+   "score": 53,
+   "findings": [],
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 15671,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "chartAth": {
+    "price": 7.00278632713071e-05,
+    "mc": 70050,
+    "t": 1792452600,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1792452613,
+    "mc": 40097
+   },
+   "odds": {
+    "n": 52,
+    "x2": 27,
+    "rug": 58
+   },
+   "signalAt": 1792453611
+  },
+  {
    "symbol": "Onion",
    "name": "For Our Futures",
    "chain": "solana",
