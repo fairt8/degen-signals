@@ -3,6 +3,299 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "SNACKS",
+   "name": "Snacks",
+   "chain": "solana",
+   "mint": "5rqqBQSsA5fo2znzmudV3vGD6uKfe7K7wafYS9N9pump",
+   "dex": "pumpswap",
+   "pair": "HxpAghxcjfymaDagAudiTWGVJ4k6A4x8LJRsaHahE7KY",
+   "mcap": 257710,
+   "liq": 44232.58,
+   "vol": 875712.03,
+   "window": "h1",
+   "buys": 2165,
+   "sells": 4298,
+   "ch5m": 2.01,
+   "ch1h": 115,
+   "ageH": 0.94,
+   "description": "The first ever vending machine that pays you.",
+   "ctoProfile": false,
+   "volLiq": 19.8,
+   "baseScore": 55,
+   "liqPctMc": 17.2,
+   "ch24h": 115,
+   "narratives": [],
+   "estFeesSol": 105.35,
+   "priceUsd": 0.000261,
+   "socials": [
+    "https://x.com/snacksfun",
+    "https://t.me/snacksportal"
+   ],
+   "websites": [
+    "https://snacks.fun/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/hxpaghxcjfymadagauditwgvj4k6a4x8ljrsahahe7ky",
+    "pumpfun": "https://pump.fun/coin/5rqqBQSsA5fo2znzmudV3vGD6uKfe7K7wafYS9N9pump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=5rqqBQSsA5fo2znzmudV3vGD6uKfe7K7wafYS9N9pump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/5rqqBQSsA5fo2znzmudV3vGD6uKfe7K7wafYS9N9pump",
+    "fomo": "https://fomo.family/tokens/solana/5rqqBQSsA5fo2znzmudV3vGD6uKfe7K7wafYS9N9pump",
+    "x_search": "https://x.com/search?q=%24SNACKS&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=SNACKS"
+   },
+   "top10Pct": 14.92,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "EDotpSsMzp5DU31XXToVfsM396wKMXBWx4uFfH6EX6WC",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/EDotpSsMzp5DU31XXToVfsM396wKMXBWx4uFfH6EX6WC",
+     "pumpfun": "https://pump.fun/profile/EDotpSsMzp5DU31XXToVfsM396wKMXBWx4uFfH6EX6WC"
+    },
+    "funder": null,
+    "firstTs": null,
+    "maxTxDay": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 105.35,
+    "maxSingleHolderPct": 2.18,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": false,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     2.2,
+     1.5,
+     1.5,
+     1.5,
+     1.4
+    ],
+    "top5Pct": 8.0,
+    "count": 1226,
+    "whalePct": 2.2,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": null,
+    "botN": "0/0",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": null,
+    "freshN": "0/0"
+   },
+   "scoreUncapped": 55,
+   "scoreCapped": false,
+   "score": 55,
+   "findings": [],
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 44209,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "chartAth": {
+    "price": 0.0004961248293375961,
+    "mc": 489871,
+    "t": 1792431900,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1792434614,
+    "mc": 235621
+   },
+   "odds": {
+    "n": 49,
+    "x2": 29,
+    "rug": 55
+   },
+   "signalAt": 1792435614
+  },
+  {
+   "symbol": "Tengu",
+   "name": "\u5929\u72d7",
+   "chain": "solana",
+   "mint": "FoV6PirGWo82XtC9QdcXy9ezEo3LKKjWAJrTt8GFpump",
+   "dex": "pumpswap",
+   "pair": "AdqRw4oeRebEY5XpsjNPixPhc6encnCfeK3LMMvs3GmT",
+   "mcap": 40985,
+   "liq": 15625.61,
+   "vol": 132888.9,
+   "window": "h1",
+   "buys": 2794,
+   "sells": 2036,
+   "ch5m": 47.08,
+   "ch1h": -11.27,
+   "ageH": 0.41,
+   "description": "Anthropic's coding agent isn't called Claude Code internally\n\nIt's called Tengu",
+   "ctoProfile": false,
+   "volLiq": 8.5,
+   "baseScore": 60,
+   "liqPctMc": 38.1,
+   "ch24h": -11.27,
+   "narratives": [
+    "AI / Agents"
+   ],
+   "estFeesSol": 15.96,
+   "priceUsd": 4.106e-05,
+   "socials": [
+    "https://x.com/genyrational/status/2112230918647603321"
+   ],
+   "websites": [
+    "https://hackernoon.com/25-things-the-claude-code-leak-reveals-about-anthropics-ai-agents"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/adqrw4oerebey5xpsjnpixphc6encncfek3lmmvs3gmt",
+    "pumpfun": "https://pump.fun/coin/FoV6PirGWo82XtC9QdcXy9ezEo3LKKjWAJrTt8GFpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=FoV6PirGWo82XtC9QdcXy9ezEo3LKKjWAJrTt8GFpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/FoV6PirGWo82XtC9QdcXy9ezEo3LKKjWAJrTt8GFpump",
+    "fomo": "https://fomo.family/tokens/solana/FoV6PirGWo82XtC9QdcXy9ezEo3LKKjWAJrTt8GFpump",
+    "x_search": "https://x.com/search?q=%24Tengu&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=Tengu"
+   },
+   "top10Pct": 21.07,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "48hhjh9KKxFHvdQbM6m4yzUgZHXuZXHJjorD6rxaL8hp",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/48hhjh9KKxFHvdQbM6m4yzUgZHXuZXHJjorD6rxaL8hp",
+     "pumpfun": "https://pump.fun/profile/48hhjh9KKxFHvdQbM6m4yzUgZHXuZXHJjorD6rxaL8hp"
+    },
+    "funder": null,
+    "firstTs": null,
+    "maxTxDay": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 15.96,
+    "maxSingleHolderPct": 2.93,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     2.9,
+     2.6,
+     2.4,
+     2.1,
+     2.0
+    ],
+    "top5Pct": 12.1,
+    "count": 1354,
+    "whalePct": 12.1,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": null,
+    "botN": "0/0",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": null,
+    "freshN": "0/0"
+   },
+   "scoreUncapped": 60,
+   "scoreCapped": false,
+   "score": 60,
+   "findings": [],
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 17073,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "chartAth": {
+    "price": 5.743712405732811e-05,
+    "mc": 57332,
+    "t": 1792430700,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1792431017,
+    "mc": 40901
+   },
+   "odds": {
+    "n": 48,
+    "x2": 29,
+    "rug": 54
+   },
+   "signalAt": 1792432034
+  },
+  {
    "symbol": "Octo",
    "name": "Octo",
    "chain": "solana",
