@@ -3,6 +3,152 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "Tame",
+   "name": "Tame",
+   "chain": "solana",
+   "mint": "6QYik2YpgbndorAAVnkv4gmRYDJ73TuGAdRssG7Vpump",
+   "dex": "pumpswap",
+   "pair": "AX6XdSy7J4v3Kb84tJj5gXbRwHcYPfsUXLfjFnW5qyCF",
+   "mcap": 75024,
+   "liq": 22288.26,
+   "vol": 103532.27,
+   "window": "h1",
+   "buys": 1464,
+   "sells": 930,
+   "ch5m": 0.72,
+   "ch1h": 77.78,
+   "ageH": 0.96,
+   "description": "Explore a world of endless possibilities in a play-to-earn MMO. Tame, battle, trade, and earn SOL with every adventure.",
+   "ctoProfile": false,
+   "volLiq": 4.6,
+   "baseScore": 65,
+   "liqPctMc": 29.7,
+   "ch24h": 77.78,
+   "narratives": [],
+   "estFeesSol": 12.38,
+   "priceUsd": 7.759e-05,
+   "socials": [
+    "https://x.com/PlayOnTame",
+    "https://discord.gg/playontame"
+   ],
+   "websites": [
+    "https://tameworld.com/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/ax6xdsy7j4v3kb84tjj5gxbrwhcypfsuxlfjfnw5qycf",
+    "pumpfun": "https://pump.fun/coin/6QYik2YpgbndorAAVnkv4gmRYDJ73TuGAdRssG7Vpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=6QYik2YpgbndorAAVnkv4gmRYDJ73TuGAdRssG7Vpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/6QYik2YpgbndorAAVnkv4gmRYDJ73TuGAdRssG7Vpump",
+    "fomo": "https://fomo.family/tokens/solana/6QYik2YpgbndorAAVnkv4gmRYDJ73TuGAdRssG7Vpump",
+    "x_search": "https://x.com/search?q=%24Tame&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=Tame"
+   },
+   "top10Pct": 17.82,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "6wFWeMHKdLGnZVy4nX5nZQZh5SAKatsA7ty7vD3V7HUz",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/6wFWeMHKdLGnZVy4nX5nZQZh5SAKatsA7ty7vD3V7HUz",
+     "pumpfun": "https://pump.fun/profile/6wFWeMHKdLGnZVy4nX5nZQZh5SAKatsA7ty7vD3V7HUz"
+    },
+    "funder": null,
+    "firstTs": null,
+    "maxTxDay": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 12.38,
+    "maxSingleHolderPct": 2.23,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     2.2,
+     2.0,
+     2.0,
+     2.0,
+     1.7
+    ],
+    "top5Pct": 9.9,
+    "count": 632,
+    "whalePct": 2.2,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": null,
+    "botN": "0/0",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": null,
+    "freshN": "0/0"
+   },
+   "scoreUncapped": 65,
+   "scoreCapped": false,
+   "score": 65,
+   "findings": [],
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 22500,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "chartAth": {
+    "price": 9.773380609672101e-05,
+    "mc": 94502,
+    "t": 1792446300,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1792444513,
+    "mc": 59905
+   },
+   "odds": {
+    "n": 51,
+    "x2": 27,
+    "rug": 59
+   },
+   "signalAt": 1792447318
+  },
+  {
    "symbol": "SNACKS",
    "name": "Snacks",
    "chain": "solana",
