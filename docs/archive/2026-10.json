@@ -3,6 +3,172 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "Onion",
+   "name": "For Our Futures",
+   "chain": "solana",
+   "mint": "7gPmhsksQ5vwtgE7vCn121qHyZjep4R5J7NNDygaHTho",
+   "dex": "pumpswap",
+   "pair": "FUZd6G6viy7Hzfmb6NsBD9bfyhEAotrDUkPDF1ZJqG9f",
+   "mcap": 198252,
+   "liq": 39448.77,
+   "vol": 478390.25,
+   "window": "h1",
+   "buys": 2692,
+   "sells": 2558,
+   "ch5m": 5.77,
+   "ch1h": 42.98,
+   "ageH": 8.62,
+   "description": "Repeal the 1958 Onion Futures Act",
+   "ctoProfile": false,
+   "volLiq": 26.3,
+   "baseScore": 62,
+   "liqPctMc": 19.9,
+   "ch24h": 373,
+   "narratives": [],
+   "estFeesSol": 123.59,
+   "priceUsd": 0.0002089,
+   "socials": [
+    "https://x.com/foronionfutures/status/2112267730610971125?s=20"
+   ],
+   "websites": [
+    "https://www.onionfutures.org/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/fuzd6g6viy7hzfmb6nsbd9bfyheaotrdukpdf1zjqg9f",
+    "pumpfun": "https://pump.fun/coin/7gPmhsksQ5vwtgE7vCn121qHyZjep4R5J7NNDygaHTho",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=7gPmhsksQ5vwtgE7vCn121qHyZjep4R5J7NNDygaHTho&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/7gPmhsksQ5vwtgE7vCn121qHyZjep4R5J7NNDygaHTho",
+    "fomo": "https://fomo.family/tokens/solana/7gPmhsksQ5vwtgE7vCn121qHyZjep4R5J7NNDygaHTho",
+    "x_search": "https://x.com/search?q=%24Onion&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=Onion"
+   },
+   "top10Pct": 21.79,
+   "clusterPct": 2.23,
+   "clusterSource": "rugcheck_insider_networks",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "2aJQeL5si2PyYrzQQ3QeFQVmvXb7qdZM8RABUp1CJowP",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/2aJQeL5si2PyYrzQQ3QeFQVmvXb7qdZM8RABUp1CJowP",
+     "pumpfun": "https://pump.fun/profile/2aJQeL5si2PyYrzQQ3QeFQVmvXb7qdZM8RABUp1CJowP"
+    },
+    "funder": null,
+    "firstTs": null,
+    "maxTxDay": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 123.59,
+    "maxSingleHolderPct": 2.51,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "smart-indigo-vulture",
+      "size": 5,
+      "type": "transfer"
+     },
+     {
+      "id": "bold-ochre-bee",
+      "size": 4,
+      "type": "transfer"
+     },
+     {
+      "id": "shy-bronze-skunk",
+      "size": 6,
+      "type": "transfer"
+     }
+    ]
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     2.5,
+     2.5,
+     2.3,
+     2.3,
+     2.3
+    ],
+    "top5Pct": 11.9,
+    "count": 2715,
+    "whalePct": 16.2,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 2.23
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": null,
+    "botN": "0/0",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": null,
+    "freshN": "0/0"
+   },
+   "scoreUncapped": 62,
+   "scoreCapped": false,
+   "score": 62,
+   "findings": [
+    [
+     "amber",
+     "volume 26.3x liquidity, possibly inflated"
+    ]
+   ],
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 39048,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "chartAth": {
+    "price": 0.0005493525025011051,
+    "mc": 521351,
+    "t": 1792448400,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1792448112,
+    "mc": 240952
+   },
+   "odds": {
+    "n": 51,
+    "x2": 27,
+    "rug": 59
+   },
+   "signalAt": 1792450910
+  },
+  {
    "symbol": "Tame",
    "name": "Tame",
    "chain": "solana",
