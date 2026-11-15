@@ -3,6 +3,151 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "Twyne",
+   "name": "Twyne",
+   "chain": "solana",
+   "mint": "DZ4DzfLBMthSZ9SkLd8oAo4gmT4sm8BQSUpSJrbzpump",
+   "dex": "pumpswap",
+   "pair": "HEG4haBnV3SrLtr4Cd255JhZN1tv49kf4dz5SNk3Z67n",
+   "mcap": 180658,
+   "liq": 36624.19,
+   "vol": 187494.56,
+   "window": "h1",
+   "buys": 1582,
+   "sells": 3321,
+   "ch5m": 7.12,
+   "ch1h": -25.17,
+   "ageH": 3.81,
+   "description": "Create a community token and pair it with SOL, stablecoins, or tokenized real-world assets. One fair launch flow, from bonding curve to open market.",
+   "ctoProfile": false,
+   "volLiq": 15.0,
+   "baseScore": 46,
+   "liqPctMc": 20.3,
+   "ch24h": 337,
+   "narratives": [],
+   "estFeesSol": 65.74,
+   "priceUsd": 0.0001893,
+   "socials": [
+    "https://x.com/twynepad"
+   ],
+   "websites": [
+    "https://twyne.lat/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/heg4habnv3srltr4cd255jhzn1tv49kf4dz5snk3z67n",
+    "pumpfun": "https://pump.fun/coin/DZ4DzfLBMthSZ9SkLd8oAo4gmT4sm8BQSUpSJrbzpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=DZ4DzfLBMthSZ9SkLd8oAo4gmT4sm8BQSUpSJrbzpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/DZ4DzfLBMthSZ9SkLd8oAo4gmT4sm8BQSUpSJrbzpump",
+    "fomo": "https://fomo.family/tokens/solana/DZ4DzfLBMthSZ9SkLd8oAo4gmT4sm8BQSUpSJrbzpump",
+    "x_search": "https://x.com/search?q=%24Twyne&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=Twyne"
+   },
+   "top10Pct": 15.59,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "Gn9hbcLbNYqx7p132yASqDFeUeZA4cKwW1s5BhEV3SzC",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/Gn9hbcLbNYqx7p132yASqDFeUeZA4cKwW1s5BhEV3SzC",
+     "pumpfun": "https://pump.fun/profile/Gn9hbcLbNYqx7p132yASqDFeUeZA4cKwW1s5BhEV3SzC"
+    },
+    "funder": null,
+    "firstTs": null,
+    "maxTxDay": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 65.74,
+    "maxSingleHolderPct": 2.05,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 1
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     2.0,
+     2.0,
+     1.7,
+     1.6,
+     1.4
+    ],
+    "top5Pct": 8.8,
+    "count": 2645,
+    "whalePct": 4.1,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": null,
+    "botN": "0/0",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": null,
+    "freshN": "0/0"
+   },
+   "scoreUncapped": 46,
+   "scoreCapped": false,
+   "score": 46,
+   "findings": [],
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 36239,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "chartAth": {
+    "price": 0.0003115981415617681,
+    "mc": 297373,
+    "t": 1792474200,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1792467165,
+    "mc": 144838
+   },
+   "odds": {
+    "n": 58,
+    "x2": 29,
+    "rug": 57
+   },
+   "signalAt": 1792478005
+  },
+  {
    "symbol": "FORKIUS",
    "name": "Forkius Maximus",
    "chain": "solana",
