@@ -3,6 +3,152 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "packs",
+   "name": "packs pump strategy",
+   "chain": "solana",
+   "mint": "DhNeWY3MD9ttAxyXhSkAzXJDPFws8Hn9TbfoWJUmpump",
+   "dex": "pumpswap",
+   "pair": "CWeoA7N4o55rQKjJq1eLosjH43ThReM2sViLnxkM26Xn",
+   "mcap": 90394,
+   "liq": 25200.17,
+   "vol": 123833.94,
+   "window": "h1",
+   "buys": 1269,
+   "sells": 934,
+   "ch5m": 14.09,
+   "ch1h": 109,
+   "ageH": 0.53,
+   "description": "Turning Pump fun creator fees into collectible packs, token buybacks & burns, and holder rewards. Infinite pack-opening flywheel.",
+   "ctoProfile": false,
+   "volLiq": 4.9,
+   "baseScore": 67,
+   "liqPctMc": 27.9,
+   "ch24h": 109,
+   "narratives": [],
+   "estFeesSol": null,
+   "priceUsd": 9.292e-05,
+   "socials": [
+    "https://x.com/wuqelfern/status/2112331292348223628"
+   ],
+   "websites": [
+    "https://packs.cash/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/cweoa7n4o55rqkjjq1elosjh43threm2svilnxkm26xn",
+    "pumpfun": "https://pump.fun/coin/DhNeWY3MD9ttAxyXhSkAzXJDPFws8Hn9TbfoWJUmpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=DhNeWY3MD9ttAxyXhSkAzXJDPFws8Hn9TbfoWJUmpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/DhNeWY3MD9ttAxyXhSkAzXJDPFws8Hn9TbfoWJUmpump",
+    "fomo": "https://fomo.family/tokens/solana/DhNeWY3MD9ttAxyXhSkAzXJDPFws8Hn9TbfoWJUmpump",
+    "x_search": "https://x.com/search?q=%24packs&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=packs"
+   },
+   "top10Pct": 22.47,
+   "clusterPct": 1.3,
+   "clusterSource": "rugcheck_insider_networks",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "9XioNVHGaWLEpvWrWXYADxpm7Y1T4pAsNrWr43A11SPZ",
+    "holdPct": 1.1,
+    "sold": false,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/9XioNVHGaWLEpvWrWXYADxpm7Y1T4pAsNrWr43A11SPZ",
+     "pumpfun": "https://pump.fun/profile/9XioNVHGaWLEpvWrWXYADxpm7Y1T4pAsNrWr43A11SPZ"
+    },
+    "funder": null,
+    "firstTs": null,
+    "maxTxDay": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": null,
+    "maxSingleHolderPct": 3.09,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "yummy-flax-lobster",
+      "size": 4,
+      "type": "transfer"
+     }
+    ]
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     3.1,
+     2.9,
+     2.7,
+     2.6,
+     2.3
+    ],
+    "top5Pct": 13.6,
+    "count": 933,
+    "whalePct": 15.6,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 1.3
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": null,
+    "botN": "0/0",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": null,
+    "freshN": "0/0"
+   },
+   "scoreUncapped": 67,
+   "scoreCapped": false,
+   "score": 67,
+   "findings": [],
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 24701,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "chartAth": null,
+   "firstScan": {
+    "t": 1792454416,
+    "mc": 28251.55
+   },
+   "odds": {
+    "n": 53,
+    "x2": 26,
+    "rug": 57
+   },
+   "signalAt": 1792457130
+  },
+  {
    "symbol": "PACK",
    "name": "PackPump",
    "chain": "solana",
