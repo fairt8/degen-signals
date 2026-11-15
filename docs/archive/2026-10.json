@@ -3,6 +3,151 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "TROAD",
+   "name": "Tesla Roadster",
+   "chain": "solana",
+   "mint": "547mPBDKVshVHz1JN54ENUZ9w2wwiZf3x2ctjvnipump",
+   "dex": "pumpswap",
+   "pair": "4SL4sitZUAWzgSTKNx8XyEtRCMt8RyvMvfSmXKpgkoH1",
+   "mcap": 88507,
+   "liq": 24210.71,
+   "vol": 221685.06,
+   "window": "h1",
+   "buys": 4364,
+   "sells": 4246,
+   "ch5m": 13.25,
+   "ch1h": 103,
+   "ageH": 0.49,
+   "description": "Redefining Speed. Electrifying the Future\nExperience the next evolution of electric performance, where visionary design meets extraordinary speed",
+   "ctoProfile": false,
+   "volLiq": 9.2,
+   "baseScore": 58,
+   "liqPctMc": 27.4,
+   "ch24h": 103,
+   "narratives": [],
+   "estFeesSol": 26.37,
+   "priceUsd": 8.85e-05,
+   "socials": [
+    "https://x.com/tesla_roadsters"
+   ],
+   "websites": [
+    "https://teslaroadster.pro/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/4sl4sitzuawzgstknx8xyetrcmt8ryvmvfsmxkpgkoh1",
+    "pumpfun": "https://pump.fun/coin/547mPBDKVshVHz1JN54ENUZ9w2wwiZf3x2ctjvnipump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=547mPBDKVshVHz1JN54ENUZ9w2wwiZf3x2ctjvnipump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/547mPBDKVshVHz1JN54ENUZ9w2wwiZf3x2ctjvnipump",
+    "fomo": "https://fomo.family/tokens/solana/547mPBDKVshVHz1JN54ENUZ9w2wwiZf3x2ctjvnipump",
+    "x_search": "https://x.com/search?q=%24TROAD&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=TROAD"
+   },
+   "top10Pct": 8.31,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "Ahrusr1e7NjeB7fuRapH4aSEiWEFFEQe4jirnveuuhAR",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/Ahrusr1e7NjeB7fuRapH4aSEiWEFFEQe4jirnveuuhAR",
+     "pumpfun": "https://pump.fun/profile/Ahrusr1e7NjeB7fuRapH4aSEiWEFFEQe4jirnveuuhAR"
+    },
+    "funder": null,
+    "firstTs": null,
+    "maxTxDay": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 26.37,
+    "maxSingleHolderPct": 0.93,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     0.9,
+     0.9,
+     0.9,
+     0.8,
+     0.8
+    ],
+    "top5Pct": 4.3,
+    "count": 2406,
+    "whalePct": 0,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": null,
+    "botN": "0/0",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": null,
+    "freshN": "0/0"
+   },
+   "scoreUncapped": 58,
+   "scoreCapped": false,
+   "score": 58,
+   "findings": [],
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 25098,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "chartAth": {
+    "price": 0.00012933647115159535,
+    "mc": 129347,
+    "t": 1792471200,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1792472492,
+    "mc": 88507
+   },
+   "odds": {
+    "n": 57,
+    "x2": 28,
+    "rug": 56
+   },
+   "signalAt": 1792472513
+  },
+  {
    "symbol": "GACHA",
    "name": "Gacha",
    "chain": "solana",
