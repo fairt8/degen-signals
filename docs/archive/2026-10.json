@@ -3,6 +3,217 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "NOOX",
+   "name": "NOOX",
+   "chain": "solana",
+   "mint": "Hx4cDZzRjfCNeqZCLS8sR4uwPRH5NVVrE4PF9Fugpump",
+   "dex": "pumpswap",
+   "pair": "6WFSZfs6UojT4GJYxJnoJC78QuJYngREXj834ZyvLujA",
+   "mcap": 53452,
+   "liq": 20071.68,
+   "vol": 79846.3,
+   "window": "h1",
+   "buys": 559,
+   "sells": 577,
+   "ch5m": 9.71,
+   "ch1h": -19.96,
+   "ageH": 4.85,
+   "description": "Every token\nwears a mask.\nNOOX looks behind it.\nA trading agent for DEX tokens. It scouts new launches on pumpfun and DexScreener, checks the mint on-chain, reads who is buying, and quotes the route o",
+   "ctoProfile": false,
+   "volLiq": 65.8,
+   "baseScore": 64,
+   "liqPctMc": 37.6,
+   "ch24h": 26.99,
+   "narratives": [
+    "AI / Agents"
+   ],
+   "estFeesSol": 158.19,
+   "priceUsd": 5.543e-05,
+   "socials": [
+    "https://x.com/noox_magic"
+   ],
+   "websites": [
+    "https://nooxmagic.pro/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/6wfszfs6uojt4gjyxjnojc78qujyngrexj834zyvluja",
+    "pumpfun": "https://pump.fun/coin/Hx4cDZzRjfCNeqZCLS8sR4uwPRH5NVVrE4PF9Fugpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=Hx4cDZzRjfCNeqZCLS8sR4uwPRH5NVVrE4PF9Fugpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/Hx4cDZzRjfCNeqZCLS8sR4uwPRH5NVVrE4PF9Fugpump",
+    "fomo": "https://fomo.family/tokens/solana/Hx4cDZzRjfCNeqZCLS8sR4uwPRH5NVVrE4PF9Fugpump",
+    "axiom": "https://axiom.trade/t/Hx4cDZzRjfCNeqZCLS8sR4uwPRH5NVVrE4PF9Fugpump?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=Hx4cDZzRjfCNeqZCLS8sR4uwPRH5NVVrE4PF9Fugpump",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24NOOX&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=NOOX"
+   },
+   "top10Pct": 9.42,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 62,
+    "transferFeePct": 0,
+    "graphInsiders": 23,
+    "danger": [
+     "Creator history of rugged tokens"
+    ]
+   },
+   "dev": {
+    "wallet": "CnBxFKsEzt2sZNdx8E9BNv9HwxvtAb1VQHq69pRwSXGu",
+    "holdPct": 0.02,
+    "sold": false,
+    "priorTokens": 10,
+    "priorMigrated": 0,
+    "priorDead": 10,
+    "bestPriorMcap": 2970.0,
+    "rugHistory": true,
+    "launchpad": "Pump.Fun",
+    "riskNames": [
+     "Creator history of rugged tokens"
+    ],
+    "links": {
+     "solscan": "https://solscan.io/account/CnBxFKsEzt2sZNdx8E9BNv9HwxvtAb1VQHq69pRwSXGu",
+     "pumpfun": "https://pump.fun/profile/CnBxFKsEzt2sZNdx8E9BNv9HwxvtAb1VQHq69pRwSXGu"
+    },
+    "funder": null,
+    "firstTs": 1792636746,
+    "maxTxDay": 134,
+    "devTxCount": 134,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": -30,
+   "devNotes": [
+    "-20 dev rug history",
+    "-10 serial launcher (10/10 dead)"
+   ],
+   "extras": {
+    "estFeesSol": 158.19,
+    "maxSingleHolderPct": 1.16,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "zany-olive-octopus",
+      "size": 23,
+      "type": "trade"
+     }
+    ]
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 1
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     1.2,
+     1.0,
+     1.0,
+     1.0,
+     0.9
+    ],
+    "top5Pct": 5.0,
+    "count": 2637,
+    "whalePct": 0,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 100,
+    "botN": "10/10",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 0,
+    "freshN": "0/10"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 23954,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "insightx": {
+    "error": "not indexed yet"
+   },
+   "safety": {
+    "status": "FAIL",
+    "pass": false,
+    "fails": [
+     "dev rug history",
+     "100% bot-like top holders"
+    ],
+    "warns": [
+     "rugcheck: Creator history of rugged tokens",
+     "23 insider wallets (rugcheck graph)"
+    ],
+    "oks": [
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "RPC funders"
+    ],
+    "pct": {
+     "insider": 0,
+     "cluster": 0
+    },
+    "scoreAdj": -10
+   },
+   "gmgnScore": -10,
+   "scoreUncapped": 24,
+   "scoreCapped": false,
+   "score": 24,
+   "findings": [
+    [
+     "red",
+     "100% bot-like holders (10/10 of top holders)"
+    ],
+    [
+     "red",
+     "volume 65.8x liquidity, possibly inflated"
+    ],
+    [
+     "red",
+     "dev has rug history"
+    ],
+    [
+     "red",
+     "dev launched 10 tokens, 10 dead"
+    ]
+   ],
+   "chartAth": {
+    "price": 0.000390576110690322,
+    "mc": 376639,
+    "t": 1792646100,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1792654161,
+    "mc": 47542
+   },
+   "odds": {
+    "n": 68,
+    "x2": 28,
+    "rug": 59
+   },
+   "signalAt": 1792666900
+  },
+  {
    "symbol": "Duke",
    "name": "Duke Nukem",
    "chain": "solana",
