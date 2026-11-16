@@ -3,6 +3,152 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "WiSP",
+   "name": "WiSP",
+   "chain": "solana",
+   "mint": "USEu5qroduzuvrSZfvs3xM1MwyU83joapQF5LMyWiSP",
+   "dex": "pumpswap",
+   "pair": "3jB5P1dycatrbHUBZ4xuKEciBiXYUsrsGF83fViM2aCc",
+   "mcap": 57636,
+   "liq": 20053.52,
+   "vol": 191046.43,
+   "window": "h1",
+   "buys": 1750,
+   "sells": 1469,
+   "ch5m": 19.34,
+   "ch1h": -19.86,
+   "ageH": 1.65,
+   "description": "ZK burner wallets for every trade. Privacy made easy. 24.5% locked until 2126, 0.5% to Fomo for the team tag.",
+   "ctoProfile": false,
+   "volLiq": 13.1,
+   "baseScore": 61,
+   "liqPctMc": 34.8,
+   "ch24h": 43.89,
+   "narratives": [],
+   "estFeesSol": 31.35,
+   "priceUsd": 6.184e-05,
+   "socials": [
+    "https://x.com/WiSPzk",
+    "https://t.me/UseWiSP"
+   ],
+   "websites": [
+    "https://usewisp.trade"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/3jb5p1dycatrbhubz4xukecibixyusrsgf83fvim2acc",
+    "pumpfun": "https://pump.fun/coin/USEu5qroduzuvrSZfvs3xM1MwyU83joapQF5LMyWiSP",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=USEu5qroduzuvrSZfvs3xM1MwyU83joapQF5LMyWiSP&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/USEu5qroduzuvrSZfvs3xM1MwyU83joapQF5LMyWiSP",
+    "fomo": "https://fomo.family/tokens/solana/USEu5qroduzuvrSZfvs3xM1MwyU83joapQF5LMyWiSP",
+    "x_search": "https://x.com/search?q=%24WiSP&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=WiSP"
+   },
+   "top10Pct": 20.49,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "fTQGbMHMt4MeanYpZp8PoecvWCzRHWitVVJEY5aWiSP",
+    "holdPct": 0.04,
+    "sold": false,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/fTQGbMHMt4MeanYpZp8PoecvWCzRHWitVVJEY5aWiSP",
+     "pumpfun": "https://pump.fun/profile/fTQGbMHMt4MeanYpZp8PoecvWCzRHWitVVJEY5aWiSP"
+    },
+    "funder": null,
+    "firstTs": null,
+    "maxTxDay": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 31.35,
+    "maxSingleHolderPct": 3.76,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 1
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     3.8,
+     3.5,
+     2.4,
+     2.3,
+     2.0
+    ],
+    "top5Pct": 14.0,
+    "count": 1394,
+    "whalePct": 12.0,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": null,
+    "botN": "0/0",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": null,
+    "freshN": "0/0"
+   },
+   "scoreUncapped": 61,
+   "scoreCapped": false,
+   "score": 61,
+   "findings": [],
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 21206,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "chartAth": {
+    "price": 0.00023440597052121618,
+    "mc": 218471,
+    "t": 1792507200,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1792503912,
+    "mc": 22764
+   },
+   "odds": {
+    "n": 64,
+    "x2": 30,
+    "rug": 56
+   },
+   "signalAt": 1792509680
+  },
+  {
    "symbol": "NARUTO",
    "name": "Naruto",
    "chain": "solana",
@@ -7695,6 +7841,74 @@
   }
  ],
  "journal": [
+  {
+   "mint": "6tsykNmR3WDqouj9uVUFZRgR2Kpai4F1Qm1gAcirpump",
+   "symbol": "Gigabite",
+   "chain": "solana",
+   "t0": 1792235785,
+   "price0": 0.0001362,
+   "mcap0": 131736,
+   "score": null,
+   "devScore": 0,
+   "link": "https://dexscreener.com/solana/fek1drg7wzn5jysutuj8otazqasxkzn3hxowl9xhtnjv",
+   "maxPrice": 0.000411474447270507,
+   "samples": [],
+   "trend": "up",
+   "h1": {
+    "price": 0.0001174,
+    "pct": -13.8,
+    "maxX": 1.0
+   },
+   "h24": {
+    "price": 6.496e-05,
+    "pct": -52.3,
+    "maxX": 2.92
+   },
+   "hit2x": true,
+   "hit5x": false,
+   "msgId": {
+    "1318404489": 118,
+    "-1004348482526": 1544
+   },
+   "last": 6.496e-05,
+   "lastT": 1792323013,
+   "lastPct": -52.3,
+   "minPrice": 3.961e-05,
+   "milestones": {
+    "2": null
+   },
+   "topMilestone": 2.0,
+   "topMilestoneT": null,
+   "lpEvents": {},
+   "lp": {
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
+    "pct": 100,
+    "unlock": null,
+    "t": 1792739552,
+    "pctMax": 100,
+    "liq": 8944.41,
+    "liqMax": 23468.33
+   },
+   "maxSrc": "chart",
+   "chartT": 1792406787,
+   "safety": {
+    "status": "WARN",
+    "reasons": [
+     "25 insider wallets (rugcheck graph)",
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "pct": {
+     "insider": 0
+    },
+    "sources": [
+     "rugcheck",
+     "LP"
+    ],
+    "backfilled": true
+   }
+  },
   {
    "mint": "ErvkxE8gc7EwmaQfvoGfVfcDJbVG4EcHQr3yweTkpump",
    "symbol": "ZeroFee",
