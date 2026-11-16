@@ -3,6 +3,169 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "ARTEMI",
+   "name": "ARTEMI",
+   "chain": "solana",
+   "mint": "7gUDvf45et6627atavR45Md4BjgYqJHMZe9EPqeR9Sya",
+   "dex": "pumpswap",
+   "pair": "FpBY8oqpjWeqN5sACricJSia5t3LFeqZh6i6Arr3FzLo",
+   "mcap": 173495,
+   "liq": 36539.92,
+   "vol": 864945.92,
+   "window": "h1",
+   "buys": 8104,
+   "sells": 6145,
+   "ch5m": 10.81,
+   "ch1h": 297,
+   "ageH": 0.29,
+   "description": "Launch a coin and airdrop bags all over the world.",
+   "ctoProfile": false,
+   "volLiq": 23.7,
+   "baseScore": 69,
+   "liqPctMc": 21.1,
+   "ch24h": 297,
+   "narratives": [
+    "AI / Agents"
+   ],
+   "estFeesSol": 102.69,
+   "priceUsd": 0.0001734,
+   "socials": [
+    "https://x.com/artemi_tech"
+   ],
+   "websites": [
+    "https://www.artemi.tech/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/fpby8oqpjweqn5sacricjsia5t3lfeqzh6i6arr3fzlo",
+    "pumpfun": "https://pump.fun/coin/7gUDvf45et6627atavR45Md4BjgYqJHMZe9EPqeR9Sya",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=7gUDvf45et6627atavR45Md4BjgYqJHMZe9EPqeR9Sya&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/7gUDvf45et6627atavR45Md4BjgYqJHMZe9EPqeR9Sya",
+    "fomo": "https://fomo.family/tokens/solana/7gUDvf45et6627atavR45Md4BjgYqJHMZe9EPqeR9Sya",
+    "x_search": "https://x.com/search?q=%24ARTEMI&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=ARTEMI"
+   },
+   "top10Pct": 16.65,
+   "clusterPct": 2.39,
+   "clusterSource": "rugcheck_insider_networks",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "733Atzo6KZrZ7t1hMj6ifqsWcRGCXkwXrqusUGypsurb",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/733Atzo6KZrZ7t1hMj6ifqsWcRGCXkwXrqusUGypsurb",
+     "pumpfun": "https://pump.fun/profile/733Atzo6KZrZ7t1hMj6ifqsWcRGCXkwXrqusUGypsurb"
+    },
+    "funder": null,
+    "firstTs": null,
+    "maxTxDay": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 102.69,
+    "maxSingleHolderPct": 3.45,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "eager-latte-coyote",
+      "size": 10,
+      "type": "transfer"
+     },
+     {
+      "id": "odd-ginger-narwhal",
+      "size": 5,
+      "type": "transfer"
+     }
+    ]
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     3.5,
+     3.4,
+     1.5,
+     1.5,
+     1.2
+    ],
+    "top5Pct": 11.1,
+    "count": 3371,
+    "whalePct": 6.9,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 2.39
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": null,
+    "botN": "0/0",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": null,
+    "freshN": "0/0"
+   },
+   "scoreUncapped": 69,
+   "scoreCapped": false,
+   "score": 69,
+   "findings": [
+    [
+     "amber",
+     "volume 23.7x liquidity, possibly inflated"
+    ]
+   ],
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 37412,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "chartAth": {
+    "price": 0.00029393739631392566,
+    "mc": 294098,
+    "t": 1792512900,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1792513893,
+    "mc": 173495
+   },
+   "odds": {
+    "n": 65,
+    "x2": 29,
+    "rug": 58
+   },
+   "signalAt": 1792513911
+  },
+  {
    "symbol": "WiSP",
    "name": "WiSP",
    "chain": "solana",
