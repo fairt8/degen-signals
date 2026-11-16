@@ -3,6 +3,161 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "ARENA",
+   "name": "Pok\u00e9mon Arena",
+   "chain": "solana",
+   "mint": "8Bm6eGHRWNjBybaKjPVuRggnfn5mf815y8FZEP2qpump",
+   "dex": "pumpswap",
+   "pair": "NZt6tq3JGR61Rp3PAogpZazRN9rZ9J8U7RvefKWaAQ1",
+   "mcap": 98265,
+   "liq": 25346.47,
+   "vol": 115703.14,
+   "window": "h1",
+   "buys": 1567,
+   "sells": 1245,
+   "ch5m": 1.28,
+   "ch1h": 128,
+   "ageH": 0.49,
+   "description": "Pixel monsters, real-time PvP, win streaks that pay. $ARENA",
+   "ctoProfile": false,
+   "volLiq": 4.6,
+   "baseScore": 63,
+   "liqPctMc": 25.8,
+   "ch24h": 128,
+   "narratives": [
+    "Gaming / Culture"
+   ],
+   "estFeesSol": 13.87,
+   "priceUsd": 9.837e-05,
+   "socials": [
+    "https://x.com/pokemonarenaio"
+   ],
+   "websites": [
+    "https://pokemonarena.io"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/nzt6tq3jgr61rp3paogpzazrn9rz9j8u7rvefkwaaq1",
+    "pumpfun": "https://pump.fun/coin/8Bm6eGHRWNjBybaKjPVuRggnfn5mf815y8FZEP2qpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=8Bm6eGHRWNjBybaKjPVuRggnfn5mf815y8FZEP2qpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/8Bm6eGHRWNjBybaKjPVuRggnfn5mf815y8FZEP2qpump",
+    "fomo": "https://fomo.family/tokens/solana/8Bm6eGHRWNjBybaKjPVuRggnfn5mf815y8FZEP2qpump",
+    "x_search": "https://x.com/search?q=%24ARENA&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=ARENA"
+   },
+   "top10Pct": 14.48,
+   "clusterPct": 1.76,
+   "clusterSource": "rugcheck_insider_networks",
+   "clusters": [],
+   "gmgn": {
+    "status": "SKIPPED",
+    "pass": null,
+    "reasons": [
+     "no GMGN_API_KEY"
+    ],
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "dev": {
+    "wallet": "CBnu197ej56m4FgZAPJkD95e8J8xZXZsXATcG1tnHoRj",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [
+     "Copycat token"
+    ],
+    "links": {
+     "solscan": "https://solscan.io/account/CBnu197ej56m4FgZAPJkD95e8J8xZXZsXATcG1tnHoRj",
+     "pumpfun": "https://pump.fun/profile/CBnu197ej56m4FgZAPJkD95e8J8xZXZsXATcG1tnHoRj"
+    },
+    "funder": null,
+    "firstTs": null,
+    "maxTxDay": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 13.87,
+    "maxSingleHolderPct": 2.65,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "kind-mint-elk",
+      "size": 4,
+      "type": "transfer"
+     }
+    ]
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     2.7,
+     2.5,
+     1.4,
+     1.3,
+     1.2
+    ],
+    "top5Pct": 9.0,
+    "count": 1182,
+    "whalePct": 5.1,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 1.76
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": null,
+    "botN": "0/0",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": null,
+    "freshN": "0/0"
+   },
+   "scoreUncapped": 63,
+   "scoreCapped": false,
+   "score": 63,
+   "findings": [],
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 26342,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "chartAth": {
+    "price": 0.00011151496950062952,
+    "mc": 111396,
+    "t": 1792501800,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1792500312,
+    "mc": 23212.69
+   },
+   "odds": {
+    "n": 62,
+    "x2": 29,
+    "rug": 56
+   },
+   "signalAt": 1792502217
+  },
+  {
    "symbol": "LIFA",
    "name": "The Last Hope",
    "chain": "solana",
