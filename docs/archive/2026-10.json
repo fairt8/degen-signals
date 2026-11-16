@@ -3,6 +3,220 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "TIB",
+   "name": "Trump In Box",
+   "chain": "solana",
+   "mint": "B28EEeqoZ8NhCtkXLmNkWQp2NUp9mixH54V4etaLpump",
+   "dex": "pumpswap",
+   "pair": "8Xs4XAL95GGVwBtYteJcuykUu6jiGDfmUKFYw8fLGnUM",
+   "mcap": 143448,
+   "liq": 33293.69,
+   "vol": 382833.73,
+   "window": "h1",
+   "buys": 4567,
+   "sells": 3366,
+   "ch5m": 10.02,
+   "ch1h": 25.56,
+   "ageH": 2.03,
+   "description": "Trump In Box (TIB)",
+   "ctoProfile": false,
+   "volLiq": 25.4,
+   "baseScore": 71,
+   "liqPctMc": 23.2,
+   "ch24h": 234,
+   "narratives": [
+    "Political"
+   ],
+   "estFeesSol": 101.52,
+   "priceUsd": 0.0001503,
+   "socials": [
+    "https://x.com/terrythedevv/status/2113099707627225318",
+    "https://www.instagram.com/p/DewWu6Pg8SW/"
+   ],
+   "websites": [
+    "https://www.instagram.com/p/DewWu6Pg8SW/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/8xs4xal95ggvwbtytejcuykuu6jigdfmukfyw8flgnum",
+    "pumpfun": "https://pump.fun/coin/B28EEeqoZ8NhCtkXLmNkWQp2NUp9mixH54V4etaLpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=B28EEeqoZ8NhCtkXLmNkWQp2NUp9mixH54V4etaLpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/B28EEeqoZ8NhCtkXLmNkWQp2NUp9mixH54V4etaLpump",
+    "fomo": "https://fomo.family/tokens/solana/B28EEeqoZ8NhCtkXLmNkWQp2NUp9mixH54V4etaLpump",
+    "axiom": "https://axiom.trade/t/B28EEeqoZ8NhCtkXLmNkWQp2NUp9mixH54V4etaLpump?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=B28EEeqoZ8NhCtkXLmNkWQp2NUp9mixH54V4etaLpump",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24TIB&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=TIB"
+   },
+   "top10Pct": 16.14,
+   "clusterPct": 8.79,
+   "clusterSource": "rugcheck_insider_networks",
+   "clusters": [],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 1,
+    "transferFeePct": 0,
+    "graphInsiders": 43,
+    "danger": []
+   },
+   "dev": {
+    "wallet": "AkiXbtYQEXBEBXpxhosYW1xZHamDhVEDby1rqkQ8DwCN",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/AkiXbtYQEXBEBXpxhosYW1xZHamDhVEDby1rqkQ8DwCN",
+     "pumpfun": "https://pump.fun/profile/AkiXbtYQEXBEBXpxhosYW1xZHamDhVEDby1rqkQ8DwCN"
+    },
+    "funder": null,
+    "firstTs": null,
+    "maxTxDay": 3000,
+    "devTxCount": 3000,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 101.52,
+    "maxSingleHolderPct": 3.32,
+    "freshWallets": 1,
+    "insiderNetworks": [
+     {
+      "id": "dazzling-auburn-seal",
+      "size": 5,
+      "type": "transfer"
+     },
+     {
+      "id": "lazy-sapphire-turtle",
+      "size": 5,
+      "type": "transfer"
+     },
+     {
+      "id": "zealous-rust-hare",
+      "size": 26,
+      "type": "transfer"
+     },
+     {
+      "id": "smooth-lilac-meerkat",
+      "size": 7,
+      "type": "transfer"
+     }
+    ]
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     3.3,
+     2.0,
+     1.7,
+     1.5,
+     1.5
+    ],
+    "top5Pct": 10.1,
+    "count": 5778,
+    "whalePct": 5.3,
+    "insiderPct": 0,
+    "freshWallets": 1,
+    "clusterPct": 8.79
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 80,
+    "botN": "8/10",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 30,
+    "freshN": "3/10"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 20978,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "insightx": {
+    "error": "not indexed yet"
+   },
+   "safety": {
+    "status": "FAIL",
+    "pass": false,
+    "fails": [
+     "80% bot-like top holders"
+    ],
+    "warns": [
+     "43 insider wallets (rugcheck graph)"
+    ],
+    "oks": [
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "RPC funders"
+    ],
+    "pct": {
+     "insider": 0,
+     "cluster": 8.8
+    },
+    "scoreAdj": -10
+   },
+   "gmgnScore": -10,
+   "scoreUncapped": 61,
+   "scoreCapped": true,
+   "score": 40,
+   "findings": [
+    [
+     "red",
+     "80% bot-like holders (8/10 of top holders)"
+    ],
+    [
+     "amber",
+     "30% fresh wallets (first tx \u22647d before launch) (3/10 of top holders)"
+    ],
+    [
+     "amber",
+     "volume 25.4x liquidity, possibly inflated"
+    ]
+   ],
+   "chartAth": {
+    "price": 0.0005263504347058226,
+    "mc": 502355,
+    "t": 1792663800,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1792654161,
+    "mc": 197527
+   },
+   "odds": {
+    "n": 68,
+    "x2": 28,
+    "rug": 59
+   },
+   "signalAt": 1792666900
+  },
+  {
    "symbol": "NOOX",
    "name": "NOOX",
    "chain": "solana",
