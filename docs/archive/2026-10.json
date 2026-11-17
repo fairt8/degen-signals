@@ -3,6 +3,211 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "ROFLAMP",
+   "name": "ROFLAMP",
+   "chain": "solana",
+   "mint": "8cFU1FJHVZQAricMRXPE5wa3zg6GvdG52mcutMMBpump",
+   "dex": "pumpswap",
+   "pair": "HzYT4SKrWUWsPSBk7A54574HSdfEuqajYR7fCLx7jXYD",
+   "mcap": 158238,
+   "liq": 33669.26,
+   "vol": 174328.93,
+   "window": "h1",
+   "buys": 1068,
+   "sells": 973,
+   "ch5m": 0.59,
+   "ch1h": -7.23,
+   "ageH": 2.89,
+   "description": "Try to keep it serious.\nSay the most boring thing you can think of. We wrote a few for you. Watch how long it lasts.",
+   "ctoProfile": false,
+   "volLiq": 21.6,
+   "baseScore": 56,
+   "liqPctMc": 21.3,
+   "ch24h": 289,
+   "narratives": [],
+   "estFeesSol": 90.25,
+   "priceUsd": 0.0001624,
+   "socials": [
+    "https://x.com/roflamp"
+   ],
+   "websites": [
+    "https://roflamp.xyz/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/hzyt4skrwuwspsbk7a54574hsdfeuqajyr7fclx7jxyd",
+    "pumpfun": "https://pump.fun/coin/8cFU1FJHVZQAricMRXPE5wa3zg6GvdG52mcutMMBpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=8cFU1FJHVZQAricMRXPE5wa3zg6GvdG52mcutMMBpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/8cFU1FJHVZQAricMRXPE5wa3zg6GvdG52mcutMMBpump",
+    "fomo": "https://fomo.family/tokens/solana/8cFU1FJHVZQAricMRXPE5wa3zg6GvdG52mcutMMBpump",
+    "axiom": "https://axiom.trade/t/8cFU1FJHVZQAricMRXPE5wa3zg6GvdG52mcutMMBpump?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=8cFU1FJHVZQAricMRXPE5wa3zg6GvdG52mcutMMBpump",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24ROFLAMP&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=ROFLAMP"
+   },
+   "top10Pct": 9.59,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 57,
+    "transferFeePct": 0,
+    "graphInsiders": 0,
+    "danger": [
+     "Creator history of rugged tokens"
+    ]
+   },
+   "dev": {
+    "wallet": "SAhGCHMGxMN93v6esokjN8rERyKxH8kUDNxzBzZU9U1",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 7,
+    "priorMigrated": 0,
+    "priorDead": 7,
+    "bestPriorMcap": 3054.0,
+    "rugHistory": true,
+    "launchpad": "Pump.Fun",
+    "riskNames": [
+     "Creator history of rugged tokens"
+    ],
+    "links": {
+     "solscan": "https://solscan.io/account/SAhGCHMGxMN93v6esokjN8rERyKxH8kUDNxzBzZU9U1",
+     "pumpfun": "https://pump.fun/profile/SAhGCHMGxMN93v6esokjN8rERyKxH8kUDNxzBzZU9U1"
+    },
+    "funder": null,
+    "firstTs": null,
+    "maxTxDay": null,
+    "devTxCount": 0,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": -30,
+   "devNotes": [
+    "-20 dev rug history",
+    "-10 serial launcher (7/7 dead)"
+   ],
+   "extras": {
+    "estFeesSol": 90.25,
+    "maxSingleHolderPct": 1.29,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     1.3,
+     1.1,
+     1.1,
+     0.9,
+     0.9
+    ],
+    "top5Pct": 5.3,
+    "count": 2420,
+    "whalePct": 0,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": null,
+    "botN": "0/0",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": null,
+    "freshN": "0/0"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 35444,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "insightx": {
+    "cluster": 0.0,
+    "sniper": 0.0,
+    "bundler": 4.3,
+    "dev": 0.0,
+    "insider": 0.0,
+    "top10": 9.25
+   },
+   "safety": {
+    "status": "FAIL",
+    "pass": false,
+    "fails": [
+     "dev rug history"
+    ],
+    "warns": [
+     "rugcheck: Creator history of rugged tokens"
+    ],
+    "oks": [
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "InsightX"
+    ],
+    "pct": {
+     "sniper": 0.0,
+     "bundler": 4.3,
+     "insider": 0.0,
+     "dev": 0.0,
+     "cluster": 0.0
+    },
+    "scoreAdj": -10
+   },
+   "gmgnScore": -10,
+   "scoreUncapped": 16,
+   "scoreCapped": false,
+   "score": 16,
+   "findings": [
+    [
+     "red",
+     "dev has rug history"
+    ],
+    [
+     "red",
+     "dev launched 7 tokens, 7 dead"
+    ],
+    [
+     "amber",
+     "volume 21.6x liquidity, possibly inflated"
+    ]
+   ],
+   "chartAth": {
+    "price": 0.0003134304727859935,
+    "mc": 305398,
+    "t": 1792994400,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1792996652,
+    "mc": 158238
+   },
+   "odds": {
+    "n": 80,
+    "x2": 28,
+    "rug": 60
+   },
+   "signalAt": 1792996675
+  },
+  {
    "symbol": "ZGAP",
    "name": "Zero Gap",
    "chain": "solana",
