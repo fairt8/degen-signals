@@ -3,6 +3,188 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "Rebuild",
+   "name": "Rebuild",
+   "chain": "solana",
+   "mint": "BgKpC5foQfa8k8u3eCv3qLC1hppUMFLqkxWKCbcBpump",
+   "dex": "pumpswap",
+   "pair": "H8m9j11hE8TVP58d61LrMfQb2MA4SLSi6Jx53zDb6jTK",
+   "mcap": 32276,
+   "liq": 13684.45,
+   "vol": 187173.26,
+   "window": "h1",
+   "buys": 2561,
+   "sells": 2044,
+   "ch5m": 32.71,
+   "ch1h": -26.46,
+   "ageH": 0.45,
+   "description": "re:build it your way, with reverse engineering from \n@reatools\n and your own AI agent team. Create a token. Let creator fees fund the build.",
+   "ctoProfile": false,
+   "volLiq": 13.7,
+   "baseScore": 58,
+   "liqPctMc": 42.4,
+   "ch24h": -26.46,
+   "narratives": [
+    "AI / Agents"
+   ],
+   "estFeesSol": 22.38,
+   "priceUsd": 3.23e-05,
+   "socials": [
+    "https://x.com/rebuildfun"
+   ],
+   "websites": [
+    "https://userebuild.fun/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/h8m9j11he8tvp58d61lrmfqb2ma4slsi6jx53zdb6jtk",
+    "pumpfun": "https://pump.fun/coin/BgKpC5foQfa8k8u3eCv3qLC1hppUMFLqkxWKCbcBpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=BgKpC5foQfa8k8u3eCv3qLC1hppUMFLqkxWKCbcBpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/BgKpC5foQfa8k8u3eCv3qLC1hppUMFLqkxWKCbcBpump",
+    "fomo": "https://fomo.family/tokens/solana/BgKpC5foQfa8k8u3eCv3qLC1hppUMFLqkxWKCbcBpump",
+    "axiom": "https://axiom.trade/t/BgKpC5foQfa8k8u3eCv3qLC1hppUMFLqkxWKCbcBpump?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=BgKpC5foQfa8k8u3eCv3qLC1hppUMFLqkxWKCbcBpump",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24Rebuild&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=Rebuild"
+   },
+   "top10Pct": 20.48,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 1,
+    "transferFeePct": 0,
+    "graphInsiders": 0,
+    "danger": []
+   },
+   "dev": {
+    "wallet": "6ec6Hhnm5aKjRKGqYrgWJmE9CYdNNJqb7Nsnor2P4xkP",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/6ec6Hhnm5aKjRKGqYrgWJmE9CYdNNJqb7Nsnor2P4xkP",
+     "pumpfun": "https://pump.fun/profile/6ec6Hhnm5aKjRKGqYrgWJmE9CYdNNJqb7Nsnor2P4xkP"
+    },
+    "funder": "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9",
+    "firstTs": 1792678736,
+    "maxTxDay": 47,
+    "devTxCount": 47,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 22.38,
+    "maxSingleHolderPct": 3.04,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     3.0,
+     2.6,
+     2.3,
+     2.2,
+     2.0
+    ],
+    "top5Pct": 12.3,
+    "count": 1263,
+    "whalePct": 12.3,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 90,
+    "botN": "9/10",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 0,
+    "freshN": "0/10"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 13624,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "insightx": {
+    "error": "not indexed yet"
+   },
+   "safety": {
+    "status": "FAIL",
+    "pass": false,
+    "fails": [
+     "90% bot-like top holders"
+    ],
+    "warns": [],
+    "oks": [
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "RPC funders"
+    ],
+    "pct": {
+     "insider": 0,
+     "cluster": 0
+    },
+    "scoreAdj": -10
+   },
+   "gmgnScore": -10,
+   "scoreUncapped": 48,
+   "scoreCapped": true,
+   "score": 40,
+   "findings": [
+    [
+     "red",
+     "90% bot-like holders (9/10 of top holders)"
+    ]
+   ],
+   "chartAth": {
+    "price": 5.956713415304029e-05,
+    "mc": 59523,
+    "t": 1792680000,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1792681250,
+    "mc": 32276
+   },
+   "odds": {
+    "n": 72,
+    "x2": 28,
+    "rug": 57
+   },
+   "signalAt": 1792684825
+  },
+  {
    "symbol": "\u62b1\u64c1",
    "name": "\u62b1\u64c1",
    "chain": "solana",
