@@ -3,6 +3,406 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "ARGUS",
+   "name": "Argus",
+   "chain": "solana",
+   "mint": "GnZdVkGALyUgoNA5PARXkxpWSKnBq32Tcb5Vh8hjpump",
+   "dex": "pumpswap",
+   "pair": "w8v8BZCZFHBa8tUKTHBsvGqjRvStfWuGXQY7oq6nR2H",
+   "mcap": 24647,
+   "liq": 11540.38,
+   "vol": 41391.57,
+   "window": "h1",
+   "buys": 739,
+   "sells": 795,
+   "ch5m": 8.6,
+   "ch1h": -41.67,
+   "ageH": 0.41,
+   "description": "See every wallet before you buy.",
+   "ctoProfile": false,
+   "volLiq": 3.6,
+   "baseScore": 45,
+   "liqPctMc": 46.8,
+   "ch24h": -41.67,
+   "narratives": [],
+   "estFeesSol": 5.08,
+   "priceUsd": 2.464e-05,
+   "socials": [
+    "https://x.com/ArgusScan"
+   ],
+   "websites": [
+    "https://argusscan.app/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/w8v8bzczfhba8tukthbsvgqjrvstfwugxqy7oq6nr2h",
+    "pumpfun": "https://pump.fun/coin/GnZdVkGALyUgoNA5PARXkxpWSKnBq32Tcb5Vh8hjpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=GnZdVkGALyUgoNA5PARXkxpWSKnBq32Tcb5Vh8hjpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/GnZdVkGALyUgoNA5PARXkxpWSKnBq32Tcb5Vh8hjpump",
+    "fomo": "https://fomo.family/tokens/solana/GnZdVkGALyUgoNA5PARXkxpWSKnBq32Tcb5Vh8hjpump",
+    "axiom": "https://axiom.trade/t/GnZdVkGALyUgoNA5PARXkxpWSKnBq32Tcb5Vh8hjpump?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=GnZdVkGALyUgoNA5PARXkxpWSKnBq32Tcb5Vh8hjpump",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24ARGUS&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=ARGUS"
+   },
+   "top10Pct": 21.93,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 1,
+    "transferFeePct": 0,
+    "graphInsiders": 0,
+    "danger": []
+   },
+   "dev": {
+    "wallet": "HR8sC39zgH3sLdRQbXRGSVoFNjKUwM5LJq8xLB6z464R",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/HR8sC39zgH3sLdRQbXRGSVoFNjKUwM5LJq8xLB6z464R",
+     "pumpfun": "https://pump.fun/profile/HR8sC39zgH3sLdRQbXRGSVoFNjKUwM5LJq8xLB6z464R"
+    },
+    "funder": "u6PJ8DtQuPFnfmwHbGFULQ4u4EgjDiyYKjVEsynXq2w",
+    "firstTs": 1793229942,
+    "maxTxDay": 3,
+    "devTxCount": 4,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 5.08,
+    "maxSingleHolderPct": 4.15,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     4.2,
+     3.5,
+     2.0,
+     1.8,
+     1.8
+    ],
+    "top5Pct": 13.3,
+    "count": 689,
+    "whalePct": 7.6,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 29,
+    "botN": "2/7",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 29,
+    "freshN": "2/7"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 11493,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "insightx": {
+    "cluster": 4.16,
+    "sniper": 0.02,
+    "bundler": 0.0,
+    "dev": 0.0,
+    "insider": 0.0,
+    "top10": 20.24
+   },
+   "safety": {
+    "status": "PASS",
+    "pass": true,
+    "fails": [],
+    "warns": [],
+    "oks": [
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "InsightX"
+    ],
+    "pct": {
+     "sniper": 0.0,
+     "bundler": 0.0,
+     "insider": 0.0,
+     "dev": 0.0,
+     "cluster": 4.2
+    },
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "scoreUncapped": 45,
+   "scoreCapped": false,
+   "score": 45,
+   "findings": [
+    [
+     "amber",
+     "29% bot-like holders (2/7 of top holders)"
+    ]
+   ],
+   "chartAth": {
+    "price": 5.107232628617952e-05,
+    "mc": 51087,
+    "t": 1793234100,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1793233832,
+    "mc": 17898.16
+   },
+   "odds": {
+    "n": 89,
+    "x2": 27,
+    "rug": 60
+   },
+   "signalAt": 1793235747
+  },
+  {
+   "symbol": "BIO",
+   "name": "BIO999",
+   "chain": "solana",
+   "mint": "7AxJJTaJumkDRCJNz4n8ixobaPjrmL6GmxexuJKDpump",
+   "dex": "pumpswap",
+   "pair": "2Zc3eR12d4x67pbemWWg75Wy8F4ARkULvXQu5krGC13L",
+   "mcap": 100048,
+   "liq": 27089.3,
+   "vol": 719595.33,
+   "window": "h1",
+   "buys": 7383,
+   "sells": 6041,
+   "ch5m": 15.43,
+   "ch1h": 130,
+   "ageH": 0.68,
+   "description": "Conscious AGI bio-organism exploring synthetic consciousness and digital biology, a virtual entity evolving its identity, capable of morphing into any lifeform.",
+   "ctoProfile": false,
+   "volLiq": 26.6,
+   "baseScore": 73,
+   "liqPctMc": 27.1,
+   "ch24h": 130,
+   "narratives": [
+    "AI / Agents"
+   ],
+   "estFeesSol": 88.3,
+   "priceUsd": 0.0001034,
+   "socials": [
+    "https://x.com/esotericpigeon/status/2115599048594137569?a=8d-eQkoqsyy5To6DM3g&s=20"
+   ],
+   "websites": [
+    "https://bio-999.com/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/2zc3er12d4x67pbemwwg75wy8f4arkulvxqu5krgc13l",
+    "pumpfun": "https://pump.fun/coin/7AxJJTaJumkDRCJNz4n8ixobaPjrmL6GmxexuJKDpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=7AxJJTaJumkDRCJNz4n8ixobaPjrmL6GmxexuJKDpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/7AxJJTaJumkDRCJNz4n8ixobaPjrmL6GmxexuJKDpump",
+    "fomo": "https://fomo.family/tokens/solana/7AxJJTaJumkDRCJNz4n8ixobaPjrmL6GmxexuJKDpump",
+    "axiom": "https://axiom.trade/t/7AxJJTaJumkDRCJNz4n8ixobaPjrmL6GmxexuJKDpump?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=7AxJJTaJumkDRCJNz4n8ixobaPjrmL6GmxexuJKDpump",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24BIO&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=BIO"
+   },
+   "top10Pct": 21.18,
+   "clusterPct": 7.13,
+   "clusterSource": "rugcheck_insider_networks",
+   "clusters": [],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 29,
+    "transferFeePct": 0,
+    "graphInsiders": 15,
+    "danger": []
+   },
+   "dev": {
+    "wallet": "AhwvgNV6G4YvHDQ6dFZxsNGJwjA5qVpKvWS32rCZz6rN",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [
+     "Copycat token"
+    ],
+    "links": {
+     "solscan": "https://solscan.io/account/AhwvgNV6G4YvHDQ6dFZxsNGJwjA5qVpKvWS32rCZz6rN",
+     "pumpfun": "https://pump.fun/profile/AhwvgNV6G4YvHDQ6dFZxsNGJwjA5qVpKvWS32rCZz6rN"
+    },
+    "funder": null,
+    "firstTs": 1793233102,
+    "maxTxDay": 933,
+    "devTxCount": 933,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 88.3,
+    "maxSingleHolderPct": 3.47,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "sad-coral-warthog",
+      "size": 5,
+      "type": "transfer"
+     },
+     {
+      "id": "hungry-violet-raven",
+      "size": 4,
+      "type": "transfer"
+     },
+     {
+      "id": "tender-brick-termite",
+      "size": 6,
+      "type": "transfer"
+     }
+    ]
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     3.5,
+     3.1,
+     2.3,
+     1.9,
+     1.9
+    ],
+    "top5Pct": 12.7,
+    "count": 2780,
+    "whalePct": 8.9,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 7.13
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 88,
+    "botN": "7/8",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 0,
+    "freshN": "0/8"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 24296,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "insightx": {
+    "cluster": 2.64,
+    "sniper": 0.14,
+    "bundler": 1.75,
+    "dev": 0.0,
+    "insider": 0.03,
+    "top10": 17.7
+   },
+   "safety": {
+    "status": "FAIL",
+    "pass": false,
+    "fails": [
+     "88% bot-like top holders"
+    ],
+    "warns": [
+     "15 insider wallets (rugcheck graph)"
+    ],
+    "oks": [
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "InsightX"
+    ],
+    "pct": {
+     "sniper": 0.1,
+     "bundler": 1.8,
+     "insider": 0.0,
+     "dev": 0.0,
+     "cluster": 2.6
+    },
+    "scoreAdj": -10
+   },
+   "gmgnScore": -10,
+   "scoreUncapped": 63,
+   "scoreCapped": true,
+   "score": 40,
+   "findings": [
+    [
+     "red",
+     "88% bot-like holders (7/8 of top holders)"
+    ],
+    [
+     "amber",
+     "volume 26.6x liquidity, possibly inflated"
+    ]
+   ],
+   "chartAth": {
+    "price": 0.0001827081016060446,
+    "mc": 176785,
+    "t": 1793234400,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1793233832,
+    "mc": 59376
+   },
+   "odds": {
+    "n": 89,
+    "x2": 27,
+    "rug": 60
+   },
+   "signalAt": 1793235747
+  },
+  {
    "symbol": "garry",
    "name": "the runner",
    "chain": "solana",
