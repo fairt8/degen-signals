@@ -3,6 +3,189 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "MIGRATE",
+   "name": "Migrate It",
+   "chain": "solana",
+   "mint": "GkF9DkVJfrFNDet7RMutqkN3UyWSicDuVmGb6huXSLeR",
+   "dex": "raydium",
+   "pair": "FJDELRM5gRYNPxTTNfugisXx3UANgDiCoRd9tA3sKCom",
+   "mcap": 26788,
+   "liq": 14440.72,
+   "vol": 207966.24,
+   "window": "h1",
+   "buys": 2582,
+   "sells": 2238,
+   "ch5m": 5.84,
+   "ch1h": -35.01,
+   "ageH": 0.37,
+   "description": "Migrate It moves a pumpfun coin to StonkFun together with its holders. Holders pledge to a public escrow and once the threshold is hit one bundle buys the new coin with all the Solana.",
+   "ctoProfile": false,
+   "volLiq": 14.4,
+   "baseScore": 48,
+   "liqPctMc": 53.9,
+   "ch24h": -35.01,
+   "narratives": [],
+   "estFeesSol": null,
+   "priceUsd": 2.678e-05,
+   "socials": [
+    "https://x.com/migrateitapp"
+   ],
+   "websites": [
+    "https://migrateit.app/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/fjdelrm5grynpxttnfugisxx3uangdicord9ta3skcom",
+    "pumpfun": "https://pump.fun/coin/GkF9DkVJfrFNDet7RMutqkN3UyWSicDuVmGb6huXSLeR",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=GkF9DkVJfrFNDet7RMutqkN3UyWSicDuVmGb6huXSLeR&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/GkF9DkVJfrFNDet7RMutqkN3UyWSicDuVmGb6huXSLeR",
+    "fomo": "https://fomo.family/tokens/solana/GkF9DkVJfrFNDet7RMutqkN3UyWSicDuVmGb6huXSLeR",
+    "axiom": "https://axiom.trade/t/GkF9DkVJfrFNDet7RMutqkN3UyWSicDuVmGb6huXSLeR?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=GkF9DkVJfrFNDet7RMutqkN3UyWSicDuVmGb6huXSLeR",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24MIGRATE&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=MIGRATE"
+   },
+   "top10Pct": 19.24,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 1,
+    "transferFeePct": 0,
+    "graphInsiders": 0,
+    "danger": []
+   },
+   "dev": {
+    "wallet": null,
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": null,
+    "riskNames": [],
+    "links": {
+     "solscan": null,
+     "pumpfun": null
+    }
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": null,
+    "maxSingleHolderPct": 2.38,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     2.4,
+     2.2,
+     2.1,
+     2.0,
+     1.9
+    ],
+    "top5Pct": 10.6,
+    "count": 1440,
+    "whalePct": 8.7,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 100,
+    "botN": "10/10",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 0,
+    "freshN": "0/10"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "raydium_cpmm",
+    "src": "rugcheck",
+    "lockedUsd": 14666,
+    "unlock": null,
+    "lpUsd": 14666,
+    "status": "locked",
+    "lockPct": 96.2,
+    "label": "\ud83d\udd12 Locked 100%"
+   },
+   "insightx": {
+    "cluster": 0.0,
+    "sniper": 0.0,
+    "bundler": 0.0,
+    "dev": 0.0,
+    "insider": 0.0,
+    "top10": 15.91
+   },
+   "safety": {
+    "status": "FAIL",
+    "pass": false,
+    "fails": [
+     "100% bot-like top holders"
+    ],
+    "warns": [],
+    "oks": [
+     "mint+freeze revoked",
+     "LP locked"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "InsightX"
+    ],
+    "pct": {
+     "sniper": 0.0,
+     "bundler": 0.0,
+     "insider": 0.0,
+     "dev": 0.0,
+     "cluster": 0.0
+    },
+    "scoreAdj": -10
+   },
+   "gmgnScore": -10,
+   "scoreUncapped": 38,
+   "scoreCapped": false,
+   "score": 38,
+   "findings": [
+    [
+     "red",
+     "100% bot-like holders (10/10 of top holders)"
+    ]
+   ],
+   "chartAth": {
+    "price": 9.914567120674856e-05,
+    "mc": 99184,
+    "t": 1793117700,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1793118655,
+    "mc": 26788
+   },
+   "odds": {
+    "n": 85,
+    "x2": 26,
+    "rug": 62
+   },
+   "signalAt": 1793118703
+  },
+  {
    "symbol": "TGC",
    "name": " Titty Gigas Coin",
    "chain": "solana",
