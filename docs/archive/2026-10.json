@@ -11572,6 +11572,71 @@
  ],
  "journal": [
   {
+   "mint": "YE2mBZx8sL1bhfWpoR9dPAozmKhGE8eKa4sEEQ5pump",
+   "symbol": "NEETOPIA",
+   "chain": "solana",
+   "t0": 1792410389,
+   "price0": 7.42e-05,
+   "mcap0": 71531,
+   "score": 61,
+   "devScore": -5,
+   "link": "https://dexscreener.com/solana/7qsqastv2ifaogwqdzovctjtsr5ayhkvubfubu1kj4sm",
+   "maxPrice": 7.42e-05,
+   "samples": [],
+   "trend": "up",
+   "h1": {
+    "price": 5.282e-05,
+    "pct": -28.8,
+    "maxX": 1.0
+   },
+   "h24": {
+    "price": 1.644e-05,
+    "pct": -77.8,
+    "maxX": 1.0
+   },
+   "hit2x": false,
+   "hit5x": false,
+   "msgId": {
+    "1318404489": 292,
+    "-1004348482526": 1726
+   },
+   "athMc": null,
+   "athT": null,
+   "lp": {
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
+    "pct": 100,
+    "unlock": null,
+    "t": 1793005314,
+    "pctMax": 100,
+    "liq": 4417.89,
+    "liqMax": 22689.92
+   },
+   "last": 1.644e-05,
+   "lastT": 1792497774,
+   "minPrice": 9.639e-06,
+   "lastPct": -77.8,
+   "milestones": {},
+   "lpEvents": {},
+   "safety": {
+    "status": "WARN",
+    "reasons": [
+     "rugcheck: Creator history of rugged tokens",
+     "5 insider wallets (rugcheck graph)",
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "pct": {
+     "insider": 0
+    },
+    "sources": [
+     "rugcheck",
+     "LP"
+    ],
+    "backfilled": true
+   }
+  },
+  {
    "mint": "BVpFpksfdEwDgaUhZxdG8kSyfAekeYfKV4BdUfNJpump",
    "symbol": "SPSI",
    "chain": "solana",
