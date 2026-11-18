@@ -12148,6 +12148,72 @@
  ],
  "journal": [
   {
+   "mint": "FoV6PirGWo82XtC9QdcXy9ezEo3LKKjWAJrTt8GFpump",
+   "symbol": "Tengu",
+   "chain": "solana",
+   "t0": 1792431989,
+   "price0": 4.106e-05,
+   "mcap0": 40985,
+   "score": 60,
+   "devScore": 0,
+   "link": "https://dexscreener.com/solana/adqrw4oerebey5xpsjnpixphc6encncfek3lmmvs3gmt",
+   "maxPrice": 7.495160453922034e-05,
+   "samples": [],
+   "trend": "fading",
+   "h1": {
+    "price": 3.561e-06,
+    "pct": -91.3,
+    "maxX": 1.83
+   },
+   "h24": {
+    "price": 3.696e-06,
+    "pct": -91.0,
+    "maxX": 1.83
+   },
+   "hit2x": false,
+   "hit5x": false,
+   "msgId": {
+    "1318404489": 310,
+    "-1004348482526": 1744
+   },
+   "athMc": 71473,
+   "athT": 1792431900,
+   "lp": {
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
+    "pct": 100,
+    "unlock": null,
+    "t": 1793025304,
+    "pctMax": 100,
+    "liq": 2127.1,
+    "liqMax": 15625.61
+   },
+   "last": 3.696e-06,
+   "lastT": 1792519215,
+   "maxSrc": "chart",
+   "athSrc": "chart",
+   "chartT": 1792511187,
+   "minPrice": 2.967e-06,
+   "lastPct": -91.0,
+   "milestones": {},
+   "lpEvents": {},
+   "safety": {
+    "status": "PASS",
+    "reasons": [
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "pct": {
+     "insider": 0
+    },
+    "sources": [
+     "rugcheck",
+     "LP"
+    ],
+    "backfilled": true
+   }
+  },
+  {
    "mint": "h2eZNEC4E4nUSDHtbgCkU46idD9BCvj7qwXZmyppump",
    "symbol": "Octo",
    "chain": "solana",
