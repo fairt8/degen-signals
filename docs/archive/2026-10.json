@@ -3,6 +3,191 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "MULTI",
+   "name": "multiple.cash",
+   "chain": "solana",
+   "mint": "9XwcqFsLTshVo7QwWyNmjVBsB982EW9C4YotSbpoxYYi",
+   "dex": "raydium",
+   "pair": "JCA7j5pcdJyxjVyqcmfQKHJaQ2jfnrNRUiLq3fJLj57X",
+   "mcap": 175748,
+   "liq": 35852.06,
+   "vol": 523908.04,
+   "window": "h1",
+   "buys": 6087,
+   "sells": 4242,
+   "ch5m": 20.84,
+   "ch1h": 41.27,
+   "ageH": 1.18,
+   "description": "Every coin trades Raydium Perps",
+   "ctoProfile": false,
+   "volLiq": 17.7,
+   "baseScore": 70,
+   "liqPctMc": 20.4,
+   "ch24h": 356,
+   "narratives": [],
+   "estFeesSol": 78.97,
+   "priceUsd": 0.0001787,
+   "socials": [
+    "https://x.com/multiplecash"
+   ],
+   "websites": [
+    "https://multiple.cash"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/jca7j5pcdjyxjvyqcmfqkhjaq2jfnrnruilq3fjlj57x",
+    "pumpfun": "https://pump.fun/coin/9XwcqFsLTshVo7QwWyNmjVBsB982EW9C4YotSbpoxYYi",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=9XwcqFsLTshVo7QwWyNmjVBsB982EW9C4YotSbpoxYYi&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/9XwcqFsLTshVo7QwWyNmjVBsB982EW9C4YotSbpoxYYi",
+    "fomo": "https://fomo.family/tokens/solana/9XwcqFsLTshVo7QwWyNmjVBsB982EW9C4YotSbpoxYYi",
+    "axiom": "https://axiom.trade/t/9XwcqFsLTshVo7QwWyNmjVBsB982EW9C4YotSbpoxYYi?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=9XwcqFsLTshVo7QwWyNmjVBsB982EW9C4YotSbpoxYYi",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24MULTI&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=MULTI"
+   },
+   "top10Pct": 17.37,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 1,
+    "transferFeePct": 0,
+    "graphInsiders": 0,
+    "danger": []
+   },
+   "dev": {
+    "wallet": null,
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": null,
+    "riskNames": [],
+    "links": {
+     "solscan": null,
+     "pumpfun": null
+    }
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 78.97,
+    "maxSingleHolderPct": 3.23,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     3.2,
+     2.4,
+     2.1,
+     1.6,
+     1.6
+    ],
+    "top5Pct": 10.9,
+    "count": 2860,
+    "whalePct": 7.8,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 56,
+    "botN": "5/9",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 33,
+    "freshN": "3/9"
+   },
+   "lp": {
+    "pct": 100.0,
+    "market": "raydium_cpmm",
+    "src": "rugcheck",
+    "lockedUsd": 35951,
+    "unlock": null,
+    "lpUsd": 35951,
+    "status": "locked",
+    "lockPct": 100.0,
+    "label": "\ud83d\udd12 Locked 100.0%"
+   },
+   "insightx": {
+    "cluster": 7.6,
+    "sniper": 0.0,
+    "bundler": 3.54,
+    "dev": 0.0,
+    "insider": 0.01,
+    "top10": 16.15
+   },
+   "safety": {
+    "status": "PASS",
+    "pass": true,
+    "fails": [],
+    "warns": [],
+    "oks": [
+     "mint+freeze revoked",
+     "LP locked"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "InsightX"
+    ],
+    "pct": {
+     "sniper": 0.0,
+     "bundler": 3.5,
+     "insider": 0.0,
+     "dev": 0.0,
+     "cluster": 7.6
+    },
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "scoreUncapped": 70,
+   "scoreCapped": true,
+   "score": 40,
+   "findings": [
+    [
+     "red",
+     "56% bot-like holders (5/9 of top holders)"
+    ],
+    [
+     "amber",
+     "33% fresh wallets (first tx \u22647d before launch) (3/9 of top holders)"
+    ]
+   ],
+   "chartAth": {
+    "price": 0.00028634998214743714,
+    "mc": 281620,
+    "t": 1793271000,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1793270732,
+    "mc": 114161
+   },
+   "odds": {
+    "n": 97,
+    "x2": 26,
+    "rug": 61
+   },
+   "signalAt": 1793274375
+  },
+  {
    "symbol": "MAS",
    "name": "Masbot",
    "chain": "solana",
@@ -14141,6 +14326,72 @@
   }
  ],
  "journal": [
+  {
+   "mint": "USEu5qroduzuvrSZfvs3xM1MwyU83joapQF5LMyWiSP",
+   "symbol": "WiSP",
+   "chain": "solana",
+   "t0": 1792509638,
+   "price0": 6.184e-05,
+   "mcap0": 57636,
+   "score": 61,
+   "devScore": 0,
+   "link": "https://dexscreener.com/solana/3jb5p1dycatrbhubz4xukecibixyusrsgf83fvim2acc",
+   "maxPrice": 0.00011064180058686793,
+   "samples": [],
+   "trend": "fading",
+   "h1": {
+    "price": 6.673e-05,
+    "pct": 7.9,
+    "maxX": 1.79
+   },
+   "h24": {
+    "price": 5.443e-05,
+    "pct": -12.0,
+    "maxX": 1.79
+   },
+   "hit2x": false,
+   "hit5x": false,
+   "msgId": {
+    "1318404489": 399,
+    "-1004348482526": 1828
+   },
+   "athMc": 218510,
+   "athT": 1792507200,
+   "lp": {
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
+    "pct": 100,
+    "unlock": null,
+    "t": 1793112479,
+    "pctMax": 100,
+    "liq": 16649.42,
+    "liqMax": 35939.64
+   },
+   "last": 5.443e-05,
+   "lastT": 1792605679,
+   "athSrc": "chart",
+   "chartT": 1792605679,
+   "minPrice": 1.988e-05,
+   "lastPct": -12.0,
+   "milestones": {},
+   "maxSrc": "chart",
+   "lpEvents": {},
+   "safety": {
+    "status": "PASS",
+    "reasons": [
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "pct": {
+     "insider": 0
+    },
+    "sources": [
+     "rugcheck",
+     "LP"
+    ],
+    "backfilled": true
+   }
+  },
   {
    "mint": "FvWz1LVYNzGfLpXEYTrdzArWpRVhMpS7Pm3RPKcvpump",
    "symbol": "NARUTO",
