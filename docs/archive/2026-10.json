@@ -3,6 +3,402 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "SOLHYPE",
+   "name": "Solhype",
+   "chain": "solana",
+   "mint": "HA479B5zxyLPsV6rUo8PzoYKK2WCDZhJojJuqdx9pump",
+   "dex": "pumpswap",
+   "pair": "FtsFRT4PNYpKCD3T9KEnw7WruVsjYVgo9MSv8ZqSRFnr",
+   "mcap": 61847,
+   "liq": 21349.67,
+   "vol": 869183.71,
+   "window": "h1",
+   "buys": 9039,
+   "sells": 6442,
+   "ch5m": 13.62,
+   "ch1h": 50.67,
+   "ageH": 0.85,
+   "description": "Launched by Co-founder Xulian",
+   "ctoProfile": false,
+   "volLiq": 40.7,
+   "baseScore": 69,
+   "liqPctMc": 34.5,
+   "ch24h": 50.67,
+   "narratives": [],
+   "estFeesSol": null,
+   "priceUsd": 6.43e-05,
+   "socials": [
+    "https://x.com/skrootimburg/status/2115940417602548206"
+   ],
+   "websites": [
+    "https://github.com/hyperliquid-dex/hyperliquid-python-sdk/pull/335/changes/3ebc9c8ee9eacde72c294198bd88397cfeae953e"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/ftsfrt4pnypkcd3t9kenw7wruvsjyvgo9msv8zqsrfnr",
+    "pumpfun": "https://pump.fun/coin/HA479B5zxyLPsV6rUo8PzoYKK2WCDZhJojJuqdx9pump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=HA479B5zxyLPsV6rUo8PzoYKK2WCDZhJojJuqdx9pump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/HA479B5zxyLPsV6rUo8PzoYKK2WCDZhJojJuqdx9pump",
+    "fomo": "https://fomo.family/tokens/solana/HA479B5zxyLPsV6rUo8PzoYKK2WCDZhJojJuqdx9pump",
+    "axiom": "https://axiom.trade/t/HA479B5zxyLPsV6rUo8PzoYKK2WCDZhJojJuqdx9pump?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=HA479B5zxyLPsV6rUo8PzoYKK2WCDZhJojJuqdx9pump",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24SOLHYPE&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=SOLHYPE"
+   },
+   "top10Pct": 19.39,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 1,
+    "transferFeePct": 0,
+    "graphInsiders": 0,
+    "danger": []
+   },
+   "dev": {
+    "wallet": "HYPE319HzKBUQdoyj1KXXWE3Q7W86b1KiEAYvefuTRVJ",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/HYPE319HzKBUQdoyj1KXXWE3Q7W86b1KiEAYvefuTRVJ",
+     "pumpfun": "https://pump.fun/profile/HYPE319HzKBUQdoyj1KXXWE3Q7W86b1KiEAYvefuTRVJ"
+    },
+    "funder": "iGdFcQoyR2MwbXMHQskhmNsqddZ6rinsipHc4TNSdwu",
+    "firstTs": 1793306428,
+    "maxTxDay": 15,
+    "devTxCount": 15,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": null,
+    "maxSingleHolderPct": 3.13,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     3.1,
+     2.6,
+     2.3,
+     1.9,
+     1.9
+    ],
+    "top5Pct": 11.9,
+    "count": 3003,
+    "whalePct": 8.0,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 100,
+    "botN": "8/8",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 25,
+    "freshN": "2/8"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 19720,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "insightx": {
+    "cluster": 0.69,
+    "sniper": 0.0,
+    "bundler": 0.0,
+    "dev": 0.0,
+    "insider": 0.0,
+    "top10": 18.04
+   },
+   "safety": {
+    "status": "FAIL",
+    "pass": false,
+    "fails": [
+     "100% bot-like top holders"
+    ],
+    "warns": [],
+    "oks": [
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "InsightX"
+    ],
+    "pct": {
+     "sniper": 0.0,
+     "bundler": 0.0,
+     "insider": 0.0,
+     "dev": 0.0,
+     "cluster": 0.7
+    },
+    "scoreAdj": -10
+   },
+   "gmgnScore": -10,
+   "scoreUncapped": 59,
+   "scoreCapped": true,
+   "score": 40,
+   "findings": [
+    [
+     "red",
+     "100% bot-like holders (8/8 of top holders)"
+    ],
+    [
+     "red",
+     "volume 40.7x liquidity, possibly inflated"
+    ]
+   ],
+   "chartAth": {
+    "price": 0.00033312888602420255,
+    "mc": 320420,
+    "t": 1793314800,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1793314832,
+    "mc": 142184
+   },
+   "odds": {
+    "n": 101,
+    "x2": 26,
+    "rug": 62
+   },
+   "signalAt": 1793316695
+  },
+  {
+   "symbol": "CATPOOP",
+   "name": "Catpoop Coin",
+   "chain": "solana",
+   "mint": "7eCffjPZzRqFFDog8RN5cWsu2JNRH4Qm1iMPAREUpump",
+   "dex": "pumpswap",
+   "pair": "13M9hXfR8ZnJAsN54Jdxf1PMHgUjygEuCZuWjvVz8JJt",
+   "mcap": 147217,
+   "liq": 31507.07,
+   "vol": 282802.25,
+   "window": "h1",
+   "buys": 3874,
+   "sells": 2359,
+   "ch5m": 16.09,
+   "ch1h": 232,
+   "ageH": 0.92,
+   "description": "Charts green, coffee spilled, zero regrets\u2014Catpoop Coin is making a mess in the crypto trenches. \ud83d\udc31\ud83d\udca9\ud83d\udcc8",
+   "ctoProfile": false,
+   "volLiq": 9.0,
+   "baseScore": 76,
+   "liqPctMc": 21.4,
+   "ch24h": 232,
+   "narratives": [
+    "Animals"
+   ],
+   "estFeesSol": 34.81,
+   "priceUsd": 0.0001496,
+   "socials": [
+    "https://x.com/catpoopcoins"
+   ],
+   "websites": [
+    "https://catpoopcoin.site"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/13m9hxfr8znjasn54jdxf1pmhgujygeuczuwjvvz8jjt",
+    "pumpfun": "https://pump.fun/coin/7eCffjPZzRqFFDog8RN5cWsu2JNRH4Qm1iMPAREUpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=7eCffjPZzRqFFDog8RN5cWsu2JNRH4Qm1iMPAREUpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/7eCffjPZzRqFFDog8RN5cWsu2JNRH4Qm1iMPAREUpump",
+    "fomo": "https://fomo.family/tokens/solana/7eCffjPZzRqFFDog8RN5cWsu2JNRH4Qm1iMPAREUpump",
+    "axiom": "https://axiom.trade/t/7eCffjPZzRqFFDog8RN5cWsu2JNRH4Qm1iMPAREUpump?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=7eCffjPZzRqFFDog8RN5cWsu2JNRH4Qm1iMPAREUpump",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24CATPOOP&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=CATPOOP"
+   },
+   "top10Pct": 5.15,
+   "clusterPct": 3.61,
+   "clusterSource": "rpc_common_funder",
+   "clusters": [
+    {
+     "funder": "BYft5jRXBzBCnHveUnuAZvzxdVnrroEbw8QZDejNBLz7",
+     "wallets": [
+      "7RbhBgZmmge8X3wZa6WGxz4LkpzV39vb6Bg1bS6gLW2E",
+      "7yr51YczXhNi13EYJ7mbpyxDehubyYrvyaMwBf3EgDMa",
+      "4J6ER32sH43o1Us2bVCaKHfkpML6kNRHQgjQvPb98wX7",
+      "76LgCar4LfcsnJB23mmJMY9PwmtpcS3UkdeK17xqhF3g",
+      "2DAQaQytDNZXWggzRKmc3p2HyLF5tBcjBNoiF21iNnB7",
+      "9SY4duCfhVidnyjVCtQYyikau3vDKwfH4NiQJeqWGrte",
+      "2rwbWumRBw3SzLHZRukxR599QaSFCcbovNksGHK7hd7B"
+     ],
+     "pct": 3.61
+    }
+   ],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 1,
+    "transferFeePct": 0,
+    "graphInsiders": 0,
+    "danger": []
+   },
+   "dev": {
+    "wallet": "FGgL3g6mpCK6PYFVYG9zvYUBPTsKacWtrLMAWx1FrLL2",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/FGgL3g6mpCK6PYFVYG9zvYUBPTsKacWtrLMAWx1FrLL2",
+     "pumpfun": "https://pump.fun/profile/FGgL3g6mpCK6PYFVYG9zvYUBPTsKacWtrLMAWx1FrLL2"
+    },
+    "funder": null,
+    "firstTs": 1793291322,
+    "maxTxDay": 18,
+    "devTxCount": 18,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 34.81,
+    "maxSingleHolderPct": 0.54,
+    "freshWallets": 9,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     0.5,
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ],
+    "top5Pct": 2.6,
+    "count": 3095,
+    "whalePct": 0,
+    "insiderPct": 0,
+    "freshWallets": 9,
+    "clusterPct": 3.61
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 0,
+    "botN": "0/10",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 100,
+    "freshN": "10/10"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 31093,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "insightx": {
+    "cluster": 70.32,
+    "sniper": 0.0,
+    "bundler": 0.39,
+    "dev": 0.0,
+    "insider": 0.89,
+    "top10": 4.23
+   },
+   "safety": {
+    "status": "FAIL",
+    "pass": false,
+    "fails": [
+     "clustered 70.3% > 25%"
+    ],
+    "warns": [],
+    "oks": [
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "InsightX"
+    ],
+    "pct": {
+     "sniper": 0.0,
+     "bundler": 0.4,
+     "insider": 0.9,
+     "dev": 0.0,
+     "cluster": 70.3
+    },
+    "scoreAdj": -10
+   },
+   "gmgnScore": -10,
+   "scoreUncapped": 66,
+   "scoreCapped": false,
+   "score": 66,
+   "findings": [
+    [
+     "red",
+     "100% fresh wallets (first tx \u22647d before launch) (10/10 of top holders)"
+    ]
+   ],
+   "chartAth": {
+    "price": 0.0002234584828450509,
+    "mc": 219899,
+    "t": 1793292600,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1793293232,
+    "mc": 132402
+   },
+   "odds": {
+    "n": 99,
+    "x2": 25,
+    "rug": 61
+   },
+   "signalAt": 1793295146
+  },
+  {
    "symbol": "HI",
    "name": "HYPER INU",
    "chain": "solana",
