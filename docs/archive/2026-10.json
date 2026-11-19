@@ -3,6 +3,194 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "STABLEPAD",
+   "name": "StablePad",
+   "chain": "solana",
+   "mint": "AABM3NrYSwKMsEDyanuskY43EH6ySbPpdPZNG1u7pump",
+   "dex": "pumpswap",
+   "pair": "Ft7gMHMmbyeWZuYS8afp4Ung8bZugPG25YNonp8pbhcN",
+   "mcap": 28265,
+   "liq": 12735.64,
+   "vol": 97832.55,
+   "window": "h1",
+   "buys": 1737,
+   "sells": 1374,
+   "ch5m": 7.95,
+   "ch1h": -26.26,
+   "ageH": 0.7,
+   "description": "Bringing stablecoin/asset pairings from around the world to solana.",
+   "ctoProfile": false,
+   "volLiq": 7.7,
+   "baseScore": 54,
+   "liqPctMc": 45.1,
+   "ch24h": -26.26,
+   "narratives": [],
+   "estFeesSol": 12.5,
+   "priceUsd": 2.989e-05,
+   "socials": [
+    "https://x.com/stablepad_"
+   ],
+   "websites": [
+    "https://stablepad.io/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/ft7gmhmmbyewzuys8afp4ung8bzugpg25ynonp8pbhcn",
+    "pumpfun": "https://pump.fun/coin/AABM3NrYSwKMsEDyanuskY43EH6ySbPpdPZNG1u7pump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=AABM3NrYSwKMsEDyanuskY43EH6ySbPpdPZNG1u7pump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/AABM3NrYSwKMsEDyanuskY43EH6ySbPpdPZNG1u7pump",
+    "fomo": "https://fomo.family/tokens/solana/AABM3NrYSwKMsEDyanuskY43EH6ySbPpdPZNG1u7pump",
+    "axiom": "https://axiom.trade/t/AABM3NrYSwKMsEDyanuskY43EH6ySbPpdPZNG1u7pump?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=AABM3NrYSwKMsEDyanuskY43EH6ySbPpdPZNG1u7pump",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24STABLEPAD&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=STABLEPAD"
+   },
+   "top10Pct": 23.92,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 1,
+    "transferFeePct": 0,
+    "graphInsiders": 0,
+    "danger": []
+   },
+   "dev": {
+    "wallet": "EFJaAXjisTe4jkkFjE9hg1XMXetDNPZVHyEmjDP3g9KF",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/EFJaAXjisTe4jkkFjE9hg1XMXetDNPZVHyEmjDP3g9KF",
+     "pumpfun": "https://pump.fun/profile/EFJaAXjisTe4jkkFjE9hg1XMXetDNPZVHyEmjDP3g9KF"
+    },
+    "funder": "BmaDdWTUdKs4s6sk4o8XmWkWZ9Rw5xp4gYwpUWgdx2Ft",
+    "firstTs": 1793332799,
+    "maxTxDay": 101,
+    "devTxCount": 101,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 12.5,
+    "maxSingleHolderPct": 3.81,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     3.8,
+     3.6,
+     3.2,
+     2.6,
+     2.2
+    ],
+    "top5Pct": 15.4,
+    "count": 1481,
+    "whalePct": 15.4,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 71,
+    "botN": "5/7",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 14,
+    "freshN": "1/7"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 12349,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "insightx": {
+    "cluster": 0.0,
+    "sniper": 0.0,
+    "bundler": 0.0,
+    "dev": 0.0,
+    "insider": 0.0,
+    "top10": 22.44
+   },
+   "safety": {
+    "status": "FAIL",
+    "pass": false,
+    "fails": [
+     "71% bot-like top holders"
+    ],
+    "warns": [],
+    "oks": [
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "InsightX"
+    ],
+    "pct": {
+     "sniper": 0.0,
+     "bundler": 0.0,
+     "insider": 0.0,
+     "dev": 0.0,
+     "cluster": 0.0
+    },
+    "scoreAdj": -10
+   },
+   "gmgnScore": -10,
+   "scoreUncapped": 44,
+   "scoreCapped": true,
+   "score": 40,
+   "findings": [
+    [
+     "red",
+     "71% bot-like holders (5/7 of top holders)"
+    ]
+   ],
+   "chartAth": {
+    "price": 7.187223736315044e-05,
+    "mc": 67965,
+    "t": 1793342400,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1793338432,
+    "mc": 33466.12
+   },
+   "odds": {
+    "n": 103,
+    "x2": 25,
+    "rug": 63
+   },
+   "signalAt": 1793344581
+  },
+  {
    "symbol": "LIQUID",
    "name": "useliquid.org",
    "chain": "solana",
