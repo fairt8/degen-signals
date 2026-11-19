@@ -14518,6 +14518,78 @@
  ],
  "journal": [
   {
+   "mint": "3ovfq2cy9mtjhgXeZcKAJTazTJH2wGtvd4afJ8ckpump",
+   "symbol": "Duke",
+   "chain": "solana",
+   "t0": 1792518186,
+   "price0": 7.929e-05,
+   "mcap0": 79295,
+   "score": 64,
+   "devScore": 0,
+   "link": "https://dexscreener.com/solana/33rpikktvztf4u1chpv8l5sg4vwzwl1wy8ltpcbc2mu5",
+   "maxPrice": 9.613150034056983e-05,
+   "samples": [],
+   "trend": "fading",
+   "h1": {
+    "price": 5.433e-06,
+    "pct": -93.1,
+    "maxX": 1.21
+   },
+   "h24": {
+    "price": 2.619e-06,
+    "pct": -96.7,
+    "maxX": 1.21
+   },
+   "hit2x": false,
+   "hit5x": false,
+   "msgId": {
+    "1318404489": 411,
+    "-1004348482526": 1846
+   },
+   "gmgn": {
+    "status": "SKIPPED",
+    "reasons": [
+     "no GMGN_API_KEY; free router blocked by Cloudflare"
+    ]
+   },
+   "athMc": 105444,
+   "athT": 1792516800,
+   "lp": {
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
+    "pct": 100,
+    "unlock": null,
+    "t": 1793120450,
+    "pctMax": 100,
+    "liq": null,
+    "liqMax": 22758.83
+   },
+   "last": 2.619e-06,
+   "lastT": 1792605679,
+   "maxSrc": "chart",
+   "athSrc": "chart",
+   "chartT": 1792605679,
+   "minPrice": 2.616e-06,
+   "lastPct": -96.7,
+   "milestones": {},
+   "lpEvents": {},
+   "safety": {
+    "status": "PASS",
+    "reasons": [
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "pct": {
+     "insider": 0
+    },
+    "sources": [
+     "rugcheck",
+     "LP"
+    ],
+    "backfilled": true
+   }
+  },
+  {
    "mint": "7gUDvf45et6627atavR45Md4BjgYqJHMZe9EPqeR9Sya",
    "symbol": "ARTEMI",
    "chain": "solana",
