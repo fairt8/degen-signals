@@ -13339,6 +13339,74 @@
  ],
  "journal": [
   {
+   "mint": "FLafZPdHXH81dYNU3gADuzSb9ii9nCv6RNXxbEDvpump",
+   "symbol": "PACK",
+   "chain": "solana",
+   "t0": 1792455394,
+   "price0": 0.0001007,
+   "mcap0": 99357,
+   "score": 57,
+   "devScore": 0,
+   "link": "https://dexscreener.com/solana/bj8euaghwxbkvdtsh1qjqk1gmrgmqzkxcenhxqs2913j",
+   "maxPrice": 0.00017008336980748934,
+   "samples": [],
+   "trend": "fading",
+   "h1": {
+    "price": 8.109e-05,
+    "pct": -19.5,
+    "maxX": 1.69
+   },
+   "h24": {
+    "price": 3.426e-06,
+    "pct": -96.6,
+    "maxX": 1.69
+   },
+   "hit2x": false,
+   "hit5x": false,
+   "msgId": {
+    "1318404489": 334,
+    "-1004348482526": 1768
+   },
+   "athMc": 255667,
+   "athT": 1792451700,
+   "lp": {
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
+    "pct": 100,
+    "unlock": null,
+    "t": 1793059262,
+    "pctMax": 100,
+    "liq": 2935.45,
+    "liqMax": 29727.66
+   },
+   "last": 3.426e-06,
+   "lastT": 1792566181,
+   "athSrc": "chart",
+   "chartT": 1792566181,
+   "minPrice": 3.426e-06,
+   "lastPct": -96.6,
+   "milestones": {},
+   "maxSrc": "chart",
+   "lpEvents": {},
+   "safety": {
+    "status": "WARN",
+    "reasons": [
+     "rugcheck: Creator history of rugged tokens",
+     "23 insider wallets (rugcheck graph)",
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "pct": {
+     "insider": 0
+    },
+    "sources": [
+     "rugcheck",
+     "LP"
+    ],
+    "backfilled": true
+   }
+  },
+  {
    "mint": "wNedNtJcdFKtdLP4FwpgGgspd6J6fepyngEND53pump",
    "symbol": "NEWS",
    "chain": "solana",
