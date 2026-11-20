@@ -3,6 +3,403 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "P2P",
+   "name": "Peer to Peer",
+   "chain": "solana",
+   "mint": "8ANLUXihz9FrSy6Jbg85CGsuPCpPjf5S9ZUXNRG5pump",
+   "dex": "pumpswap",
+   "pair": "8EzXtricxU35cAigVYgAXN4mHgZvGJo3bFm2xQaoJVNw",
+   "mcap": 111994,
+   "liq": 26097.91,
+   "vol": 174554.06,
+   "window": "h1",
+   "buys": 2436,
+   "sells": 1842,
+   "ch5m": 32.46,
+   "ch1h": 178,
+   "ageH": 0.4,
+   "description": "A Peer-to-Peer desk for memecoins. Buy, sell, and make private offers on any bag without nuking the chart.",
+   "ctoProfile": false,
+   "volLiq": 6.7,
+   "baseScore": 69,
+   "liqPctMc": 23.3,
+   "ch24h": 178,
+   "narratives": [
+    "Meme culture"
+   ],
+   "estFeesSol": 23.09,
+   "priceUsd": 0.0001119,
+   "socials": [
+    "https://x.com/p2pventures"
+   ],
+   "websites": [
+    "https://p2p.ventures/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/8ezxtricxu35caigvygaxn4mhgzvgjo3bfm2xqaojvnw",
+    "pumpfun": "https://pump.fun/coin/8ANLUXihz9FrSy6Jbg85CGsuPCpPjf5S9ZUXNRG5pump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=8ANLUXihz9FrSy6Jbg85CGsuPCpPjf5S9ZUXNRG5pump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/8ANLUXihz9FrSy6Jbg85CGsuPCpPjf5S9ZUXNRG5pump",
+    "fomo": "https://fomo.family/tokens/solana/8ANLUXihz9FrSy6Jbg85CGsuPCpPjf5S9ZUXNRG5pump",
+    "axiom": "https://axiom.trade/t/8ANLUXihz9FrSy6Jbg85CGsuPCpPjf5S9ZUXNRG5pump?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=8ANLUXihz9FrSy6Jbg85CGsuPCpPjf5S9ZUXNRG5pump",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24P2P&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=P2P"
+   },
+   "top10Pct": 23.86,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 80,
+    "transferFeePct": 0,
+    "graphInsiders": 0,
+    "danger": [
+     "Creator history of rugged tokens"
+    ]
+   },
+   "dev": {
+    "wallet": "4LXAFVZUUTdcqLCmgHq2NZmgLB2arRxp9wuYVa6rnx5C",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 48,
+    "priorMigrated": 0,
+    "priorDead": 48,
+    "bestPriorMcap": 3776.0,
+    "rugHistory": true,
+    "launchpad": "Pump.Fun",
+    "riskNames": [
+     "Creator history of rugged tokens",
+     "Copycat token"
+    ],
+    "links": {
+     "solscan": "https://solscan.io/account/4LXAFVZUUTdcqLCmgHq2NZmgLB2arRxp9wuYVa6rnx5C",
+     "pumpfun": "https://pump.fun/profile/4LXAFVZUUTdcqLCmgHq2NZmgLB2arRxp9wuYVa6rnx5C"
+    },
+    "funder": null,
+    "firstTs": null,
+    "maxTxDay": 1217,
+    "devTxCount": 3000,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": -30,
+   "devNotes": [
+    "-20 dev rug history",
+    "-10 serial launcher (48/48 dead)"
+   ],
+   "extras": {
+    "estFeesSol": 23.09,
+    "maxSingleHolderPct": 3.66,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     3.7,
+     3.6,
+     2.9,
+     2.8,
+     2.4
+    ],
+    "top5Pct": 15.3,
+    "count": 1903,
+    "whalePct": 19.5,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 86,
+    "botN": "6/7",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 0,
+    "freshN": "0/7"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 28503,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "insightx": {
+    "cluster": 9.53,
+    "sniper": 0.0,
+    "bundler": 0.01,
+    "dev": 0.22,
+    "insider": 0.0,
+    "top10": 25.47
+   },
+   "safety": {
+    "status": "FAIL",
+    "pass": false,
+    "fails": [
+     "dev rug history",
+     "86% bot-like top holders"
+    ],
+    "warns": [
+     "rugcheck: Creator history of rugged tokens"
+    ],
+    "oks": [
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "InsightX"
+    ],
+    "pct": {
+     "sniper": 0.0,
+     "bundler": 0.0,
+     "insider": 0.0,
+     "dev": 0.2,
+     "cluster": 9.5
+    },
+    "scoreAdj": -10
+   },
+   "gmgnScore": -10,
+   "scoreUncapped": 29,
+   "scoreCapped": false,
+   "score": 29,
+   "findings": [
+    [
+     "red",
+     "86% bot-like holders (6/7 of top holders)"
+    ],
+    [
+     "red",
+     "dev has rug history"
+    ],
+    [
+     "red",
+     "dev launched 48 tokens, 48 dead"
+    ]
+   ],
+   "chartAth": {
+    "price": 0.0001718730096477534,
+    "mc": 172017,
+    "t": 1793536200,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1793533532,
+    "mc": 9772.26
+   },
+   "odds": {
+    "n": 112,
+    "x2": 27,
+    "rug": 63
+   },
+   "signalAt": 1793536418
+  },
+  {
+   "symbol": "tipr",
+   "name": "tipr",
+   "chain": "solana",
+   "mint": "3kRQDKPGqMWwBdGjiVPpPqVzFsnYG5PDqvrVz1D2pump",
+   "dex": "pumpswap",
+   "pair": "6qfkD7d8RaFVAn1FC76M5MtqAr3kHrHpxPwMQvL6Ndxt",
+   "mcap": 55236,
+   "liq": 17947.25,
+   "vol": 179671.41,
+   "window": "h1",
+   "buys": 3477,
+   "sells": 2439,
+   "ch5m": 27.91,
+   "ch1h": 41.92,
+   "ageH": 0.37,
+   "description": "turn token fees into tips. pair a token with an X handle and route fees directly to them.",
+   "ctoProfile": false,
+   "volLiq": 10.0,
+   "baseScore": 62,
+   "liqPctMc": 32.5,
+   "ch24h": 41.92,
+   "narratives": [],
+   "estFeesSol": 23.52,
+   "priceUsd": 5.529e-05,
+   "socials": [
+    "https://x.com/usetipr"
+   ],
+   "websites": [
+    "https://usetipr.app"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/6qfkd7d8rafvan1fc76m5mtqar3khrhpxpwmqvl6ndxt",
+    "pumpfun": "https://pump.fun/coin/3kRQDKPGqMWwBdGjiVPpPqVzFsnYG5PDqvrVz1D2pump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=3kRQDKPGqMWwBdGjiVPpPqVzFsnYG5PDqvrVz1D2pump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/3kRQDKPGqMWwBdGjiVPpPqVzFsnYG5PDqvrVz1D2pump",
+    "fomo": "https://fomo.family/tokens/solana/3kRQDKPGqMWwBdGjiVPpPqVzFsnYG5PDqvrVz1D2pump",
+    "axiom": "https://axiom.trade/t/3kRQDKPGqMWwBdGjiVPpPqVzFsnYG5PDqvrVz1D2pump?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=3kRQDKPGqMWwBdGjiVPpPqVzFsnYG5PDqvrVz1D2pump",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24tipr&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=tipr"
+   },
+   "top10Pct": 20.56,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 1,
+    "transferFeePct": 0,
+    "graphInsiders": 0,
+    "danger": []
+   },
+   "dev": {
+    "wallet": "77JdC3aJnBHr62wXM8H3C3tLhfUpcyDoFjcNagP19u1T",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/77JdC3aJnBHr62wXM8H3C3tLhfUpcyDoFjcNagP19u1T",
+     "pumpfun": "https://pump.fun/profile/77JdC3aJnBHr62wXM8H3C3tLhfUpcyDoFjcNagP19u1T"
+    },
+    "funder": "3DWChPvoktELiD7oT4xiGApR4YYvNmo5YAbuKfmTJJyZ",
+    "firstTs": 1793501941,
+    "maxTxDay": 32,
+    "devTxCount": 32,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 23.52,
+    "maxSingleHolderPct": 3.56,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     3.6,
+     3.2,
+     3.1,
+     2.3,
+     1.5
+    ],
+    "top5Pct": 13.8,
+    "count": 1782,
+    "whalePct": 12.3,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 100,
+    "botN": "8/8",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 0,
+    "freshN": "0/8"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 16754,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "insightx": {
+    "cluster": 1.43,
+    "sniper": 0.1,
+    "bundler": 0.26,
+    "dev": 0.0,
+    "insider": 0.0,
+    "top10": 15.71
+   },
+   "safety": {
+    "status": "FAIL",
+    "pass": false,
+    "fails": [
+     "100% bot-like top holders"
+    ],
+    "warns": [],
+    "oks": [
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "InsightX"
+    ],
+    "pct": {
+     "sniper": 0.1,
+     "bundler": 0.3,
+     "insider": 0.0,
+     "dev": 0.0,
+     "cluster": 1.4
+    },
+    "scoreAdj": -10
+   },
+   "gmgnScore": -10,
+   "scoreUncapped": 52,
+   "scoreCapped": true,
+   "score": 40,
+   "findings": [
+    [
+     "red",
+     "100% bot-like holders (8/8 of top holders)"
+    ]
+   ],
+   "chartAth": {
+    "price": 9.084946499037563e-05,
+    "mc": 90761,
+    "t": 1793504700,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1793503832,
+    "mc": 8814.98
+   },
+   "odds": {
+    "n": 111,
+    "x2": 26,
+    "rug": 64
+   },
+   "signalAt": 1793505701
+  },
+  {
    "symbol": "CHUDBOB",
    "name": "Chudbob",
    "chain": "solana",
