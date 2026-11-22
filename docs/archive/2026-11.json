@@ -3,6 +3,191 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "pumpcat",
+   "name": "pumpcat",
+   "chain": "solana",
+   "mint": "8KwLDzEDYdp9hP8YNsx29Kjzp3pNHTacQHdYgjibpump",
+   "dex": "pumpswap",
+   "pair": "8ng1Co6hgCQH9PT7ojVSMMNDg2ibRG6UkdmEDxTjjQin",
+   "mcap": 94791,
+   "liq": 25960.09,
+   "vol": 204769.13,
+   "window": "h1",
+   "buys": 2814,
+   "sells": 1890,
+   "ch5m": 11.59,
+   "ch1h": 116,
+   "ageH": 0.25,
+   "description": "pumpcat",
+   "ctoProfile": false,
+   "volLiq": 7.9,
+   "baseScore": 62,
+   "liqPctMc": 27.4,
+   "ch24h": 116,
+   "narratives": [],
+   "estFeesSol": null,
+   "priceUsd": 9.479e-05,
+   "socials": [
+    "https://x.com/heypumpcat",
+    "https://www.tiktok.com/@realpumpcat"
+   ],
+   "websites": [
+    "https://pump.fun/u/realpumpcat",
+    "https://www.tiktok.com/@realpumpcat"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/8ng1co6hgcqh9pt7ojvsmmndg2ibrg6ukdmedxtjjqin",
+    "pumpfun": "https://pump.fun/coin/8KwLDzEDYdp9hP8YNsx29Kjzp3pNHTacQHdYgjibpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=8KwLDzEDYdp9hP8YNsx29Kjzp3pNHTacQHdYgjibpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/8KwLDzEDYdp9hP8YNsx29Kjzp3pNHTacQHdYgjibpump",
+    "fomo": "https://fomo.family/tokens/solana/8KwLDzEDYdp9hP8YNsx29Kjzp3pNHTacQHdYgjibpump",
+    "axiom": "https://axiom.trade/t/8KwLDzEDYdp9hP8YNsx29Kjzp3pNHTacQHdYgjibpump?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=8KwLDzEDYdp9hP8YNsx29Kjzp3pNHTacQHdYgjibpump",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24pumpcat&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=pumpcat"
+   },
+   "top10Pct": 22.16,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 1,
+    "transferFeePct": 0,
+    "graphInsiders": 0,
+    "danger": []
+   },
+   "dev": {
+    "wallet": "APTxLuJ8uemtZufb9axXfwBsUdez3oTVJmBmf17Z5J12",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/APTxLuJ8uemtZufb9axXfwBsUdez3oTVJmBmf17Z5J12",
+     "pumpfun": "https://pump.fun/profile/APTxLuJ8uemtZufb9axXfwBsUdez3oTVJmBmf17Z5J12"
+    },
+    "funder": "HckQ93Xqjjo8mwt5pNPWvyCTZXQZ858rvzmm7ZRrZg9t",
+    "firstTs": 1793638774,
+    "maxTxDay": 101,
+    "devTxCount": 101,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": null,
+    "maxSingleHolderPct": 2.86,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     2.9,
+     2.6,
+     2.6,
+     2.4,
+     2.2
+    ],
+    "top5Pct": 12.6,
+    "count": 1852,
+    "whalePct": 16.8,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 75,
+    "botN": "6/8",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 12,
+    "freshN": "1/8"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 31079,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "insightx": {
+    "cluster": 4.92,
+    "sniper": 0.0,
+    "bundler": 0.0,
+    "dev": 0.0,
+    "insider": 0.0,
+    "top10": 17.94
+   },
+   "safety": {
+    "status": "FAIL",
+    "pass": false,
+    "fails": [
+     "75% bot-like top holders"
+    ],
+    "warns": [],
+    "oks": [
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "InsightX"
+    ],
+    "pct": {
+     "sniper": 0.0,
+     "bundler": 0.0,
+     "insider": 0.0,
+     "dev": 0.0,
+     "cluster": 4.9
+    },
+    "scoreAdj": -10
+   },
+   "gmgnScore": -10,
+   "scoreUncapped": 52,
+   "scoreCapped": true,
+   "score": 40,
+   "findings": [
+    [
+     "red",
+     "75% bot-like holders (6/8 of top holders)"
+    ]
+   ],
+   "chartAth": null,
+   "firstScan": {
+    "t": 1793639768,
+    "mc": 94791
+   },
+   "odds": {
+    "n": 119,
+    "x2": 27,
+    "rug": 63
+   },
+   "signalAt": 1793639786
+  },
+  {
    "symbol": "VICECITY",
    "name": "GTAVI CITY",
    "chain": "solana",
