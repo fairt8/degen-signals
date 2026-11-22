@@ -3,6 +3,194 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "SLM",
+   "name": "Solana Language Model",
+   "chain": "solana",
+   "mint": "B1FxS86N8hEBTgKMpt29yPB9VzPxXUgNY7AzdjGZpump",
+   "dex": "pumpswap",
+   "pair": "9EDDGSgtxnk4gVPZutY8zV15UHNL3ArZiNn4gtNNhNhw",
+   "mcap": 73586,
+   "liq": 20678.85,
+   "vol": 123138.71,
+   "window": "h1",
+   "buys": 1460,
+   "sells": 1224,
+   "ch5m": 6.15,
+   "ch1h": 90.89,
+   "ageH": 0.88,
+   "description": "SLM (Solana Language Model) is the first LLM with its brain (weights) stored and its thoughts (inference) generated entirely on the Solana blockchain.",
+   "ctoProfile": false,
+   "volLiq": 6.0,
+   "baseScore": 68,
+   "liqPctMc": 28.1,
+   "ch24h": 90.89,
+   "narratives": [
+    "AI / Agents"
+   ],
+   "estFeesSol": 16.84,
+   "priceUsd": 7.563e-05,
+   "socials": [
+    "https://x.com/chatslm_io"
+   ],
+   "websites": [
+    "https://chatslm.io/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/9eddgsgtxnk4gvpzuty8zv15uhnl3arzinn4gtnnhnhw",
+    "pumpfun": "https://pump.fun/coin/B1FxS86N8hEBTgKMpt29yPB9VzPxXUgNY7AzdjGZpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=B1FxS86N8hEBTgKMpt29yPB9VzPxXUgNY7AzdjGZpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/B1FxS86N8hEBTgKMpt29yPB9VzPxXUgNY7AzdjGZpump",
+    "fomo": "https://fomo.family/tokens/solana/B1FxS86N8hEBTgKMpt29yPB9VzPxXUgNY7AzdjGZpump",
+    "axiom": "https://axiom.trade/t/B1FxS86N8hEBTgKMpt29yPB9VzPxXUgNY7AzdjGZpump?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=B1FxS86N8hEBTgKMpt29yPB9VzPxXUgNY7AzdjGZpump",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24SLM&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=SLM"
+   },
+   "top10Pct": 20.69,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 1,
+    "transferFeePct": 0,
+    "graphInsiders": 0,
+    "danger": []
+   },
+   "dev": {
+    "wallet": "3PkAyL155cfUNz2roHp4ToPgBAzGQfem7wGYR1he6S7C",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/3PkAyL155cfUNz2roHp4ToPgBAzGQfem7wGYR1he6S7C",
+     "pumpfun": "https://pump.fun/profile/3PkAyL155cfUNz2roHp4ToPgBAzGQfem7wGYR1he6S7C"
+    },
+    "funder": "8DfHuYFv7VQ6wgcGtVDN2vtFn5ezF52hHNtPWYcqm8hU",
+    "firstTs": 1793586520,
+    "maxTxDay": 6,
+    "devTxCount": 6,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 16.84,
+    "maxSingleHolderPct": 3.03,
+    "freshWallets": 1,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     3.0,
+     2.8,
+     2.2,
+     2.1,
+     2.0
+    ],
+    "top5Pct": 12.1,
+    "count": 825,
+    "whalePct": 14.2,
+    "insiderPct": 0,
+    "freshWallets": 1,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 29,
+    "botN": "2/7",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 14,
+    "freshN": "1/7"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 20887,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "insightx": {
+    "cluster": 12.3,
+    "sniper": 0.0,
+    "bundler": 0.1,
+    "dev": 0.0,
+    "insider": 0.0,
+    "top10": 17.54
+   },
+   "safety": {
+    "status": "PASS",
+    "pass": true,
+    "fails": [],
+    "warns": [],
+    "oks": [
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "InsightX"
+    ],
+    "pct": {
+     "sniper": 0.0,
+     "bundler": 0.1,
+     "insider": 0.0,
+     "dev": 0.0,
+     "cluster": 12.3
+    },
+    "scoreAdj": 0
+   },
+   "gmgnScore": 0,
+   "scoreUncapped": 68,
+   "scoreCapped": false,
+   "score": 68,
+   "findings": [
+    [
+     "amber",
+     "29% bot-like holders (2/7 of top holders)"
+    ]
+   ],
+   "chartAth": {
+    "price": 0.0001288448572205667,
+    "mc": 125363,
+    "t": 1793650500,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1793650532,
+    "mc": 105671
+   },
+   "odds": {
+    "n": 120,
+    "x2": 27,
+    "rug": 63
+   },
+   "signalAt": 1793653274
+  },
+  {
    "symbol": "CAPY",
    "name": "Capycoin",
    "chain": "solana",
