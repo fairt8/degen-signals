@@ -3,6 +3,194 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "OMBRO",
+   "name": "Ombro",
+   "chain": "solana",
+   "mint": "8DB8Fw5UiC1AzugQAfRyw3qL8omw772LJbdehNWhpump",
+   "dex": "pumpswap",
+   "pair": "DFLvcLcX2MYWNb5YwmNPVSzP9VPbK285s8QouYeBQGNo",
+   "mcap": 136438,
+   "liq": 32337.62,
+   "vol": 425695.3,
+   "window": "h1",
+   "buys": 6291,
+   "sells": 4554,
+   "ch5m": 0.66,
+   "ch1h": 214,
+   "ageH": 0.8,
+   "description": "Ombro is the monero launchpad and terminal on Solana. Launch coins with SOL or native XMR, and every coin pays its holders in XMR every 15 minutes. 0.1% of every trade on every Ombro coin buys back an",
+   "ctoProfile": false,
+   "volLiq": 13.2,
+   "baseScore": 66,
+   "liqPctMc": 23.7,
+   "ch24h": 214,
+   "narratives": [],
+   "estFeesSol": null,
+   "priceUsd": 0.0001406,
+   "socials": [
+    "https://x.com/ombroxmr"
+   ],
+   "websites": [
+    "https://ombro.fun"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/dflvclcx2mywnb5ywmnpvszp9vpbk285s8qouyebqgno",
+    "pumpfun": "https://pump.fun/coin/8DB8Fw5UiC1AzugQAfRyw3qL8omw772LJbdehNWhpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=8DB8Fw5UiC1AzugQAfRyw3qL8omw772LJbdehNWhpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/8DB8Fw5UiC1AzugQAfRyw3qL8omw772LJbdehNWhpump",
+    "fomo": "https://fomo.family/tokens/solana/8DB8Fw5UiC1AzugQAfRyw3qL8omw772LJbdehNWhpump",
+    "axiom": "https://axiom.trade/t/8DB8Fw5UiC1AzugQAfRyw3qL8omw772LJbdehNWhpump?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=8DB8Fw5UiC1AzugQAfRyw3qL8omw772LJbdehNWhpump",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24OMBRO&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=OMBRO"
+   },
+   "top10Pct": 18.47,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 1,
+    "transferFeePct": 0,
+    "graphInsiders": 0,
+    "danger": []
+   },
+   "dev": {
+    "wallet": "EvTeF6WrLC4FYjc28EGjVVcTzW8Z21sutKH31VNEUebW",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/EvTeF6WrLC4FYjc28EGjVVcTzW8Z21sutKH31VNEUebW",
+     "pumpfun": "https://pump.fun/profile/EvTeF6WrLC4FYjc28EGjVVcTzW8Z21sutKH31VNEUebW"
+    },
+    "funder": "BmFdpraQhkiDQE6SnfG5omcA1VwzqfXrwtNYBwWTymy6",
+    "firstTs": 1791845908,
+    "maxTxDay": 31,
+    "devTxCount": 305,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": null,
+    "maxSingleHolderPct": 2.81,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     2.8,
+     2.7,
+     2.1,
+     2.1,
+     2.1
+    ],
+    "top5Pct": 11.8,
+    "count": 2882,
+    "whalePct": 11.8,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 100,
+    "botN": "8/8",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 25,
+    "freshN": "2/8"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 31825,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "insightx": {
+    "cluster": 2.21,
+    "sniper": 0.0,
+    "bundler": 0.0,
+    "dev": 0.0,
+    "insider": 0.0,
+    "top10": 10.99
+   },
+   "safety": {
+    "status": "FAIL",
+    "pass": false,
+    "fails": [
+     "100% bot-like top holders"
+    ],
+    "warns": [],
+    "oks": [
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "InsightX"
+    ],
+    "pct": {
+     "sniper": 0.0,
+     "bundler": 0.0,
+     "insider": 0.0,
+     "dev": 0.0,
+     "cluster": 2.2
+    },
+    "scoreAdj": -10
+   },
+   "gmgnScore": -10,
+   "scoreUncapped": 56,
+   "scoreCapped": true,
+   "score": 40,
+   "findings": [
+    [
+     "red",
+     "100% bot-like holders (8/8 of top holders)"
+    ]
+   ],
+   "chartAth": {
+    "price": 0.0001872605259116706,
+    "mc": 181717,
+    "t": 1793697000,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1793697389,
+    "mc": 136438
+   },
+   "odds": {
+    "n": 128,
+    "x2": 27,
+    "rug": 60
+   },
+   "signalAt": 1793697409
+  },
+  {
    "symbol": "UNPOOLED",
    "name": "unpooled",
    "chain": "solana",
