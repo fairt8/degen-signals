@@ -3,6 +3,220 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "HIGH",
+   "name": "higher.fun",
+   "chain": "solana",
+   "mint": "7ymF66Z6VhgNiwadtVhjTtT6U7iQRpSxeiRrhfufhigh",
+   "dex": "raydium",
+   "pair": "CqvMZmWDvEufa5rzkubidyR4zMDqDPoLjAtsW6wGsPMu",
+   "mcap": 112830,
+   "liq": 24616.25,
+   "vol": 351687.86,
+   "window": "h1",
+   "buys": 2996,
+   "sells": 2532,
+   "ch5m": 31.08,
+   "ch1h": 43,
+   "ageH": 1.02,
+   "description": "Lower fees, Higher together",
+   "ctoProfile": false,
+   "volLiq": 14.9,
+   "baseScore": 67,
+   "liqPctMc": 21.8,
+   "ch24h": 123,
+   "narratives": [],
+   "estFeesSol": 49.11,
+   "priceUsd": 0.0001128,
+   "socials": [
+    "https://x.com/higherdotfun_"
+   ],
+   "websites": [
+    "https://higher.fun/",
+    "https://higher.fun/fees"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/cqvmzmwdveufa5rzkubidyr4zmdqdpoljatsw6wgspmu",
+    "pumpfun": "https://pump.fun/coin/7ymF66Z6VhgNiwadtVhjTtT6U7iQRpSxeiRrhfufhigh",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=7ymF66Z6VhgNiwadtVhjTtT6U7iQRpSxeiRrhfufhigh&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/7ymF66Z6VhgNiwadtVhjTtT6U7iQRpSxeiRrhfufhigh",
+    "fomo": "https://fomo.family/tokens/solana/7ymF66Z6VhgNiwadtVhjTtT6U7iQRpSxeiRrhfufhigh",
+    "axiom": "https://axiom.trade/t/7ymF66Z6VhgNiwadtVhjTtT6U7iQRpSxeiRrhfufhigh?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=7ymF66Z6VhgNiwadtVhjTtT6U7iQRpSxeiRrhfufhigh",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24HIGH&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=HIGH"
+   },
+   "top10Pct": 22.54,
+   "clusterPct": 4.01,
+   "clusterSource": "rpc_common_funder",
+   "clusters": [
+    {
+     "funder": "B48kNVXs4YK4amkBCH2XokQiv1SeiVQGHDR17xDeKAAn",
+     "wallets": [
+      "2ppqZsyb1dmZqAsGioDsPPUzK36yFG3FjnfMokTMewJX",
+      "9zZajGMiNuwy2QDueVgmBmvRBWsPfXFXegM3prt4D6wG"
+     ],
+     "pct": 4.01
+    }
+   ],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 1,
+    "transferFeePct": 0,
+    "graphInsiders": 4,
+    "danger": []
+   },
+   "dev": {
+    "wallet": "WLHv2UAZm6z4KyaaELi5pjdbJh6RESMva1Rnn8pJVVh",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": null,
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/WLHv2UAZm6z4KyaaELi5pjdbJh6RESMva1Rnn8pJVVh",
+     "pumpfun": "https://pump.fun/profile/WLHv2UAZm6z4KyaaELi5pjdbJh6RESMva1Rnn8pJVVh"
+    },
+    "funder": null,
+    "firstTs": null,
+    "maxTxDay": 3000,
+    "devTxCount": 3000,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 49.11,
+    "maxSingleHolderPct": 3.38,
+    "freshWallets": 1,
+    "insiderNetworks": [
+     {
+      "id": "quirky-wisteria-elk",
+      "size": 4,
+      "type": "transfer"
+     }
+    ]
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     3.4,
+     3.2,
+     3.1,
+     2.7,
+     2.3
+    ],
+    "top5Pct": 14.6,
+    "count": 1382,
+    "whalePct": 16.7,
+    "insiderPct": 0,
+    "freshWallets": 1,
+    "clusterPct": 4.01
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 50,
+    "botN": "4/8",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 50,
+    "freshN": "4/8"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "raydium_cpmm",
+    "src": "rugcheck",
+    "lockedUsd": 24808,
+    "unlock": null,
+    "lpUsd": 24808,
+    "status": "locked",
+    "lockPct": 100,
+    "label": "\ud83d\udd12 Locked 100%"
+   },
+   "insightx": {
+    "cluster": 3.48,
+    "sniper": 3.38,
+    "bundler": 36.61,
+    "dev": 3.38,
+    "insider": 0.0,
+    "top10": 19.93
+   },
+   "safety": {
+    "status": "FAIL",
+    "pass": false,
+    "fails": [
+     "bundlers 36.6% > 15%",
+     "sniper+bundler+insider 40.0% > 30%"
+    ],
+    "warns": [],
+    "oks": [
+     "mint+freeze revoked",
+     "LP locked"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "InsightX"
+    ],
+    "pct": {
+     "sniper": 3.4,
+     "bundler": 36.6,
+     "insider": 0.0,
+     "dev": 3.4,
+     "cluster": 3.5
+    },
+    "scoreAdj": -10
+   },
+   "gmgnScore": -10,
+   "scoreUncapped": 57,
+   "scoreCapped": true,
+   "score": 40,
+   "findings": [
+    [
+     "red",
+     "50% bot-like holders (4/8 of top holders)"
+    ],
+    [
+     "red",
+     "50% fresh wallets (first tx \u22647d before launch) (4/8 of top holders)"
+    ],
+    [
+     "red",
+     "bundlers hold 36.6%"
+    ]
+   ],
+   "chartAth": {
+    "price": 0.0003460666582174647,
+    "mc": 346159,
+    "t": 1793726400,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1793727932,
+    "mc": 184767
+   },
+   "odds": {
+    "n": 132,
+    "x2": 27,
+    "rug": 60
+   },
+   "signalAt": 1793729783
+  },
+  {
    "symbol": "ANY",
    "name": "Anypair",
    "chain": "solana",
