@@ -3,6 +3,211 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "ANY",
+   "name": "Anypair",
+   "chain": "solana",
+   "mint": "2G1uc6R97HYiuMFpbwSDitToYEPRdmQ1qk2opbtDpair",
+   "dex": "raydium",
+   "pair": "ATbndCYRRqLawiHTk28U7xRZwWi7WS4DmXaNQrpVwxCD",
+   "mcap": 25460,
+   "liq": 13427.36,
+   "vol": 164386.5,
+   "window": "h1",
+   "buys": 1724,
+   "sells": 1403,
+   "ch5m": 16.04,
+   "ch1h": -28.45,
+   "ageH": 0.83,
+   "description": "Start anything from everything.",
+   "ctoProfile": false,
+   "volLiq": 12.2,
+   "baseScore": 56,
+   "liqPctMc": 52.7,
+   "ch24h": -28.45,
+   "narratives": [],
+   "estFeesSol": 21.94,
+   "priceUsd": 2.732e-05,
+   "socials": [
+    "https://x.com/anypairdotio"
+   ],
+   "websites": [
+    "https://anypair.io/board"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/atbndcyrrqlawihtk28u7xrzwwi7ws4dmxanqrpvwxcd",
+    "pumpfun": "https://pump.fun/coin/2G1uc6R97HYiuMFpbwSDitToYEPRdmQ1qk2opbtDpair",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=2G1uc6R97HYiuMFpbwSDitToYEPRdmQ1qk2opbtDpair&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/2G1uc6R97HYiuMFpbwSDitToYEPRdmQ1qk2opbtDpair",
+    "fomo": "https://fomo.family/tokens/solana/2G1uc6R97HYiuMFpbwSDitToYEPRdmQ1qk2opbtDpair",
+    "axiom": "https://axiom.trade/t/2G1uc6R97HYiuMFpbwSDitToYEPRdmQ1qk2opbtDpair?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=2G1uc6R97HYiuMFpbwSDitToYEPRdmQ1qk2opbtDpair",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24ANY&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=ANY"
+   },
+   "top10Pct": 22.69,
+   "clusterPct": 5.23,
+   "clusterSource": "rpc_common_funder",
+   "clusters": [
+    {
+     "funder": "F7p3dFrjRTbtRp8FRF6qHLomXbKRBzpvBLjtQcfcgmNe",
+     "wallets": [
+      "8df8zbEdWENaNArtGkaadwW57i8dXpdnZvNwAMueuHz2",
+      "8aVYqPTkraF2Yum9dah7iXyakXerGFuiR7yELNSHutUC"
+     ],
+     "pct": 5.23
+    }
+   ],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 1,
+    "transferFeePct": 0,
+    "graphInsiders": 8,
+    "danger": []
+   },
+   "dev": {
+    "wallet": null,
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": null,
+    "riskNames": [],
+    "links": {
+     "solscan": null,
+     "pumpfun": null
+    }
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 21.94,
+    "maxSingleHolderPct": 3.5,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "smart-lilac-lynx",
+      "size": 4,
+      "type": "transfer"
+     },
+     {
+      "id": "happy-lime-stork",
+      "size": 4,
+      "type": "transfer"
+     }
+    ]
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     3.5,
+     2.8,
+     2.7,
+     2.5,
+     2.4
+    ],
+    "top5Pct": 13.9,
+    "count": 1036,
+    "whalePct": 13.9,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 5.23
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 89,
+    "botN": "8/9",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 22,
+    "freshN": "2/9"
+   },
+   "lp": {
+    "pct": 100.0,
+    "market": "raydium_cpmm",
+    "src": "rugcheck",
+    "lockedUsd": 13279,
+    "unlock": null,
+    "lpUsd": 13279,
+    "status": "burned+locked",
+    "lockPct": 87.7,
+    "label": "\ud83d\udd25\ud83d\udd12 Burned+locked 100.0% (locker ~87.7%)"
+   },
+   "insightx": {
+    "cluster": 3.35,
+    "sniper": 1.44,
+    "bundler": 4.49,
+    "dev": 0.17,
+    "insider": 0.0,
+    "top10": 19.2
+   },
+   "safety": {
+    "status": "FAIL",
+    "pass": false,
+    "fails": [
+     "89% bot-like top holders"
+    ],
+    "warns": [
+     "8 insider wallets (rugcheck graph)"
+    ],
+    "oks": [
+     "mint+freeze revoked",
+     "LP burned+locked"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "InsightX"
+    ],
+    "pct": {
+     "sniper": 1.4,
+     "bundler": 4.5,
+     "insider": 0.0,
+     "dev": 0.2,
+     "cluster": 3.4
+    },
+    "scoreAdj": -10
+   },
+   "gmgnScore": -10,
+   "scoreUncapped": 46,
+   "scoreCapped": true,
+   "score": 40,
+   "findings": [
+    [
+     "red",
+     "89% bot-like holders (8/9 of top holders)"
+    ]
+   ],
+   "chartAth": {
+    "price": 0.00011007457031107169,
+    "mc": 102580,
+    "t": 1793719200,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1793719832,
+    "mc": 54814
+   },
+   "odds": {
+    "n": 129,
+    "x2": 28,
+    "rug": 60
+   },
+   "signalAt": 1793721783
+  },
+  {
    "symbol": "BINGUS",
    "name": "Bingus",
    "chain": "solana",
