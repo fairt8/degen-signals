@@ -3,6 +3,196 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "ONE",
+   "name": "onestop trade",
+   "chain": "solana",
+   "mint": "9xU9DLJer45mJocspDuyhFfqvSuBTYf2bLcTKcFLpump",
+   "dex": "pumpswap",
+   "pair": "GoYjDPDtWfSQRiWD9S4sfPh2XC3jPTNkv2rmWvfYhbJL",
+   "mcap": 94114,
+   "liq": 24024.23,
+   "vol": 162241.85,
+   "window": "h1",
+   "buys": 1485,
+   "sells": 2566,
+   "ch5m": 25.9,
+   "ch1h": 150,
+   "ageH": 0.74,
+   "description": "one stop for all your agents trades\n\none api/mcp, many order types, one sentence setup\n\ntrading as easy as typing",
+   "ctoProfile": false,
+   "volLiq": 6.8,
+   "baseScore": 57,
+   "liqPctMc": 25.5,
+   "ch24h": 150,
+   "narratives": [
+    "AI / Agents"
+   ],
+   "estFeesSol": 22.04,
+   "priceUsd": 9.811e-05,
+   "socials": [
+    "https://x.com/onestoptrade"
+   ],
+   "websites": [
+    "https://onestop.trade/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/goyjdpdtwfsqriwd9s4sfph2xc3jptnkv2rmwvfyhbjl",
+    "pumpfun": "https://pump.fun/coin/9xU9DLJer45mJocspDuyhFfqvSuBTYf2bLcTKcFLpump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=9xU9DLJer45mJocspDuyhFfqvSuBTYf2bLcTKcFLpump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/9xU9DLJer45mJocspDuyhFfqvSuBTYf2bLcTKcFLpump",
+    "fomo": "https://fomo.family/tokens/solana/9xU9DLJer45mJocspDuyhFfqvSuBTYf2bLcTKcFLpump",
+    "axiom": "https://axiom.trade/t/9xU9DLJer45mJocspDuyhFfqvSuBTYf2bLcTKcFLpump?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=9xU9DLJer45mJocspDuyhFfqvSuBTYf2bLcTKcFLpump",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24ONE&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=ONE"
+   },
+   "top10Pct": 20.87,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 1,
+    "transferFeePct": 0,
+    "graphInsiders": 0,
+    "danger": []
+   },
+   "dev": {
+    "wallet": "3V7bknAsmSnENvLNKHkPvfgQWzmfZhnn24FeyM35Eihi",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/3V7bknAsmSnENvLNKHkPvfgQWzmfZhnn24FeyM35Eihi",
+     "pumpfun": "https://pump.fun/profile/3V7bknAsmSnENvLNKHkPvfgQWzmfZhnn24FeyM35Eihi"
+    },
+    "funder": "ATu4i13dyL8yAUZgqXogxqfSVAL5JMe55FF8PJShDW6m",
+    "firstTs": 1793749329,
+    "maxTxDay": 13,
+    "devTxCount": 13,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 22.04,
+    "maxSingleHolderPct": 3.38,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     3.4,
+     3.0,
+     2.0,
+     2.0,
+     1.9
+    ],
+    "top5Pct": 12.2,
+    "count": 1026,
+    "whalePct": 8.4,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 62,
+    "botN": "5/8",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 25,
+    "freshN": "2/8"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 21454,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "insightx": {
+    "cluster": 1.01,
+    "sniper": 2.09,
+    "bundler": 4.06,
+    "dev": 2.09,
+    "insider": 0.0,
+    "top10": 19.72
+   },
+   "safety": {
+    "status": "FAIL",
+    "pass": false,
+    "fails": [
+     "62% bot-like top holders"
+    ],
+    "warns": [],
+    "oks": [
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "InsightX"
+    ],
+    "pct": {
+     "sniper": 2.1,
+     "bundler": 4.1,
+     "insider": 0.0,
+     "dev": 2.1,
+     "cluster": 1.0
+    },
+    "scoreAdj": -10
+   },
+   "gmgnScore": -10,
+   "scoreUncapped": 47,
+   "scoreCapped": true,
+   "score": 40,
+   "findings": [
+    [
+     "red",
+     "62% bot-like holders (5/8 of top holders)"
+    ]
+   ],
+   "chartAth": {
+    "price": 0.00011224306058192757,
+    "mc": 107671,
+    "t": 1793751900,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1793752254,
+    "mc": 94114
+   },
+   "odds": {
+    "n": 134,
+    "x2": 28,
+    "rug": 61
+   },
+   "signalAt": 1793752269
+  },
+  {
    "symbol": "E ",
    "name": "exposure",
    "chain": "solana",
