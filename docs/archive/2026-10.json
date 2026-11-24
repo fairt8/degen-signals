@@ -16566,6 +16566,86 @@
  ],
  "journal": [
   {
+   "mint": "5KtxmGhFfy6QaoU3Qtu2ouweqq1qfXfNZHg3CJH7y6ea",
+   "symbol": "ZGAP",
+   "chain": "solana",
+   "t0": 1792953159,
+   "price0": 5.185e-05,
+   "mcap0": 51856,
+   "score": 40,
+   "devScore": 0,
+   "link": "https://dexscreener.com/solana/5y889k2e1ef2umvpzqgc83bxvk6kz5jqnxmkdstekaki",
+   "maxPrice": 0.00016297629553201583,
+   "samples": [],
+   "trend": "up",
+   "h1": {
+    "price": 4.956e-05,
+    "pct": -4.4,
+    "maxX": 1.46
+   },
+   "h24": {
+    "price": 7.225e-05,
+    "pct": 39.3,
+    "maxX": 3.14
+   },
+   "hit2x": true,
+   "hit5x": false,
+   "msgId": {
+    "1318404489": 486,
+    "-1004348482526": 1931
+   },
+   "gmgn": null,
+   "safety": {
+    "status": "FAIL",
+    "reasons": [
+     "mint authority not revoked",
+     "clustered 30.8% > 25%",
+     "rugcheck: Mint Authority still enabled",
+     "5 insider wallets (rugcheck graph)"
+    ],
+    "pct": {
+     "sniper": 0.4,
+     "bundler": 9.3,
+     "insider": 0.0,
+     "dev": 0.0,
+     "cluster": 30.8
+    },
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "InsightX"
+    ]
+   },
+   "athMc": 359854,
+   "athT": 1793012100,
+   "lp": {
+    "status": "partial",
+    "label": "\u26a0\ufe0f Only 50.0% burned/locked",
+    "pct": 50.0,
+    "unlock": null,
+    "t": 1793556043,
+    "pctMax": 100,
+    "liq": 12008.13,
+    "liqMax": 31683.49
+   },
+   "last": 7.225e-05,
+   "lastT": 1793044014,
+   "maxSrc": "chart",
+   "athSrc": "chart",
+   "chartT": 1793044014,
+   "minPrice": 4.607e-05,
+   "lastPct": 39.3,
+   "milestones": {
+    "2": 1792962189
+   },
+   "lpEvents": {
+    "unlocked": 1792962219
+   },
+   "topMilestone": 2.0,
+   "topMilestoneT": 1792962189
+  },
+  {
    "mint": "9uNgkUWsRDCMsnE6UX9aJ9bCwj3Lw3pjTU4TnMEnpump",
    "symbol": "BILLIONS",
    "chain": "solana",
