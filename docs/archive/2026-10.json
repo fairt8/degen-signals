@@ -16566,6 +16566,80 @@
  ],
  "journal": [
   {
+   "mint": "8cFU1FJHVZQAricMRXPE5wa3zg6GvdG52mcutMMBpump",
+   "symbol": "ROFLAMP",
+   "chain": "solana",
+   "t0": 1792996652,
+   "price0": 0.0001624,
+   "mcap0": 158238,
+   "score": 16,
+   "devScore": -30,
+   "link": "https://dexscreener.com/solana/hzyt4skrwuwspsbk7a54574hsdfeuqajyr7fclx7jxyd",
+   "maxPrice": 0.00026831043732991166,
+   "samples": [],
+   "trend": "up",
+   "h1": {
+    "price": 5.935e-05,
+    "pct": -63.5,
+    "maxX": 1.65
+   },
+   "h24": {
+    "price": 2.195e-06,
+    "pct": -98.6,
+    "maxX": 1.65
+   },
+   "hit2x": false,
+   "hit5x": false,
+   "msgId": {
+    "1318404489": 491,
+    "-1004348482526": 1936
+   },
+   "gmgn": null,
+   "safety": {
+    "status": "FAIL",
+    "reasons": [
+     "dev rug history",
+     "rugcheck: Creator history of rugged tokens",
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "pct": {
+     "sniper": 0.0,
+     "bundler": 4.3,
+     "insider": 0.0,
+     "dev": 0.0,
+     "cluster": 0.0
+    },
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "InsightX"
+    ]
+   },
+   "athMc": 305398,
+   "athT": 1792994400,
+   "lp": {
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)",
+    "pct": 100,
+    "unlock": null,
+    "t": 1793601076,
+    "pctMax": 100,
+    "liq": null,
+    "liqMax": 33669.26
+   },
+   "last": 2.195e-06,
+   "lastT": 1793083582,
+   "maxSrc": "chart",
+   "athSrc": "chart",
+   "chartT": 1793082775,
+   "minPrice": 2.162e-06,
+   "lastPct": -98.6,
+   "milestones": {},
+   "lpEvents": {}
+  },
+  {
    "mint": "5KtxmGhFfy6QaoU3Qtu2ouweqq1qfXfNZHg3CJH7y6ea",
    "symbol": "ZGAP",
    "chain": "solana",
