@@ -3,6 +3,206 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "PAIRITY",
+   "name": "Pairity launchpad",
+   "chain": "solana",
+   "mint": "CaQR7CNrXvXaFQLC2ChWBZHpUed4EYfVVJxjR34ipair",
+   "dex": "pumpswap",
+   "pair": "AnkoGq4SqJcAUWaHon5fzNZektSCKrFftbBR7MDCrZ15",
+   "mcap": 92696,
+   "liq": 24572.23,
+   "vol": 563879.41,
+   "window": "h1",
+   "buys": 8270,
+   "sells": 6397,
+   "ch5m": 18.69,
+   "ch1h": 149,
+   "ageH": 0.84,
+   "description": "We don\u2019t follow the meta. I ship it.",
+   "ctoProfile": false,
+   "volLiq": 22.9,
+   "baseScore": 68,
+   "liqPctMc": 26.5,
+   "ch24h": 149,
+   "narratives": [],
+   "estFeesSol": 76.01,
+   "priceUsd": 9.57e-05,
+   "socials": [
+    "https://x.com/Pairitydotwtf"
+   ],
+   "websites": [
+    "https://pairity.wtf/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/ankogq4sqjcauwahon5fznzektsckrfftbbr7mdcrz15",
+    "pumpfun": "https://pump.fun/coin/CaQR7CNrXvXaFQLC2ChWBZHpUed4EYfVVJxjR34ipair",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=CaQR7CNrXvXaFQLC2ChWBZHpUed4EYfVVJxjR34ipair&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/CaQR7CNrXvXaFQLC2ChWBZHpUed4EYfVVJxjR34ipair",
+    "fomo": "https://fomo.family/tokens/solana/CaQR7CNrXvXaFQLC2ChWBZHpUed4EYfVVJxjR34ipair",
+    "axiom": "https://axiom.trade/t/CaQR7CNrXvXaFQLC2ChWBZHpUed4EYfVVJxjR34ipair?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=CaQR7CNrXvXaFQLC2ChWBZHpUed4EYfVVJxjR34ipair",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24PAIRITY&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=PAIRITY"
+   },
+   "top10Pct": 19.81,
+   "clusterPct": 0.66,
+   "clusterSource": "rugcheck_insider_networks",
+   "clusters": [],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 1,
+    "transferFeePct": 0,
+    "graphInsiders": 6,
+    "danger": []
+   },
+   "dev": {
+    "wallet": "G5aXRsPhF4Zp37XLSZDQcZ5UcWvTykHwqfvV4Dx4LkCP",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/G5aXRsPhF4Zp37XLSZDQcZ5UcWvTykHwqfvV4Dx4LkCP",
+     "pumpfun": "https://pump.fun/profile/G5aXRsPhF4Zp37XLSZDQcZ5UcWvTykHwqfvV4Dx4LkCP"
+    },
+    "funder": "CbUNNXjuEtvRaat1FFA2QSfiJvvBP7zrUGuGojqfeSLu",
+    "firstTs": 1793798418,
+    "maxTxDay": 144,
+    "devTxCount": 144,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 76.01,
+    "maxSingleHolderPct": 3.19,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "tiny-black-iguana",
+      "size": 6,
+      "type": "transfer"
+     }
+    ]
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     3.2,
+     2.9,
+     2.4,
+     2.2,
+     2.0
+    ],
+    "top5Pct": 12.7,
+    "count": 3020,
+    "whalePct": 10.8,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0.66
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 83,
+    "botN": "5/6",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 17,
+    "freshN": "1/6"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 23697,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "insightx": {
+    "cluster": 5.77,
+    "sniper": 0.22,
+    "bundler": 0.26,
+    "dev": 0.0,
+    "insider": 0.0,
+    "top10": 18.67
+   },
+   "safety": {
+    "status": "FAIL",
+    "pass": false,
+    "fails": [
+     "83% bot-like top holders"
+    ],
+    "warns": [
+     "6 insider wallets (rugcheck graph)"
+    ],
+    "oks": [
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "InsightX"
+    ],
+    "pct": {
+     "sniper": 0.2,
+     "bundler": 0.3,
+     "insider": 0.0,
+     "dev": 0.0,
+     "cluster": 5.8
+    },
+    "scoreAdj": -10
+   },
+   "gmgnScore": -10,
+   "scoreUncapped": 58,
+   "scoreCapped": true,
+   "score": 40,
+   "findings": [
+    [
+     "red",
+     "83% bot-like holders (5/6 of top holders)"
+    ],
+    [
+     "amber",
+     "volume 22.9x liquidity, possibly inflated"
+    ]
+   ],
+   "chartAth": {
+    "price": 0.000151624135143867,
+    "mc": 146865,
+    "t": 1793800200,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1793800832,
+    "mc": 109488
+   },
+   "odds": {
+    "n": 142,
+    "x2": 30,
+    "rug": 61
+   },
+   "signalAt": 1793801882
+  },
+  {
    "symbol": "TOLY",
    "name": "The Toly",
    "chain": "solana",
