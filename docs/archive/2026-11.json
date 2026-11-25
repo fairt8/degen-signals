@@ -3,6 +3,197 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "POOLS",
+   "name": "POOLS",
+   "chain": "solana",
+   "mint": "Fu9n4TS5QkEKzMW66djz6T6fUspAbTuYsb7gcHSApump",
+   "dex": "pumpswap",
+   "pair": "EZ3ia9mGyJjaRvoHnsUEkdF9NA1RBNm8w14EEpxNRUx9",
+   "mcap": 101125,
+   "liq": 26860.3,
+   "vol": 260972.83,
+   "window": "h1",
+   "buys": 3399,
+   "sells": 2673,
+   "ch5m": 31.41,
+   "ch1h": 114,
+   "ageH": 0.38,
+   "description": "Each token starts on its own curve at a ~$20K market cap. Buy and sell on Pools as buys build the SOL reserve. \n\nAt the ~$100K graduation target, that liquidity can migrate",
+   "ctoProfile": false,
+   "volLiq": 9.7,
+   "baseScore": 62,
+   "liqPctMc": 26.6,
+   "ch24h": 114,
+   "narratives": [],
+   "estFeesSol": null,
+   "priceUsd": 0.0001011,
+   "socials": [
+    "https://x.com/tryPools/status/2117889763596202341?s=20"
+   ],
+   "websites": [
+    "https://trypools.fun/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/ez3ia9mgyjjarvohnsuekdf9na1rbnm8w14eepxnrux9",
+    "pumpfun": "https://pump.fun/coin/Fu9n4TS5QkEKzMW66djz6T6fUspAbTuYsb7gcHSApump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=Fu9n4TS5QkEKzMW66djz6T6fUspAbTuYsb7gcHSApump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/Fu9n4TS5QkEKzMW66djz6T6fUspAbTuYsb7gcHSApump",
+    "fomo": "https://fomo.family/tokens/solana/Fu9n4TS5QkEKzMW66djz6T6fUspAbTuYsb7gcHSApump",
+    "axiom": "https://axiom.trade/t/Fu9n4TS5QkEKzMW66djz6T6fUspAbTuYsb7gcHSApump?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=Fu9n4TS5QkEKzMW66djz6T6fUspAbTuYsb7gcHSApump",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24POOLS&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=POOLS"
+   },
+   "top10Pct": 20.01,
+   "clusterPct": 6.31,
+   "clusterSource": "rugcheck_insider_networks",
+   "clusters": [],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 1,
+    "transferFeePct": 0,
+    "graphInsiders": 5,
+    "danger": []
+   },
+   "dev": {
+    "wallet": "EcVnaSwYF6o1oHf6HwRarNt4WRiMziCmMAs9ceTXR3b8",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/EcVnaSwYF6o1oHf6HwRarNt4WRiMziCmMAs9ceTXR3b8",
+     "pumpfun": "https://pump.fun/profile/EcVnaSwYF6o1oHf6HwRarNt4WRiMziCmMAs9ceTXR3b8"
+    },
+    "funder": "AaZkwhkiDStDcgrU37XAj9fpNLrD8Erz5PNkdm4k5hjy",
+    "firstTs": 1793637088,
+    "maxTxDay": 51,
+    "devTxCount": 70,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": null,
+    "maxSingleHolderPct": 4.03,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "little-gray-quokka",
+      "size": 5,
+      "type": "transfer"
+     }
+    ]
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     4.0,
+     2.7,
+     2.2,
+     2.1,
+     2.0
+    ],
+    "top5Pct": 13.0,
+    "count": 1980,
+    "whalePct": 11.0,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 6.31
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 71,
+    "botN": "5/7",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 0,
+    "freshN": "0/7"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 25178,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "insightx": {
+    "cluster": 2.75,
+    "sniper": 0.0,
+    "bundler": 0.0,
+    "dev": 0.0,
+    "insider": 0.0,
+    "top10": 16.98
+   },
+   "safety": {
+    "status": "FAIL",
+    "pass": false,
+    "fails": [
+     "71% bot-like top holders"
+    ],
+    "warns": [
+     "5 insider wallets (rugcheck graph)"
+    ],
+    "oks": [
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "InsightX"
+    ],
+    "pct": {
+     "sniper": 0.0,
+     "bundler": 0.0,
+     "insider": 0.0,
+     "dev": 0.0,
+     "cluster": 2.8
+    },
+    "scoreAdj": -10
+   },
+   "gmgnScore": -10,
+   "scoreUncapped": 52,
+   "scoreCapped": true,
+   "score": 40,
+   "findings": [
+    [
+     "red",
+     "71% bot-like holders (5/7 of top holders)"
+    ]
+   ],
+   "chartAth": null,
+   "firstScan": {
+    "t": 1793780132,
+    "mc": 8036.21
+   },
+   "odds": {
+    "n": 139,
+    "x2": 30,
+    "rug": 61
+   },
+   "signalAt": 1793782888
+  },
+  {
    "symbol": "CHILLCATS",
    "name": "CHILLCATS",
    "chain": "solana",
