@@ -3,6 +3,206 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "Donkey",
+   "name": "The Donkey",
+   "chain": "solana",
+   "mint": "G8Lf8uthQp5YHoswQZDRdeRxaWiUqnNFNoZ45y68pump",
+   "dex": "pumpswap",
+   "pair": "ESCdnqaEAyUsxUy5hAdqogQYykJiAFAYXgchuDhDgxAN",
+   "mcap": 106669,
+   "liq": 28500.83,
+   "vol": 220391.23,
+   "window": "h1",
+   "buys": 2780,
+   "sells": 1844,
+   "ch5m": 10.92,
+   "ch1h": 93.83,
+   "ageH": 2.53,
+   "description": "The logo of the Democratic Party, DONKEY",
+   "ctoProfile": false,
+   "volLiq": 43.5,
+   "baseScore": 68,
+   "liqPctMc": 26.7,
+   "ch24h": 201,
+   "narratives": [],
+   "estFeesSol": 161.22,
+   "priceUsd": 0.0001155,
+   "socials": [
+    "https://x.com/thedemocrats"
+   ],
+   "websites": [
+    "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/escdnqaeayusxuy5hadqogqyykjiafayxgchudhdgxan",
+    "pumpfun": "https://pump.fun/coin/G8Lf8uthQp5YHoswQZDRdeRxaWiUqnNFNoZ45y68pump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=G8Lf8uthQp5YHoswQZDRdeRxaWiUqnNFNoZ45y68pump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/G8Lf8uthQp5YHoswQZDRdeRxaWiUqnNFNoZ45y68pump",
+    "fomo": "https://fomo.family/tokens/solana/G8Lf8uthQp5YHoswQZDRdeRxaWiUqnNFNoZ45y68pump",
+    "axiom": "https://axiom.trade/t/G8Lf8uthQp5YHoswQZDRdeRxaWiUqnNFNoZ45y68pump?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=G8Lf8uthQp5YHoswQZDRdeRxaWiUqnNFNoZ45y68pump",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24Donkey&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=Donkey"
+   },
+   "top10Pct": 20.39,
+   "clusterPct": 0.09,
+   "clusterSource": "rugcheck_insider_networks",
+   "clusters": [],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 1,
+    "transferFeePct": 0,
+    "graphInsiders": 17,
+    "danger": []
+   },
+   "dev": {
+    "wallet": "4FDNhaz443183ExeXarqjsyB8KikE8vEM5PG12HVfPp1",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/4FDNhaz443183ExeXarqjsyB8KikE8vEM5PG12HVfPp1",
+     "pumpfun": "https://pump.fun/profile/4FDNhaz443183ExeXarqjsyB8KikE8vEM5PG12HVfPp1"
+    },
+    "funder": "abcdEvoXux3WaRi8RBujiNuoXmrXdVZTFcY5cuPgS2L",
+    "firstTs": 1793803157,
+    "maxTxDay": 659,
+    "devTxCount": 659,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 161.22,
+    "maxSingleHolderPct": 3.37,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "humble-lime-fox",
+      "size": 17,
+      "type": "transfer"
+     }
+    ]
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     3.4,
+     2.6,
+     2.4,
+     2.3,
+     1.9
+    ],
+    "top5Pct": 12.5,
+    "count": 4266,
+    "whalePct": 10.6,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0.09
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 89,
+    "botN": "8/9",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 0,
+    "freshN": "0/9"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 30057,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "insightx": {
+    "cluster": 0.0,
+    "sniper": 1.39,
+    "bundler": 0.44,
+    "dev": 0.0,
+    "insider": 1.85,
+    "top10": 19.13
+   },
+   "safety": {
+    "status": "FAIL",
+    "pass": false,
+    "fails": [
+     "89% bot-like top holders"
+    ],
+    "warns": [
+     "17 insider wallets (rugcheck graph)"
+    ],
+    "oks": [
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "InsightX"
+    ],
+    "pct": {
+     "sniper": 1.4,
+     "bundler": 0.4,
+     "insider": 1.9,
+     "dev": 0.0,
+     "cluster": 0.0
+    },
+    "scoreAdj": -10
+   },
+   "gmgnScore": -10,
+   "scoreUncapped": 58,
+   "scoreCapped": true,
+   "score": 40,
+   "findings": [
+    [
+     "red",
+     "89% bot-like holders (8/9 of top holders)"
+    ],
+    [
+     "red",
+     "volume 43.5x liquidity, possibly inflated"
+    ]
+   ],
+   "chartAth": {
+    "price": 0.00032596936748961546,
+    "mc": 301046,
+    "t": 1793805000,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1793809832,
+    "mc": 149507
+   },
+   "odds": {
+    "n": 145,
+    "x2": 30,
+    "rug": 60
+   },
+   "signalAt": 1793812633
+  },
+  {
    "symbol": "tremp",
    "name": "doland tremp",
    "chain": "solana",
