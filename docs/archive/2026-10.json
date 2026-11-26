@@ -16566,6 +16566,82 @@
  ],
  "journal": [
   {
+   "mint": "GkF9DkVJfrFNDet7RMutqkN3UyWSicDuVmGb6huXSLeR",
+   "symbol": "MIGRATE",
+   "chain": "solana",
+   "t0": 1793118655,
+   "price0": 2.678e-05,
+   "mcap0": 26788,
+   "score": 38,
+   "devScore": 0,
+   "link": "https://dexscreener.com/solana/fjdelrm5grynpxttnfugisxx3uangdicord9ta3skcom",
+   "maxPrice": 6.320231464094682e-05,
+   "samples": [],
+   "trend": "fading",
+   "h1": {
+    "price": 1.024e-05,
+    "pct": -61.8,
+    "maxX": 2.36
+   },
+   "h24": {
+    "price": 3.047e-06,
+    "pct": -88.6,
+    "maxX": 2.36
+   },
+   "hit2x": true,
+   "hit5x": false,
+   "msgId": {
+    "1318404489": 511,
+    "-1004348482526": 1956
+   },
+   "gmgn": null,
+   "safety": {
+    "status": "FAIL",
+    "reasons": [
+     "100% bot-like top holders",
+     "mint+freeze revoked",
+     "LP locked"
+    ],
+    "pct": {
+     "sniper": 0.0,
+     "bundler": 0.0,
+     "insider": 0.0,
+     "dev": 0.0,
+     "cluster": 0.0
+    },
+    "sources": [
+     "rugcheck",
+     "LP",
+     "InsightX"
+    ]
+   },
+   "athMc": 99184,
+   "athT": 1793117700,
+   "lp": {
+    "status": "locked",
+    "label": "\ud83d\udd12 Locked 100%",
+    "pct": 100,
+    "unlock": null,
+    "t": 1793722543,
+    "pctMax": 100,
+    "liq": 3163.79,
+    "liqMax": 19706.21
+   },
+   "last": 3.047e-06,
+   "lastT": 1793208318,
+   "maxSrc": "chart",
+   "athSrc": "chart",
+   "chartT": 1793194666,
+   "minPrice": 2.868e-06,
+   "lastPct": -88.6,
+   "milestones": {
+    "2": null
+   },
+   "topMilestone": 2.0,
+   "topMilestoneT": null,
+   "lpEvents": {}
+  },
+  {
    "mint": "ASCcuz8Dy5edyvjZMcpyJEkfx87fgjw1pBVoLbj4pump",
    "symbol": "TGC",
    "chain": "solana",
