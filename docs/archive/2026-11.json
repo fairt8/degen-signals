@@ -3,6 +3,193 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "PUMP2",
+   "name": "PUMP2",
+   "chain": "solana",
+   "mint": "24KaBFmjyvPyvjaWfnSsvJBbSaAiAD57TPvxngzpump2",
+   "dex": "raydium",
+   "pair": "CzH9CynSkjyL1VQE3xz7Rib9pRq9m39m2nnLEyBNZR6Y",
+   "mcap": 72524,
+   "liq": 23284.46,
+   "vol": 94551.16,
+   "window": "h1",
+   "buys": 816,
+   "sells": 619,
+   "ch5m": 29.17,
+   "ch1h": 81.5,
+   "ageH": 0.54,
+   "description": "pump2 is the classic launchpad back on Raydium, and PUMP2 is its coin. Every trade on every pump2 coin pays a 0.40% platform fee. A quarter of it buys PUMP2 and burns it, and a quarter goes to PUMP2 h",
+   "ctoProfile": false,
+   "volLiq": 4.1,
+   "baseScore": 72,
+   "liqPctMc": 32.1,
+   "ch24h": 81.5,
+   "narratives": [
+    "AI / Agents"
+   ],
+   "estFeesSol": 12.29,
+   "priceUsd": 7.252e-05,
+   "socials": [
+    "https://x.com/pump2lol"
+   ],
+   "websites": [
+    "https://pump2.lol/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/czh9cynskjyl1vqe3xz7rib9prq9m39m2nnleybnzr6y",
+    "pumpfun": "https://pump.fun/coin/24KaBFmjyvPyvjaWfnSsvJBbSaAiAD57TPvxngzpump2",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=24KaBFmjyvPyvjaWfnSsvJBbSaAiAD57TPvxngzpump2&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/24KaBFmjyvPyvjaWfnSsvJBbSaAiAD57TPvxngzpump2",
+    "fomo": "https://fomo.family/tokens/solana/24KaBFmjyvPyvjaWfnSsvJBbSaAiAD57TPvxngzpump2",
+    "axiom": "https://axiom.trade/t/24KaBFmjyvPyvjaWfnSsvJBbSaAiAD57TPvxngzpump2?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=24KaBFmjyvPyvjaWfnSsvJBbSaAiAD57TPvxngzpump2",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24PUMP2&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=PUMP2"
+   },
+   "top10Pct": 15.95,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 10,
+    "transferFeePct": 0,
+    "graphInsiders": 0,
+    "danger": []
+   },
+   "dev": {
+    "wallet": null,
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": null,
+    "riskNames": [
+     "Fee config enabled"
+    ],
+    "links": {
+     "solscan": null,
+     "pumpfun": null
+    }
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 12.29,
+    "maxSingleHolderPct": 2.37,
+    "freshWallets": 2,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     2.4,
+     2.3,
+     1.8,
+     1.8,
+     1.6
+    ],
+    "top5Pct": 9.9,
+    "count": 384,
+    "whalePct": 4.7,
+    "insiderPct": 0,
+    "freshWallets": 2,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 75,
+    "botN": "6/8",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 25,
+    "freshN": "2/8"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "raydium_cpmm",
+    "src": "rugcheck",
+    "lockedUsd": 22202,
+    "unlock": null,
+    "lpUsd": 22202,
+    "status": "locked",
+    "lockPct": 100,
+    "label": "\ud83d\udd12 Locked 100%"
+   },
+   "insightx": {
+    "cluster": 12.54,
+    "sniper": 0.03,
+    "bundler": 7.22,
+    "dev": 0.03,
+    "insider": 0.0,
+    "top10": 9.92
+   },
+   "safety": {
+    "status": "FAIL",
+    "pass": false,
+    "fails": [
+     "75% bot-like top holders"
+    ],
+    "warns": [],
+    "oks": [
+     "mint+freeze revoked",
+     "LP locked"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "InsightX"
+    ],
+    "pct": {
+     "sniper": 0.0,
+     "bundler": 7.2,
+     "insider": 0.0,
+     "dev": 0.0,
+     "cluster": 12.5
+    },
+    "scoreAdj": -10
+   },
+   "gmgnScore": -10,
+   "scoreUncapped": 62,
+   "scoreCapped": true,
+   "score": 40,
+   "findings": [
+    [
+     "red",
+     "75% bot-like holders (6/8 of top holders)"
+    ]
+   ],
+   "chartAth": {
+    "price": 0.0001398349024690842,
+    "mc": 139843,
+    "t": 1793844000,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1793844973,
+    "mc": 63055
+   },
+   "odds": {
+    "n": 151,
+    "x2": 30,
+    "rug": 60
+   },
+   "signalAt": 1793845934
+  },
+  {
    "symbol": "CALL",
    "name": "Call",
    "chain": "solana",
