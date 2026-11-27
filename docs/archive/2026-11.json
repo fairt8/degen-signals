@@ -3,6 +3,403 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "PAIRS",
+   "name": "PairsFun",
+   "chain": "solana",
+   "mint": "WecNBsywJKQLGfBKZzBSix3ykXJ11DfAGUiXCLypair",
+   "dex": "raydium",
+   "pair": "4qq6m4MMfd84fW5USDMWvzvFoJZVETsuuVuqvLRuuBW3",
+   "mcap": 75036,
+   "liq": 37563.73,
+   "vol": 194192.37,
+   "window": "h1",
+   "buys": 2298,
+   "sells": 1533,
+   "ch5m": 39.3,
+   "ch1h": -6.84,
+   "ageH": 0.47,
+   "description": "Memecoins backed by a basket of stocks. Multipair to 4 Raydium pools per token Built on \n@Solana\n.",
+   "ctoProfile": false,
+   "volLiq": 5.2,
+   "baseScore": 64,
+   "liqPctMc": 50.1,
+   "ch24h": -6.84,
+   "narratives": [
+    "Meme culture"
+   ],
+   "estFeesSol": 25.28,
+   "priceUsd": 7.503e-05,
+   "socials": [
+    "https://x.com/pairsfun_xyz"
+   ],
+   "websites": [
+    "https://pairsfun.xyz/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/4qq6m4mmfd84fw5usdmwvzvfojzvetsuuvuqvlruubw3",
+    "pumpfun": "https://pump.fun/coin/WecNBsywJKQLGfBKZzBSix3ykXJ11DfAGUiXCLypair",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=WecNBsywJKQLGfBKZzBSix3ykXJ11DfAGUiXCLypair&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/WecNBsywJKQLGfBKZzBSix3ykXJ11DfAGUiXCLypair",
+    "fomo": "https://fomo.family/tokens/solana/WecNBsywJKQLGfBKZzBSix3ykXJ11DfAGUiXCLypair",
+    "axiom": "https://axiom.trade/t/WecNBsywJKQLGfBKZzBSix3ykXJ11DfAGUiXCLypair?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=WecNBsywJKQLGfBKZzBSix3ykXJ11DfAGUiXCLypair",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24PAIRS&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=PAIRS"
+   },
+   "top10Pct": 19.51,
+   "clusterPct": 1.97,
+   "clusterSource": "rugcheck_insider_networks",
+   "clusters": [],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 1,
+    "transferFeePct": 0,
+    "graphInsiders": 12,
+    "danger": []
+   },
+   "dev": {
+    "wallet": "C478RVVWiAg2eFBr8BTw619qhkKSQFQuudEZUuqNtw5y",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 1,
+    "priorMigrated": 0,
+    "priorDead": 1,
+    "bestPriorMcap": 408.0,
+    "rugHistory": false,
+    "launchpad": null,
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/C478RVVWiAg2eFBr8BTw619qhkKSQFQuudEZUuqNtw5y",
+     "pumpfun": "https://pump.fun/profile/C478RVVWiAg2eFBr8BTw619qhkKSQFQuudEZUuqNtw5y"
+    },
+    "funder": "7LuzGXh4N1XnPbYCjH4MusUdrf9HkyQifK8yWnPTfund",
+    "firstTs": 1792213670,
+    "maxTxDay": 16,
+    "devTxCount": 35,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 25.28,
+    "maxSingleHolderPct": 2.73,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "tired-smoke-turtle",
+      "size": 8,
+      "type": "transfer"
+     },
+     {
+      "id": "giant-ginger-platypus",
+      "size": 4,
+      "type": "transfer"
+     }
+    ]
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     2.7,
+     2.5,
+     2.2,
+     2.2,
+     1.8
+    ],
+    "top5Pct": 11.4,
+    "count": 1160,
+    "whalePct": 9.7,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 1.97
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 100,
+    "botN": "8/8",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 12,
+    "freshN": "1/8"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "raydium_cpmm",
+    "src": "rugcheck",
+    "lockedUsd": 40288,
+    "unlock": null,
+    "lpUsd": 37771,
+    "status": "locked",
+    "lockPct": 97.8,
+    "label": "\ud83d\udd12 Locked 100%"
+   },
+   "insightx": {
+    "cluster": 3.45,
+    "sniper": 0.04,
+    "bundler": 15.69,
+    "dev": 0.0,
+    "insider": 0.0,
+    "top10": 11.43
+   },
+   "safety": {
+    "status": "FAIL",
+    "pass": false,
+    "fails": [
+     "bundlers 15.7% > 15%",
+     "100% bot-like top holders"
+    ],
+    "warns": [
+     "12 insider wallets (rugcheck graph)"
+    ],
+    "oks": [
+     "mint+freeze revoked",
+     "LP locked"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "InsightX"
+    ],
+    "pct": {
+     "sniper": 0.0,
+     "bundler": 15.7,
+     "insider": 0.0,
+     "dev": 0.0,
+     "cluster": 3.5
+    },
+    "scoreAdj": -10
+   },
+   "gmgnScore": -10,
+   "scoreUncapped": 54,
+   "scoreCapped": true,
+   "score": 40,
+   "findings": [
+    [
+     "red",
+     "100% bot-like holders (8/8 of top holders)"
+    ],
+    [
+     "amber",
+     "bundlers hold 15.7%"
+    ]
+   ],
+   "chartAth": {
+    "price": 0.00013336971056300288,
+    "mc": 133380,
+    "t": 1793853000,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1793853932,
+    "mc": 73639
+   },
+   "odds": {
+    "n": 153,
+    "x2": 29,
+    "rug": 60
+   },
+   "signalAt": 1793854938
+  },
+  {
+   "symbol": "FURAX",
+   "name": "FURAX",
+   "chain": "solana",
+   "mint": "6xfCD17nTqpVtDwwALjFnchqxzQMMhocF7wELxC3pump",
+   "dex": "pumpswap",
+   "pair": "4MSamMU5kEa9AP9qEJMMWihWvQutsrZobwnxNTeaLcpE",
+   "mcap": 113616,
+   "liq": 27108.21,
+   "vol": 257419.68,
+   "window": "h1",
+   "buys": 5440,
+   "sells": 5881,
+   "ch5m": 6.73,
+   "ch1h": 194,
+   "ageH": 1.0,
+   "description": "See the trap\nbefore you buy.\nPaste any Solana token. FURAX reads seven data sources, runs 17 risk checks, and Claude explains what it means for your money",
+   "ctoProfile": false,
+   "volLiq": 9.5,
+   "baseScore": 68,
+   "liqPctMc": 23.9,
+   "ch24h": 194,
+   "narratives": [
+    "AI / Agents"
+   ],
+   "estFeesSol": 33.52,
+   "priceUsd": 0.0001174,
+   "socials": [
+    "https://x.com/furax_agent"
+   ],
+   "websites": [
+    "https://furax.fun/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/4msammu5kea9ap9qejmmwihwvqutsrzobwnxntealcpe",
+    "pumpfun": "https://pump.fun/coin/6xfCD17nTqpVtDwwALjFnchqxzQMMhocF7wELxC3pump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=6xfCD17nTqpVtDwwALjFnchqxzQMMhocF7wELxC3pump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/6xfCD17nTqpVtDwwALjFnchqxzQMMhocF7wELxC3pump",
+    "fomo": "https://fomo.family/tokens/solana/6xfCD17nTqpVtDwwALjFnchqxzQMMhocF7wELxC3pump",
+    "axiom": "https://axiom.trade/t/6xfCD17nTqpVtDwwALjFnchqxzQMMhocF7wELxC3pump?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=6xfCD17nTqpVtDwwALjFnchqxzQMMhocF7wELxC3pump",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24FURAX&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=FURAX"
+   },
+   "top10Pct": 8.13,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 10,
+    "transferFeePct": 0,
+    "graphInsiders": 0,
+    "danger": []
+   },
+   "dev": {
+    "wallet": "9Nzj5y9kFW2zAQhNffKNwP3nrGFceohiXqZGTWdFKWYQ",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 1,
+    "priorMigrated": 0,
+    "priorDead": 1,
+    "bestPriorMcap": 2705.0,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [
+     "Low Liquidity"
+    ],
+    "links": {
+     "solscan": "https://solscan.io/account/9Nzj5y9kFW2zAQhNffKNwP3nrGFceohiXqZGTWdFKWYQ",
+     "pumpfun": "https://pump.fun/profile/9Nzj5y9kFW2zAQhNffKNwP3nrGFceohiXqZGTWdFKWYQ"
+    },
+    "funder": null,
+    "firstTs": 1793850192,
+    "maxTxDay": 101,
+    "devTxCount": 101,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 33.52,
+    "maxSingleHolderPct": 1.63,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     1.6,
+     1.3,
+     0.7,
+     0.7,
+     0.7
+    ],
+    "top5Pct": 4.9,
+    "count": 2388,
+    "whalePct": 0,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 88,
+    "botN": "7/8",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 0,
+    "freshN": "0/8"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 4492,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "insightx": {
+    "cluster": 30.13,
+    "sniper": 0.0,
+    "bundler": 1.31,
+    "dev": 0.0,
+    "insider": 0.0,
+    "top10": 7.42
+   },
+   "safety": {
+    "status": "FAIL",
+    "pass": false,
+    "fails": [
+     "clustered 30.1% > 25%",
+     "88% bot-like top holders"
+    ],
+    "warns": [],
+    "oks": [
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "InsightX"
+    ],
+    "pct": {
+     "sniper": 0.0,
+     "bundler": 1.3,
+     "insider": 0.0,
+     "dev": 0.0,
+     "cluster": 30.1
+    },
+    "scoreAdj": -10
+   },
+   "gmgnScore": -10,
+   "scoreUncapped": 58,
+   "scoreCapped": true,
+   "score": 40,
+   "findings": [
+    [
+     "red",
+     "88% bot-like holders (7/8 of top holders)"
+    ]
+   ],
+   "chartAth": null,
+   "firstScan": {
+    "t": 1793853069,
+    "mc": 96324
+   },
+   "odds": {
+    "n": 153,
+    "x2": 29,
+    "rug": 60
+   },
+   "signalAt": 1793854938
+  },
+  {
    "symbol": "PUMP2",
    "name": "PUMP2",
    "chain": "solana",
