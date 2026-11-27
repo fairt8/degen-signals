@@ -3,6 +3,216 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "CALL",
+   "name": "Call",
+   "chain": "solana",
+   "mint": "7UooapEDmXmP5hRJPoYvXqYDWMVh15Gi59gYu7hopump",
+   "dex": "pumpswap",
+   "pair": "77hsvm1D3fu4MpoDCvL4cwXG7KgMrVyJrnxFNoE9cyBx",
+   "mcap": 119251,
+   "liq": 29697.1,
+   "vol": 413640.7,
+   "window": "h1",
+   "buys": 5210,
+   "sells": 3775,
+   "ch5m": 49.65,
+   "ch1h": -31.32,
+   "ageH": 1.99,
+   "description": "Just Call it",
+   "ctoProfile": false,
+   "volLiq": 38.2,
+   "baseScore": 61,
+   "liqPctMc": 24.9,
+   "ch24h": 216,
+   "narratives": [],
+   "estFeesSol": 147.87,
+   "priceUsd": 0.000125,
+   "socials": [
+    "https://x.com/callitfam"
+   ],
+   "websites": [
+    "https://callit.family/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/77hsvm1d3fu4mpodcvl4cwxg7kgmrvyjrnxfnoe9cybx",
+    "pumpfun": "https://pump.fun/coin/7UooapEDmXmP5hRJPoYvXqYDWMVh15Gi59gYu7hopump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=7UooapEDmXmP5hRJPoYvXqYDWMVh15Gi59gYu7hopump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/7UooapEDmXmP5hRJPoYvXqYDWMVh15Gi59gYu7hopump",
+    "fomo": "https://fomo.family/tokens/solana/7UooapEDmXmP5hRJPoYvXqYDWMVh15Gi59gYu7hopump",
+    "axiom": "https://axiom.trade/t/7UooapEDmXmP5hRJPoYvXqYDWMVh15Gi59gYu7hopump?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=7UooapEDmXmP5hRJPoYvXqYDWMVh15Gi59gYu7hopump",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24CALL&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=CALL"
+   },
+   "top10Pct": 20.02,
+   "clusterPct": 2.06,
+   "clusterSource": "rugcheck_insider_networks",
+   "clusters": [],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 1,
+    "transferFeePct": 0,
+    "graphInsiders": 25,
+    "danger": []
+   },
+   "dev": {
+    "wallet": "B1yzjRGRbv5hbRMkKcD5fDCWcCNZZ9RpumoYmUqYjnfi",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/B1yzjRGRbv5hbRMkKcD5fDCWcCNZZ9RpumoYmUqYjnfi",
+     "pumpfun": "https://pump.fun/profile/B1yzjRGRbv5hbRMkKcD5fDCWcCNZZ9RpumoYmUqYjnfi"
+    },
+    "funder": "Hufy2kTe3sji5mbcttVhmkbWFyyKbHuHd9V8qQpWT4dw",
+    "firstTs": 1793836452,
+    "maxTxDay": 1915,
+    "devTxCount": 2334,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 147.87,
+    "maxSingleHolderPct": 3.34,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "peaceful-opal-gorilla",
+      "size": 5,
+      "type": "transfer"
+     },
+     {
+      "id": "sharp-navy-mole",
+      "size": 16,
+      "type": "transfer"
+     },
+     {
+      "id": "obvious-forest-salmon",
+      "size": 4,
+      "type": "transfer"
+     }
+    ]
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     3.3,
+     2.4,
+     2.3,
+     1.8,
+     1.8
+    ],
+    "top5Pct": 11.7,
+    "count": 4159,
+    "whalePct": 8.1,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 2.06
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 100,
+    "botN": "7/7",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 0,
+    "freshN": "0/7"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 29728,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "insightx": {
+    "cluster": 1.89,
+    "sniper": 0.72,
+    "bundler": 2.51,
+    "dev": 0.42,
+    "insider": 0.07,
+    "top10": 12.54
+   },
+   "safety": {
+    "status": "FAIL",
+    "pass": false,
+    "fails": [
+     "100% bot-like top holders"
+    ],
+    "warns": [
+     "25 insider wallets (rugcheck graph)"
+    ],
+    "oks": [
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "InsightX"
+    ],
+    "pct": {
+     "sniper": 0.7,
+     "bundler": 2.5,
+     "insider": 0.1,
+     "dev": 0.4,
+     "cluster": 1.9
+    },
+    "scoreAdj": -10
+   },
+   "gmgnScore": -10,
+   "scoreUncapped": 51,
+   "scoreCapped": true,
+   "score": 40,
+   "findings": [
+    [
+     "red",
+     "100% bot-like holders (7/7 of top holders)"
+    ],
+    [
+     "amber",
+     "volume 38.2x liquidity, possibly inflated"
+    ]
+   ],
+   "chartAth": {
+    "price": 0.0002517645354739366,
+    "mc": 240185,
+    "t": 1793840400,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1793836832,
+    "mc": 29034.24
+   },
+   "odds": {
+    "n": 151,
+    "x2": 30,
+    "rug": 60
+   },
+   "signalAt": 1793844101
+  },
+  {
    "symbol": "FIX",
    "name": "Fix",
    "chain": "solana",
