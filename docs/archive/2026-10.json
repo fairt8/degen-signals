@@ -16566,6 +16566,83 @@
  ],
  "journal": [
   {
+   "mint": "JDAEYyQswqJga9NmhmL7F2Ruf1CFa6iuS9Kvj8neSTNK",
+   "symbol": "Stonker",
+   "chain": "solana",
+   "t0": 1793189564,
+   "price0": 0.0001802,
+   "mcap0": 180273,
+   "score": 40,
+   "devScore": 0,
+   "link": "https://dexscreener.com/solana/frragmh8u1n19mgow3sfluqdbakg9yfb4qfigbepuwag",
+   "maxPrice": 0.00036176634642431715,
+   "samples": [],
+   "trend": "fading",
+   "h1": {
+    "price": 0.0001685,
+    "pct": -6.5,
+    "maxX": 2.01
+   },
+   "h24": {
+    "price": 2.079e-05,
+    "pct": -88.5,
+    "maxX": 2.01
+   },
+   "hit2x": true,
+   "hit5x": false,
+   "msgId": {
+    "1318404489": 530,
+    "-1004348482526": 1976
+   },
+   "gmgn": null,
+   "safety": {
+    "status": "FAIL",
+    "reasons": [
+     "90% bot-like top holders",
+     "5 insider wallets (rugcheck graph)",
+     "mint+freeze revoked",
+     "LP locked"
+    ],
+    "pct": {
+     "sniper": 0.0,
+     "bundler": 0.0,
+     "insider": 0.0,
+     "dev": 0.0,
+     "cluster": 2.2
+    },
+    "sources": [
+     "rugcheck",
+     "LP",
+     "InsightX"
+    ]
+   },
+   "athMc": 361854,
+   "athT": 1793191500,
+   "lp": {
+    "status": "locked",
+    "label": "\ud83d\udd12 Locked 100%",
+    "pct": 100,
+    "unlock": null,
+    "t": 1793790049,
+    "pctMax": 100,
+    "liq": 4765.57,
+    "liqMax": 37763.73
+   },
+   "last": 2.079e-05,
+   "lastT": 1793276149,
+   "maxSrc": "chart",
+   "athSrc": "chart",
+   "chartT": 1793267132,
+   "minPrice": 1.195e-05,
+   "lastPct": -88.5,
+   "milestones": {
+    "2": null
+   },
+   "topMilestone": 2.0,
+   "topMilestoneT": null,
+   "lpEvents": {}
+  },
+  {
    "mint": "FuK9BkA4jXTBzj8HQRQT4538gy1BJzPYy9qwiHs2pump",
    "symbol": "ENVAR",
    "chain": "solana",
