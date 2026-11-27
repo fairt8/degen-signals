@@ -3,6 +3,195 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "FIX",
+   "name": "Fix",
+   "chain": "solana",
+   "mint": "LWSYx94hV8NaFujStsqRZNsd1V8PkasADLTfiWjbfix",
+   "dex": "raydium",
+   "pair": "G3FEDSLfXCcVUo96WWYTFWgvfQsgtqAmo9tddPNxEVFn",
+   "mcap": 148361,
+   "liq": 36790.98,
+   "vol": 230221.81,
+   "window": "h1",
+   "buys": 2755,
+   "sells": 2194,
+   "ch5m": 24.25,
+   "ch1h": 278,
+   "ageH": 0.71,
+   "description": "fix the tokenization.",
+   "ctoProfile": false,
+   "volLiq": 6.3,
+   "baseScore": 68,
+   "liqPctMc": 24.8,
+   "ch24h": 278,
+   "narratives": [],
+   "estFeesSol": 30.21,
+   "priceUsd": 0.0001483,
+   "socials": [
+    "https://x.com/fixtheonchain"
+   ],
+   "websites": [
+    "https://fixtheonchain.com/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/g3fedslfxccvuo96wwytfwgvfqsgtqamo9tddpnxevfn",
+    "pumpfun": "https://pump.fun/coin/LWSYx94hV8NaFujStsqRZNsd1V8PkasADLTfiWjbfix",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=LWSYx94hV8NaFujStsqRZNsd1V8PkasADLTfiWjbfix&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/LWSYx94hV8NaFujStsqRZNsd1V8PkasADLTfiWjbfix",
+    "fomo": "https://fomo.family/tokens/solana/LWSYx94hV8NaFujStsqRZNsd1V8PkasADLTfiWjbfix",
+    "axiom": "https://axiom.trade/t/LWSYx94hV8NaFujStsqRZNsd1V8PkasADLTfiWjbfix?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=LWSYx94hV8NaFujStsqRZNsd1V8PkasADLTfiWjbfix",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24FIX&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=FIX"
+   },
+   "top10Pct": 18.09,
+   "clusterPct": 0,
+   "clusterSource": "rugcheck_insiders",
+   "clusters": [],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 1,
+    "transferFeePct": 0,
+    "graphInsiders": 0,
+    "danger": []
+   },
+   "dev": {
+    "wallet": "JASDLNYipiv9rFPPNzBtCySxVnXvVhLPHqyxtzy2sYV3",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": null,
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/JASDLNYipiv9rFPPNzBtCySxVnXvVhLPHqyxtzy2sYV3",
+     "pumpfun": "https://pump.fun/profile/JASDLNYipiv9rFPPNzBtCySxVnXvVhLPHqyxtzy2sYV3"
+    },
+    "funder": "8DfHuYFv7VQ6wgcGtVDN2vtFn5ezF52hHNtPWYcqm8hU",
+    "firstTs": 1793806771,
+    "maxTxDay": 13,
+    "devTxCount": 13,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 30.21,
+    "maxSingleHolderPct": 3.12,
+    "freshWallets": 0,
+    "insiderNetworks": []
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     3.1,
+     2.6,
+     1.8,
+     1.7,
+     1.7
+    ],
+    "top5Pct": 10.9,
+    "count": 1464,
+    "whalePct": 5.7,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 0
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 88,
+    "botN": "7/8",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 25,
+    "freshN": "2/8"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "raydium_cpmm",
+    "src": "rugcheck",
+    "lockedUsd": 30865,
+    "unlock": null,
+    "lpUsd": 30865,
+    "status": "burned+locked",
+    "lockPct": 85.5,
+    "label": "\ud83d\udd25\ud83d\udd12 Burned+locked 100% (locker ~85.5%)"
+   },
+   "insightx": {
+    "cluster": 4.52,
+    "sniper": 0.1,
+    "bundler": 4.14,
+    "dev": 0.0,
+    "insider": 0.0,
+    "top10": 14.23
+   },
+   "safety": {
+    "status": "FAIL",
+    "pass": false,
+    "fails": [
+     "88% bot-like top holders"
+    ],
+    "warns": [],
+    "oks": [
+     "mint+freeze revoked",
+     "LP burned+locked"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "InsightX"
+    ],
+    "pct": {
+     "sniper": 0.1,
+     "bundler": 4.1,
+     "insider": 0.0,
+     "dev": 0.0,
+     "cluster": 4.5
+    },
+    "scoreAdj": -10
+   },
+   "gmgnScore": -10,
+   "scoreUncapped": 58,
+   "scoreCapped": true,
+   "score": 40,
+   "findings": [
+    [
+     "red",
+     "88% bot-like holders (7/8 of top holders)"
+    ]
+   ],
+   "chartAth": {
+    "price": 0.00013088436706542951,
+    "mc": 130938,
+    "t": 1793816100,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1793816132,
+    "mc": 111735
+   },
+   "odds": {
+    "n": 147,
+    "x2": 29,
+    "rug": 61
+   },
+   "signalAt": 1793817982
+  },
+  {
    "symbol": "SAGAS",
    "name": "SAGAS",
    "chain": "solana",
