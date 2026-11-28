@@ -3,6 +3,204 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "SOUNDER",
+   "name": "Sounder",
+   "chain": "solana",
+   "mint": "DBhWAqpAJFNM1A9XY6DDb1SJVkNCv87hRdYCoCoypump",
+   "dex": "pumpswap",
+   "pair": "6dTUgedFaTS8qopkTLq5YeZS3TdkeSk32mw8nriWXp86",
+   "mcap": 61216,
+   "liq": 18930.4,
+   "vol": 120740.34,
+   "window": "h1",
+   "buys": 1646,
+   "sells": 1203,
+   "ch5m": 15.63,
+   "ch1h": 55.53,
+   "ageH": 0.32,
+   "description": "Every liquidity pool has a bottom. Cross-venue depth on Solana, read straight from pool state.",
+   "ctoProfile": false,
+   "volLiq": 6.4,
+   "baseScore": 67,
+   "liqPctMc": 30.9,
+   "ch24h": 55.53,
+   "narratives": [
+    "AI / Agents"
+   ],
+   "estFeesSol": 15.86,
+   "priceUsd": 6.138e-05,
+   "socials": [
+    "https://x.com/SounderLiq"
+   ],
+   "websites": [
+    "https://www.sounderliq.app/"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/6dtugedfats8qopktlq5yezs3tdkesk32mw8nriwxp86",
+    "pumpfun": "https://pump.fun/coin/DBhWAqpAJFNM1A9XY6DDb1SJVkNCv87hRdYCoCoypump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=DBhWAqpAJFNM1A9XY6DDb1SJVkNCv87hRdYCoCoypump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/DBhWAqpAJFNM1A9XY6DDb1SJVkNCv87hRdYCoCoypump",
+    "fomo": "https://fomo.family/tokens/solana/DBhWAqpAJFNM1A9XY6DDb1SJVkNCv87hRdYCoCoypump",
+    "axiom": "https://axiom.trade/t/DBhWAqpAJFNM1A9XY6DDb1SJVkNCv87hRdYCoCoypump?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=DBhWAqpAJFNM1A9XY6DDb1SJVkNCv87hRdYCoCoypump",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24SOUNDER&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=SOUNDER"
+   },
+   "top10Pct": 22.67,
+   "clusterPct": 5.31,
+   "clusterSource": "rugcheck_insider_networks",
+   "clusters": [],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 1,
+    "transferFeePct": 0,
+    "graphInsiders": 7,
+    "danger": []
+   },
+   "dev": {
+    "wallet": "3A3ynW7VTHjpBP7KSLLbjoMex34UkCbCtxVH9rQk6cLZ",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/3A3ynW7VTHjpBP7KSLLbjoMex34UkCbCtxVH9rQk6cLZ",
+     "pumpfun": "https://pump.fun/profile/3A3ynW7VTHjpBP7KSLLbjoMex34UkCbCtxVH9rQk6cLZ"
+    },
+    "funder": "6LY1JzAFVZsP2a2xKrtU6znQMQ5h4i7tocWdgrkZzkzF",
+    "firstTs": 1793879928,
+    "maxTxDay": 18,
+    "devTxCount": 18,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": 15.86,
+    "maxSingleHolderPct": 4.39,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "strong-khaki-tiger",
+      "size": 7,
+      "type": "transfer"
+     }
+    ]
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     4.4,
+     3.2,
+     3.2,
+     2.1,
+     1.7
+    ],
+    "top5Pct": 14.7,
+    "count": 1212,
+    "whalePct": 12.9,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 5.31
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 86,
+    "botN": "6/7",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 14,
+    "freshN": "1/7"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 19006,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "insightx": {
+    "cluster": 11.67,
+    "sniper": 0.0,
+    "bundler": 4.45,
+    "dev": 0.0,
+    "insider": 0.0,
+    "top10": 21.5
+   },
+   "safety": {
+    "status": "FAIL",
+    "pass": false,
+    "fails": [
+     "86% bot-like top holders"
+    ],
+    "warns": [
+     "7 insider wallets (rugcheck graph)"
+    ],
+    "oks": [
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "InsightX"
+    ],
+    "pct": {
+     "sniper": 0.0,
+     "bundler": 4.5,
+     "insider": 0.0,
+     "dev": 0.0,
+     "cluster": 11.7
+    },
+    "scoreAdj": -10
+   },
+   "gmgnScore": -10,
+   "scoreUncapped": 57,
+   "scoreCapped": true,
+   "score": 40,
+   "findings": [
+    [
+     "red",
+     "86% bot-like holders (6/7 of top holders)"
+    ]
+   ],
+   "chartAth": {
+    "price": 6.564511340612699e-05,
+    "mc": 65470,
+    "t": 1793887800,
+    "src": "chart"
+   },
+   "firstScan": {
+    "t": 1793885432,
+    "mc": 13944.9
+   },
+   "odds": {
+    "n": 157,
+    "x2": 29,
+    "rug": 61
+   },
+   "signalAt": 1793888188
+  },
+  {
    "symbol": "ELYSIUM",
    "name": "Elysium Pad",
    "chain": "solana",
