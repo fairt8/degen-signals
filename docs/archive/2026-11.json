@@ -3,6 +3,202 @@
  "note": "Archived Degen signals (older than 30 days). Not financial advice.",
  "tokens": [
   {
+   "symbol": "DNUT",
+   "name": "donut fade",
+   "chain": "solana",
+   "mint": "7PriNMSQarKxpDcHHVKBkVh2AyK6rNZmdFF5D6Copump",
+   "dex": "pumpswap",
+   "pair": "GS2ZDkcrz1xutuvM1KKzpP3dMwmrTiRP9vcjAWkRM7CQ",
+   "mcap": 54722,
+   "liq": 19702.93,
+   "vol": 225420.76,
+   "window": "h1",
+   "buys": 3705,
+   "sells": 2807,
+   "ch5m": 3.8,
+   "ch1h": 16.64,
+   "ageH": 0.3,
+   "description": "Donut fade.",
+   "ctoProfile": false,
+   "volLiq": 11.4,
+   "baseScore": 55,
+   "liqPctMc": 36.0,
+   "ch24h": 16.64,
+   "narratives": [],
+   "estFeesSol": null,
+   "priceUsd": 5.472e-05,
+   "socials": [
+    "https://x.com/jimothy_phd/status/2118429505492586803"
+   ],
+   "websites": [
+    "https://otcdesks.cash/coin/2sHRxUXzET8pWQKXnhQk6MSUrqxyeQexowBiQoV5Q59z"
+   ],
+   "cheapPass": true,
+   "links": {
+    "dexscreener": "https://dexscreener.com/solana/gs2zdkcrz1xutuvm1kkzpp3dmwmrtirp9vcjawkrm7cq",
+    "pumpfun": "https://pump.fun/coin/7PriNMSQarKxpDcHHVKBkVh2AyK6rNZmdFF5D6Copump",
+    "bubblemaps": "https://v2.bubblemaps.io/map?address=7PriNMSQarKxpDcHHVKBkVh2AyK6rNZmdFF5D6Copump&chain=solana",
+    "insightx": "https://app.insightx.network/bubblemaps/solana/7PriNMSQarKxpDcHHVKBkVh2AyK6rNZmdFF5D6Copump",
+    "fomo": "https://fomo.family/tokens/solana/7PriNMSQarKxpDcHHVKBkVh2AyK6rNZmdFF5D6Copump",
+    "axiom": "https://axiom.trade/t/7PriNMSQarKxpDcHHVKBkVh2AyK6rNZmdFF5D6Copump?chain=sol",
+    "bullx": "https://neo.bullx.io/terminal?chainId=1399811149&address=7PriNMSQarKxpDcHHVKBkVh2AyK6rNZmdFF5D6Copump",
+    "shuriken": "https://t.me/shuriken_trade_bot",
+    "x_search": "https://x.com/search?q=%24DNUT&f=live",
+    "tiktok": "https://www.tiktok.com/search?q=DNUT"
+   },
+   "top10Pct": 22.38,
+   "clusterPct": 1.41,
+   "clusterSource": "rugcheck_insider_networks",
+   "clusters": [],
+   "rugcheck": {
+    "mintAuth": null,
+    "freezeAuth": null,
+    "rugged": false,
+    "score": 1,
+    "transferFeePct": 0,
+    "graphInsiders": 13,
+    "danger": []
+   },
+   "dev": {
+    "wallet": "CoNWt6PPf6E8kXAT2wjTxbPj8aDLkrjcpbgJTPdmqJyb",
+    "holdPct": 0.0,
+    "sold": true,
+    "priorTokens": 0,
+    "priorMigrated": 0,
+    "priorDead": 0,
+    "bestPriorMcap": null,
+    "rugHistory": false,
+    "launchpad": "Pump.Fun",
+    "riskNames": [],
+    "links": {
+     "solscan": "https://solscan.io/account/CoNWt6PPf6E8kXAT2wjTxbPj8aDLkrjcpbgJTPdmqJyb",
+     "pumpfun": "https://pump.fun/profile/CoNWt6PPf6E8kXAT2wjTxbPj8aDLkrjcpbgJTPdmqJyb"
+    },
+    "funder": "HckQ93Xqjjo8mwt5pNPWvyCTZXQZ858rvzmm7ZRrZg9t",
+    "firstTs": 1793907989,
+    "maxTxDay": 102,
+    "devTxCount": 102,
+    "funderSharedWithTopHolders": false
+   },
+   "devScore": 0,
+   "devNotes": [],
+   "extras": {
+    "estFeesSol": null,
+    "maxSingleHolderPct": 3.37,
+    "freshWallets": 0,
+    "insiderNetworks": [
+     {
+      "id": "bitter-mauve-worm",
+      "size": 8,
+      "type": "transfer"
+     },
+     {
+      "id": "obtuse-white-cockroach",
+      "size": 5,
+      "type": "transfer"
+     }
+    ]
+   },
+   "orders": {
+    "dexPaid": true,
+    "ctoOrder": false,
+    "boosts": 0
+   },
+   "cto": false,
+   "holders": {
+    "top5": [
+     3.4,
+     2.9,
+     2.6,
+     2.4,
+     2.3
+    ],
+    "top5Pct": 13.7,
+    "count": 1961,
+    "whalePct": 15.8,
+    "insiderPct": 0,
+    "freshWallets": 0,
+    "clusterPct": 1.41
+   },
+   "behaviour": {
+    "sampled": 10,
+    "source": "rpc",
+    "botPct": 88,
+    "botN": "7/8",
+    "flipperPct": null,
+    "flipperN": "0/0",
+    "freshPct": 25,
+    "freshN": "2/8"
+   },
+   "lp": {
+    "pct": 100,
+    "market": "pump_fun_amm",
+    "src": "rugcheck",
+    "lockedUsd": null,
+    "unlock": null,
+    "lpUsd": 19228,
+    "status": "burned",
+    "label": "\ud83d\udd25 Burned 100% (PumpSwap migration burns LP)"
+   },
+   "insightx": {
+    "cluster": 2.1,
+    "sniper": 0.0,
+    "bundler": 0.0,
+    "dev": 0.0,
+    "insider": 0.0,
+    "top10": 19.19
+   },
+   "safety": {
+    "status": "FAIL",
+    "pass": false,
+    "fails": [
+     "88% bot-like top holders"
+    ],
+    "warns": [
+     "13 insider wallets (rugcheck graph)"
+    ],
+    "oks": [
+     "mint+freeze revoked",
+     "LP burned"
+    ],
+    "sources": [
+     "rugcheck",
+     "LP",
+     "RPC dev",
+     "InsightX"
+    ],
+    "pct": {
+     "sniper": 0.0,
+     "bundler": 0.0,
+     "insider": 0.0,
+     "dev": 0.0,
+     "cluster": 2.1
+    },
+    "scoreAdj": -10
+   },
+   "gmgnScore": -10,
+   "scoreUncapped": 45,
+   "scoreCapped": true,
+   "score": 40,
+   "findings": [
+    [
+     "red",
+     "88% bot-like holders (7/8 of top holders)"
+    ]
+   ],
+   "chartAth": null,
+   "firstScan": {
+    "t": 1793908866,
+    "mc": 54722
+   },
+   "odds": {
+    "n": 159,
+    "x2": 28,
+    "rug": 62
+   },
+   "signalAt": 1793908888
+  },
+  {
    "symbol": "SOUNDER",
    "name": "Sounder",
    "chain": "solana",
